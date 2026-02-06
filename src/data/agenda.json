@@ -1,0 +1,30 @@
+[
+  {
+    "day": "Day 1",
+    "theme": "Strategy & Direction",
+    "date": "June 2",
+    "color": "orange",
+    "items": [
+      { "time": "09:00", "title": "Registration & Networking Breakfast" },
+      { "time": "10:00", "title": "Welcome & Opening Keynote" },
+      { "time": "11:15", "title": "Track A: API Strategy" },
+      { "time": "11:15", "title": "Track B: APIs & the AI Era" },
+      { "time": "14:00", "title": "Expert Panels" },
+      { "time": "16:30", "title": "Community Roundtables" }
+    ]
+  },
+  {
+    "day": "Day 2",
+    "theme": "Practice & Co-Creation",
+    "date": "June 3",
+    "color": "blue",
+    "items": [
+      { "time": "09:00", "title": "Morning Keynote" },
+      { "time": "09:45", "title": "Hands-On Workshops" },
+      { "time": "11:30", "title": "APIOps Clinics" },
+      { "time": "13:30", "title": "Unconference Sessions" },
+      { "time": "15:00", "title": "Partner Spotlight" },
+      { "time": "16:00", "title": "Closing + Community Commitments" }
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Jaska Jokunen",
+    "title": "Director of API Strategy",
+    "company": "Company A",
+    "track": "Strategy & Direction",
+    "bio": "Leads API platform modernization across public services and helps teams scale federated governance."
+  },
+  {
+    "name": "Niina Jokunen",
+    "title": "Principal Architect",
+    "company": "Company B",
+    "track": "AI-Driven APIs",
+    "bio": "Builds trusted API ecosystems with machine-learning driven observability and risk controls."
+  },
+  {
+    "name": "Tiina Jokunen",
+    "title": "Head of Platform",
+    "company": "Company C",
+    "track": "Community Co-Creation",
+    "bio": "Focuses on developer experience, community programs, and reusable API products."
+  },
+  {
+    "name": "Mikko Jokunen",
+    "title": "Product Lead",
+    "company": "Company D",
+    "track": "Practice & Clinics",
+    "bio": "Designs API-first product journeys and runs hands-on clinics for API teams."
+  }
+]

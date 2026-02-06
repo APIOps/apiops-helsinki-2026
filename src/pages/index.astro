@@ -1,17 +1,202 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import highlights from "../data/highlights.json";
+import agenda from "../data/agenda.json";
+import speakers from "../data/speakers.json";
+import sponsors from "../data/sponsors.json";
+import attendees from "../data/attendees.json";
 
+const ticketUrl = "https://tickets.apiopshelsinki.fi";
+const partnerUrl = "https://docs.google.com/presentation/d/1bXmS1AlfLN40FQ6Ws6ldm9BffD1sS_BW/edit?usp=sharing&ouid=108887358045542967446&rtpof=true&sd=true";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="APIOps Helsinki Conference 2026">
+  <nav>
+    <div class="container nav-inner">
+      <div>
+        <strong>APIOps Helsinki</strong>
+      </div>
+      <div class="nav-links">
+        <a href="#agenda">Agenda</a>
+        <a href="#tracks">Tracks</a>
+        <a href="#community">Community</a>
+        <a href="#sponsors">Sponsors</a>
+        <a href={ticketUrl}>Tickets</a>
+        <a class="button primary" href={ticketUrl}>Register Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-content">
+      <span class="badge">June 2-3, 2026 · Epicenter Helsinki</span>
+      <h1>APIOps Helsinki Conference 2026</h1>
+      <p class="meta">Strategy · AI-Driven APIs · Community Co-Creation</p>
+      <p>
+        Join Finland’s premier APIOps gathering for two days of focused strategy sessions,
+        hands-on clinics, and peer-led community building. Tickets are sold via our dedicated
+        ticketing partner.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href={ticketUrl}>Buy Tickets</a>
+        <a class="button secondary" href={partnerUrl}>Become a Partner</a>
+      </div>
+    </div>
+  </header>
+
+    <section class="section highlight-row" id="tracks">
+      <div class="container">
+        <div class="grid highlight-grid">
+          {highlights.map((item) => (
+            <div class="card">
+              <span class="badge">APIOps Focus</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  <section class="section" id="agenda">
+    <div class="container">
+      <div class="section-title">
+        <h2>Conference Agenda</h2>
+        <p>June 2-3, 2026 · Epicenter Helsinki</p>
+      </div>
+      <div class="split" id="day">
+        {agenda.map((day) => (
+          <div class="card agenda-card">
+            <div class={`agenda-header ${day.color}`}>
+              {day.day}: {day.theme} · {day.date}
+            </div>
+            <ul class="agenda-list" id="day">
+              {day.items.map((item) => (
+                <li>
+                  <span class="agenda-time">{item.time}</span>
+                  <span>{item.title}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center; margin-top: 2rem;">
+        <a class="button primary" href={ticketUrl}>See Full Agenda</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="community">
+    <div class="container">
+      <div class="section-title">
+        <h2>Who Should Attend</h2>
+        <p>Real insights and peer conversations, not expo noise.</p>
+      </div>
+      <div class="grid attend-grid" id="title">
+        {attendees.map((audience) => (
+          <div class="card">
+            <div class="speaker-avatar">AP</div>
+            <h4>{audience.title}</h4>
+            <p>{audience.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="speakers">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Speakers</h2>
+        <p>Leaders from Finland’s API, platform, and AI ecosystems.</p>
+      </div>
+      <div class="grid speaker-grid" id="name">
+        {speakers.map((speaker) => (
+          <div class="card speaker-card">
+            <div class="speaker-avatar">
+              {speaker.name
+                .split(" ")
+                .map((name) => name[0])
+                .join("")}
+            </div>
+            <h3>{speaker.name}</h3>
+            <p>
+              <strong>{speaker.title}</strong>
+              <br />
+              {speaker.company}
+            </p>
+            <p>{speaker.bio}</p>
+            <span class="badge" style="margin-top: 0.8rem;">{speaker.track}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section highlight-row" id="sponsors">
+    <div class="container">
+      <div class="section-title">
+        <h2>Sponsors & Partners</h2>
+        <p>Interested in partnering? Email partners@apiopshelsinki.fi.</p>
+      </div>
+      <div class="grid sponsor-grid" id="name">
+        {sponsors.gold.map((name) => (
+          <div class="card sponsor-card">
+            {name}
+            <p style="font-size: 0.85rem; color: var(--slate-light);">Gold</p>
+          </div>
+        ))}
+        {sponsors.silver.map((name) => (
+          <div class="card sponsor-card">
+            {name}
+            <p style="font-size: 0.85rem; color: var(--slate-light);">Silver</p>
+          </div>
+        ))}
+        {sponsors.community.map((name) => (
+          <div class="card sponsor-card">
+            {name}
+            <p style="font-size: 0.85rem; color: var(--slate-light);">Community</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container">
+      <h2>Join Finland’s APIOps Community</h2>
+      <p>Advance your API strategy and practices in a focused, collaborative setting.</p>
+      <div class="hero-actions" style="justify-content:center; margin-top: 1.5rem;">
+        <a class="button primary" href={ticketUrl}>Get Your Ticket</a>
+        <a class="button secondary" href={partnerUrl}>View Sponsorships</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>APIOps Helsinki 2026</h4>
+        <p>Epicenter Helsinki · June 2-3, 2026</p>
+        <p>Organized by Osaango in partnership with APIdays.</p>
+      </div>
+      <div>
+        <h4>Conference</h4>
+        <a href="#agenda">Agenda</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#sponsors">Sponsors</a>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <a href="#community">Who Should Attend</a>
+        <a href={partnerUrl}>Become a Partner</a>
+      </div>
+      <div>
+        <h4>Tickets</h4>
+        <a href={ticketUrl}>Ticketing Partner</a>
+        <a href="mailto:hello@apiopshelsinki.fi">Contact</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
