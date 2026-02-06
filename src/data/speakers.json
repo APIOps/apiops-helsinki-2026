@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Aino Korhonen",
+    "title": "Director of API Strategy",
+    "company": "Nordic Digital",
+    "track": "Strategy & Direction",
+    "bio": "Leads API platform modernization across public services and helps teams scale federated governance."
+  },
+  {
+    "name": "Mikko Laaksonen",
+    "title": "Principal Architect",
+    "company": "Arctic Bank",
+    "track": "AI-Driven APIs",
+    "bio": "Builds trusted API ecosystems with machine-learning driven observability and risk controls."
+  },
+  {
+    "name": "Sofia Niemi",
+    "title": "Head of Platform",
+    "company": "Helsinki Mobility Labs",
+    "track": "Community Co-Creation",
+    "bio": "Focuses on developer experience, community programs, and reusable API products."
+  },
+  {
+    "name": "Jonas Lehto",
+    "title": "Product Lead",
+    "company": "Polar Cloud",
+    "track": "Practice & Clinics",
+    "bio": "Designs API-first product journeys and runs hands-on clinics for API teams."
+  }
+]

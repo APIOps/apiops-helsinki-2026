@@ -1,0 +1,20 @@
+---
+import "../styles/global.css";
+
+const { title = "APIOps Helsinki 2026" } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="APIOps Helsinki Conference 2026 brings together API leaders, platform teams, and practitioners for two days of strategy, AI-driven APIs, and community co-creation."
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

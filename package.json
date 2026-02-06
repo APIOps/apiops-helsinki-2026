@@ -1,0 +1,14 @@
+{
+  "name": "apiops-helsinki-2026",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "format": "astro format"
+  },
+  "dependencies": {
+    "astro": "^4.15.0"
+  }
+}
