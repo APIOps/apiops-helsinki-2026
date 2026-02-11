@@ -1,5 +1,27 @@
 {
-  "gold": ["Osaango", "APIdays"],
-  "silver": ["Apiable"],
-  "community": []
+  "gold": [
+    {
+      "name": "Osaango",
+      "logo": "/images/sponsors/osaango-black.svg",
+      "url": "https://osaango.com"
+    },
+    {
+      "name": "APIdays",
+      "logo": "/images/sponsors/apidays.jpg",
+      "url": "https://www.apidays.global/"
+    }
+  ],
+  "silver": [
+    {
+      "name": "Apiable",
+      "logo": "/images/sponsors/apiable.svg",
+      "url": "https://www.apiable.io/"
+    }
+  ],
+  "community": [    
+    {
+      "name": "APIOps Cycles",
+      "logo": "/images/sponsors/apiops-cycles-logo-dark.svg",
+      "url": "https://apiopscycles.com/"
+    }]
 }

@@ -18,16 +18,45 @@ const speakerUrl = "https://tally.so/r/LZW5kO";
       <div>
         <strong>APIOps Helsinki</strong>
       </div>
-      <div class="nav-links">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="top-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="top-navigation">
         <a href="#agenda">Agenda</a>
         <a href="#tracks">Tracks</a>
         <a href="#community">Community</a>
-        <a href="#sponsors">Sponsors</a>
+        <a href="#partners">Partners</a>
         <a href={ticketUrl}>Tickets</a>
         <a class="button primary" href={ticketUrl}>Register Now</a>
       </div>
     </div>
   </nav>
+
+    <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    navToggle?.addEventListener("click", () => {
+      navLinks?.classList.toggle("is-open");
+      const isExpanded = navLinks?.classList.contains("is-open") || false;
+      navToggle.setAttribute("aria-expanded", String(isExpanded));
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 720 && navLinks?.classList.contains("is-open")) {
+        navLinks.classList.remove("is-open");
+        navToggle?.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
 
   <header class="hero" style={`--hero-image: url('${site.hero.backgroundImage}')`}>
     <div class="container hero-content">
@@ -135,28 +164,97 @@ const speakerUrl = "https://tally.so/r/LZW5kO";
     </div>
   </section> -->
 
-  <section class="section highlight-row" id="sponsors">
+ <section class="section highlight-row" id="partners">
     <div class="container">
       <div class="section-title">
-        <h2>Sponsors & Partners</h2>
+        <h2>Partners</h2>
       </div>
       <div class="grid sponsor-grid" id="name">
-        {sponsors.gold.map((name) => (
+        {sponsors.gold.map((sponsor) => (
           <div class="card sponsor-card">
-            {name}
-            <p style="font-size: 0.85rem; color: var(--slate-light);">Gold</p>
+            {sponsor.url ? (
+              <a class="sponsor-link" href={sponsor.url} target="_blank" rel="noreferrer">
+                <div class="sponsor-media">
+                  {sponsor.logo ? (
+                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                  ) : (
+                    <span class="sponsor-name">{sponsor.name}</span>
+                  )}
+                </div>
+                <p class="sponsor-name">{sponsor.name}</p>
+                <p class="sponsor-tier">Gold</p>
+              </a>
+            ) : (
+              <>
+                <div class="sponsor-media">
+                  {sponsor.logo ? (
+                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                  ) : (
+                    <span class="sponsor-name">{sponsor.name}</span>
+                  )}
+                </div>
+                <p class="sponsor-name">{sponsor.name}</p>
+                <p class="sponsor-tier">Gold</p>
+              </>
+            )}
           </div>
         ))}
-        {sponsors.silver.map((name) => (
+        {sponsors.silver.map((sponsor) => (
           <div class="card sponsor-card">
-            {name}
-            <p style="font-size: 0.85rem; color: var(--slate-light);">Silver</p>
+            {sponsor.url ? (
+              <a class="sponsor-link" href={sponsor.url} target="_blank" rel="noreferrer">
+                <div class="sponsor-media">
+                  {sponsor.logo ? (
+                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                  ) : (
+                    <span class="sponsor-name">{sponsor.name}</span>
+                  )}
+                </div>
+                <p class="sponsor-name">{sponsor.name}</p>
+                <p class="sponsor-tier">Silver</p>
+              </a>
+            ) : (
+              <>
+                <div class="sponsor-media">
+                  {sponsor.logo ? (
+                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                  ) : (
+                    <span class="sponsor-name">{sponsor.name}</span>
+                  )}
+                </div>
+                <p class="sponsor-name">{sponsor.name}</p>
+                <p class="sponsor-tier">Silver</p>
+              </>
+            )}
           </div>
         ))}
-        {sponsors.community.map((name) => (
+        {sponsors.community.map((sponsor) => (
           <div class="card sponsor-card">
-            {name}
-            <p style="font-size: 0.85rem; color: var(--slate-light);">Community</p>
+            {sponsor.url ? (
+              <a class="sponsor-link" href={sponsor.url} target="_blank" rel="noreferrer">
+                <div class="sponsor-media">
+                  {sponsor.logo ? (
+                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                  ) : (
+                    <span class="sponsor-name">{sponsor.name}</span>
+                  )}
+                </div>
+                <p class="sponsor-name">{sponsor.name}</p>
+                <p class="sponsor-tier">Community</p>
+              </a>
+            ) : (
+              <>
+                <div class="sponsor-media">
+                  {sponsor.logo ? (
+                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                  ) : (
+                    <span class="sponsor-name">{sponsor.name}</span>
+                  )}
+                </div>
+                <p class="sponsor-name">{sponsor.name}</p>
+                <p class="sponsor-tier">Community</p>
+              </>
+            )}
           </div>
         ))}
       </div>
@@ -169,7 +267,7 @@ const speakerUrl = "https://tally.so/r/LZW5kO";
       <p>Advance your API strategy and practices in a focused, collaborative setting.</p>
       <div class="hero-actions" style="justify-content:center; margin-top: 1.5rem;">
         <a class="button primary" href={ticketUrl}>Get Your Ticket</a>
-        <a class="button secondary" href={partnerUrl}>View Sponsorships</a>
+        <a class="button secondary" href={partnerUrl}>View Partnerships</a>
       </div>
     </div>
   </section>
@@ -185,7 +283,7 @@ const speakerUrl = "https://tally.so/r/LZW5kO";
         <h4>Conference</h4>
         <a href="#agenda">Agenda</a>
         <a href="#speakers">Speakers</a>
-        <a href="#sponsors">Sponsors</a>
+        <a href="#partners">Partners</a>
       </div>
       <div>
         <h4>Community</h4>
