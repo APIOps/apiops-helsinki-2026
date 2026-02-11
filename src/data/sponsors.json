@@ -23,5 +23,11 @@
       "name": "APIOps Cycles",
       "logo": "/images/sponsors/apiops-cycles-logo-dark.svg",
       "url": "https://apiopscycles.com/"
-    }]
+    },
+    {
+      "name": "get 10% off with code API_10",
+      "logo": "/images/sponsors/futurefrontend06w.svg",
+      "url": "https://futurefrontend.com/"
+    }
+  ]
 }
