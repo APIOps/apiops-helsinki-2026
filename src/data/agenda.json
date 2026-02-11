@@ -1,17 +1,35 @@
 [
   {
     "day": "Day 1",
-    "theme": "",
+    "theme": "Strategy + Execution",
     "date": "June 2",
     "color": "orange",
     "items": [
       { "time": "13:00", "title": "Registration & Coffee" },
-      { "time": "13:30", "title": "Opening Keynote" },
-      { "time": "14:00", "title": "APIOps in 15 Minutes (Shared Orientation)" },
-      { "time": "14:15", "title": "Track A Talk" },
-      { "time": "14:15", "title": "Track B Talk" },
-      { "time": "14:40", "title": "Track A Talk" },
-      { "time": "14:40", "title": "Track B Talk" },
+      {
+        "time": "13:30",
+        "title": "Opening Keynote",
+        "speaker": ""
+      },
+      {
+        "time": "14:00",
+        "title": "APIOps in 15 Minutes (Shared Orientation)",
+        "speaker": "Program Team"
+      },
+      {
+        "time": "14:15",
+        "tracks": {
+          "a": { "title": "Track A Talk", "speaker": "" },
+          "b": { "title": "Track B Talk", "speaker": "" }
+        }
+      },
+      {
+        "time": "14:40",
+        "tracks": {
+          "a": { "title": "Track A Talk", "speaker": "" },
+          "b": { "title": "Track B Talk", "speaker": "" }
+        }
+      },
       { "time": "15:05", "title": "Break & Networking" },
       { "time": "15:45", "title": "Panel Discussion" },
       { "time": "16:45-17:00", "title": "Day 1 Wrap-Up" }
@@ -19,25 +37,60 @@
   },
   {
     "day": "Day 2",
-    "theme": "",
+    "theme": "Workshops + Community Labs",
     "date": "June 3",
     "color": "blue",
     "items": [
       { "time": "08:30", "title": "Coffee & Arrival" },
-      { "time": "09:00", "title": "Morning Keynote" },
-      { "time": "09:30", "title": "Track A Workshop" },
-      { "time": "09:30", "title": "Track B Workshop" },
+      {
+        "time": "09:00",
+        "title": "Morning Keynote",
+        "speaker": ""
+      },
+      {
+        "time": "09:30",
+        "tracks": {
+          "a": { "title": "Track A Workshop", "speaker": "" },
+          "b": { "title": "Track B Workshop", "speaker": "" }
+        }
+      },
       { "time": "11:00", "title": "Break" },
-      { "time": "11:30", "title": "Track A Talk" },
-      { "time": "11:30", "title": "Track B Talk" },
-      { "time": "11:55", "title": "Track A Talk" },
-      { "time": "11:55", "title": "Track B Talk" },
+      {
+        "time": "11:30",
+        "tracks": {
+          "a": { "title": "Track A Talk", "speaker": "" },
+          "b": { "title": "Track B Talk", "speaker": "" }
+        }
+      },
+      {
+        "time": "11:55",
+        "tracks": {
+          "a": { "title": "Track A Talk", "speaker": "" },
+          "b": { "title": "Track B Talk", "speaker": "" }
+        }
+      },
       { "time": "12:30", "title": "Lunch" },
-      { "time": "13:30", "title": "Track A APIOps Clinic" },
-      { "time": "13:30", "title": "Track B APIOps Clinic" },
+      {
+        "time": "13:30",
+        "tracks": {
+          "a": { "title": "Track A APIOps Clinic", "speaker": "" },
+          "b": { "title": "Track B APIOps Clinic", "speaker": "" }
+        }
+      },
       { "time": "14:30", "title": "Break" },
-      { "time": "15:00", "title": "Track A Guided Unconference" },
-      { "time": "15:00", "title": "Track B Guided Unconference" },
+      {
+        "time": "15:00",
+        "tracks": {
+          "a": {
+            "title": "Track A Guided Unconference",
+            "speaker": ""
+          },
+          "b": {
+            "title": "Track B Guided Unconference",
+            "speaker": ""
+          }
+        }
+      },
       { "time": "16:00", "title": "Closing Keynote & Takeaways" }
     ]
   }

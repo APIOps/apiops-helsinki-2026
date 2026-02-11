@@ -88,7 +88,7 @@ const speakerUrl = "https://tally.so/r/LZW5kO";
       </div>
     </section>
 
-  <section class="section" id="agenda">
+ <section class="section" id="agenda">
     <div class="container">
       <div class="section-title">
         <h2>Conference Agenda</h2>
@@ -100,11 +100,39 @@ const speakerUrl = "https://tally.so/r/LZW5kO";
             <div class={`agenda-header ${day.color}`}>
               {day.day}: {day.theme} · {day.date}
             </div>
+            <div class="agenda-track-headings">
+              <span class="track-heading">Time</span>
+              <span class="track-heading">Track A</span>
+              <span class="track-heading">Track B</span>
+            </div>
             <ul class="agenda-list" id="day">
               {day.items.map((item) => (
-                <li>
+                <li class={item.tracks ? "agenda-row has-tracks" : "agenda-row is-shared"}>
                   <span class="agenda-time">{item.time}</span>
-                  <span>{item.title}</span>
+                  {item.tracks ? (
+                    <>
+                      <div class="agenda-track-item">
+                        <span class="agenda-track-label">Track A</span>
+                        <span class="agenda-topic">{item.tracks.a.title}</span>
+                        {item.tracks.a.speaker && (
+                          <span class="agenda-speaker">{item.tracks.a.speaker}</span>
+                        )}
+                      </div>
+                      <div class="agenda-track-item">
+                        <span class="agenda-track-label">Track B</span>
+                        <span class="agenda-topic">{item.tracks.b.title}</span>
+                        {item.tracks.b.speaker && (
+                          <span class="agenda-speaker">{item.tracks.b.speaker}</span>
+                        )}
+                      </div>
+                    </>
+                  ) : (
+                    <div class="agenda-shared-item">
+                      <span class="agenda-track-label">Shared session</span>
+                      <span class="agenda-topic">{item.title}</span>
+                      {item.speaker && <span class="agenda-speaker">{item.speaker}</span>}
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
@@ -113,10 +141,10 @@ const speakerUrl = "https://tally.so/r/LZW5kO";
       </div>
       <div style="text-align:center; margin-top: 2rem;">
         <!-- <a class="button primary" href={ticketUrl}>See Full Agenda</a> -->
-         <a class="button primary" href={speakerUrl}>Apply to speak</a>
       </div>
     </div>
   </section>
+
 
   <section class="section" id="community">
     <div class="container">
@@ -135,7 +163,7 @@ const speakerUrl = "https://tally.so/r/LZW5kO";
     </div>
   </section>
 
-<!--   <section class="section" id="speakers">
+  <section class="section" id="speakers">
     <div class="container">
       <div class="section-title">
         <h2>Featured Speakers</h2>
@@ -145,24 +173,28 @@ const speakerUrl = "https://tally.so/r/LZW5kO";
         {speakers.map((speaker) => (
           <div class="card speaker-card">
             <div class="speaker-avatar">
-              {speaker.name
-                .split(" ")
-                .map((name) => name[0])
-                .join("")}
+              {speaker.avatar ? (
+                <img src={speaker.avatar} alt={`Portrait of ${speaker.name}`} loading="lazy" />
+              ) : (
+                speaker.name
+                  .split(" ")
+                  .map((name) => name[0])
+                  .join("")
+              )}
             </div>
             <h3>{speaker.name}</h3>
             <p>
-              <strong>{speaker.title}</strong>
-              <br />
-              {speaker.company}
+              {speaker.title} @{speaker.company}
             </p>
-            <p>{speaker.bio}</p>
-            <span class="badge" style="margin-top: 0.8rem;">{speaker.track}</span>
+            {/* <p>{speaker.bio}</p> */}
           </div>
         ))}
       </div>
+        <div style="text-align:center; margin-top: 2rem;">
+              <a class="button primary" href={speakerUrl}>Apply to speak</a>
+        </div>
     </div>
-  </section> -->
+  </section>
 
  <section class="section highlight-row" id="partners">
     <div class="container">

@@ -265,21 +265,72 @@ nav {
   padding: 1.2rem 1.5rem 1.5rem;
 }
 
-.agenda-list li {
+.agenda-track-headings {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 80px 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem 0.2rem;
+}
+
+.track-heading {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--slate-light);
+}
+
+.agenda-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr;
   gap: 1rem;
   padding: 0.8rem 0;
   border-bottom: 1px solid var(--border);
 }
 
-.agenda-list li:last-child {
+.agenda-row.is-shared {
+  grid-template-columns: 80px 1fr;
+}
+
+.agenda-row:last-child {
   border-bottom: none;
 }
 
 .agenda-time {
   font-weight: 700;
   color: var(--navy);
+}
+
+.agenda-track-item,
+.agenda-shared-item {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.agenda-topic {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.45;
+}
+
+.agenda-track-label {
+  display: none;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--slate-light);
+}
+
+.agenda-shared-item {
+  grid-column: 2 / span 2;
+}
+
+.agenda-speaker {
+  color: var(--slate-light);
+  font-size: 0.88rem;
+  overflow-wrap: anywhere;
 }
 
 .attend-grid {
@@ -304,6 +355,7 @@ nav {
   width: 96px;
   height: 96px;
   border-radius: 50%;
+  overflow: hidden;
   background: #dbe4f3;
   margin: 0 auto 1rem;
   display: grid;
@@ -312,6 +364,14 @@ nav {
   font-weight: 700;
   font-size: 1.4rem;
 }
+
+.speaker-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 
 .sponsor-grid {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -433,5 +493,37 @@ nav {
   .hero-actions {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  
+  .agenda-track-headings {
+    display: none;
+  }
+
+  .agenda-row,
+  .agenda-row.is-shared {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    padding: 0.95rem 0;
+  }
+
+  .agenda-time {
+    font-size: 0.92rem;
+  }
+
+  .agenda-track-item,
+  .agenda-shared-item {
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 0.65rem 0.75rem;
+    background: #f8fafc;
+  }
+
+  .agenda-track-label {
+    display: inline-block;
+  }
+
+  .agenda-shared-item {
+    grid-column: auto;
   }
 }
