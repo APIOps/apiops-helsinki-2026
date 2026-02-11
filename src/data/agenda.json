@@ -1,30 +1,44 @@
 [
   {
     "day": "Day 1",
-    "theme": "Strategy & Direction",
+    "theme": "Context & Direction",
     "date": "June 2",
     "color": "orange",
     "items": [
-      { "time": "09:00", "title": "Registration & Networking Breakfast" },
-      { "time": "10:00", "title": "Welcome & Opening Keynote" },
-      { "time": "11:15", "title": "Track A: API Strategy" },
-      { "time": "11:15", "title": "Track B: APIs & the AI Era" },
-      { "time": "14:00", "title": "Expert Panels" },
-      { "time": "16:30", "title": "Community Roundtables" }
+      { "time": "13:00", "title": "Registration & Coffee" },
+      { "time": "13:30", "title": "Opening Keynote" },
+      { "time": "14:00", "title": "APIOps in 15 Minutes (Shared Orientation)" },
+      { "time": "14:15", "title": "Track A Talk" },
+      { "time": "14:15", "title": "Track B Talk" },
+      { "time": "14:40", "title": "Track A Talk" },
+      { "time": "14:40", "title": "Track B Talk" },
+      { "time": "15:05", "title": "Break & Networking" },
+      { "time": "15:45", "title": "Panel Discussion" },
+      { "time": "16:45-17:00", "title": "Day 1 Wrap-Up" }
     ]
   },
   {
     "day": "Day 2",
-    "theme": "Practice & Co-Creation",
+    "theme": "Practice, Learning & Co-Creation",
     "date": "June 3",
     "color": "blue",
     "items": [
+      { "time": "08:30", "title": "Coffee & Arrival" },
       { "time": "09:00", "title": "Morning Keynote" },
-      { "time": "09:45", "title": "Hands-On Workshops" },
-      { "time": "11:30", "title": "APIOps Clinics" },
-      { "time": "13:30", "title": "Unconference Sessions" },
-      { "time": "15:00", "title": "Partner Spotlight" },
-      { "time": "16:00", "title": "Closing + Community Commitments" }
+      { "time": "09:30", "title": "Track A Workshop" },
+      { "time": "09:30", "title": "Track B Workshop" },
+      { "time": "11:00", "title": "Break" },
+      { "time": "11:30", "title": "Track A Talk" },
+      { "time": "11:30", "title": "Track B Talk" },
+      { "time": "11:55", "title": "Track A Talk" },
+      { "time": "11:55", "title": "Track B Talk" },
+      { "time": "12:30", "title": "Lunch" },
+      { "time": "13:30", "title": "Track A APIOps Clinic" },
+      { "time": "13:30", "title": "Track B APIOps Clinic" },
+      { "time": "14:30", "title": "Break" },
+      { "time": "15:00", "title": "Track A Guided Unconference" },
+      { "time": "15:00", "title": "Track B Guided Unconference" },
+      { "time": "16:00", "title": "Closing Keynote & Takeaways" }
     ]
   }
 ]

@@ -5,6 +5,7 @@ import agenda from "../data/agenda.json";
 import speakers from "../data/speakers.json";
 import sponsors from "../data/sponsors.json";
 import attendees from "../data/attendees.json";
+import site from "../data/site.json";
 
 const ticketUrl = "https://shop.osaango.com/category/apiops-helsinki-2026";
 const partnerUrl = "https://docs.google.com/presentation/d/1bXmS1AlfLN40FQ6Ws6ldm9BffD1sS_BW/edit?usp=sharing&ouid=108887358045542967446&rtpof=true&sd=true";
@@ -27,7 +28,7 @@ const partnerUrl = "https://docs.google.com/presentation/d/1bXmS1AlfLN40FQ6Ws6ld
     </div>
   </nav>
 
-  <header class="hero">
+  <header class="hero" style={`--hero-image: url('${site.hero.backgroundImage}')`}>
     <div class="container hero-content">
       <span class="badge">June 2-3, 2026 · Epicenter Helsinki</span>
       <h1>APIOps Helsinki Conference 2026</h1>
@@ -95,7 +96,6 @@ const partnerUrl = "https://docs.google.com/presentation/d/1bXmS1AlfLN40FQ6Ws6ld
       <div class="grid attend-grid" id="title">
         {attendees.map((audience) => (
           <div class="card">
-            <div class="speaker-avatar">AP</div>
             <h4>{audience.title}</h4>
             <p>{audience.description}</p>
           </div>
