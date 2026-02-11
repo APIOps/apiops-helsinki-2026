@@ -1,14 +1,14 @@
 [
   {
+    "title": "Track A – API Strategy & Platform Ownership",
+    "description": "API strategy and product thinking - Platform ownership and funding models - Governance, security, and compliance  - Organisational roles and operating models - Managing APIs across their full lifecycle"
+  },
+  {
+    "title": "Track B – APIs & Integrations for the AI Era",
+    "description": "APIs as enablers for AI, agents, and automation - Integration patterns for AI‑driven workflows - Data access, contracts, and reliability - Observability, cost control, and governance - Avoiding fragile or accidental AI architectures"
+},
+  {
     "title": "Focused & Practitioner-Driven",
-    "description": "Hands-on sessions with real API roadmaps, governance patterns, and operating models."
-  },
-  {
-    "title": "Two Parallel Tracks",
-    "description": "Strategy & Direction plus Practice & Co-Creation tracks in one program."
-  },
-  {
-    "title": "Workshops & Clinics",
-    "description": "Deep dives, coaching, and peer-led clinics to move initiatives forward."
+    "description": "Hands-on sessions with real API roadmaps, governance patterns, and operating models. Deep dives, workshops, and peer-led clinics to move initiatives forward."
   }
 ]

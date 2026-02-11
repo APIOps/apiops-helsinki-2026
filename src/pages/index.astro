@@ -9,6 +9,7 @@ import site from "../data/site.json";
 
 const ticketUrl = "https://shop.osaango.com/category/apiops-helsinki-2026";
 const partnerUrl = "https://docs.google.com/presentation/d/1bXmS1AlfLN40FQ6Ws6ldm9BffD1sS_BW/edit?usp=sharing&ouid=108887358045542967446&rtpof=true&sd=true";
+const speakerUrl = "https://tally.so/r/LZW5kO";
 ---
 
 <BaseLayout title="APIOps Helsinki Conference 2026">
@@ -82,7 +83,8 @@ const partnerUrl = "https://docs.google.com/presentation/d/1bXmS1AlfLN40FQ6Ws6ld
         ))}
       </div>
       <div style="text-align:center; margin-top: 2rem;">
-        <a class="button primary" href={ticketUrl}>See Full Agenda</a>
+        <!-- <a class="button primary" href={ticketUrl}>See Full Agenda</a> -->
+         <a class="button primary" href={speakerUrl}>Apply to speak</a>
       </div>
     </div>
   </section>
@@ -104,7 +106,7 @@ const partnerUrl = "https://docs.google.com/presentation/d/1bXmS1AlfLN40FQ6Ws6ld
     </div>
   </section>
 
-  <section class="section" id="speakers">
+<!--   <section class="section" id="speakers">
     <div class="container">
       <div class="section-title">
         <h2>Featured Speakers</h2>
@@ -131,13 +133,12 @@ const partnerUrl = "https://docs.google.com/presentation/d/1bXmS1AlfLN40FQ6Ws6ld
         ))}
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="section highlight-row" id="sponsors">
     <div class="container">
       <div class="section-title">
         <h2>Sponsors & Partners</h2>
-        <p>Interested in partnering? Email partners@apiopshelsinki.fi.</p>
       </div>
       <div class="grid sponsor-grid" id="name">
         {sponsors.gold.map((name) => (
