@@ -3,8 +3,8 @@
   --navy: #1f365c;
   --navy-dark: #152748;
   --blue: #2e5c9a;
-  --accent: #f26a2e;
-  --accent-dark: #d4551e;
+  --accent: #7150b0;
+  --accent-dark: #d0cef3;
   --slate: #334155;
   --slate-light: #64748b;
   --background: #f7f9fc;
@@ -86,7 +86,7 @@ img {
 .button.primary {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 10px 20px rgba(242, 106, 46, 0.25);
+  box-shadow: 0 10px 20px rgb(104 76 166 / 75%);
 }
 
 .button.primary:hover {
@@ -426,7 +426,7 @@ nav {
 
 
 .cta-band {
-  background: linear-gradient(120deg, #ff8a3d, #f45c2c);
+  background: linear-gradient(120deg, var(--accent), var(--accent-dark));
   color: #fff;
   text-align: center;
 }
