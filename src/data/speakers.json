@@ -26,5 +26,19 @@
     "title": "Founder",
     "company": "Aavista",
     "bio": ""
+  },
+  {
+    "name": "Dan Erez",
+    "avatar": "/images/speakers/dan-erez.jpg",
+    "title": "Chief Architect",
+    "company": "Aman",
+    "bio": ""
+  },
+  {
+    "name": "Jürgen Buchmann",
+    "avatar": "/images/speakers/jurgen-buchmann.jpg",
+    "title": "CEO",
+    "company": "TPP Validation",
+    "bio": ""
   }
 ]
