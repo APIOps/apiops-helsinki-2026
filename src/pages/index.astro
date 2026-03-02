@@ -10,6 +10,28 @@ import site from "../data/site.json";
 const ticketUrl = "https://shop.osaango.com/category/apiops-helsinki-2026";
 const partnerUrl = "https://docs.google.com/presentation/d/1bXmS1AlfLN40FQ6Ws6ldm9BffD1sS_BW/edit?usp=sharing&ouid=108887358045542967446&rtpof=true&sd=true";
 const speakerUrl = "https://tally.so/r/LZW5kO";
+const galleryImages = [
+  {
+    src: "/images/hero/hero-bg.jpg",
+    alt: "Audience networking during a previous APIOps Helsinki event",
+    caption: "Packed rooms and active community discussions"
+  },
+  {
+    src: "/images/speakers/marjukka-niinioja.jpg",
+    alt: "Previous year keynote talk",
+    caption: "Practical talks grounded in real delivery experience"
+  },
+  {
+    src: "/images/speakers/mike-jackson.jpg",
+    alt: "Speaker sharing lessons learned from API platforms",
+    caption: "International and local experts on one stage"
+  },
+  {
+    src: "/images/speakers/merja-kajava.jpg",
+    alt: "APIOps Helsinki community panel from an earlier edition",
+    caption: "Community-first sessions and peer learning"
+  }
+];
 ---
 
 <BaseLayout title="APIOps Helsinki Conference 2026">
@@ -77,6 +99,119 @@ const speakerUrl = "https://tally.so/r/LZW5kO";
     </div>
   </header>
 
+ <section class="section highlight-row" id="partners">
+    <div class="container">
+      <div class="section-title">
+        <h2>Partners</h2>
+      </div>
+
+      <div class="sponsor-tier-group">
+        <h3 class="sponsor-tier-heading">Gold Sponsors</h3>
+        <div class="grid sponsor-grid sponsor-grid-gold" id="name">
+          {sponsors.gold.map((sponsor) => (
+            <div class="card sponsor-card sponsor-card-gold">
+              {sponsor.url ? (
+                <a class="sponsor-link" href={sponsor.url} target="_blank" rel="noreferrer">
+                  <div class="sponsor-media sponsor-media-gold">
+                    {sponsor.logo ? (
+                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                    ) : (
+                      <span class="sponsor-name">{sponsor.name}</span>
+                    )}
+                  </div>
+                  <p class="sponsor-name">{sponsor.name}</p>
+                  <p class="sponsor-tier">Gold</p>
+                </a>
+              ) : (
+                <>
+                  <div class="sponsor-media sponsor-media-gold">
+                    {sponsor.logo ? (
+                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                    ) : (
+                      <span class="sponsor-name">{sponsor.name}</span>
+                    )}
+                  </div>
+                  <p class="sponsor-name">{sponsor.name}</p>
+                  <p class="sponsor-tier">Gold</p>
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="sponsor-tier-group">
+        <h3 class="sponsor-tier-heading">Silver Sponsors</h3>
+        <div class="grid sponsor-grid sponsor-grid-silver">
+          {sponsors.silver.map((sponsor) => (
+            <div class="card sponsor-card">
+              {sponsor.url ? (
+                <a class="sponsor-link" href={sponsor.url} target="_blank" rel="noreferrer">
+                  <div class="sponsor-media">
+                    {sponsor.logo ? (
+                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                    ) : (
+                      <span class="sponsor-name">{sponsor.name}</span>
+                    )}
+                  </div>
+                  <p class="sponsor-name">{sponsor.name}</p>
+                  <p class="sponsor-tier">Silver</p>
+                </a>
+              ) : (
+                <>
+                  <div class="sponsor-media">
+                    {sponsor.logo ? (
+                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                    ) : (
+                      <span class="sponsor-name">{sponsor.name}</span>
+                    )}
+                  </div>
+                  <p class="sponsor-name">{sponsor.name}</p>
+                  <p class="sponsor-tier">Silver</p>
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="sponsor-tier-group">
+        <h3 class="sponsor-tier-heading">Community Sponsors</h3>
+        <div class="grid sponsor-grid sponsor-grid-community">
+          {sponsors.community.map((sponsor) => (
+            <div class="card sponsor-card">
+              {sponsor.url ? (
+                <a class="sponsor-link" href={sponsor.url} target="_blank" rel="noreferrer">
+                  <div class="sponsor-media">
+                    {sponsor.logo ? (
+                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                    ) : (
+                      <span class="sponsor-name">{sponsor.name}</span>
+                    )}
+                  </div>
+                  <p class="sponsor-name">{sponsor.name}</p>
+                  <p class="sponsor-tier">Community</p>
+                </a>
+              ) : (
+                <>
+                  <div class="sponsor-media">
+                    {sponsor.logo ? (
+                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                    ) : (
+                      <span class="sponsor-name">{sponsor.name}</span>
+                    )}
+                  </div>
+                  <p class="sponsor-name">{sponsor.name}</p>
+                  <p class="sponsor-tier">Community</p>
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
     <section class="section" id="about">
     <div class="container">
       <div class="section-title">
@@ -124,6 +259,10 @@ const speakerUrl = "https://tally.so/r/LZW5kO";
 
     <section class="section highlight-row" id="tracks">
       <div class="container">
+        <div class="section-title">
+          <h2>Highlights</h2>
+          <p>Core APIOps tracks plus moments from previous editions.</p>
+        </div>
         <div class="grid highlight-grid">
           {highlights.map((item) => (
             <div class="card">
@@ -132,6 +271,18 @@ const speakerUrl = "https://tally.so/r/LZW5kO";
               <p>{item.description}</p>
             </div>
           ))}
+        </div>
+
+        <div class="gallery-wrap">
+          <h3>From previous years</h3>
+          <div class="gallery-grid">
+            {galleryImages.map((image) => (
+              <figure class="gallery-card">
+                <img src={image.src} alt={image.alt} loading="lazy" />
+                <figcaption>{image.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -243,104 +394,6 @@ const speakerUrl = "https://tally.so/r/LZW5kO";
         </div>
     </div>
   </section>
-
- <section class="section highlight-row" id="partners">
-    <div class="container">
-      <div class="section-title">
-        <h2>Partners</h2>
-      </div>
-      <div class="grid sponsor-grid" id="name">
-        {sponsors.gold.map((sponsor) => (
-          <div class="card sponsor-card">
-            {sponsor.url ? (
-              <a class="sponsor-link" href={sponsor.url} target="_blank" rel="noreferrer">
-                <div class="sponsor-media">
-                  {sponsor.logo ? (
-                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                  ) : (
-                    <span class="sponsor-name">{sponsor.name}</span>
-                  )}
-                </div>
-                <p class="sponsor-name">{sponsor.name}</p>
-                <p class="sponsor-tier">Gold</p>
-              </a>
-            ) : (
-              <>
-                <div class="sponsor-media">
-                  {sponsor.logo ? (
-                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                  ) : (
-                    <span class="sponsor-name">{sponsor.name}</span>
-                  )}
-                </div>
-                <p class="sponsor-name">{sponsor.name}</p>
-                <p class="sponsor-tier">Gold</p>
-              </>
-            )}
-          </div>
-        ))}
-        {sponsors.silver.map((sponsor) => (
-          <div class="card sponsor-card">
-            {sponsor.url ? (
-              <a class="sponsor-link" href={sponsor.url} target="_blank" rel="noreferrer">
-                <div class="sponsor-media">
-                  {sponsor.logo ? (
-                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                  ) : (
-                    <span class="sponsor-name">{sponsor.name}</span>
-                  )}
-                </div>
-                <p class="sponsor-name">{sponsor.name}</p>
-                <p class="sponsor-tier">Silver</p>
-              </a>
-            ) : (
-              <>
-                <div class="sponsor-media">
-                  {sponsor.logo ? (
-                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                  ) : (
-                    <span class="sponsor-name">{sponsor.name}</span>
-                  )}
-                </div>
-                <p class="sponsor-name">{sponsor.name}</p>
-                <p class="sponsor-tier">Silver</p>
-              </>
-            )}
-          </div>
-        ))}
-        {sponsors.community.map((sponsor) => (
-          <div class="card sponsor-card">
-            {sponsor.url ? (
-              <a class="sponsor-link" href={sponsor.url} target="_blank" rel="noreferrer">
-                <div class="sponsor-media">
-                  {sponsor.logo ? (
-                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                  ) : (
-                    <span class="sponsor-name">{sponsor.name}</span>
-                  )}
-                </div>
-                <p class="sponsor-name">{sponsor.name}</p>
-                <p class="sponsor-tier">Community</p>
-              </a>
-            ) : (
-              <>
-                <div class="sponsor-media">
-                  {sponsor.logo ? (
-                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                  ) : (
-                    <span class="sponsor-name">{sponsor.name}</span>
-                  )}
-                </div>
-                <p class="sponsor-name">{sponsor.name}</p>
-                <p class="sponsor-tier">Community</p>
-              </>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <section class="section cta-band">
     <div class="container">
       <h2>Join Finland’s APIOps Community</h2>
