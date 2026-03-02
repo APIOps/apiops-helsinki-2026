@@ -107,7 +107,7 @@ const galleryImages = [
 
       <div class="sponsor-tier-group">
         <h3 class="sponsor-tier-heading">Gold Sponsors</h3>
-        <div class="grid sponsor-grid sponsor-grid-gold" id="name">
+        <div class="grid sponsor-grid sponsor-grid-gold" id="name" style={`--tier-columns: ${Math.max(1, Math.min(3, sponsors.gold.length))};`}>
           {sponsors.gold.map((sponsor) => (
             <div class="card sponsor-card sponsor-card-gold">
               {sponsor.url ? (
@@ -142,7 +142,7 @@ const galleryImages = [
 
       <div class="sponsor-tier-group">
         <h3 class="sponsor-tier-heading">Silver Sponsors</h3>
-        <div class="grid sponsor-grid sponsor-grid-silver">
+        <div class="grid sponsor-grid sponsor-grid-silver" style={`--tier-columns: ${Math.max(1, Math.min(4, sponsors.silver.length))};`}>
           {sponsors.silver.map((sponsor) => (
             <div class="card sponsor-card">
               {sponsor.url ? (
@@ -177,7 +177,7 @@ const galleryImages = [
 
       <div class="sponsor-tier-group">
         <h3 class="sponsor-tier-heading">Community Sponsors</h3>
-        <div class="grid sponsor-grid sponsor-grid-community">
+        <div class="grid sponsor-grid sponsor-grid-community" style={`--tier-columns: ${Math.max(1, Math.min(5, sponsors.community.length))};`}>
           {sponsors.community.map((sponsor) => (
             <div class="card sponsor-card">
               {sponsor.url ? (
