@@ -99,6 +99,40 @@ const galleryImages = [
     </div>
   </header>
 
+
+    <section class="section" id="speakers">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Speakers</h2>
+        <p>Leaders from Finland’s API, platform, and AI ecosystems.</p>
+      </div>
+      <div class="grid speaker-grid" id="name">
+        {speakers.map((speaker) => (
+          <div class="card speaker-card">
+            <div class="speaker-avatar">
+              {speaker.avatar ? (
+                <img src={speaker.avatar} alt={`Portrait of ${speaker.name}`} loading="lazy" />
+              ) : (
+                speaker.name
+                  .split(" ")
+                  .map((name) => name[0])
+                  .join("")
+              )}
+            </div>
+            <h3>{speaker.name}</h3>
+            <p>
+              {speaker.title} @{speaker.company}
+            </p>
+            {/* <p>{speaker.bio}</p> */}
+          </div>
+        ))}
+      </div>
+        <div style="text-align:center; margin-top: 2rem;">
+              <a class="button primary" href={speakerUrl}>Apply to speak</a>
+        </div>
+    </div>
+  </section>
+
  <section class="section highlight-row" id="partners">
     <div class="container">
       <div class="section-title">
@@ -357,38 +391,7 @@ const galleryImages = [
     </div>
   </section>
 
-  <section class="section" id="speakers">
-    <div class="container">
-      <div class="section-title">
-        <h2>Featured Speakers</h2>
-        <p>Leaders from Finland’s API, platform, and AI ecosystems.</p>
-      </div>
-      <div class="grid speaker-grid" id="name">
-        {speakers.map((speaker) => (
-          <div class="card speaker-card">
-            <div class="speaker-avatar">
-              {speaker.avatar ? (
-                <img src={speaker.avatar} alt={`Portrait of ${speaker.name}`} loading="lazy" />
-              ) : (
-                speaker.name
-                  .split(" ")
-                  .map((name) => name[0])
-                  .join("")
-              )}
-            </div>
-            <h3>{speaker.name}</h3>
-            <p>
-              {speaker.title} @{speaker.company}
-            </p>
-            {/* <p>{speaker.bio}</p> */}
-          </div>
-        ))}
-      </div>
-        <div style="text-align:center; margin-top: 2rem;">
-              <a class="button primary" href={speakerUrl}>Apply to speak</a>
-        </div>
-    </div>
-  </section>
+
   <section class="section cta-band">
     <div class="container">
       <h2>Join Finland’s APIOps Community</h2>
