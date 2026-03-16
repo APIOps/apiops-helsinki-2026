@@ -332,6 +332,7 @@ const galleryImages = [
               <span class="track-heading">Time</span>
               <span class="track-heading">Track A</span>
               <span class="track-heading">Track B</span>
+              <span class="track-heading">Workshop</span>
             </div>
             <ul class="agenda-list" id="day">
               {day.items.map((item) => (
@@ -353,6 +354,14 @@ const galleryImages = [
                           <span class="agenda-speaker">{item.tracks.b.speaker}</span>
                         )}
                       </div>
+                      <div class="agenda-track-item">
+                        <span class="agenda-track-label">Workshop</span>
+                        <span class="agenda-topic">{item.tracks.workshop.title}</span>
+                        {item.tracks.workshop.speaker && (
+                          <span class="agenda-speaker">{item.tracks.workshop.speaker}</span>
+                        )}
+                      </div>
+
                     </>
                   ) : (
                     <div class="agenda-shared-item">

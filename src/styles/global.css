@@ -267,7 +267,7 @@ nav {
 
 .agenda-track-headings {
   display: grid;
-  grid-template-columns: 80px 1fr 1fr;
+  grid-template-columns: 80px 1fr 1fr 1fr;
   gap: 1rem;
   padding: 1rem 1.5rem 0.2rem;
 }
@@ -282,7 +282,7 @@ nav {
 
 .agenda-row {
   display: grid;
-  grid-template-columns: 80px 1fr 1fr;
+  grid-template-columns: 80px 1fr 1fr 1fr;
   gap: 1rem;
   padding: 0.8rem 0;
   border-bottom: 1px solid var(--border);
@@ -312,6 +312,7 @@ nav {
   overflow-wrap: anywhere;
   word-break: break-word;
   line-height: 1.45;
+  font-weight: bold;
 }
 
 .agenda-track-label {

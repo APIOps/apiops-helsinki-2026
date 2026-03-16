@@ -5,36 +5,117 @@
     "date": "June 2",
     "color": "orange",
     "items": [
-      { "time": "13:00", "title": "Registration & Coffee" },
+      { "time": "12:30", "title": "Registration & Networking" },
+
+      {
+        "time": "13:00",
+        "title": "Keynote: Architecting Happiness: From Legacy to AI Driven Product Platform",
+        "speaker": "Valtter Rajakannas, Lead Product Owner @OP Financial Group",
+        "speakerId": "valtter-rajakannas"
+      },
+
       {
         "time": "13:30",
-        "title": "Opening Keynote",
-        "speaker": ""
+        "title": "Keynote",
+        "speaker": "TBD"
       },
+
       {
         "time": "14:00",
-        "title": "APIOps in 15 Minutes (Shared Orientation)",
-        "speaker": "Program Team"
-      },
-      {
-        "time": "14:15",
         "tracks": {
-          "a": { "title": "Track A Talk", "speaker": "" },
-          "b": { "title": "Track B Talk", "speaker": "" }
+          "a": {
+            "title": "APIOps in 20 Minutes (Orientation)",
+            "speaker": "Marjukka Niinioja, Founding Partner @Osaango",
+            "speakerId": "marjukka-niinioja"
+          },
+          "b": {
+            "title": "AI-Native APIs: Designing Platforms for Agentic Systems",
+            "speaker": "Mike Jackson, Founder & CTO @Narranor",
+            "speakerId": "mike-jackson"
+          },
+          "workshop": {
+            "title": "Workshop",
+            "speaker": "Apply to run the workshop!"
+          }
         }
       },
+
       {
-        "time": "14:40",
+        "time": "14:25",
         "tracks": {
-          "a": { "title": "Track A Talk", "speaker": "" },
-          "b": { "title": "Track B Talk", "speaker": "" }
+          "a": {
+            "title": "SaaS Lives – Value Shifts to the Workspace",
+            "speaker": "Jürgen Buchmann, CEO @TPP Validation",
+            "speakerId": "jurgen-buchmann"
+          },
+          "b": {
+            "title": "AI Governance Meets APIs",
+            "speaker": "TBD"
+          },
+          "workshop": {
+            "title": "API Product Design Clinic - with APIOps Cycles and AI skills",
+            "speaker": "Marjukka Niinioja, Founding Partner @Osaango",
+            "speakerId": "marjukka-niinioja"
+          }
         }
       },
-      { "time": "15:05", "title": "Break & Networking" },
-      { "time": "15:45", "title": "Panel Discussion" },
-      { "time": "16:45-17:00", "title": "Day 1 Wrap-Up" }
+
+      { "time": "14:50", "title": "Coffee Break & Networking" },
+
+      {
+        "time": "15:20",
+        "tracks": {
+          "a": {
+            "title": "Turning API Programs into Revenue",
+            "speaker": "Allan Knabe, CEO @Apiable",
+            "speakerId": "allan-knabe"
+          },
+          "b": {
+            "title": "Identity-First APIs: IAM as the Real Platform",
+            "speaker": "Oscar Santolalla, Senior Project Manager @Spinverse",
+            "speakerId": "oscar-santolalla"
+          },
+          "workshop": {
+            "title": "Workshop",
+            "speaker": "TBD"
+          }
+        }
+      },
+
+      {
+        "time": "15:45",
+        "tracks": {
+          "a": {
+            "title": "API Platform for AI-Ready Infrastructure",
+            "speaker": "TBD"
+          },
+          "b": {
+            "title": "From API Gateways to AI Gateways: The Next Platform Layer",
+            "speaker": "Dan Erez, Chief Architect @Aman",
+            "speakerId": "dan-erez"
+          },
+          "workshop": {
+            "title": "Hands-On: Create an MCP Wrapper for Your API",
+            "speaker": "Jürgen Buchmann, CEO @TPP Validation",
+            "speakerId": "jurgen-buchmann"
+          }
+        }
+      },
+
+      {
+        "time": "16:10",
+        "title": "Panel - Are APIs Still the Platform, or Are AI Agents Replacing Them?",
+        "speaker": "Moderator: Oscar Santolalla, Senior Project Manager @Spinverse",
+        "speakerIds": ["oscar-santolalla"]
+      },
+
+      {
+        "time": "16:40",
+        "title": "Networking until 17:00"
+      }
     ]
   },
+
   {
     "day": "Day 2",
     "theme": "Workshops + Community Labs",
@@ -42,56 +123,121 @@
     "color": "blue",
     "items": [
       { "time": "08:30", "title": "Coffee & Arrival" },
+
       {
         "time": "09:00",
-        "title": "Morning Keynote",
-        "speaker": ""
+        "title": "Keynote: From Ecosystem Design to API Strategy",
+        "speaker": "Hanna Sillanpää, Director and Head of Product Line Management @ASSA ABLOY Opening Solutions",
+        "speakerId": "hanna-sillanpaa"
       },
+
       {
         "time": "09:30",
         "tracks": {
-          "a": { "title": "Track A Workshop", "speaker": "" },
-          "b": { "title": "Track B Workshop", "speaker": "" }
+          "a": {
+            "title": "FIDA, Open Finance and the Future of API Ecosystems",
+            "speaker": "TBD"
+          },
+          "b": {
+            "title": "Placeholder: Agentic Workflows: APIs as the Interface for AI Systems",
+            "speaker": "Apply to speak!"
+          },
+          "workshop": {
+            "title": "Workshop",
+            "speaker": "TBD"
+          }
         }
       },
+
       { "time": "11:00", "title": "Break" },
+
       {
         "time": "11:30",
         "tracks": {
-          "a": { "title": "Track A Talk", "speaker": "" },
-          "b": { "title": "Track B Talk", "speaker": "" }
+          "a": {
+            "title": "Boosting API Testing",
+            "speaker": "TBD"
+          },
+          "b": {
+            "title": "Placeholder: Cloud Platforms for API Ecosystems",
+            "speaker": "Apply to speak!"
+          },
+          "workshop": {
+            "title": "API Monetization Clinic",
+            "speaker": "Allan Knabe, CEO @Apiable",
+            "speakerId": "allan-knabe"
+          }
         }
       },
+
       {
         "time": "11:55",
         "tracks": {
-          "a": { "title": "Track A Talk", "speaker": "" },
-          "b": { "title": "Track B Talk", "speaker": "" }
+          "a": {
+            "title": "Placeholder: Why Developers Ignore Your APIs",
+            "speaker": "Apply to speak!"
+          },
+          "b": {
+            "title": "AI Agents and Secure API Access",
+            "speaker": "Merja Kajava, Founder @Aavista",
+            "speakerId": "merja-kajava"
+          },
+          "workshop": {
+            "title": "Workshop",
+            "speaker": "Apply to run the workshop!"
+          }
         }
       },
+
       { "time": "12:30", "title": "Lunch" },
+
       {
         "time": "13:30",
         "tracks": {
-          "a": { "title": "Track A APIOps Clinic", "speaker": "" },
-          "b": { "title": "Track B APIOps Clinic", "speaker": "" }
-        }
-      },
-      { "time": "14:30", "title": "Break" },
-      {
-        "time": "15:00",
-        "tracks": {
           "a": {
-            "title": "Track A Guided Unconference",
-            "speaker": ""
+            "title": "APIOps Clinic – Strategy, Governance and Platform Design",
+            "speaker": "Coaches: Marjukka Niinioja, Founding Partner @Osaango; Allan Knabe, CEO @Apiable",
+            "speakerIds": ["marjukka-niinioja", "allan-knabe"]
           },
           "b": {
-            "title": "Track B Guided Unconference",
+            "title": "AI Lab – APIs, MCP and Agent Integrations",
+            "speaker": "Coaches: Merja Kajava, Founder @Aavista; Jürgen Buchmann, CEO @TPP Validation",
+            "speakerIds": ["merja-kajava", "jurgen-buchmann"]
+          },
+          "workshop": {
+            "title": "",
             "speaker": ""
           }
         }
       },
-      { "time": "16:00", "title": "Closing Keynote & Takeaways" }
+
+      { "time": "14:30", "title": "Break" },
+
+      {
+        "time": "15:00",
+        "tracks": {
+          "a": {
+            "title": "Guided Unconference – API Strategy and Platform Leadership",
+            "speaker": "Facilitators: Merja Kajava, Founder @Aavista; Allan Knabe, CEO @Apiable",
+            "speakerIds": ["merja-kajava", "allan-knabe"]
+          },
+          "b": {
+            "title": "Guided Unconference – AI Agents and Developer Platforms",
+            "speaker": "Facilitators: Jürgen Buchmann, CEO @TPP Validation; Marjukka Niinioja, Founding Partner @Osaango",
+            "speakerIds": ["jurgen-buchmann", "marjukka-niinioja"]
+          },
+          "workshop": {
+            "title": "",
+            "speaker": ""
+          }
+        }
+      },
+
+      {
+        "time": "16:00",
+        "title": "Closing Keynote – APIOps in the Age of AI Agents",
+        "speaker": "TBD"
+      }
     ]
   }
 ]
