@@ -244,6 +244,23 @@ nav {
 .cosmic-band .card {
   background: rgb(255 255 255 / 95%);
   border-color: rgb(226 232 240 / 75%);
+  color: var(--slate);
+}
+
+.cosmic-band .card h3 {
+  color: var(--navy);
+}
+
+.cosmic-band .card p {
+  color: var(--slate);
+}
+
+.cosmic-band .agenda-topic {
+  color: var(--navy);
+}
+
+.cosmic-band .agenda-time {
+  color: var(--navy-dark);
 }
 
 .highlight-grid {
