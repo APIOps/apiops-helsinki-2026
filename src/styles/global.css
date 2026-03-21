@@ -225,6 +225,27 @@ nav {
   border-bottom: 1px solid #edf1f7;
 }
 
+.cosmic-band {
+  background:
+    radial-gradient(circle at 8% 82%, rgb(242 146 57 / 22%), transparent 24%),
+    radial-gradient(circle at 94% 22%, rgb(167 139 250 / 20%), transparent 24%),
+    linear-gradient(125deg, #20144b 0%, #241446 45%, #1a1c4f 100%);
+  color: #f8f9ff;
+}
+
+.cosmic-band .section-title h2 {
+  color: #f3e8ff;
+}
+
+.cosmic-band .section-title p {
+  color: #ddd6fe;
+}
+
+.cosmic-band .card {
+  background: rgb(255 255 255 / 95%);
+  border-color: rgb(226 232 240 / 75%);
+}
+
 .highlight-grid {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   text-align: center;
@@ -604,6 +625,27 @@ nav {
 
 .single-row {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.day-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.7rem;
+  margin-right: 0.5rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+  font-weight: 700;
+}
+
+.day-pill-orange {
+  background: #f59e0b;
+}
+
+.day-pill-blue {
+  background: #6366f1;
 }
 
 .session-type {
