@@ -49,8 +49,9 @@
             "speakerId": "jurgen-buchmann"
           },
           "b": {
-            "title": "AI Governance Meets APIs",
-            "speaker": "TBD"
+            "title": "No Identity, No Agents: Why IAM Is the Foundation of AI-Driven API Ecosystems",
+            "speaker": "Tomas Bolin, API Customer Success Manager @If Insurance",
+            "speakerId": "tomas-bolin"
           },
           "workshop": {
             "title": "API Product Design Clinic - with APIOps Cycles and AI skills",
