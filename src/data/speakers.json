@@ -4,69 +4,69 @@
     "avatar": "/images/speakers/valtter-rajakannas.jpg",
     "title": "Lead Product Owner",
     "company": "OP Financial Group",
-    "bio": "Leading digital excellence | Enterprise Architecture | Digital Services, AI and Ecosystems"
+    "bio": "Leading API-driven product platform development at OP Financial Group."
   },
   {
     "name": "Hanna Sillanpää",
     "avatar": "/images/speakers/hanna-sillanpaa.jpg",
     "title": "Director and Head of Product Line Management",
     "company": "ASSA ABLOY Opening Solutions",
-    "bio": "Passionate about smooth collaboration between technology and business,providing even smarter and more convenient solutions to our customers."
+    "bio": "Driving ecosystem and product strategy at ASSA ABLOY Opening Solutions."
   },
   {
     "name": "Tomas Bolin",
     "avatar": "/images/speakers/tomas-bolin.jpg",
     "title": "API Customer Success Manager",
     "company": "If Insurance",
-    "bio": "Driving the cultural change and API-first way of working."
+    "bio": "Leading API-first transformation in insurance at If."
   },
   {
     "name": "Marjukka Niinioja",
     "avatar": "/images/speakers/marjukka-niinioja.jpg",
     "title": "Conference organizer & Founding partner",
     "company": "Osaango",
-    "bio": "Helps organizations turn API strategy into measurable business outcomes through advisory, training, and hands-on enablement."
+    "bio": "Building practical APIOps operating models that connect product, governance, and platform outcomes."
   },
   {
     "name": "Oscar Santolalla",
     "avatar": "/images/speakers/oscar-santolalla.jpg",
     "title": "Senior Project Manager",
     "company": "Spinverse",
-    "bio": ""
+    "bio": "Guiding identity-first API initiatives in complex enterprise programs."
   },
   {
     "name": "Allan Knabe",
     "avatar": "/images/speakers/allan-knabe.jpg",
     "title": "CEO",
     "company": "Apiable",
-    "bio": ""
+    "bio": "Helping organizations turn API products into measurable monetization outcomes."
   },
   {
     "name": "Mike Jackson",
     "avatar": "/images/speakers/mike-jackson.jpg",
     "title": "Founder & CTO",
     "company": "Narranor",
-    "bio": ""
+    "bio": "Designing AI-native API patterns for production-grade platform teams."
   },
   {
     "name": "Merja Kajava",
     "avatar": "/images/speakers/merja-kajava.jpg",
     "title": "Founder",
     "company": "Aavista",
-    "bio": ""
+    "bio": "Coaching teams on secure API access patterns for AI-driven workflows."
   },
   {
     "name": "Dan Erez",
     "avatar": "/images/speakers/dan-erez.jpg",
     "title": "Chief Architect",
     "company": "Aman",
-    "bio": ""
+    "bio": "Shaping next-generation API and AI gateway architecture."
   },
   {
     "name": "Jürgen Buchmann",
     "avatar": "/images/speakers/jurgen-buchmann.jpg",
     "title": "CEO",
     "company": "TPP Validation",
-    "bio": ""
+    "bio": "Implementing MCP and agent-integration patterns for enterprise API teams."
   }
 ]

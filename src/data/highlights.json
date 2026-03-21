@@ -1,14 +1,14 @@
 [
   {
-    "title": "Track A – API Strategy & Platform Ownership",
-    "description": "API strategy and product thinking - Platform ownership and funding models - Governance, security, and compliance  - Organisational roles and operating models - Managing APIs across their full lifecycle"
+    "title": "Most API Strategies Will Break in the AI Era",
+    "description": "Your APIs were designed for apps, not agents. Learn what changes when APIs become inputs to autonomous systems."
   },
   {
-    "title": "Track B – APIs & Integrations for the AI Era",
-    "description": "APIs as enablers for AI, agents, and automation - Integration patterns for AI‑driven workflows - Data access, contracts, and reliability - Observability, cost control, and governance - Avoiding fragile or accidental AI architectures"
-},
+    "title": "Your APIs Are Not Ready for AI Agents",
+    "description": "Identity, access, contracts, and observability are not optional anymore. See how teams are fixing the gaps before they scale problems."
+  },
   {
-    "title": "Focused & Practitioner-Driven",
-    "description": "Hands-on sessions with real API roadmaps, governance patterns, and operating models. Deep dives, workshops, and peer-led clinics to move initiatives forward."
+    "title": "No Slides Without Consequences",
+    "description": "Workshops, clinics, and labs where you bring your own API challenges. Get feedback from people actually running platforms."
   }
 ]

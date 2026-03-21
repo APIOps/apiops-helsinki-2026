@@ -4,13 +4,13 @@
       "name": "Osaango",
       "logo": "/images/sponsors/osaango-black.svg",
       "url": "https://osaango.com",
-      "description": "Osaango makes people and integrations more Agile for real growth through better operating models, integration strategy and API design."
+      "description": "API operating models, governance design, and transformation for enterprise teams."
     },
     {
       "name": "APIdays",
       "logo": "/images/sponsors/apidays.jpg",
       "url": "https://www.apidays.global/",
-      "description": "APIdays is the leading conference series on API strategy and management, bringing together industry leaders, developers, and innovators to explore the latest trends and best practices in the API ecosystem. "
+      "description": "Global API strategy community connecting platform leaders and practitioners."
     }
   ],
   "silver": [
@@ -18,15 +18,15 @@
       "name": "Apiable",
       "logo": "/images/sponsors/apiable.svg",
       "url": "https://www.apiable.io/",
-      "description": "Apiable is a platform that helps organisations build and manage API ecosystems."
+      "description": "API monetization platforms and commercial operating models."
     }
   ],
-  "community": [    
+  "community": [
     {
       "name": "APIOps Cycles",
       "logo": "/images/sponsors/apiops-cycles-logo-dark.svg",
       "url": "https://apiopscycles.com/",
-      "description": "APIOps Cycles is an open, practical method for evolving APIs continuously — with business impact built in."
+      "description": "Open practical method for continuous API evolution with business impact."
     },
     {
       "name": "get 10% off with code API_10",
