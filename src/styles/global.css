@@ -59,6 +59,10 @@ img {
   color: var(--slate-light);
 }
 
+.section-title-left {
+  text-align: left;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -284,6 +288,18 @@ nav {
   overflow: hidden;
 }
 
+.agenda-showcase {
+  background:
+    radial-gradient(circle at 1px 1px, #d8deea 1px, transparent 0) 0 0 / 22px 22px,
+    #f5f7fb;
+}
+
+.agenda-showcase .agenda-card {
+  border: 1px solid #d7deea;
+  box-shadow: 0 12px 24px rgb(15 23 42 / 6%);
+  border-radius: 1rem;
+}
+
 .agenda-header {
   padding: 1rem 1.5rem;
   color: #fff;
@@ -350,7 +366,8 @@ nav {
   overflow-wrap: anywhere;
   word-break: break-word;
   line-height: 1.45;
-  font-weight: bold;
+  font-weight: 700;
+  color: #1f2b42;
 }
 
 .agenda-track-label {
@@ -696,6 +713,12 @@ nav {
   background: #f3ecff;
   border-radius: 999px;
   padding: 0.12rem 0.5rem;
+}
+
+.agenda-showcase .session-type {
+  background: #4c3b8f;
+  color: #f8f6ff;
+  font-weight: 700;
 }
 
 .agenda-takeaway {
