@@ -26,19 +26,47 @@ const notFor = [
 const formatBlocks = [
   {
     title: "🛠 Clinics",
+    icon: "material-symbols-light:handyman-outline",
     body: "Bring your API, platform, or governance problem.",
     outcome: "Get direct input from experienced practitioners."
   },
   {
     title: "🧪 AI Lab",
+    icon: "material-symbols-light:science-outline",
     body: "Test ideas around MCP, agent integrations, and AI workflows.",
     outcome: "Understand what actually works (and what breaks)."
   },
   {
     title: "🔄 Guided Unconference",
+    icon: "material-symbols-light:sync-outline",
     body: "Topics are shaped by participants.",
     outcome: "Discuss what matters now, not what was planned months ago."
   }
+];
+
+const whyEventExists = [
+  {
+    icon: "material-symbols-light:smart-toy-outline",
+    text: "AI agents are changing how APIs are used (from apps → autonomous systems)."
+  },
+  {
+    icon: "material-symbols-light:api-outline",
+    text: "Identity, governance, and contracts are becoming critical bottlenecks."
+  },
+  {
+    icon: "material-symbols-light:warning-outline",
+    text: "Most API strategies were not designed for this shift."
+  },
+  {
+    icon: "material-symbols-light:error-outline",
+    text: "This conference helps you adapt before things break."
+  }
+];
+
+const highlightIcons = [
+  "material-symbols-light:layers-outline",
+  "material-symbols-light:hub-outline",
+  "material-symbols-light:gavel-outline"
 ];
 ---
 
@@ -87,6 +115,7 @@ const formatBlocks = [
       }
     });
   </script>
+  <script is:inline type="module" src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 
   <header class="hero" style={`--hero-image: url('${site.hero.backgroundImage}')`}>
     <div class="container hero-content wide">
@@ -112,10 +141,12 @@ const formatBlocks = [
     <div class="container">
       <h2>Why this event exists</h2>
       <ul class="strip-list">
-        <li>AI agents are changing how APIs are used (from apps → autonomous systems).</li>
-        <li>Identity, governance, and contracts are becoming critical bottlenecks.</li>
-        <li>Most API strategies were not designed for this shift.</li>
-        <li>This conference helps you adapt before things break.</li>
+        {whyEventExists.map((item) => (
+          <li>
+            <iconify-icon icon={item.icon} class="section-icon"></iconify-icon>
+            <span>{item.text}</span>
+          </li>
+        ))}
       </ul>
     </div>
   </section>
@@ -149,8 +180,9 @@ const formatBlocks = [
         <h2>Rapid Change Demands New Ideas</h2>
       </div>
       <div class="grid highlight-grid">
-        {highlights.map((item) => (
+        {highlights.map((item, index) => (
           <div class="card">
+            <iconify-icon icon={highlightIcons[index]} class="section-icon highlight-icon"></iconify-icon>
             <span class="badge">APIOps Focus</span>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
@@ -169,6 +201,7 @@ const formatBlocks = [
       <div class="grid highlight-grid">
         {formatBlocks.map((item) => (
           <div class="card left-card">
+            <iconify-icon icon={item.icon} class="section-icon format-icon"></iconify-icon>
             <h3>{item.title}</h3>
             <p>{item.body}</p>
             <p class="arrow-line">→ {item.outcome}</p>
