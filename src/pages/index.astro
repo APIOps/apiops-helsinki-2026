@@ -215,12 +215,12 @@ function getSharedSessionType(item) {
 
         <div class="hero-actions">
           <a class="button primary" href={ticketUrl}>Get Your Ticket</a>
-          <a class="button secondary" href={speakerUrl}>Apply to Speak / Run a Session</a>
+          <a class="button secondary" href={speakerUrl}>Bring a Case / Run a Session</a>
         </div>
 
-        <div class="hero-proof is-hidden">
-          <span>Trusted by teams from</span>
-          <div class="hero-proof-logos">
+        <div class="trust-row">
+          <span>Teams joining from:</span>
+          <div class="trust-logos">
             <span>OP Financial Group</span>
             <span>ASSA ABLOY</span>
             <span>If Insurance</span>
@@ -291,6 +291,19 @@ function getSharedSessionType(item) {
             </ul>
           </article>
         </div>
+
+        <div class="surface-card team-card">
+          <h3>Best experienced as a team</h3>
+          <p>
+            This event works best when you bring 2–4 people from your organization: platform, IAM, product,
+            and architecture.
+          </p>
+          <ul>
+            <li>→ Align faster across roles</li>
+            <li>→ Make decisions on the spot</li>
+            <li>→ Avoid “conference → no change” syndrome</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -352,6 +365,33 @@ function getSharedSessionType(item) {
               <p>{item.body}</p>
             </article>
           ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light" id="bring-problem">
+    <div class="container">
+      <div class="section-shell bring-problem">
+        <div class="bring-problem-content">
+          <div class="small-pill">Working Session</div>
+          <h2>Bring your API, IAM, or platform problem.</h2>
+          <p>
+            This is not a passive conference. You’ll work on real decisions with people solving similar
+            challenges: platform design, API monetization, IAM for AI agents, and governance models.
+          </p>
+
+          <ul class="bring-problem-list">
+            <li>→ Get direct input from people running API platforms</li>
+            <li>→ Pressure-test your architecture and strategy</li>
+            <li>→ Leave with clearer decisions (not just notes)</li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href={ticketUrl} class="button primary">Get Your Ticket</a>
+            <a href={speakerUrl} class="button secondary alt">Bring a Case</a>
+          </div>
+          <p class="case-microcopy">Bring a real API, IAM, or platform challenge. No vendor talks.</p>
         </div>
       </div>
     </div>
@@ -464,8 +504,9 @@ function getSharedSessionType(item) {
         </div>
 
         <div class="section-cta-row">
-          <a class="button primary" href={speakerUrl}>Apply to Speak</a>
+          <a class="button primary" href={speakerUrl}>Bring a Case</a>
         </div>
+        <p class="case-microcopy center">Bring a real API, IAM, or platform challenge. No vendor talks.</p>
       </div>
     </div>
   </section>
@@ -530,8 +571,7 @@ function getSharedSessionType(item) {
       <p>Bring a real API challenge. Get input from people solving similar problems. Leave with clearer decisions.</p>
       <div class="hero-actions cta-actions">
         <a class="button primary" href={ticketUrl}>Get Your Ticket</a>
-        <a class="button secondary" href={speakerUrl}>Apply to Speak or Run a Session</a>
-        <a class="button secondary" href={partnerUrl}>Partnerships</a>
+        <a class="button secondary" href={speakerUrl}>Bring a Case</a>
       </div>
     </div>
   </section>
