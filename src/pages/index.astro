@@ -10,16 +10,16 @@ const partnerUrl =
   "https://docs.google.com/presentation/d/1bXmS1AlfLN40FQ6Ws6ldm9BffD1sS_BW/edit?usp=sharing&ouid=108887358045542967446&rtpof=true&sd=true";
 
 const whoFor = [
-  "Owning or building an API platform in an enterprise",
-  "Designing APIs that will be used by AI agents or automation",
-  "Responsible for API governance, IAM, or monetization",
-  "Trying to align business, product, and platform teams",
+  "Own or build an API platform in an enterprise",
+  "Design APIs used by AI agents or automation",
+  "Are responsible for governance, IAM, or monetization",
+  "Need to align business, product, and platform teams",
 ];
 
 const notFor = [
-  "You want beginner-level API content",
-  "You’re looking for vendor-heavy presentations",
-  "You don’t have real API challenges to solve",
+  "Want beginner-level API content",
+  "Prefer vendor-driven presentations",
+  "Don’t have real API challenges to solve",
 ];
 
 const formatBlocks = [
@@ -53,7 +53,7 @@ const whyEventExists = [
   {
     icon: "material-symbols-light:smart-toy-outline",
     title: "APIs designed without APIOps break under AI usage",
-    text: "Interfaces built only for app-to-app traffic fail when autonomous agents scale requests.",
+    text: "Interfaces built for apps don’t handle autonomous agents, scale, or unpredictability.",
   },
   {
     icon: "material-symbols-light:api",
@@ -63,34 +63,34 @@ const whyEventExists = [
   {
     icon: "material-symbols-light:warning-outline",
     title: "Platform thinking becomes mandatory",
-    text: "Teams need shared operating models, lifecycle governance, and product accountability across APIs.",
+    text: "Teams need shared operating models, lifecycle governance, and clear ownership across APIs.",
   },
   {
     icon: "material-symbols-light:note-stack-outline",
-    title: "Execution beats abstractions",
-    text: "APIOps turns strategy into repeatable decisions, measurable outcomes, and durable API products.",
+    title: "Strategy must translate into execution",
+    text: "APIOps turns decisions into repeatable practices and measurable platform outcomes.",
   },
 ];
 
 const coverTopics = [
   {
     title: "Strategy",
-    body: "Platform and product realignment",
+    body: "Platform and product alignment across APIs",
     icon: "material-symbols-light:layers-outline",
   },
   {
     title: "Identity",
-    body: "Auth for agents and machines",
+    body: "Auth models that work for agents, systems, and scale",
     icon: "material-symbols-light:shield-lock-outline",
   },
   {
     title: "Monetization",
-    body: "New models and metrics",
+    body: "Turning API usage into measurable business value",
     icon: "material-symbols-light:euro-outline",
   },
   {
     title: "AI Agents",
-    body: "MCP, autonomy, and safeguards",
+    body: "APIs as inputs to autonomous systems",
     icon: "material-symbols-light:smart-toy-outline",
   },
 ];
@@ -193,15 +193,14 @@ function getSharedSessionType(item) {
       <div class="hero-copy">
         <span class="hero-kicker">June 2–3, 2026 · Epicenter Helsinki</span>
         <h1>APIOps Is Becoming<br />The Operating Model for APIs</h1>
-        <p class="hero-meta">If your APIs are not well-designed, governed, and productized, they won’t survive AI agents.</p>
+        <p class="hero-meta">If your APIs aren’t well-designed, governed, and productized, they break under AI agents.</p>
         <p>
-          A working conference for people building, governing, and monetizing API platforms in the age of AI
-          agents.
+          A working conference for people building, governing, and scaling API platforms.
         </p>
-        <p>APIOps is about how APIs are designed, governed, and evolved as products — not just built.</p>
+        <p>APIOps is how APIs are designed, governed, and evolved as products — not just built.</p>
         <p>
-          This is not a passive event. You’ll challenge assumptions, bring real problems, and leave with
-          clearer decisions.
+          This is not a passive event. Bring real problems. Challenge assumptions. Leave with clearer
+          decisions.
         </p>
         <p class="hero-audience-line">
           For API platform leaders, architects, IAM owners, and product teams navigating AI-driven change.
@@ -209,7 +208,7 @@ function getSharedSessionType(item) {
 
         <div class="hero-actions">
           <a class="button primary" href={ticketUrl}>Get Your Ticket</a>
-          <a class="button secondary" href={speakerUrl}>Bring a Case / Run a Session</a>
+          <a class="button secondary" href={speakerUrl}>Bring an APIOps Problem</a>
         </div>
 
         <div class="trust-row">
@@ -314,7 +313,7 @@ function getSharedSessionType(item) {
           <article class="surface-card audience-card">
             <div class="audience-card-title">
               <iconify-icon icon="material-symbols-light:check-circle-outline"></iconify-icon>
-              <h3>If You Are:</h3>
+              <h3>You should be here if you:</h3>
             </div>
             <ul>
               {whoFor.map((item) => <li>{item}</li>)}
@@ -324,7 +323,7 @@ function getSharedSessionType(item) {
           <article class="surface-card audience-card audience-card-muted">
             <div class="audience-card-title">
               <iconify-icon icon="material-symbols-light:cancel-outline"></iconify-icon>
-              <h3>This Is NOT for You If:</h3>
+              <h3>This is not for you if you:</h3>
             </div>
             <ul>
               {notFor.map((item) => <li>{item}</li>)}
@@ -353,13 +352,13 @@ function getSharedSessionType(item) {
       <div class="section-shell">
         <div class="format-top">
           <div class="format-intro">
-            <p class="format-kicker">This is APIOps in practice:</p>
+            <p class="format-kicker">This is APIOps in practice.</p>
             <h2>Two Days. One Goal.<br />Make Better API Decisions.</h2>
             <div class="format-signals">
-              <div><iconify-icon icon="material-symbols-light:forum-outline"></iconify-icon><span>No slides without consequences</span></div>
+              <div><iconify-icon icon="material-symbols-light:forum-outline"></iconify-icon><span>No slides without decisions</span></div>
               <div><iconify-icon icon="material-symbols-light:domain-verification-outline"></iconify-icon><span>Real problems from real teams</span></div>
               <div><iconify-icon icon="material-symbols-light:groups-outline"></iconify-icon><span>Workshops, clinics, open labs</span></div>
-              <div><iconify-icon icon="material-symbols-light:smart-toy-outline"></iconify-icon><span>People building what’s next</span></div>
+              <div><iconify-icon icon="material-symbols-light:smart-toy-outline"></iconify-icon><span>People running real platforms</span></div>
             </div>
           </div>
 
@@ -430,9 +429,9 @@ function getSharedSessionType(item) {
 
           <div class="hero-actions">
             <a href={ticketUrl} class="button primary">Get Your Ticket</a>
-            <a href={speakerUrl} class="button secondary alt">Bring a Case</a>
+            <a href={speakerUrl} class="button secondary alt">Bring an APIOps Problem</a>
           </div>
-          <p class="case-microcopy">Bring a real API, IAM, or platform challenge. No vendor talks.</p>
+          <p class="case-microcopy">Bring a real APIOps challenge: API, IAM, platform, or governance. No vendor talks.</p>
         </div>
       </div>
     </div>
@@ -444,7 +443,7 @@ function getSharedSessionType(item) {
         <div class="section-title section-title-left section-title-compact">
           <h2>Agenda</h2>
           <p>Where we go deep on <strong>actual API decisions.</strong></p>
-          <p>This is not theory — this is APIOps applied to real systems.</p>
+          <p>This is APIOps applied — not theory.</p>
         </div>
 
         <div class="agenda-days">
@@ -522,7 +521,7 @@ function getSharedSessionType(item) {
         <div class="section-title section-title-left section-title-compact">
           <h2>Speakers & Hosts</h2>
           <p>Direct experience, not vendor marketing.</p>
-          <p>People doing APIOps in real organizations.</p>
+          <p>People doing APIOps in real organizations — not talking about it.</p>
         </div>
 
         <div class="grid speaker-grid speaker-grid-modern">
@@ -547,9 +546,9 @@ function getSharedSessionType(item) {
         </div>
 
         <div class="section-cta-row">
-          <a class="button primary" href={speakerUrl}>Bring a Case</a>
+          <a class="button primary" href={speakerUrl}>Bring an APIOps Problem</a>
         </div>
-        <p class="case-microcopy center">Bring a real API, IAM, or platform challenge. No vendor talks.</p>
+        <p class="case-microcopy center">Bring a real APIOps challenge: API, IAM, platform, or governance. No vendor talks.</p>
       </div>
     </div>
   </section>
@@ -562,7 +561,7 @@ function getSharedSessionType(item) {
             <div class="section-title section-title-left section-title-compact">
               <h2>Sponsors</h2>
               <p>
-                APIOps Helsinki is supported by respected companies helping shape the future of
+                APIOps Helsinki is supported by respected companies working with teams building real
                 <strong> API platforms.</strong>
               </p>
             </div>
@@ -611,10 +610,10 @@ function getSharedSessionType(item) {
   <section class="section cta-band cta-section">
     <div class="container">
       <h2>Don’t attend to listen. Attend to figure things out.</h2>
-      <p>Bring a real API challenge. Get input from people solving similar problems. Leave with clearer decisions.</p>
+      <p>Bring an APIOps problem. Work through it with people solving similar challenges. Leave with clearer decisions.</p>
       <div class="hero-actions cta-actions">
         <a class="button primary" href={ticketUrl}>Get Your Ticket</a>
-        <a class="button secondary" href={speakerUrl}>Bring a Case</a>
+        <a class="button secondary" href={speakerUrl}>Bring an APIOps Problem</a>
       </div>
     </div>
   </section>
