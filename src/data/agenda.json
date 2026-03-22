@@ -37,7 +37,7 @@
           },
           "workshop": {
             "title": "Workshop",
-            "speaker": "Apply to run the workshop!"
+            "speaker": "Contribute - Bring an APIOps Problem"
           }
         }
       },
@@ -149,11 +149,13 @@
         "tracks": {
           "a": {
             "title": "FIDA, Open Finance and the Future of API Ecosystems",
-            "speaker": "TBD"
+            "speaker": "Markus Petman, Senior Manager @Fennia",
+            "speakerId": "markus-petman",
+            "takeaway": "FIDA turns APIs from integration points into regulated products — and most platforms aren’t ready for that shift."
           },
           "b": {
-            "title": "Placeholder: Agentic Workflows: APIs as the Interface for AI Systems",
-            "speaker": "Apply to speak!"
+            "title": "Agentic Workflows: APIs as the Interface for AI Systems",
+            "speaker": "Contribute - Bring an APIOps Problem"
           },
           "workshop": {
             "title": "Workshop",
@@ -173,8 +175,8 @@
             "speaker": "TBD"
           },
           "b": {
-            "title": "Placeholder: Cloud Platforms for API Ecosystems",
-            "speaker": "Apply to speak!"
+            "title": "Cloud Platforms for API Ecosystems",
+            "speaker": "Contribute - Bring an APIOps Problem"
           },
           "workshop": {
             "title": "API Monetization Clinic",
@@ -189,8 +191,8 @@
         "time": "11:55",
         "tracks": {
           "a": {
-            "title": "Placeholder: Why Developers Ignore Your APIs",
-            "speaker": "Apply to speak!"
+            "title": "Why Developers Ignore Your APIs",
+            "speaker": "Contribute - Bring an APIOps Problem"
           },
           "b": {
             "title": "AI Agents and Secure API Access",
@@ -199,7 +201,7 @@
           },
           "workshop": {
             "title": "Workshop",
-            "speaker": "Apply to run the workshop!"
+            "speaker": "Contribute - Bring an APIOps Problem"
           }
         }
       },
