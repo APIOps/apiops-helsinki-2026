@@ -58,7 +58,7 @@ const whyEventExists = [
     text: "Most APIs were built for apps. Autonomy brings new types of requests.",
   },
   {
-    icon: "material-symbols-light:api-outline",
+    icon: "material-symbols-light:api",
     title: "APIs designed for apps are breaking under AI agents",
     text: "Long-tail identity, access, and governance issues are hitting hard.",
   },
@@ -77,14 +77,14 @@ const whyEventExists = [
 const highlightIcons = [
   "material-symbols-light:layers-outline",
   "material-symbols-light:hub-outline",
-  "material-symbols-light:gavel-outline",
+  "material-symbols-light:gavel",
 ];
 
 const systemMap = [
   { title: "Identity", icon: "material-symbols-light:badge-outline" },
   { title: "Access", icon: "material-symbols-light:lock-outline" },
   { title: "Contracts", icon: "material-symbols-light:rule-outline" },
-  { title: "APIs", icon: "material-symbols-light:api-outline", featured: true },
+  { title: "APIs", icon: "material-symbols-light:api", featured: true },
   { title: "AI Agents", icon: "material-symbols-light:smart-toy-outline" },
   { title: "Platforms", icon: "material-symbols-light:deployed-code-outline" },
   { title: "Business", icon: "material-symbols-light:business-center-outline" },
@@ -157,7 +157,7 @@ function getSharedSessionType(item) {
   <nav>
     <div class="container nav-inner">
       <div class="brand">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <img class="brand-logo" src="/favicon.svg" alt="APIOps Helsinki logo" />
         <strong>APIOps Helsinki</strong>
       </div>
 
@@ -226,7 +226,7 @@ function getSharedSessionType(item) {
           <a class="button secondary" href={speakerUrl}>Apply to Speak / Run a Session</a>
         </div>
 
-        <div class="hero-proof">
+        <div class="hero-proof is-hidden">
           <span>Trusted by teams from</span>
           <div class="hero-proof-logos">
             <span>OP Financial Group</span>

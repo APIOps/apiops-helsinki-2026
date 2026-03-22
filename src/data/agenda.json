@@ -57,7 +57,8 @@
           "workshop": {
             "title": "API Product Design Clinic - with APIOps Cycles and AI skills",
             "speaker": "Marjukka Niinioja, Founding Partner @Osaango",
-            "speakerId": "marjukka-niinioja"
+            "speakerId": "marjukka-niinioja",
+            "sessionType": "CLINIC"
           }
         }
       },

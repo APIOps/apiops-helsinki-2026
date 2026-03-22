@@ -232,6 +232,12 @@ nav {
   font-weight: 700;
 }
 
+.brand-logo {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
 .brand-mark {
   width: 22px;
   height: 22px;
@@ -371,6 +377,10 @@ nav {
   margin-top: 1.7rem;
   display: grid;
   gap: 0.7rem;
+}
+
+.is-hidden {
+  display: none !important;
 }
 
 .hero-proof > span {
