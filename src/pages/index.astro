@@ -1,45 +1,148 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import highlights from "../data/highlights.json";
 import agenda from "../data/agenda.json";
 import speakers from "../data/speakers.json";
 import sponsors from "../data/sponsors.json";
-import attendees from "../data/attendees.json";
-import site from "../data/site.json";
 
 const ticketUrl = "https://shop.osaango.com/category/apiops-helsinki-2026";
-const partnerUrl = "https://docs.google.com/presentation/d/1bXmS1AlfLN40FQ6Ws6ldm9BffD1sS_BW/edit?usp=sharing&ouid=108887358045542967446&rtpof=true&sd=true";
 const speakerUrl = "https://tally.so/r/LZW5kO";
-const galleryImages = [
-  {
-    src: "/images/hero/hero-bg.jpg",
-    alt: "Audience networking during a previous APIOps Helsinki event",
-    caption: "Networking and peer conversations are at the heart of the event"
-  },
-  {
-    src: "/images/hero/apidays-hki-2025-mehdi.jpg",
-    alt: "Previous year keynote talk",
-    caption: "Practical talks grounded in real delivery experience"
-  },
-  {
-    src: "/images/hero/apidays-hki-2019.jpg",
-    alt: "Speaker sharing lessons learned from API platforms",
-    caption: "International and local experts on one stage since 2019"
-  },
-  {
-    src: "/images/hero/apidays-hki-2025-crowd.jpg",
-    alt: "Crowd listening attentively",
-    caption: "Packed rooms and active community discussions"
-  }
+const partnerUrl =
+  "https://docs.google.com/presentation/d/1bXmS1AlfLN40FQ6Ws6ldm9BffD1sS_BW/edit?usp=sharing&ouid=108887358045542967446&rtpof=true&sd=true";
+
+const whoFor = [
+  "Own or build an API platform in an enterprise",
+  "Design APIs used by AI agents or automation",
+  "Are responsible for governance, IAM, or monetization",
+  "Need to align business, product, and platform teams",
 ];
+
+const notFor = [
+  "Want beginner-level API content",
+  "Prefer vendor-driven presentations",
+  "Don’t have real API challenges to solve",
+];
+
+const formatBlocks = [
+  {
+    title: "Clinic",
+    tag: "CLINIC",
+    icon: "material-symbols-light:handyman-outline",
+    body: "Bring your API, platform, or governance problem.",
+    outcome: "Get direct input from experienced practitioners.",
+    tone: "orange",
+  },
+  {
+    title: "AI Lab",
+    tag: "LAB",
+    icon: "material-symbols-light:science-outline",
+    body: "Test ideas around MCP, agent integrations, and AI workflows.",
+    outcome: "Understand what actually works (and what breaks).",
+    tone: "purple",
+  },
+  {
+    title: "Unconference",
+    tag: "UNCONFERENCE",
+    icon: "material-symbols-light:sync-outline",
+    body: "Topics are shaped by participants.",
+    outcome: "Discuss what matters now, not what was planned months ago.",
+    tone: "blue",
+  },
+];
+
+const whyEventExists = [
+  {
+    icon: "material-symbols-light:smart-toy-outline",
+    title: "APIs designed without APIOps break under AI usage",
+    text: "Interfaces built for apps don’t handle autonomous agents, scale, or unpredictability.",
+  },
+  {
+    icon: "material-symbols-light:api",
+    title: "Governance, identity, and contracts become critical",
+    text: "Without explicit control boundaries, agent behavior creates reliability, access, and compliance risks.",
+  },
+  {
+    icon: "material-symbols-light:warning-outline",
+    title: "Platform thinking becomes mandatory",
+    text: "Teams need shared operating models, lifecycle governance, and clear ownership across APIs.",
+  },
+  {
+    icon: "material-symbols-light:note-stack-outline",
+    title: "Strategy must translate into execution",
+    text: "APIOps turns decisions into repeatable practices and measurable platform outcomes.",
+  },
+];
+
+const coverTopics = [
+  {
+    title: "Strategy",
+    body: "Platform and product alignment across APIs",
+    icon: "material-symbols-light:layers-outline",
+  },
+  {
+    title: "Identity",
+    body: "Auth models that work for agents, systems, and scale",
+    icon: "material-symbols-light:shield-lock-outline",
+  },
+  {
+    title: "Monetization",
+    body: "Turning API usage into measurable business value",
+    icon: "material-symbols-light:euro-outline",
+  },
+  {
+    title: "AI Agents",
+    body: "APIs as inputs to autonomous systems",
+    icon: "material-symbols-light:smart-toy-outline",
+  },
+];
+
+const sessionToneMap = {
+  KEYNOTE: "orange",
+  "CASE STUDY": "purple",
+  PANEL: "slate",
+  CLINIC: "orange",
+  "HANDS-ON": "purple",
+  WORKSHOP: "purple",
+  LAB: "purple",
+  UNCONFERENCE: "blue",
+  BREAK: "soft",
+  LUNCH: "soft",
+  CLOSING: "soft",
+};
+
+function getSessionTone(type) {
+  return sessionToneMap[type] || "soft";
+}
+
+function inferSessionType(title = "") {
+  const t = title.toLowerCase();
+
+  if (t.includes("keynote")) return "KEYNOTE";
+  if (t.includes("panel")) return "PANEL";
+  if (t.includes("clinic")) return "CLINIC";
+  if (t.includes("lab")) return "LAB";
+  if (t.includes("unconference")) return "UNCONFERENCE";
+  if (t.includes("hands-on")) return "HANDS-ON";
+  if (t.includes("workshop")) return "WORKSHOP";
+  if (t.includes("break")) return "BREAK";
+  if (t.includes("lunch")) return "LUNCH";
+  if (t.includes("closing")) return "CLOSING";
+
+  return "";
+}
+
+function getSharedSessionType(item) {
+  return item.sessionType || inferSessionType(item.title || "");
+}
 ---
 
 <BaseLayout title="APIOps Helsinki Conference 2026">
   <nav>
     <div class="container nav-inner">
-      <div>
+      <div class="brand">
+        <img class="brand-logo" src="/favicon.svg" alt="APIOps Helsinki logo" />
         <strong>APIOps Helsinki</strong>
       </div>
+
       <button
         class="nav-toggle"
         type="button"
@@ -51,18 +154,19 @@ const galleryImages = [
         <span></span>
         <span></span>
       </button>
+
       <div class="nav-links" id="top-navigation">
         <a href="#agenda">Agenda</a>
-        <a href="#tracks">Tracks</a>
-        <a href="#community">Community</a>
+        <a href="#format">Format</a>
+        <a href="#speakers">Speakers</a>
         <a href="#partners">Partners</a>
         <a href={ticketUrl}>Tickets</a>
-        <a class="button primary" href={ticketUrl}>Register Now</a>
+        <a class="button primary" href={ticketUrl}>Get Your Ticket</a>
       </div>
     </div>
   </nav>
 
-    <script>
+  <script>
     const navToggle = document.querySelector(".nav-toggle");
     const navLinks = document.querySelector(".nav-links");
 
@@ -79,335 +183,437 @@ const galleryImages = [
       }
     });
   </script>
+  <script
+    is:inline
+    type="module"
+    src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 
-  <header class="hero" style={`--hero-image: url('${site.hero.backgroundImage}')`}>
-    <div class="container hero-content">
-      <span class="badge">June 2-3, 2026 · Epicenter Helsinki</span>
-      <h1>APIOps Helsinki Conference 2026</h1>
-      <p class="meta">Strategy · AI-Driven APIs · Community Co-Creation</p>
-      <p>
-        APIs are products, platforms, and the foundation for AI-driven systems.
-      </p>
-      <p>
-        Join Finland’s premier API gathering for two days of focused strategy sessions,
-        hands-on clinics, and peer-led community building. Designed for practitioners who want to advance their API and integration practices in a collaborative, hype-free environment.
-      </p>
-      <div class="hero-actions">
-        <a class="button primary" href={ticketUrl}>Buy Tickets</a>
-        <a class="button secondary" href={partnerUrl}>Become a Partner</a>
+  <header class="hero hero-clean">
+    <div class="container hero-layout">
+      <div class="hero-copy">
+        <span class="hero-kicker">June 2–3, 2026 · Epicenter Helsinki</span>
+        <h1>APIOps Is Becoming<br />The Operating Model for APIs</h1>
+        <p class="hero-meta">If your APIs aren’t well-designed, governed, and productized, they break under AI agents.</p>
+        <p>
+          A working conference for people building, governing, and scaling API platforms.
+        </p>
+        <p>APIOps is how APIs are designed, governed, and evolved as products — not just built.</p>
+        <p>
+          This is not a passive event. Bring real problems. Challenge assumptions. Leave with clearer
+          decisions.
+        </p>
+        <p class="hero-audience-line">
+          For API platform leaders, architects, IAM owners, and product teams navigating AI-driven change.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href={ticketUrl}>Get Your Ticket</a>
+          <a class="button secondary" href={speakerUrl}>Bring an APIOps Problem</a>
+        </div>
+
+        <div class="trust-row">
+          <span>Teams joining from:</span>
+          <div class="trust-logos">
+            <span>OP Financial Group</span>
+            <span>ASSA ABLOY</span>
+            <span>If Insurance</span>
+            <span>Apiable</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-map hero-map-rich" aria-hidden="true">
+        <div class="hero-map-grid"></div>
+        <div class="hero-map-panel"></div>
+
+        <div class="hero-map-core">APIs</div>
+
+        <div class="hero-map-node hero-map-node-identity">
+          <iconify-icon icon="material-symbols-light:badge-outline"></iconify-icon>
+          <span>Identity</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-access">
+          <iconify-icon icon="material-symbols-light:lock-outline"></iconify-icon>
+          <span>Access</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-contracts">
+          <iconify-icon icon="material-symbols-light:rule-outline"></iconify-icon>
+          <span>Contracts</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-ai-agents">
+          <iconify-icon icon="material-symbols-light:smart-toy-outline"></iconify-icon>
+          <span>AI Agents</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-platforms">
+          <iconify-icon icon="material-symbols-light:deployed-code-outline"></iconify-icon>
+          <span>Platforms</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-business">
+          <iconify-icon icon="material-symbols-light:business-center-outline"></iconify-icon>
+          <span>Business</span>
+        </div>
+
+        <div class="hero-mini-card hero-mini-card-lab">
+          <div class="hero-mini-card-tag hero-mini-card-tag-purple">LAB</div>
+          <h4>MCP, agents, workflows</h4>
+        </div>
+
+        <div class="hero-mini-card hero-mini-card-clinic">
+          <div class="hero-mini-card-tag hero-mini-card-tag-orange">CLINIC</div>
+          <h4>Bring your IAM challenge</h4>
+        </div>
+
+        <div class="hero-mini-card hero-mini-card-keynote">
+          <div class="hero-mini-card-tag hero-mini-card-tag-soft">KEYNOTE</div>
+          <p class="hero-mini-time">09:00</p>
+          <h4>From Ecosystem Design to API Strategy</h4>
+          <p class="hero-mini-meta">Shared session</p>
+        </div>
+
+        <span class="hero-glow hero-glow-1"></span>
+        <span class="hero-glow hero-glow-2"></span>
+        <span class="hero-glow hero-glow-3"></span>
       </div>
     </div>
   </header>
 
-
-    <section class="section" id="speakers">
+  <section class="section section-light section-why" id="positioning">
     <div class="container">
-      <div class="section-title">
-        <h2>Featured Speakers</h2>
-        <p>Leaders from Finland’s API, platform, and AI ecosystems.</p>
-      </div>
-      <div class="grid speaker-grid" id="name">
-        {speakers.map((speaker) => (
-          <div class="card speaker-card">
-            <div class="speaker-avatar">
-              {speaker.avatar ? (
-                <img src={speaker.avatar} alt={`Portrait of ${speaker.name}`} loading="lazy" />
-              ) : (
-                speaker.name
-                  .split(" ")
-                  .map((name) => name[0])
-                  .join("")
-              )}
-            </div>
-            <h3>{speaker.name}</h3>
-            <p>
-              {speaker.title} @{speaker.company}
-            </p>
-            {<p>{speaker.bio}</p>}
-          </div>
-        ))}
-      </div>
-        <div style="text-align:center; margin-top: 2rem;">
-              <a class="button primary" href={speakerUrl}>Apply to speak</a>
+      <div class="section-shell">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>Why APIOps Matters Now</h2>
         </div>
-    </div>
-  </section>
 
- <section class="section highlight-row" id="partners">
-    <div class="container">
-      <div class="section-title">
-        <h2>Partners</h2>
-      </div>
-
-      <div class="sponsor-tier-group">
-        <h3 class="sponsor-tier-heading">Gold Sponsors</h3>
-        <div class="grid sponsor-grid sponsor-grid-gold" id="name" style={`--tier-columns: ${Math.max(1, Math.min(3, sponsors.gold.length))};`}>
-          {sponsors.gold.map((sponsor) => (
-            <div class="card sponsor-card sponsor-card-gold">
-              {sponsor.url ? (
-                <a class="sponsor-link" href={sponsor.url} target="_blank" rel="noreferrer">
-                  <div class="sponsor-media sponsor-media-gold">
-                    {sponsor.logo ? (
-                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                    ) : (
-                      <span class="sponsor-name">{sponsor.name}</span>
-                    )}
-                  </div>
-                  <p class="sponsor-name">{sponsor.description}</p>
-                </a>
-              ) : (
-                <>
-                  <div class="sponsor-media sponsor-media-gold">
-                    {sponsor.logo ? (
-                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                    ) : (
-                      <span class="sponsor-name">{sponsor.name}</span>
-                    )}
-                  </div>
-                  <p class="sponsor-name">{sponsor.description}</p>
-                </>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div class="sponsor-tier-group">
-        <h3 class="sponsor-tier-heading">Silver Sponsors</h3>
-        <div class="grid sponsor-grid sponsor-grid-silver" style={`--tier-columns: ${Math.max(1, Math.min(4, sponsors.silver.length))};`}>
-          {sponsors.silver.map((sponsor) => (
-            <div class="card sponsor-card">
-              {sponsor.url ? (
-                <a class="sponsor-link" href={sponsor.url} target="_blank" rel="noreferrer">
-                  <div class="sponsor-media">
-                    {sponsor.logo ? (
-                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                    ) : (
-                      <span class="sponsor-name">{sponsor.name}</span>
-                    )}
-                  </div>
-                  <p class="sponsor-name">{sponsor.description}</p>
-                </a>
-              ) : (
-                <>
-                  <div class="sponsor-media">
-                    {sponsor.logo ? (
-                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                    ) : (
-                      <span class="sponsor-name">{sponsor.name}</span>
-                    )}
-                  </div>
-                  <p class="sponsor-name">{sponsor.description}</p>
-                </>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div class="sponsor-tier-group">
-        <h3 class="sponsor-tier-heading">Community Sponsors</h3>
-        <div class="grid sponsor-grid sponsor-grid-community" style={`--tier-columns: ${Math.max(1, Math.min(5, sponsors.community.length))};`}>
-          {sponsors.community.map((sponsor) => (
-            <div class="card sponsor-card">
-              {sponsor.url ? (
-                <a class="sponsor-link" href={sponsor.url} target="_blank" rel="noreferrer">
-                  <div class="sponsor-media">
-                    {sponsor.logo ? (
-                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                    ) : (
-                      <span class="sponsor-name">{sponsor.name}</span>
-                    )}
-                  </div>
-                  <p class="sponsor-name">{sponsor.description}</p>
-                </a>
-              ) : (
-                <>
-                  <div class="sponsor-media">
-                    {sponsor.logo ? (
-                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                    ) : (
-                      <span class="sponsor-name">{sponsor.name}</span>
-                    )}
-                  </div>
-                  <p class="sponsor-name">{sponsor.description}</p>
-                </>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <section class="section" id="about">
-    <div class="container">
-      <div class="section-title">
-        <h2>What is APIOps?</h2>
-        <p>A working conference for API and integration practitioners.</p>
-      </div>
-      <div class="card">
-        <p>
-          APIOps Helsinki Conference is a practitioner-driven event for people who work with API ownership,
-          governance, platform models, and AI-era integration decisions in real organisations.
-        </p>
-        <p>
-          This is not a hype-driven API or AI event, and not a vendor expo. It is designed to help participants
-          think more clearly, compare approaches with peers, and leave with concrete next steps.
-        </p>
-        <p>Read more about APIOps in the blog <a href="https://www.osaango.com/blog/what-is-apiops/"><b><u>What is APIOps?</u></b></a> and <a href="https://www.osaango.com/blog/bridging-the-gap-where-does-product-management-fit-in-apiops-and-devops/"><b><u>Bridging the Gap: Where does product management fit in APIOps and DevOps?</u></b></a></p>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section highlight-row" id="difference">
-    <div class="container">
-      <div class="section-title">
-        <h2>Why isn't it called apidays Helsinki &amp; North like in previous years?</h2>
-        <p>Essentials of the event is the same, but with a new name and focus on APIOps, due to the growing interest in the APIOps practices, and the open APIOps Cycles method. The global <b>apidays</b> organization is our partner, not main organizer. This is a controlled experiment, to try some new formats that can be more community-driven, and maintain local community engagement.</p>
-                
-      </div>
-      <div class="grid highlight-grid">
-        <div class="card">
-          <h3>Community-driven formats</h3>
-          <p>Clinics, workshops, and guided unconference sessions are part of the core program.</p>
-        </div>
-        <div class="card">
-          <h3>The proven good stuff stays</h3>
-          <p>Focused on the Finnish ecosystem, curated talks without sales pitches, and two parallel tracks.</p>
-        </div>
-        <div class="card">
-          <h3>Single shared experience</h3>
-          <p>No fragmented expo hall. The goal is depth, practical insight, and concrete outcomes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-    <section class="section highlight-row" id="tracks">
-      <div class="container">
-        <div class="section-title">
-          <h2>Highlights</h2>
-          <p>Core APIOps tracks plus moments from previous editions.</p>
-        </div>
-        <div class="grid highlight-grid">
-          {highlights.map((item) => (
-            <div class="card">
-              <span class="badge">APIOps Focus</span>
+        <div class="why-grid">
+          {whyEventExists.map((item, index) => (
+            <article class={`surface-card why-card ${index >= 2 ? "surface-card-soft" : ""}`}>
+              <iconify-icon icon={item.icon} class="card-icon"></iconify-icon>
               <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
+              <p>{item.text}</p>
+            </article>
           ))}
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="gallery-wrap">
-          <h3>From previous years</h3>
-          <div class="gallery-grid">
-            {galleryImages.map((image) => (
-              <figure class="gallery-card">
-                <img src={image.src} alt={image.alt} loading="lazy" />
-                <figcaption>{image.caption}</figcaption>
-              </figure>
+  <section class="section section-soft" id="who-for">
+    <div class="container">
+      <div class="section-shell">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>Who This Is For</h2>
+        </div>
+
+        <div class="audience-grid">
+          <article class="surface-card audience-card">
+            <div class="audience-card-title">
+              <iconify-icon icon="material-symbols-light:check-circle-outline"></iconify-icon>
+              <h3>You should be here if you:</h3>
+            </div>
+            <ul>
+              {whoFor.map((item) => <li>{item}</li>)}
+            </ul>
+          </article>
+
+          <article class="surface-card audience-card audience-card-muted">
+            <div class="audience-card-title">
+              <iconify-icon icon="material-symbols-light:cancel-outline"></iconify-icon>
+              <h3>This is not for you if you:</h3>
+            </div>
+            <ul>
+              {notFor.map((item) => <li>{item}</li>)}
+            </ul>
+          </article>
+        </div>
+
+        <div class="surface-card team-card">
+          <h3>Best experienced as a team</h3>
+          <p>
+            This event works best when you bring 2–4 people from your organization: platform, IAM, product,
+            and architecture.
+          </p>
+          <ul>
+            <li>→ Align faster across roles</li>
+            <li>→ Make decisions on the spot</li>
+            <li>→ Avoid “conference → no change” syndrome</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="format">
+    <div class="container">
+      <div class="section-shell">
+        <div class="format-top">
+          <div class="format-intro">
+            <p class="format-kicker">This is APIOps in practice.</p>
+            <h2>Two Days. One Goal.<br />Make Better API Decisions.</h2>
+            <div class="format-signals">
+              <div><iconify-icon icon="material-symbols-light:forum-outline"></iconify-icon><span>No slides without decisions</span></div>
+              <div><iconify-icon icon="material-symbols-light:domain-verification-outline"></iconify-icon><span>Real problems from real teams</span></div>
+              <div><iconify-icon icon="material-symbols-light:groups-outline"></iconify-icon><span>Workshops, clinics, open labs</span></div>
+              <div><iconify-icon icon="material-symbols-light:smart-toy-outline"></iconify-icon><span>People running real platforms</span></div>
+            </div>
+          </div>
+
+          <div class="format-cards">
+            {formatBlocks.map((item) => (
+              <article class={`surface-card format-card surface-card-accent-${item.tone}`}>
+                <div class="format-card-top">
+                  <iconify-icon icon={item.icon} class="card-icon"></iconify-icon>
+                  <span class={`session-type session-type-${item.tone}`}>{item.tag}</span>
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+                <p class="arrow-line">→ {item.outcome}</p>
+              </article>
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
- <section class="section" id="agenda">
+  <section class="section section-light section-system-map" id="program-narrative">
     <div class="container">
-      <div class="section-title">
-        <h2>Conference Agenda</h2>
-        <p>June 2-3, 2026 · Epicenter Helsinki, Mikonkatu 9</p>
-      </div>
-      <div class="split" id="day">
-        {agenda.map((day) => (
-          <div class="card agenda-card">
-            <div class={`agenda-header ${day.color}`}>
-              {day.day}: {day.theme} · {day.date}
-            </div>
-            <div class="agenda-track-headings">
-              <span class="track-heading">Time</span>
-              <span class="track-heading">Track A</span>
-              <span class="track-heading">Track B</span>
-              <span class="track-heading">Workshop</span>
-            </div>
-            <ul class="agenda-list" id="day">
-              {day.items.map((item) => (
-                <li class={item.tracks ? "agenda-row has-tracks" : "agenda-row is-shared"}>
-                  <span class="agenda-time">{item.time}</span>
-                  {item.tracks ? (
-                    <>
-                      <div class="agenda-track-item">
-                        <span class="agenda-track-label">Track A</span>
-                        <span class="agenda-topic">{item.tracks.a.title}</span>
-                        {item.tracks.a.speaker && (
-                          <span class="agenda-speaker">{item.tracks.a.speaker}</span>
-                        )}
-                      </div>
-                      <div class="agenda-track-item">
-                        <span class="agenda-track-label">Track B</span>
-                        <span class="agenda-topic">{item.tracks.b.title}</span>
-                        {item.tracks.b.speaker && (
-                          <span class="agenda-speaker">{item.tracks.b.speaker}</span>
-                        )}
-                      </div>
-                      <div class="agenda-track-item">
-                        <span class="agenda-track-label">Workshop</span>
-                        <span class="agenda-topic">{item.tracks.workshop.title}</span>
-                        {item.tracks.workshop.speaker && (
-                          <span class="agenda-speaker">{item.tracks.workshop.speaker}</span>
-                        )}
-                      </div>
+      <div class="section-shell">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>What We’ll Cover</h2>
+        </div>
 
-                    </>
-                  ) : (
-                    <div class="agenda-shared-item">
-                      <span class="agenda-track-label">Shared session</span>
-                      <span class="agenda-topic">{item.title}</span>
-                      {item.speaker && <span class="agenda-speaker">{item.speaker}</span>}
-                    </div>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-      <div style="text-align:center; margin-top: 2rem;">
-        <!-- <a class="button primary" href={ticketUrl}>See Full Agenda</a> -->
+        <div class="cover-grid">
+          {coverTopics.map((item) => (
+            <article class="surface-card cover-card">
+              <iconify-icon
+                icon={item.icon}
+                class={`card-icon ${
+                  item.title === "Identity"
+                    ? "identity"
+                    : item.title === "Monetization"
+                      ? "monetization"
+                      : item.title === "AI Agents"
+                        ? "ai"
+                        : ""
+                }`}></iconify-icon>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-
-  <section class="section" id="community">
+  <section class="section section-light" id="bring-problem">
     <div class="container">
-      <div class="section-title">
-        <h2>Who Should Attend</h2>
-        <p>Real insights and peer conversations, not expo noise.</p>
-      </div>
-      <div class="grid attend-grid" id="title">
-        {attendees.map((audience) => (
-          <div class="card">
-            <h4>{audience.title}</h4>
-            <p>{audience.description}</p>
+      <div class="section-shell bring-problem">
+        <div class="bring-problem-content">
+          <div class="small-pill">Working Session</div>
+          <h2>Bring your API, IAM, or platform problem.</h2>
+          <p>
+            This is not a passive conference. You’ll work on real decisions with people solving similar
+            challenges: platform design, API monetization, IAM for AI agents, and governance models.
+          </p>
+
+          <ul class="bring-problem-list">
+            <li>→ Get direct input from people running API platforms</li>
+            <li>→ Pressure-test your architecture and strategy</li>
+            <li>→ Leave with clearer decisions (not just notes)</li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href={ticketUrl} class="button primary">Get Your Ticket</a>
+            <a href={speakerUrl} class="button secondary alt">Bring an APIOps Problem</a>
           </div>
-        ))}
+          <p class="case-microcopy">Bring a real APIOps challenge: API, IAM, platform, or governance. No vendor talks.</p>
+        </div>
       </div>
     </div>
   </section>
 
-
-  <section class="section cta-band">
+  <section class="section agenda-showcase" id="agenda">
     <div class="container">
-      <h2>Join Finland’s APIOps Community</h2>
-      <p>Advance your API strategy and practices in a focused, collaborative setting.</p>
-      <div class="hero-actions" style="justify-content:center; margin-top: 1.5rem;">
+      <div class="section-shell">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>Agenda</h2>
+          <p>Where we go deep on <strong>actual API decisions.</strong></p>
+          <p>This is APIOps applied — not theory.</p>
+        </div>
+
+        <div class="agenda-days">
+          {agenda.map((day) => (
+            <article class="agenda-panel agenda-modern">
+              <div class="agenda-panel-header agenda-modern-header">
+                <h3>
+                  <span class={`day-pill agenda-day ${day.color === "orange" ? "day-pill-orange" : "day-pill-blue"}`}>
+                    {day.date}
+                  </span>
+                  {day.theme}
+                </h3>
+              </div>
+
+              <ul class="agenda-modern-list">
+                {day.items.map((item) => (
+                  <li class={`agenda-modern-row ${item.tracks ? "is-tracks" : "is-shared"}`}>
+                    <div class="agenda-modern-time">{item.time}</div>
+
+                    {item.tracks ? (
+                      <div class="agenda-modern-tracks">
+                        {["a", "b", "workshop"].map((key) => {
+                          const block = item.tracks[key];
+                          if (!block?.title && !block?.speaker) return null;
+
+                          return (
+                            <div class="agenda-modern-item">
+                              <div class="agenda-modern-meta">
+                                <span class="agenda-modern-track">
+                                  {key === "a" ? "Track A" : key === "b" ? "Track B" : "Workshop"}
+                                </span>
+                                {block.sessionType && (
+                                  <span class={`session-type session-type-${getSessionTone(block.sessionType)}`}>
+                                    {block.sessionType}
+                                  </span>
+                                )}
+                              </div>
+
+                              <div class="agenda-topic">{block.title}</div>
+                              {block.speaker && <div class="agenda-speaker">{block.speaker}</div>}
+                              {block.takeaway && <div class="agenda-takeaway">→ {block.takeaway}</div>}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div class="agenda-modern-item agenda-modern-item-shared">
+                        <div class="agenda-modern-meta">
+                          <span class="agenda-modern-track">Shared session</span>
+                          {getSharedSessionType(item) && (
+                            <span class={`session-type session-type-${getSessionTone(getSharedSessionType(item))}`}>
+                              {getSharedSessionType(item)}
+                            </span>
+                          )}
+                        </div>
+
+                        <div class="agenda-topic">{item.title}</div>
+                        {item.speaker && <div class="agenda-speaker">{item.speaker}</div>}
+                        {item.takeaway && <div class="agenda-takeaway">→ {item.takeaway}</div>}
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section speakers-showcase" id="speakers">
+    <div class="container">
+      <div class="section-shell">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>Speakers & Hosts</h2>
+          <p>Direct experience, not vendor marketing.</p>
+          <p>People doing APIOps in real organizations — not talking about it.</p>
+        </div>
+
+        <div class="grid speaker-grid speaker-grid-modern">
+          {speakers.map((speaker) => (
+            <article class="speaker-card-modern">
+              <div class="speaker-avatar speaker-avatar-modern">
+                {speaker.avatar ? (
+                  <img src={speaker.avatar} alt={`Portrait of ${speaker.name}`} loading="lazy" />
+                ) : (
+                  speaker.name
+                    .split(" ")
+                    .map((name) => name[0])
+                    .join("")
+                )}
+              </div>
+
+              <h3>{speaker.name}</h3>
+              <p class="speaker-role">{speaker.title}, {speaker.company}</p>
+              <p class="speaker-bio speaker-bio-clamped">{speaker.bio}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="section-cta-row">
+          <a class="button primary" href={speakerUrl}>Bring an APIOps Problem</a>
+        </div>
+        <p class="case-microcopy center">Bring a real APIOps challenge: API, IAM, platform, or governance. No vendor talks.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sponsors-showcase" id="partners">
+    <div class="container">
+      <div class="section-shell">
+        <div class="sponsors-layout">
+          <div class="sponsors-copy">
+            <div class="section-title section-title-left section-title-compact">
+              <h2>Sponsors</h2>
+              <p>
+                APIOps Helsinki is supported by respected companies working with teams building real
+                <strong> API platforms.</strong>
+              </p>
+            </div>
+
+            <div class="sponsor-tier-group sponsor-tier-group-modern">
+              <span class="sponsor-tier-label">Featured</span>
+
+              <div class="sponsor-logo-grid">
+                {[...sponsors.gold, ...sponsors.silver, ...sponsors.community].map((sponsor) => (
+                  <div class="sponsor-logo-card sponsor-card">
+                    {sponsor.url ? (
+                      <a href={sponsor.url} target="_blank" rel="noreferrer">
+                        {sponsor.logo ? (
+                          <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                        ) : (
+                          <span class="sponsor-fallback-name">{sponsor.name}</span>
+                        )}
+                      </a>
+                    ) : sponsor.logo ? (
+                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                    ) : (
+                      <span class="sponsor-fallback-name">{sponsor.name}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <aside class="sponsor-cta-card">
+            <h3>Partner With Us, Too</h3>
+            <p>
+              Building API reliability, governance, and AI-ready platform capability matters in the next 1–2
+              years. Show your support in front of the right audience.
+            </p>
+
+            <div class="section-cta-row section-cta-row-left">
+              <a class="button secondary alt" href={partnerUrl}>Become a Sponsor</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band cta-section">
+    <div class="container">
+      <h2>Don’t attend to listen. Attend to figure things out.</h2>
+      <p>Bring an APIOps problem. Work through it with people solving similar challenges. Leave with clearer decisions.</p>
+      <div class="hero-actions cta-actions">
         <a class="button primary" href={ticketUrl}>Get Your Ticket</a>
-        <a class="button secondary" href={partnerUrl}>View Partnerships</a>
+        <a class="button secondary" href={speakerUrl}>Bring an APIOps Problem</a>
       </div>
     </div>
   </section>
@@ -416,8 +622,8 @@ const galleryImages = [
     <div class="container footer-grid">
       <div>
         <h4>APIOps Helsinki 2026</h4>
-        <p>Epicenter Helsinki · June 2-3, 2026</p>
-        <p>Organized by Osaango in partnership with APIdays.</p>
+        <p>Epicenter Helsinki · June 2–3, 2026</p>
+        <p>A working conference on API design, governance, and platform strategy.</p>
       </div>
       <div>
         <h4>Conference</h4>
@@ -427,7 +633,7 @@ const galleryImages = [
       </div>
       <div>
         <h4>Community</h4>
-        <a href="#community">Who Should Attend</a>
+        <a href="#who-for">Who Should Attend</a>
         <a href={partnerUrl}>Become a Partner</a>
       </div>
       <div>
