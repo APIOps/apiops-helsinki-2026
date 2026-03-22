@@ -1,10 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import highlights from "../data/highlights.json";
 import agenda from "../data/agenda.json";
 import speakers from "../data/speakers.json";
 import sponsors from "../data/sponsors.json";
-import site from "../data/site.json";
 
 const ticketUrl = "https://shop.osaango.com/category/apiops-helsinki-2026";
 const speakerUrl = "https://tally.so/r/LZW5kO";
@@ -72,12 +70,6 @@ const whyEventExists = [
     title: "Most API strategies weren’t built for this era",
     text: "You’ll need to rethink your approach before things break.",
   },
-];
-
-const highlightIcons = [
-  "material-symbols-light:layers-outline",
-  "material-symbols-light:hub-outline",
-  "material-symbols-light:gavel",
 ];
 
 const systemMap = [
@@ -206,7 +198,7 @@ function getSharedSessionType(item) {
     type="module"
     src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 
-  <header class="hero" style={`--hero-image: url('${site.hero.backgroundImage}')`}>
+  <header class="hero hero-clean">
     <div class="container hero-layout">
       <div class="hero-copy">
         <span class="hero-kicker">June 2–3, 2026 · Epicenter Helsinki</span>
@@ -298,27 +290,6 @@ function getSharedSessionType(item) {
               {notFor.map((item) => <li>{item}</li>)}
             </ul>
           </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-light" id="tracks">
-    <div class="container">
-      <div class="section-shell">
-        <div class="section-title">
-          <h2>Rapid Change Demands New Ideas</h2>
-        </div>
-
-        <div class="highlights-grid">
-          {highlights.map((item, index) => (
-            <article class="surface-card highlight-card">
-              <div class="small-pill">APIOps Focus</div>
-              <iconify-icon icon={highlightIcons[index]} class="card-icon highlight-icon"></iconify-icon>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </article>
-          ))}
         </div>
       </div>
     </div>
@@ -477,7 +448,7 @@ function getSharedSessionType(item) {
 
               <h3>{speaker.name}</h3>
               <p class="speaker-role">{speaker.title}, {speaker.company}</p>
-              <p class="speaker-bio">{speaker.bio}</p>
+              <p class="speaker-bio speaker-bio-clamped">{speaker.bio}</p>
             </article>
           ))}
         </div>
@@ -538,23 +509,6 @@ function getSharedSessionType(item) {
               <a class="button secondary alt" href={partnerUrl}>Become a Sponsor</a>
             </div>
           </aside>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-light" id="outcomes">
-    <div class="container">
-      <div class="section-shell">
-        <div class="section-title">
-          <h2>What people typically figure out here</h2>
-        </div>
-
-        <div class="highlights-grid outcomes-grid">
-          <div class="surface-card quote-card"><p>“Our API strategy doesn’t work for AI agents.”</p></div>
-          <div class="surface-card quote-card"><p>“We need to rethink IAM as a platform layer.”</p></div>
-          <div class="surface-card quote-card"><p>“We’ve been over-investing in the wrong abstractions.”</p></div>
-          <div class="surface-card quote-card"><p>“We finally understand how to monetize APIs.”</p></div>
         </div>
       </div>
     </div>

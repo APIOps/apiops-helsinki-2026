@@ -301,16 +301,13 @@ nav {
 }
 
 .hero {
-  --hero-image: none;
   position: relative;
   color: #fff;
   background:
-    linear-gradient(180deg, rgba(7, 13, 28, 0.95), rgba(7, 13, 28, 0.88)),
+    linear-gradient(180deg, rgba(7, 13, 28, 0.98), rgba(7, 13, 28, 0.94)),
     linear-gradient(90deg, rgba(111, 78, 246, 0.08), transparent 28%, transparent 72%, rgba(245, 158, 11, 0.08)),
-    radial-gradient(circle at top right, rgba(111, 78, 246, 0.16), transparent 42%),
-    var(--hero-image);
-  background-size: cover;
-  background-position: center;
+    radial-gradient(circle at top right, rgba(111, 78, 246, 0.12), transparent 42%),
+    linear-gradient(180deg, #0b1220, #091121);
   overflow: hidden;
 }
 
@@ -319,10 +316,10 @@ nav {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 64px 64px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), transparent 92%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95), transparent 94%);
   pointer-events: none;
 }
 
@@ -331,11 +328,11 @@ nav {
   z-index: 1;
   display: grid;
   gap: 2.5rem;
-  padding: 4.6rem 0 4.2rem;
+  padding: 4.8rem 0 4.4rem;
 }
 
 .hero-copy {
-  max-width: 620px;
+  max-width: 580px;
 }
 
 .hero-kicker {
@@ -362,8 +359,9 @@ nav {
 
 .hero p {
   color: #dbe4f0;
-  margin-bottom: 1rem;
-  font-size: 1.04rem;
+  margin-bottom: 0.9rem;
+  font-size: 1rem;
+  max-width: 54ch;
 }
 
 .hero-actions {
@@ -718,9 +716,9 @@ nav {
 .session-type {
   display: inline-flex;
   align-items: center;
-  padding: 0.22rem 0.58rem;
+  padding: 0.18rem 0.52rem;
   border-radius: 8px;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   line-height: 1;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -792,8 +790,8 @@ nav {
 .agenda-modern-row {
   display: grid;
   grid-template-columns: 72px 1fr;
-  gap: 1rem;
-  padding: 1rem 0;
+  gap: 0.9rem;
+  padding: 0.85rem 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -830,31 +828,33 @@ nav {
 }
 
 .agenda-modern-track {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--slate-light);
+  color: #8a94a6;
   font-weight: 700;
 }
 
 .agenda-topic {
   font-weight: 700;
   color: var(--navy);
-  line-height: 1.34;
-  font-size: 1.05rem;
+  line-height: 1.32;
+  font-size: 1rem;
   overflow-wrap: anywhere;
 }
 
 .agenda-speaker {
-  color: var(--slate-light);
-  font-size: 0.9rem;
+  color: #7a8798;
+  font-size: 0.83rem;
+  line-height: 1.4;
   overflow-wrap: anywhere;
 }
 
 .agenda-takeaway {
-  color: var(--blue);
-  font-size: 0.86rem;
-  font-weight: 600;
+  color: #5d78c8;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 .speakers-showcase {
@@ -863,7 +863,8 @@ nav {
 }
 
 .speaker-grid-modern {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
   position: relative;
   z-index: 1;
 }
@@ -872,7 +873,7 @@ nav {
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 1.4rem 1.2rem 1.25rem;
+  padding: 1.25rem 1rem 1.1rem;
   text-align: center;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
@@ -883,9 +884,9 @@ nav {
 }
 
 .speaker-avatar-modern {
-  width: 88px;
-  height: 88px;
-  margin: 0 auto 1rem;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 0.9rem;
   border-radius: 999px;
   overflow: hidden;
   background: #eef2f7;
@@ -904,22 +905,30 @@ nav {
 
 .speaker-card-modern h3 {
   color: var(--navy);
-  font-size: 1.15rem;
+  font-size: 1.08rem;
   line-height: 1.2;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .speaker-role {
   color: var(--slate);
-  font-weight: 500;
-  font-size: 0.95rem;
-  margin-bottom: 0.55rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.35;
+  margin-bottom: 0.45rem;
 }
 
 .speaker-bio {
   color: var(--slate-light);
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   line-height: 1.45;
+}
+
+.speaker-bio-clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .section-cta-row {
@@ -957,8 +966,8 @@ nav {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--slate-light);
-  font-weight: 700;
+  color: var(--navy);
+  font-weight: 800;
 }
 
 .sponsor-logo-grid {
@@ -997,8 +1006,8 @@ nav {
 }
 
 .sponsor-cta-card {
-  background: #fff;
-  border: 1px solid var(--border-strong);
+  background: linear-gradient(180deg, #ffffff, #fbfbfe);
+  border: 1px solid #d9dff0;
   border-radius: 18px;
   padding: 1.75rem;
   align-self: stretch;
