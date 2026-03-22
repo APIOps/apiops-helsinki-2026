@@ -251,8 +251,8 @@ function getSharedSessionType(item) {
         </div>
 
         <div class="why-grid">
-          {whyEventExists.map((item) => (
-            <article class="surface-card why-card">
+          {whyEventExists.map((item, index) => (
+            <article class={`surface-card why-card ${index >= 2 ? "surface-card-soft" : ""}`}>
               <iconify-icon icon={item.icon} class="card-icon"></iconify-icon>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
@@ -311,7 +311,7 @@ function getSharedSessionType(item) {
 
           <div class="format-cards">
             {formatBlocks.map((item) => (
-              <article class="surface-card format-card">
+              <article class={`surface-card format-card surface-card-accent-${item.tone}`}>
                 <div class="format-card-top">
                   <iconify-icon icon={item.icon} class="card-icon"></iconify-icon>
                   <span class={`session-type session-type-${item.tone}`}>{item.tag}</span>
@@ -337,7 +337,17 @@ function getSharedSessionType(item) {
         <div class="cover-grid">
           {coverTopics.map((item) => (
             <article class="surface-card cover-card">
-              <iconify-icon icon={item.icon} class="card-icon"></iconify-icon>
+              <iconify-icon
+                icon={item.icon}
+                class={`card-icon ${
+                  item.title === "Identity"
+                    ? "identity"
+                    : item.title === "Monetization"
+                      ? "monetization"
+                      : item.title === "AI Agents"
+                        ? "ai"
+                        : ""
+                }`}></iconify-icon>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
             </article>
@@ -357,10 +367,10 @@ function getSharedSessionType(item) {
 
         <div class="agenda-days">
           {agenda.map((day) => (
-            <article class="agenda-panel">
+            <article class="agenda-panel agenda-modern">
               <div class="agenda-panel-header">
                 <h3>
-                  <span class={`day-pill ${day.color === "orange" ? "day-pill-orange" : "day-pill-blue"}`}>
+                  <span class={`day-pill agenda-day ${day.color === "orange" ? "day-pill-orange" : "day-pill-blue"}`}>
                     {day.date}
                   </span>
                   {day.theme}
@@ -478,7 +488,7 @@ function getSharedSessionType(item) {
 
               <div class="sponsor-logo-grid">
                 {[...sponsors.gold, ...sponsors.silver, ...sponsors.community].map((sponsor) => (
-                  <div class="sponsor-logo-card">
+                  <div class="sponsor-logo-card sponsor-card">
                     {sponsor.url ? (
                       <a href={sponsor.url} target="_blank" rel="noreferrer">
                         {sponsor.logo ? (

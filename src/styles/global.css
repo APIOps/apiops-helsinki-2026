@@ -62,7 +62,7 @@ iconify-icon {
 }
 
 .section-light {
-  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  background: #f6f8fc;
 }
 
 .section-soft {
@@ -72,9 +72,10 @@ iconify-icon {
 }
 
 .section-shell {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.96));
-  border: 1px solid var(--border);
-  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid #e6ebf3;
+  border-radius: 18px;
+  backdrop-filter: blur(4px);
   padding: 2rem;
   position: relative;
 }
@@ -84,7 +85,7 @@ iconify-icon {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  border-radius: 24px;
+  border-radius: 18px;
   background:
     linear-gradient(90deg, transparent 0 79%, rgba(15, 23, 42, 0.04) 79%, transparent 80%),
     linear-gradient(0deg, transparent 0 88%, rgba(15, 23, 42, 0.04) 88%, transparent 89%);
@@ -188,7 +189,7 @@ iconify-icon {
 .surface-card,
 .card {
   background: #fff;
-  border: 1px solid var(--border);
+  border: 1px solid #e3e8f2;
   border-radius: 16px;
   padding: 1.35rem;
   position: relative;
@@ -199,7 +200,39 @@ iconify-icon {
 .card-icon {
   font-size: 1.4rem;
   line-height: 1;
-  color: var(--navy);
+  color: var(--blue);
+}
+
+.card-icon.identity {
+  color: #7c3aed;
+}
+
+.card-icon.monetization {
+  color: #f59e0b;
+}
+
+.card-icon.ai {
+  color: #2563eb;
+}
+
+.surface-card-soft {
+  background: linear-gradient(180deg, #ffffff, #f8faff);
+  border: 1px solid #dbe3f3;
+}
+
+.surface-card-accent-blue {
+  background: linear-gradient(180deg, #f8fbff, #eef4ff);
+  border: 1px solid #cfe0ff;
+}
+
+.surface-card-accent-purple {
+  background: linear-gradient(180deg, #fbf9ff, #f3efff);
+  border: 1px solid #e0d7ff;
+}
+
+.surface-card-accent-orange {
+  background: linear-gradient(180deg, #fffaf5, #fff1e6);
+  border: 1px solid #ffd9b3;
 }
 
 .arrow-line {
@@ -713,6 +746,11 @@ nav {
   background: var(--blue);
 }
 
+.agenda-day {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
 .session-type {
   display: inline-flex;
   align-items: center;
@@ -768,6 +806,11 @@ nav {
   border: 1px solid var(--border-strong);
   border-radius: 18px;
   overflow: hidden;
+}
+
+.agenda-modern {
+  background: linear-gradient(180deg, #ffffff, #f9fbff);
+  border: 1px solid #dfe6f3;
 }
 
 .agenda-panel-header {
@@ -986,6 +1029,11 @@ nav {
   border-radius: 14px;
 }
 
+.sponsor-card {
+  background: #ffffff;
+  border: 1px solid #e3e8f2;
+}
+
 .sponsor-logo-card a {
   display: grid;
   place-items: center;
@@ -1006,8 +1054,8 @@ nav {
 }
 
 .sponsor-cta-card {
-  background: linear-gradient(180deg, #ffffff, #fbfbfe);
-  border: 1px solid #d9dff0;
+  background: linear-gradient(180deg, #ffffff, #f3f6ff);
+  border: 1px solid #d9e2ff;
   border-radius: 18px;
   padding: 1.75rem;
   align-self: stretch;
