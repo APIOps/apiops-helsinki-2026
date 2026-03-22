@@ -72,16 +72,6 @@ const whyEventExists = [
   },
 ];
 
-const systemMap = [
-  { title: "Identity", icon: "material-symbols-light:badge-outline" },
-  { title: "Access", icon: "material-symbols-light:lock-outline" },
-  { title: "Contracts", icon: "material-symbols-light:rule-outline" },
-  { title: "APIs", icon: "material-symbols-light:api", featured: true },
-  { title: "AI Agents", icon: "material-symbols-light:smart-toy-outline" },
-  { title: "Platforms", icon: "material-symbols-light:deployed-code-outline" },
-  { title: "Business", icon: "material-symbols-light:business-center-outline" },
-];
-
 const coverTopics = [
   {
     title: "Strategy",
@@ -212,6 +202,9 @@ function getSharedSessionType(item) {
           This is not a passive event. You’ll challenge assumptions, bring real problems, and leave with
           clearer decisions.
         </p>
+        <p class="hero-audience-line">
+          For API platform leaders, architects, IAM owners, and product teams navigating AI-driven change.
+        </p>
 
         <div class="hero-actions">
           <a class="button primary" href={ticketUrl}>Get Your Ticket</a>
@@ -229,16 +222,62 @@ function getSharedSessionType(item) {
         </div>
       </div>
 
-      <div class="hero-map" aria-hidden="true">
+      <div class="hero-map hero-map-rich" aria-hidden="true">
+        <div class="hero-map-grid"></div>
+        <div class="hero-map-panel"></div>
+
         <div class="hero-map-core">APIs</div>
-        {systemMap
-          .filter((item) => !item.featured)
-          .map((item) => (
-            <div class={`hero-map-node hero-map-node-${item.title.toLowerCase().replaceAll(" ", "-")}`}>
-              <iconify-icon icon={item.icon}></iconify-icon>
-              <span>{item.title}</span>
-            </div>
-          ))}
+
+        <div class="hero-map-node hero-map-node-identity">
+          <iconify-icon icon="material-symbols-light:badge-outline"></iconify-icon>
+          <span>Identity</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-access">
+          <iconify-icon icon="material-symbols-light:lock-outline"></iconify-icon>
+          <span>Access</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-contracts">
+          <iconify-icon icon="material-symbols-light:rule-outline"></iconify-icon>
+          <span>Contracts</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-ai-agents">
+          <iconify-icon icon="material-symbols-light:smart-toy-outline"></iconify-icon>
+          <span>AI Agents</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-platforms">
+          <iconify-icon icon="material-symbols-light:deployed-code-outline"></iconify-icon>
+          <span>Platforms</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-business">
+          <iconify-icon icon="material-symbols-light:business-center-outline"></iconify-icon>
+          <span>Business</span>
+        </div>
+
+        <div class="hero-mini-card hero-mini-card-lab">
+          <div class="hero-mini-card-tag hero-mini-card-tag-purple">LAB</div>
+          <h4>MCP, agents, workflows</h4>
+        </div>
+
+        <div class="hero-mini-card hero-mini-card-clinic">
+          <div class="hero-mini-card-tag hero-mini-card-tag-orange">CLINIC</div>
+          <h4>Bring your IAM challenge</h4>
+        </div>
+
+        <div class="hero-mini-card hero-mini-card-keynote">
+          <div class="hero-mini-card-tag hero-mini-card-tag-soft">KEYNOTE</div>
+          <p class="hero-mini-time">09:00</p>
+          <h4>From Ecosystem Design to API Strategy</h4>
+          <p class="hero-mini-meta">Shared session</p>
+        </div>
+
+        <span class="hero-glow hero-glow-1"></span>
+        <span class="hero-glow hero-glow-2"></span>
+        <span class="hero-glow hero-glow-3"></span>
       </div>
     </div>
   </header>
