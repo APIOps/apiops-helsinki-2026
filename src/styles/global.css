@@ -158,12 +158,14 @@ iconify-icon {
 }
 
 .button.primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, #b32edb, #8154f8);
   color: #fff;
+  border-color: rgba(84, 104, 248, 0.35);
+  box-shadow: 0 8px 18px rgba(84, 104, 248, 0.22);
 }
 
 .button.primary:hover {
-  background: var(--accent-dark);
+  background: linear-gradient(135deg, #6544f0 0%, #4b5ff2 100%);
 }
 
 .button.secondary {
@@ -419,6 +421,19 @@ nav {
   color: #b9c7df;
   font-size: 0.98rem;
   max-width: 56ch;
+}
+
+.hero-selection-line {
+  margin-top: 1rem;
+  color: #d7e0f0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.hero-problem-line {
+  margin-top: 0.35rem;
+  color: #9fb0c8;
+  font-size: 0.85rem;
 }
 
 .hero-actions {
@@ -945,28 +960,130 @@ nav {
   min-height: 160px;
 }
 
-.bring-problem {
+.problems-layout {
+  display: grid;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.problems-main-card {
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+  border: 1px solid #dbe3f3;
+  padding: 1.4rem;
+}
+
+.problems-list {
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.problems-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  color: var(--navy);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.problems-list li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.problems-side-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.problem-signal-card {
+  padding: 1.1rem 1.15rem;
+}
+
+.problem-signal-card h3 {
+  margin-top: 0.7rem;
+  margin-bottom: 0.35rem;
+  color: var(--navy);
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.problem-signal-card p {
+  color: var(--slate-light);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.bring-problem-shell {
   background: linear-gradient(180deg, #ffffff, #f6f9ff);
   border: 1px solid #dbe3f3;
 }
 
 .bring-problem-content {
-  max-width: 720px;
+  max-width: 760px;
+  position: relative;
+  z-index: 1;
 }
 
-.bring-problem h2 {
+.bring-problem-content h2 {
+  margin-top: 0.7rem;
   margin-bottom: 0.6rem;
+  color: var(--navy);
+  font-size: clamp(1.9rem, 2.6vw, 2.6rem);
+  line-height: 1.08;
+}
+
+.bring-problem-lead {
+  color: var(--navy);
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.bring-problem-content p {
+  color: var(--slate);
+  max-width: 62ch;
 }
 
 .bring-problem-list {
   list-style: none;
   margin: 1rem 0 1.2rem;
-  color: var(--slate);
-  font-size: 0.95rem;
+  display: grid;
+  gap: 0.55rem;
 }
 
 .bring-problem-list li {
-  margin-bottom: 0.4rem;
+  position: relative;
+  padding-left: 1.15rem;
+  color: var(--slate);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.bring-problem-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.bring-problem-actions {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 1.1rem;
+}
+
+.bring-problem-footnote {
+  margin-top: 0.9rem;
+  font-size: 0.84rem;
+  color: var(--slate-light);
 }
 
 .case-microcopy {
@@ -1432,6 +1549,17 @@ nav {
   }
 }
 
+@media (min-width: 900px) {
+  .problems-layout {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: start;
+  }
+
+  .problems-side-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 979px) {
   .hero-map-rich {
     display: none;
@@ -1513,6 +1641,15 @@ nav {
   }
 
   .cta-actions .button {
+    width: 100%;
+  }
+
+  .bring-problem-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bring-problem-actions .button {
     width: 100%;
   }
 }

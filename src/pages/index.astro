@@ -22,6 +22,33 @@ const notFor = [
   "Don’t have real API challenges to solve",
 ];
 
+const apiopsProblems = [
+  "Our IAM model doesn’t work for AI agents",
+  "Our API platform adoption is stalled",
+  "Governance is slowing teams down",
+  "We don’t know how to structure APIs as products",
+  "We can’t connect API usage to business value",
+  "Our APIs weren’t designed for agent-driven usage",
+];
+
+const problemSignals = [
+  {
+    title: "For platform owners",
+    body: "Operating model, ownership, governance, and business value are unclear.",
+    icon: "material-symbols-light:layers-outline",
+  },
+  {
+    title: "For architects",
+    body: "Identity, contracts, lifecycle, and platform boundaries aren’t holding up.",
+    icon: "material-symbols-light:account-tree-outline",
+  },
+  {
+    title: "For senior engineers",
+    body: "MCP, agent integrations, reliability, and API behavior break under real usage.",
+    icon: "material-symbols-light:code-blocks-outline",
+  },
+];
+
 const formatBlocks = [
   {
     title: "Clinic",
@@ -216,6 +243,12 @@ function getSharedSessionType(item) {
             <span>Apiable</span>
           </div>
         </div>
+        <p class="hero-selection-line">
+          We’re selecting ~10–15 teams to work on real API platform challenges.
+        </p>
+        <p class="hero-problem-line">
+          Typical problems: IAM for agents · platform adoption · governance · monetization
+        </p>
       </div>
 
       <div class="hero-map hero-map-rich" aria-hidden="true">
@@ -293,6 +326,37 @@ function getSharedSessionType(item) {
               <p>{item.text}</p>
             </article>
           ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light" id="apiops-problems">
+    <div class="container">
+      <div class="section-shell">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>What kind of APIOps problems?</h2>
+          <p>We’re not looking for talks. We’re looking for real problems.</p>
+        </div>
+
+        <div class="problems-layout">
+          <div class="surface-card problems-main-card">
+            <ul class="problems-list">
+              {apiopsProblems.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="problems-side-grid">
+            {problemSignals.map((item) => (
+              <article class="surface-card problem-signal-card">
+                <iconify-icon icon={item.icon} class="card-icon"></iconify-icon>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -406,28 +470,34 @@ function getSharedSessionType(item) {
     </div>
   </section>
 
-  <section class="section section-light" id="bring-problem">
+  <section class="section section-soft" id="bring-problem">
     <div class="container">
-      <div class="section-shell bring-problem">
+      <div class="section-shell bring-problem-shell">
         <div class="bring-problem-content">
           <div class="small-pill">Working Session</div>
-          <h2>Bring your API, IAM, or platform problem.</h2>
+          <h2>Bring a Real APIOps Problem</h2>
+          <p class="bring-problem-lead">
+            This is not a passive conference. You’ll work on real APIOps decisions with people solving similar
+            challenges.
+          </p>
           <p>
-            This is not a passive conference. You’ll work on real decisions with people solving similar
-            challenges: platform design, API monetization, IAM for AI agents, and governance models.
+            Bring a problem around APIs, IAM, platform design, or governance — and get direct input from
+            practitioners.
           </p>
 
           <ul class="bring-problem-list">
-            <li>→ Get direct input from people running API platforms</li>
-            <li>→ Pressure-test your architecture and strategy</li>
-            <li>→ Leave with clearer decisions (not just notes)</li>
+            <li>Get direct input from people running API platforms</li>
+            <li>Pressure-test your architecture and strategy</li>
+            <li>Leave with clearer decisions, not just notes</li>
           </ul>
 
-          <div class="hero-actions">
-            <a href={ticketUrl} class="button primary">Get Your Ticket</a>
-            <a href={speakerUrl} class="button secondary alt">Bring an APIOps Problem</a>
+          <div class="bring-problem-actions">
+            <a class="button primary" href={ticketUrl}>Get Your Ticket</a>
+            <a class="button secondary alt" href={speakerUrl}>Bring an APIOps Problem</a>
           </div>
-          <p class="case-microcopy">Bring a real APIOps challenge: API, IAM, platform, or governance. No sales pitches.</p>
+          <p class="bring-problem-footnote">
+            No vendor talks. No generic presentations.
+          </p>
         </div>
       </div>
     </div>
@@ -542,7 +612,7 @@ function getSharedSessionType(item) {
         </div>
 
         <div class="section-cta-row">
-          <a class="button primary" href={speakerUrl}>Bring an APIOps Problem</a>
+          <a class="button primary" href={speakerUrl}>Contribute a Problem or Experience</a>
         </div>
         <p class="case-microcopy center">Bring a real APIOps challenge: API, IAM, platform, or governance. No vendor talks.</p>
       </div>
@@ -606,7 +676,10 @@ function getSharedSessionType(item) {
   <section class="section cta-band cta-section">
     <div class="container">
       <h2>Don’t attend to listen. Attend to figure things out.</h2>
-      <p>Bring an APIOps problem. Work through it with people solving similar challenges. Leave with clearer decisions.</p>
+      <p>
+        Bring a real APIOps problem. Work through it with people solving similar challenges. Leave with decisions you
+        can act on.
+      </p>
       <div class="hero-actions cta-actions">
         <a class="button primary" href={ticketUrl}>Get Your Ticket</a>
         <a class="button secondary" href={speakerUrl}>Bring an APIOps Problem</a>
