@@ -887,6 +887,15 @@ nav {
   margin-bottom: 1.2rem;
 }
 
+.format-kicker {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--slate-light);
+  margin-bottom: 0.45rem;
+  font-weight: 700;
+}
+
 .format-signals {
   display: grid;
   gap: 0.85rem;
