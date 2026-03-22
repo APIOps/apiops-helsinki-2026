@@ -158,12 +158,14 @@ iconify-icon {
 }
 
 .button.primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, #6f4ef6 0%, #5468f8 100%);
   color: #fff;
+  border-color: rgba(84, 104, 248, 0.35);
+  box-shadow: 0 8px 18px rgba(84, 104, 248, 0.22);
 }
 
 .button.primary:hover {
-  background: var(--accent-dark);
+  background: linear-gradient(135deg, #6544f0 0%, #4b5ff2 100%);
 }
 
 .button.secondary {
