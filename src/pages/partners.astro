@@ -4,14 +4,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const partnerUrl = "https://calendly.com/marjukka-niinioja/30min";
 const ticketUrl = "https://shop.osaango.com/category/apiops-helsinki-2026";
 
-const audience = [
-  "API platform owners",
-  "Enterprise & solution architects",
-  "IAM and security leads",
-  "Senior engineers building API platforms",
-  "Product owners responsible for platform or API strategy",
-  "Selected vendor experts contributing to real discussions",
-];
 
 const participationModes = [
   {
@@ -77,7 +69,7 @@ const packages = [
   <nav>
     <div class="container nav-inner">
       <div class="brand">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <img class="brand-logo" src="/favicon-32x32.png" alt="APIOps Helsinki logo" />
         <strong>APIOps Helsinki</strong>
       </div>
 
@@ -235,17 +227,40 @@ const packages = [
         <div class="section-title section-title-left section-title-compact">
           <h2>Who you’ll meet</h2>
           <p>
-            This is not a high-volume expo audience. It’s a curated room of practitioners working on real API platform challenges.
+            You’ll meet practitioners actively working on API platform strategy, governance, IAM, and implementation.
           </p>
         </div>
 
-        <div class="partner-audience-grid">
-          {audience.map((item) => (
-            <article class="surface-card partner-audience-card">
-              <iconify-icon icon="material-symbols-light:arrow-outward-rounded" class="card-icon"></iconify-icon>
-              <p>{item}</p>
-            </article>
-          ))}
+        <div class="partner-audience-grid partner-audience-grid-dense">
+          <article class="surface-card partner-audience-card partner-audience-card-dense">
+            <h3>API platform owners</h3>
+            <p>Responsible for platform direction, lifecycle, and adoption.</p>
+          </article>
+
+          <article class="surface-card partner-audience-card partner-audience-card-dense">
+            <h3>Enterprise &amp; solution architects</h3>
+            <p>Shaping operating models, integrations, and governance.</p>
+          </article>
+
+          <article class="surface-card partner-audience-card partner-audience-card-dense">
+            <h3>IAM and security leads</h3>
+            <p>Defining access, control boundaries, and compliance.</p>
+          </article>
+
+          <article class="surface-card partner-audience-card partner-audience-card-dense">
+            <h3>Senior engineers building API platforms</h3>
+            <p>Working on runtime behavior, reliability, and developer experience.</p>
+          </article>
+
+          <article class="surface-card partner-audience-card partner-audience-card-dense">
+            <h3>Product owners for platform or API strategy</h3>
+            <p>Connecting platform decisions to business priorities.</p>
+          </article>
+
+          <article class="surface-card partner-audience-card partner-audience-card-dense">
+            <h3>Selected vendor experts</h3>
+            <p>Contributing implementation experience from real customer environments.</p>
+          </article>
         </div>
       </div>
     </div>
@@ -311,18 +326,20 @@ const packages = [
     </div>
   </section>
 
-  <section class="section section-light" id="not-for">
+  <section class="section section-light" id="partner-fit">
     <div class="container narrow">
-      <div class="partner-warning-card">
-        <h3>This is not a lead generation event.</h3>
-        <ul class="partner-bullets">
-          <li>No sales pitches</li>
-          <li>No attendee scraping</li>
-          <li>No booth theatre</li>
+      <div class="partner-fit-card">
+        <h3>Built for relevance, not volume</h3>
+
+        <ul class="partner-bullets partner-fit-list">
+          <li>Contribute experience, not pitches</li>
+          <li>Join practitioner discussions</li>
+          <li>Engage in a curated, high-signal environment</li>
         </ul>
+
         <p>
-          If you want pipeline, this is the wrong event.<br />
-          If you want relevance in API platform decisions, you should be here.
+          If you want to understand real API platform challenges and build trust with the people facing them,
+          this is the right room.
         </p>
       </div>
     </div>
