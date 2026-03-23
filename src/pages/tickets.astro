@@ -1,0 +1,156 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const storeLinks = {
+  earlyBird: "https://shop.osaango.com/product/apiops-helsinki-2026-early-bird-conference-ticket-limited",
+  regular: "https://shop.osaango.com/product/apiops-helsinki-2026-regular-conference-ticket",
+  academic: "https://shop.osaango.com/product/apiops-helsinki-2026-academic-unemployed-ticket",
+  caseApply: "https://tally.so/r/LZW5kO",
+  teamAccess: "mailto:marjukka@osaango.com",
+};
+---
+
+<BaseLayout title="Tickets — APIOps Helsinki 2026">
+  <nav>
+    <div class="container nav-inner">
+      <div class="brand">
+        <img class="brand-logo" src="/favicon-32x32.png" alt="APIOps Helsinki logo" />
+        <strong>APIOps Helsinki</strong>
+      </div>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="top-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="top-navigation">
+        <a href="/#agenda">Agenda</a>
+        <a href="/#format">Format</a>
+        <a href="/#speakers">Speakers</a>
+        <a href="/partners">Partners</a>
+        <a href="/tickets">Tickets</a>
+        <a class="button primary" href="#standard-tickets">Get Your Ticket</a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    navToggle?.addEventListener("click", () => {
+      navLinks?.classList.toggle("is-open");
+      const isExpanded = navLinks?.classList.contains("is-open") || false;
+      navToggle.setAttribute("aria-expanded", String(isExpanded));
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 720 && navLinks?.classList.contains("is-open")) {
+        navLinks.classList.remove("is-open");
+        navToggle?.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
+
+  <section class="hero hero-small">
+    <div class="container tickets-hero-content">
+      <h1>Choose how you participate</h1>
+      <p>This is a working event. Access depends on how you contribute.</p>
+    </div>
+  </section>
+
+  <section class="section section-light" id="standard-tickets">
+    <div class="container">
+      <div class="section-title">
+        <h2>Standard tickets</h2>
+        <p>Join as an attendee.</p>
+      </div>
+
+      <div class="ticket-grid">
+        <article class="ticket-card">
+          <h3>Early Bird</h3>
+          <p class="price">€495</p>
+          <p>Limited availability</p>
+          <a href={storeLinks.earlyBird} class="button primary">Buy ticket</a>
+        </article>
+
+        <article class="ticket-card">
+          <h3>Regular</h3>
+          <p class="price">€694</p>
+          <p>Full conference access</p>
+          <a href={storeLinks.regular} class="button primary">Buy ticket</a>
+        </article>
+
+        <article class="ticket-card">
+          <h3>Academic / Unemployed</h3>
+          <p class="price">€50</p>
+          <p>Limited availability</p>
+          <a href={storeLinks.academic} class="button secondary alt">Apply / Buy</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container narrow">
+      <div class="section-title">
+        <h2>Bring an APIOps problem</h2>
+        <p>Work on a real API, IAM, or platform challenge with peers.</p>
+      </div>
+
+      <div class="ticket-cta-card">
+        <p>Selected participants can join working sessions, clinics, and labs with real problems.</p>
+
+        <ul>
+          <li>Get feedback from experienced practitioners</li>
+          <li>Pressure-test your approach</li>
+          <li>Leave with concrete decisions</li>
+        </ul>
+
+        <a href={storeLinks.caseApply} class="button primary">Apply to bring a case</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container narrow">
+      <div class="section-title">
+        <h2>Team participation</h2>
+        <p>This event works best when you attend as a team.</p>
+      </div>
+
+      <div class="ticket-cta-card">
+        <p>Bring 2–4 people across platform, IAM, architecture, and product.</p>
+
+        <ul>
+          <li>Align faster across roles</li>
+          <li>Make decisions on the spot</li>
+          <li>Avoid “conference → no change”</li>
+        </ul>
+
+        <a href={storeLinks.teamAccess} class="button secondary alt">Ask about team access</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container narrow">
+      <div class="ticket-explainer">
+        <h3>How access works</h3>
+
+        <ul>
+          <li>Standard tickets are available to anyone</li>
+          <li>Some participants join through curated invitations</li>
+          <li>Working sessions are limited to ensure quality discussions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
