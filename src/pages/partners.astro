@@ -1,153 +1,325 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const partnerUrl = "https://calendly.com/marjukka-niinioja/30min";
+const ticketUrl = "https://shop.osaango.com/category/apiops-helsinki-2026";
+
+const audience = [
+  "API platform owners",
+  "Enterprise & solution architects",
+  "IAM and security leads",
+  "Senior engineers building API platforms",
+  "Product owners responsible for platform or API strategy",
+  "Selected vendor experts contributing to real discussions",
+];
+
+const participationModes = [
+  {
+    label: "CASE",
+    tone: "orange",
+    title: "Bring a customer case",
+    text: "Bring a real API, IAM, or platform challenge into the room.",
+    bullets: ["Get feedback from practitioners", "Pressure-test your approach"],
+  },
+  {
+    label: "CLINIC",
+    tone: "purple",
+    title: "Join clinics",
+    text: "Work directly with teams in structured problem-solving sessions.",
+    bullets: ["Direct interaction with decision-makers", "Understand real constraints"],
+  },
+  {
+    label: "EXPERIENCE",
+    tone: "blue",
+    title: "Contribute experience",
+    text: "Share what worked, what failed, and what changed in practice.",
+    bullets: ["No sales pitches", "Only real implementation insight"],
+  },
+];
+
+const packages = [
+  {
+    name: "Community Partner",
+    price: "€950",
+    featured: false,
+    bullets: ["Logo on website", "Logo on slides", "1 ticket", "Access to networking"],
+  },
+  {
+    name: "Silver Partner",
+    price: "€2900",
+    featured: false,
+    bullets: [
+      "Strong website visibility",
+      "Logo on slides",
+      "Booth / table",
+      "4 tickets",
+      "Short intro or demo opportunity",
+      "Participation in partner discussions",
+    ],
+  },
+  {
+    name: "Gold Partner",
+    price: "€6900",
+    featured: true,
+    bullets: [
+      "Strong visibility",
+      "Logo on slides and website",
+      "Booth / table",
+      "8 tickets",
+      "Reviewed speaking slot or curated contribution",
+      "Participation in clinics / deeper engagement",
+    ],
+  },
+];
 ---
 
 <BaseLayout title="Partner with APIOps Helsinki">
-  <section class="hero hero--dark">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <p class="eyebrow">PARTNER WITH APIOPS HELSINKI</p>
+  <nav>
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <strong>APIOps Helsinki</strong>
+      </div>
 
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="top-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="top-navigation">
+        <a href="/#agenda">Agenda</a>
+        <a href="/#format">Format</a>
+        <a href="/#speakers">Speakers</a>
+        <a href="/partners">Partners</a>
+        <a href="/#tickets">Tickets</a>
+        <a class="button primary" href={ticketUrl}>Get Your Ticket</a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    navToggle?.addEventListener("click", () => {
+      navLinks?.classList.toggle("is-open");
+      const isExpanded = navLinks?.classList.contains("is-open") || false;
+      navToggle.setAttribute("aria-expanded", String(isExpanded));
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 720 && navLinks?.classList.contains("is-open")) {
+        navLinks.classList.remove("is-open");
+        navToggle?.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
+  <script
+    is:inline
+    type="module"
+    src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <header class="hero partners-hero">
+    <div class="container hero-layout partners-hero-layout">
+      <div class="hero-copy">
+        <span class="hero-kicker">PARTNER WITH APIOPS HELSINKI</span>
         <h1>
           Stop sponsoring impressions.<br />
           Start participating in API decisions.
         </h1>
-
         <p class="hero-sub">
-          Join the room where API platform teams solve real problems —
-          with the people building them.
+          Join the room where API platform teams solve real problems — with the people building them.
         </p>
 
         <div class="hero-actions">
-          <a href="/contact" class="btn btn-primary">Become a Partner</a>
-          <a href="#participation" class="btn btn-secondary">How it works</a>
+          <a class="button primary" href={partnerUrl}>Become a Partner</a>
+          <a class="button secondary" href="#levels">See partnership levels</a>
         </div>
+
+        <p class="hero-selection-line">
+          ~200 curated participants from enterprises, vendors, and platform teams.
+        </p>
+        <p class="hero-problem-line">
+          We’re selecting a small number of partners.
+        </p>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="api-map">
-          <div class="node center">APIs</div>
-          <div class="node">Identity</div>
-          <div class="node">Access</div>
-          <div class="node">Contracts</div>
-          <div class="node">Agents</div>
-          <div class="node">Platforms</div>
+      <div class="hero-map hero-map-rich" aria-hidden="true">
+        <div class="hero-map-grid"></div>
+        <div class="hero-map-panel"></div>
+
+        <div class="hero-map-core">APIs</div>
+
+        <div class="hero-map-node hero-map-node-identity">
+          <iconify-icon icon="material-symbols-light:badge-outline"></iconify-icon>
+          <span>Identity</span>
         </div>
+
+        <div class="hero-map-node hero-map-node-access">
+          <iconify-icon icon="material-symbols-light:lock-outline"></iconify-icon>
+          <span>Access</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-contracts">
+          <iconify-icon icon="material-symbols-light:rule-outline"></iconify-icon>
+          <span>Contracts</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-ai-agents">
+          <iconify-icon icon="material-symbols-light:smart-toy-outline"></iconify-icon>
+          <span>AI Agents</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-platforms">
+          <iconify-icon icon="material-symbols-light:deployed-code-outline"></iconify-icon>
+          <span>Platforms</span>
+        </div>
+
+        <div class="hero-map-node hero-map-node-business">
+          <iconify-icon icon="material-symbols-light:business-center-outline"></iconify-icon>
+          <span>Business</span>
+        </div>
+
+        <div class="hero-mini-card hero-mini-card-clinic">
+          <div class="hero-mini-card-tag hero-mini-card-tag-orange">CASE</div>
+          <h4>Bring a real customer problem</h4>
+        </div>
+
+        <div class="hero-mini-card hero-mini-card-lab">
+          <div class="hero-mini-card-tag hero-mini-card-tag-purple">CLINIC</div>
+          <h4>Join direct working sessions</h4>
+        </div>
+
+        <div class="hero-mini-card hero-mini-card-keynote">
+          <div class="hero-mini-card-tag hero-mini-card-tag-soft">TRUST</div>
+          <h4>Context, relevance, peer-level interaction</h4>
+          <p class="hero-mini-meta">Not a lead generation event</p>
+        </div>
+
+        <span class="hero-glow hero-glow-1"></span>
+        <span class="hero-glow hero-glow-2"></span>
+        <span class="hero-glow hero-glow-3"></span>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="section section--tight">
-    <div class="container three-col center-text">
-      <div>
-        <h3>Access</h3>
-        <p>Direct conversations with platform teams.</p>
-      </div>
-
-      <div>
-        <h3>Context</h3>
-        <p>Real API constraints, not slideware.</p>
-      </div>
-
-      <div>
-        <h3>Trust</h3>
-        <p>Peer-level interaction. No vendor theatre.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="participation" class="section">
+  <section class="section section-light section-partner-strip">
     <div class="container">
-      <h2>How partners participate</h2>
-      <p class="section-sub">
-        You don’t sponsor visibility. You participate in solving problems.
-      </p>
-
-      <div class="card-grid three">
-        <div class="card card--feature">
-          <h3>Bring a customer case</h3>
-          <p>
-            Present real API, IAM, or platform challenges.
-          </p>
-          <ul>
-            <li>Get feedback from practitioners</li>
-            <li>Pressure-test your approach</li>
-          </ul>
+      <div class="partner-strip">
+        <div>
+          <h3>Access</h3>
+          <p>Direct conversations with platform teams.</p>
         </div>
-
-        <div class="card card--feature">
-          <h3>Join clinics</h3>
-          <p>
-            Work hands-on with teams in structured sessions.
-          </p>
-          <ul>
-            <li>Direct interaction with decision-makers</li>
-            <li>Understand real constraints</li>
-          </ul>
+        <div>
+          <h3>Context</h3>
+          <p>Real API constraints, not slideware.</p>
         </div>
-
-        <div class="card card--feature">
-          <h3>Contribute experience</h3>
-          <p>
-            Share what works (and what doesn’t).
-          </p>
-          <ul>
-            <li>No pitches</li>
-            <li>Only real implementation insight</li>
-          </ul>
+        <div>
+          <h3>Trust</h3>
+          <p>Peer-level interaction. No vendor theatre.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--muted">
+  <section class="section section-light" id="who-youll-meet">
     <div class="container">
-      <h2>Partnership levels</h2>
-      <p class="section-sub">
-        Packages define how deeply you engage — not how loud your logo is.
-      </p>
-
-      <div class="card-grid three">
-        <div class="card">
-          <h3>Supporter</h3>
-          <ul>
-            <li>Logo visibility</li>
-            <li>Access to event</li>
-          </ul>
+      <div class="section-shell">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>Who you’ll meet</h2>
+          <p>
+            This is not a high-volume expo audience. It’s a curated room of practitioners working on real API platform challenges.
+          </p>
         </div>
 
-        <div class="card card--highlight">
-          <h3>Partner</h3>
-          <ul>
-            <li>Bring a case</li>
-            <li>Join clinics</li>
-            <li>Community participation</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Leader</h3>
-          <ul>
-            <li>Keynote opportunity</li>
-            <li>Roundtable access</li>
-            <li>Strategic involvement</li>
-          </ul>
+        <div class="partner-audience-grid">
+          {audience.map((item) => (
+            <article class="surface-card partner-audience-card">
+              <iconify-icon icon="material-symbols-light:arrow-outward-rounded" class="card-icon"></iconify-icon>
+              <p>{item}</p>
+            </article>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-light" id="participation">
+    <div class="container">
+      <div class="section-shell">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>How partners participate</h2>
+          <p>You don’t sponsor visibility. You participate in solving problems.</p>
+        </div>
+
+        <div class="partner-participation-grid">
+          {participationModes.map((item) => (
+            <article class="surface-card partner-mode-card">
+              <div class="partner-mode-head">
+                <span class={`session-type session-type-${item.tone}`}>{item.label}</span>
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <ul class="partner-bullets">
+                {item.bullets.map((bullet) => (
+                  <li>{bullet}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="levels">
+    <div class="container">
+      <div class="section-shell">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>Partnership levels</h2>
+          <p>Partnership is about participation. The levels below define how deeply you engage.</p>
+        </div>
+
+        <div class="partner-levels-grid">
+          {packages.map((item) => (
+            <article class={`surface-card partner-level-card ${item.featured ? "partner-level-card-featured" : ""}`}>
+              <div class="partner-level-top">
+                <h3>{item.name}</h3>
+                <div class="partner-price">{item.price}</div>
+              </div>
+
+              <ul class="partner-bullets">
+                {item.bullets.map((bullet) => (
+                  <li>{bullet}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+        <div class="partner-addons-note">
+          <strong>Optional add-ons:</strong> coffee, lunch, badge, or lanyard sponsorships. Confirm final pricing separately before publishing, since earlier materials contained conflicting add-on amounts.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light" id="not-for">
     <div class="container narrow">
-      <div class="callout">
+      <div class="partner-warning-card">
         <h3>This is not a lead generation event.</h3>
-
-        <ul>
+        <ul class="partner-bullets">
           <li>No sales pitches</li>
           <li>No attendee scraping</li>
           <li>No booth theatre</li>
         </ul>
-
         <p>
           If you want pipeline, this is the wrong event.<br />
           If you want relevance in API platform decisions, you should be here.
@@ -156,13 +328,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <section class="section section--dark">
-    <div class="container center-text">
+  <section class="section cta-band partner-cta-band">
+    <div class="container">
       <h2>Join the room where API decisions are made.</h2>
-
-      <div class="cta-actions">
-        <a href="/contact" class="btn btn-primary">Become a Partner</a>
-        <a href="/agenda" class="btn btn-secondary">See the agenda</a>
+      <div class="hero-actions cta-actions">
+        <a class="button primary" href={partnerUrl}>Become a Partner</a>
+        <a class="button secondary" href="/#agenda">See the agenda</a>
       </div>
     </div>
   </section>
