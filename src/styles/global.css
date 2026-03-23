@@ -2169,6 +2169,25 @@ nav {
   gap: 0.75rem;
 }
 
+
+.ticket-card-bookmarked,
+.ticket-cta-card-bookmarked {
+  position: relative;
+  overflow: hidden;
+}
+
+.ticket-card-bookmarked::after,
+.ticket-cta-card-bookmarked::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 2.5rem 2.5rem 0;
+  border-color: transparent #f28c28 transparent transparent;
+}
 .ticket-card h3 {
   font-size: 1.2rem;
   margin: 0;
