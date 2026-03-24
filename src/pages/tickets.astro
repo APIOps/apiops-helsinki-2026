@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import sponsors from "../data/sponsors.json";
 
 const storeLinks = {
   earlyBird: "https://shop.osaango.com/product/apiops-helsinki-2026-early-bird-conference-ticket-limited",
@@ -35,7 +36,7 @@ const storeLinks = {
         <a href="/#speakers">Speakers</a>
         <a href="/partners">Partners</a>
         <a href="/tickets">Tickets</a>
-        <a class="button primary" href="#standard-tickets">Get Your Ticket</a>
+        <a class="button primary" href="#standard-tickets">Register</a>
       </div>
     </div>
   </nav>
@@ -62,6 +63,22 @@ const storeLinks = {
     <div class="container tickets-hero-content">
       <h1>Choose how you participate</h1>
       <p>This is a working event. Access depends on how you contribute.</p>
+    </div>
+  </section>
+
+  
+  <section class="section section-light">
+    <div class="container narrow">
+      <div class="ticket-explainer">
+        <h3>How access works</h3>
+
+        <ul>
+          <li>Standard tickets are available to anyone</li>
+          <li>Some participants join through curated invitations</li>
+          <li>Working sessions are limited to ensure quality discussions</li>
+          <li>Partner organizations may have special access opportunities</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -100,7 +117,7 @@ const storeLinks = {
   <section class="section section-light">
     <div class="container narrow">
       <div class="section-title">
-        <h2>Bring an APIOps problem</h2>
+        <h2>Earn a free ticket - Bring an APIOps problem</h2>
         <p>Work on a real API, IAM, or platform challenge with peers.</p>
       </div>
 
@@ -121,7 +138,7 @@ const storeLinks = {
   <section class="section section-light">
     <div class="container narrow">
       <div class="section-title">
-        <h2>Team participation</h2>
+        <h2>Team participation - special pricing</h2>
         <p>This event works best when you attend as a cross-functional team.</p>
       </div>
 
@@ -148,17 +165,62 @@ const storeLinks = {
     </div>
   </section>
 
-  <section class="section section-light">
-    <div class="container narrow">
-      <div class="ticket-explainer">
-        <h3>How access works</h3>
 
-        <ul>
-          <li>Standard tickets are available to anyone</li>
-          <li>Some participants join through curated invitations</li>
-          <li>Working sessions are limited to ensure quality discussions</li>
-        </ul>
+  
+  <section class="section sponsors-showcase" id="partners">
+    <div class="container">
+      <div class="section-shell">
+        <div class="sponsors-layout">
+          <div class="sponsors-copy">
+            <div class="section-title section-title-left section-title-compact">
+              <h2>Partners</h2>
+              <p>
+                APIOps Helsinki is supported by respected companies working with teams building real
+                <strong> API platforms.</strong>
+              </p>
+            </div>
+
+            <div class="sponsor-tier-group sponsor-tier-group-modern">
+              <span class="sponsor-tier-label">Featured</span>
+
+              <div class="sponsor-logo-grid">
+                {[...sponsors.gold, ...sponsors.silver, ...sponsors.community].map((sponsor) => (
+                  <div class="sponsor-logo-card sponsor-card">
+                    {sponsor.url ? (
+                      <a href={sponsor.url} target="_blank" rel="noreferrer">
+                        {sponsor.logo ? (
+                          <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                        ) : (
+                          <span class="sponsor-fallback-name">{sponsor.name}</span>
+                        )}
+                      </a>
+                    ) : sponsor.logo ? (
+                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                    ) : (
+                      <span class="sponsor-fallback-name">{sponsor.name}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <aside class="sponsor-cta-card">
+            <h3>Partner With Us, Too</h3>
+            <p>
+              Building API reliability, governance, and AI-ready platform capability matters in the next 1–2
+              years. Show your support in front of the right audience.
+            </p>
+
+            <div class="section-cta-row section-cta-row-left">
+              <a class="button secondary alt" href="/partners">Become a Partner</a>
+            </div>
+          </aside>
+        </div>
       </div>
     </div>
   </section>
+  
+  
+  
 </BaseLayout>
