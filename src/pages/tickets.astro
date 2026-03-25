@@ -3,9 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import sponsors from "../data/sponsors.json";
 
 const storeLinks = {
-  earlyBird: "https://shop.osaango.com/product/apiops-helsinki-2026-early-bird-conference-ticket-limited",
-  regular: "https://shop.osaango.com/product/apiops-helsinki-2026-regular-conference-ticket",
-  academic: "https://shop.osaango.com/product/apiops-helsinki-2026-academic-unemployed-ticket",
+  earlyBird: "https://www.eventbrite.com/e/apiops-helsinki-2026-tickets-1985901765640",
+  regular: "https://www.eventbrite.com/e/apiops-helsinki-2026-tickets-1985901765640",
+  academic: "https://www.eventbrite.com/e/apiops-helsinki-2026-tickets-1985901765640",
   caseApply: "https://tally.so/r/Zjl5ey",
 };
 ---
@@ -91,7 +91,7 @@ const storeLinks = {
 
       <div class="ticket-grid">
         <article class="ticket-card ticket-card-bookmarked">
-          <h3>Early Bird</h3>
+          <h3>Early Bird - until Apr 30</h3>
           <p class="price">€495</p>
           <p>Limited availability</p>
           <a href={storeLinks.earlyBird} class="button primary">Buy ticket</a>
@@ -99,7 +99,7 @@ const storeLinks = {
 
         <article class="ticket-card">
           <h3>Regular</h3>
-          <p class="price">€694</p>
+          <p class="price">€694 or 2 for 1 until May 30th</p>
           <p>Full conference access</p>
           <a href={storeLinks.regular} class="button primary">Buy ticket</a>
         </article>
