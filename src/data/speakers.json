@@ -75,5 +75,12 @@
     "title": "CEO",
     "company": "TPP Validation",
     "bio": "Implementing MCP and agent-integration patterns for enterprise API teams."
+  },
+  {
+    "name": "Katerina Kairo",
+    "avatar": "/images/speakers/katerina-kairo.jpg",
+    "title": "Senior Consultant",
+    "company": "Sogeti",
+    "bio": "Helping organizations at the intersection of software development, quality engineering, AI and automation."
   }
 ]
