@@ -19,18 +19,22 @@
       },
       {
         "time": "13:30",
-        "title": "Keynote",
-        "speaker": "TBD",
-        "takeaway": ""
+         "title": "APIOps in 20 Minutes (Orientation)",
+         "speaker": "Marjukka Niinioja, Founding Partner @Osaango",
+         "speakerId": "marjukka-niinioja",
+         "takeaway": "Get a clear starting point for APIOps—what to implement first and what to ignore to move faster."
+      },
+      {
+        "time": "13:50",
+        "title": "Strech Break - move to tracks"
       },
       {
         "time": "14:00",
         "tracks": {
           "a": {
-            "title": "APIOps in 20 Minutes (Orientation)",
-            "speaker": "Marjukka Niinioja, Founding Partner @Osaango",
-            "speakerId": "marjukka-niinioja",
-            "takeaway": "Get a clear starting point for APIOps—what to implement first and what to ignore to move faster."
+            "title": "Your API Strategy Is Not a Strategy (Yet)",
+            "speaker": "Contribute - Bring an APIOps Problem",
+            "takeaway": "Understand the difference between having APIs and having a strategic API approach."
           },
           "b": {
             "title": "AI-Native APIs: Designing Platforms for Agentic Systems",
@@ -39,9 +43,11 @@
             "takeaway": "Learn how to design APIs that AI agents can reliably use—not just human developers."
           },
           "workshop": {
-            "title": "Workshop",
-            "speaker": "Contribute - Bring an APIOps Problem",
-            "takeaway": "Clarify your biggest APIOps challenge and leave with a concrete direction to move forward."
+            "title": "Create an MCP Wrapper for Your API (50 min workshop)",
+            "speaker": "Jürgen Buchmann, CEO @TPP Validation",
+            "speakerId": "jurgen-buchmann",
+            "sessionType": "HANDS-ON",
+            "takeaway": "Walk away with a working MCP wrapper implementation pattern."
           }
         }
       },
@@ -61,10 +67,11 @@
             "takeaway": "Learn how to structure identity and access so your APIs can support AI-driven use cases securely."
           },
           "workshop": {
-            "title": "API Product Design Clinic - with APIOps Cycles and AI skills",
-            "speaker": "Marjukka Niinioja, Founding Partner @Osaango",
-            "speakerId": "marjukka-niinioja",
-            "sessionType": "CLINIC"
+            "title": "Workshop CONTINUES: Create an MCP Wrapper for Your API",
+            "speaker": "Jürgen Buchmann, CEO @TPP Validation",
+            "speakerId": "jurgen-buchmann",
+            "sessionType": "HANDS-ON",
+            "takeaway": "Walk away with a working MCP wrapper implementation pattern."
           }
         }
       },
@@ -90,8 +97,11 @@
             "takeaway": "Why identity becomes the control layer for AI-driven systems."
           },
           "workshop": {
-            "title": "Workshop",
-            "speaker": "TBD"
+            "title": "Design Your APIOps Operating Model (50 min clinic, come when you can, leave when you must)",
+            "speaker": "Marjukka Niinioja, Founding Partner @Osaango & APIOps Helsinki Conference Organizer",
+            "speakerId": "marjukka-niinioja",
+            "sessionType": "CLINIC",
+            "takeaway": "Define roles, responsibilities, and decision points for your API platform—so execution doesn’t stall."
           }
         }
       },
@@ -100,7 +110,7 @@
         "tracks": {
           "a": {
             "title": "API Platform for AI-Ready Infrastructure",
-            "speaker": "TBD"
+            "speaker": "Contribute - Bring an APIOps Problem"
           },
           "b": {
             "title": "From API Gateways to AI Gateways: The Next Platform Layer",
@@ -109,11 +119,11 @@
             "takeaway": "Understand what needs to change in your gateway layer to support AI agents and new traffic patterns."
           },
           "workshop": {
-            "title": "Hands-On: Create an MCP Wrapper for Your API",
-            "speaker": "Jürgen Buchmann, CEO @TPP Validation",
-            "speakerId": "jurgen-buchmann",
-            "sessionType": "HANDS-ON",
-            "takeaway": "Walk away with a working MCP wrapper implementation pattern."
+            "title": "Clinic CONTINUES: Design Your APIOps Operating Model (come when you can, leave when you must)",
+            "speaker": "Marjukka Niinioja, Founding Partner @Osaango & APIOps Helsinki Conference Organizer",
+            "speakerId": "marjukka-niinioja",
+            "sessionType": "CLINIC",
+            "takeaway": " Continued: Define roles, responsibilities, and decision points for your API platform—so execution doesn’t stall."
           }
         }
       },
@@ -143,6 +153,13 @@
       },
       {
         "time": "09:00",
+        "title": "Day 2 Opening words",
+        "speaker": "Marjukka Niinioja, Founding Partner @Osaango & APIOps Helsinki Conference Organizer",
+        "speakerId": "marjukka-niinioja",
+        "takeaway": "Set the stage for a day of hands-on learning and community problem-solving."
+      },
+      {
+        "time": "09:15",
         "title": "Keynote: From Ecosystem Design to API Strategy",
         "speaker": "Hanna Sillanpää, Director and Head of Product Line Management @ASSA ABLOY Opening Solutions",
         "speakerId": "hanna-sillanpaa",
@@ -150,7 +167,11 @@
         "takeaway": "Connect ecosystem decisions directly to platform execution."
       },
       {
-        "time": "09:30",
+        "time": "09:45",
+        "title": "Stretch Break & Move to Tracks"
+      },
+      {
+        "time": "10:00",
         "tracks": {
           "a": {
             "title": "FIDA, Open Finance and the Future of API Ecosystems",
@@ -159,20 +180,23 @@
             "takeaway": "FIDA turns APIs from integration points into regulated products — and most platforms aren’t ready for that shift."
           },
           "b": {
-            "title": "Agentic Workflows: APIs as the Interface for AI Systems",
-            "speaker": "Contribute - Bring an APIOps Problem",
-            "takeaway": "Learn how to structure APIs to support multi-step, autonomous workflows instead of single requests."
+            "title": "Beyond OpenAPI: Workflows That AI Agents Can Actually Execute",
+            "speaker": "Frank Kilcommins, Head of Enterprise Architecture @Jentic, BGB member @OpenAPI Initiative",
+            "speakerId": "frank-kilcommins",
+            "takeaway": "Covers Arazzo 1.1 and why workflows matter for agent execution."
           },
           "workshop": {
-            "title": "Workshop",
-            "speaker": "TBD",
-            "takeaway": "Turn a real problem into a practical experiment you can run immediately after the event."
+            "title": "API Product Design Clinic - with APIOps Cycles and AI skills (60 min clinic, come when you can, leave when you must)",
+            "speaker": "Marjukka Niinioja, Founding Partner @Osaango",
+            "speakerId": "marjukka-niinioja",
+            "sessionType": "CLINIC",
+            "takeaway": "Get feedback on your API design, governance and roadmap from an APIOps perspective, with a focus on AI-driven use cases."
           }
         }
       },
       {
         "time": "11:00",
-        "title": "Break"
+        "title": "Networking Break & Move to Tracks"
       },
       {
         "time": "11:30",
@@ -189,7 +213,7 @@
             "takeaway": "Understand how to design cloud platforms that support API ecosystems without unnecessary complexity."
           },
           "workshop": {
-            "title": "API Monetization Clinic",
+            "title": "API Monetization Clinic  (60 min clinic, come when you can, leave when you must)",
             "speaker": "Allan Knabe, CEO @Apiable",
             "speakerId": "allan-knabe",
             "sessionType": "CLINIC",
@@ -212,15 +236,17 @@
             "takeaway": "Learn how to give AI agents access to APIs while maintaining control, security, and auditability."
           },
           "workshop": {
-            "title": "Workshop",
-            "speaker": "Contribute - Bring an APIOps Problem",
-            "takeaway": "Work through a real blocker with peers and leave with a practical way forward."
+            "title": "Clinic CONTINUES: API Monetization Clinic (come when you can, leave when you must)",
+            "speaker": "Allan Knabe, CEO @Apiable",
+            "speakerId": "allan-knabe",
+            "sessionType": "CLINIC",
+            "takeaway": "Continued: Pressure-test your monetization model with practitioners."
           }
         }
       },
       {
         "time": "12:30",
-        "title": "Lunch"
+        "title": "Lunch & Networking"
       },
       {
         "time": "13:30",
@@ -234,36 +260,36 @@
           },
           "b": {
             "title": "AI Lab – APIs, MCP and Agent Integrations",
-            "speaker": "Coaches: Merja Kajava, Founder @Aavista; Jürgen Buchmann, CEO @TPP Validation",
-            "speakerIds": ["merja-kajava", "jurgen-buchmann"],
+            "speaker": "Coaches: Frank Kilcommins, Head of Enterprise Architecture @Jentic, BGB member @OpenAPI Initiative; Merja Kajava, Founder @Aavista; Jürgen Buchmann, CEO @TPP Validation",
+            "speakerIds": ["frank-kilcommins", "merja-kajava", "jurgen-buchmann"],
             "sessionType": "HANDS-ON",
-            "takeaway": "Test agent integrations and identify what breaks in practice."
+            "takeaway": "Test agent integrations and identify what breaks in practice. OpenAPI & AI readiness: hands-on scoring and improvement using agent skills combined with open-source frameworks and tooling."
           },
           "workshop": {
             "title": "",
             "speaker": "",
-            "takeaway": "Define the concrete changes you will make in your API or platform strategy within the next 30 days."
+            "takeaway": ""
           }
         }
       },
       {
         "time": "14:30",
-        "title": "Break"
+        "title": "Coffee Break & Networking"
       },
       {
         "time": "15:00",
         "tracks": {
           "a": {
             "title": "Guided Unconference – API Strategy and Platform Leadership",
-            "speaker": "Facilitators: Merja Kajava, Founder @Aavista; Allan Knabe, CEO @Apiable",
-            "speakerIds": ["merja-kajava", "allan-knabe"],
+            "speaker": "Facilitators:  Marjukka Niinioja, Founding Partner @Osaango;Merja Kajava, Founder @Aavista; Allan Knabe, CEO @Apiable",
+            "speakerIds": ["marjukka-niinioja", "merja-kajava", "allan-knabe"],
             "sessionType": "CLINIC",
             "takeaway": "Surface priority decisions with peers facing the same constraints."
           },
           "b": {
             "title": "Guided Unconference – AI Agents and Developer Platforms",
-            "speaker": "Facilitators: Jürgen Buchmann, CEO @TPP Validation; Marjukka Niinioja, Founding Partner @Osaango",
-            "speakerIds": ["jurgen-buchmann", "marjukka-niinioja"],
+            "speaker": "Facilitators: Jürgen Buchmann, CEO @TPP Validation; Frank Kilcommins, Head of Enterprise Architecture @Jentic, BGB member @OpenAPI Initiative",
+            "speakerIds": ["jurgen-buchmann", "frank-kilcommins"],
             "sessionType": "CLINIC",
             "takeaway": "Debate real trade-offs for agent-ready developer platforms."
           },
@@ -276,9 +302,11 @@
       },
       {
         "time": "16:00",
-        "title": "Closing Keynote – APIOps in the Age of AI Agents",
-        "speaker": "TBD",
-        "takeaway": "Understand what to prioritize next as APIs, platforms, and AI agents converge—and how to act on it."
+        "title": "APIOps in the Age of AI Agents: What to Prioritize Next",
+        "speaker": "Frank Kilcommins, Head of Enterprise Architecture @Jentic, BGB member @OpenAPI Initiative",
+        "speakerId": "frank-kilcommins",
+        "sessionType": "KEYNOTE",
+        "takeaway": "Strategic roadmap for APIOps teams as agents become dominant API consumers."
       }
     ]
   }
