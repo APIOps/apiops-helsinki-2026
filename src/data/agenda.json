@@ -260,15 +260,17 @@
           },
           "b": {
             "title": "AI Lab – APIs, MCP and Agent Integrations",
-            "speaker": "Coaches: Frank Kilcommins, Head of Enterprise Architecture @Jentic, BGB member @OpenAPI Initiative; Merja Kajava, Founder @Aavista; Jürgen Buchmann, CEO @TPP Validation",
-            "speakerIds": ["frank-kilcommins", "merja-kajava", "jurgen-buchmann"],
+            "speaker": "Coaches: Merja Kajava, Founder @Aavista; Jürgen Buchmann, CEO @TPP Validation",
+            "speakerIds": ["merja-kajava", "jurgen-buchmann"],
             "sessionType": "HANDS-ON",
-            "takeaway": "Test agent integrations and identify what breaks in practice. OpenAPI & AI readiness: hands-on scoring and improvement using agent skills combined with open-source frameworks and tooling."
+            "takeaway": "Test agent integrations and identify what breaks in practice. "
           },
           "workshop": {
-            "title": "",
-            "speaker": "",
-            "takeaway": ""
+            "title": "You May Have OpenAPI, But Is It AI-Ready?",
+            "speaker": "Frank Kilcommins, Head of Enterprise Architecture @Jentic",
+            "speakerId": "frank-kilcommins",
+            "sessionType": "HANDS-ON",
+            "takeaway": "Hands-on scoring and improvement using agent skills combined with open-source frameworks and tooling."
           }
         }
       },
