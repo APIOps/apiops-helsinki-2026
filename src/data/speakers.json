@@ -89,5 +89,12 @@
     "title": "Head of Enterprise Architecture",
     "company": "Jentic",
     "bio": "Leading API and AI integration initiatives. Business Governance Board member at the OpenAPI Initiative."
+  },
+  {
+    "name": "Hugo Guerrero",
+    "avatar": "/images/speakers/hugo-guerrero.jpg",
+    "title": "Head of Technical Marketing",
+    "company": "Kong",
+    "bio": "Driving MCP and API gateway innovation at Kong. Governance Board Member at AsyncAPI Initiative." 
   }
 ]

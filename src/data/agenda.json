@@ -208,9 +208,10 @@
             "takeaway": "Test automation patterns and tools to keep up with the speed of API- and AI-driven development."
           },
           "b": {
-            "title": "Cloud Platforms for API Ecosystems",
-            "speaker": "Contribute - Bring an APIOps Problem",
-            "takeaway": "Understand how to design cloud platforms that support API ecosystems without unnecessary complexity."
+            "title": "Scaling MCP: Avoiding Context Bloat with Gateway & Registry Patterns",
+            "speaker": "Hugo Guerrero, Head of Technical Marketing @Kong & Governance Board Member @AsyncAPI Initiative",
+            "speakerId": "hugo-guerrero",
+            "takeaway": "Why MCP implementations hit scaling limits—and how to dynamically route and inject only the tools relevant to each request to maintain performance and reasoning quality."
           },
           "workshop": {
             "title": "API Monetization Clinic  (60 min clinic, come when you can, leave when you must)",
