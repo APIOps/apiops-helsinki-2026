@@ -110,8 +110,8 @@
         "tracks": {
           "a": {
             "title": "TBA",
-            "speaker": "Axway (Speaker TBA)",
-            "speakerId": "axway"
+            "speaker": "Tim Sevenich, Principal Pre-Sales Architect @Axway",
+            "speakerId": "tim-sevenich"
           },
           "b": {
             "title": "From API Gateways to AI Gateways: The Next Platform Layer",
