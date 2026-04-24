@@ -76,6 +76,17 @@ const formatBlocks = [
   },
 ];
 
+const sponsorTiers = [
+  { key: "gold", label: "Gold Sponsors", className: "gold", sponsors: sponsors.gold },
+  { key: "silver", label: "Silver Sponsors", className: "silver", sponsors: sponsors.silver },
+  {
+    key: "community",
+    label: "Community Sponsors",
+    className: "community",
+    sponsors: sponsors.community,
+  },
+];
+
 const whyEventExists = [
   {
     icon: "material-symbols-light:smart-toy-outline",
@@ -440,6 +451,120 @@ function getSharedSessionType(item) {
     </div>
   </section>
 
+
+   <section class="section speakers-showcase" id="speakers">
+    <div class="container">
+      <div class="section-shell">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>Speakers & Hosts</h2>
+          <p>Direct experience, not vendor marketing.</p>
+          <p>People doing APIOps in real organizations — not talking about it.</p>
+        </div>
+
+        <div class="grid speaker-grid speaker-grid-modern">
+          {speakers.map((speaker) => (
+            <article class="speaker-card-modern">
+              <div class="speaker-avatar speaker-avatar-modern">
+                {speaker.avatar ? (
+                  <img src={speaker.avatar} alt={`Portrait of ${speaker.name}`} loading="lazy" />
+                ) : (
+                  speaker.name
+                    .split(" ")
+                    .map((name) => name[0])
+                    .join("")
+                )}
+              </div>
+
+              <h3>{speaker.name}</h3>
+              <p class="speaker-role">{speaker.title}, {speaker.company}</p>
+              <p class="speaker-bio speaker-bio-clamped">{speaker.bio}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="section-cta-row">
+          <a class="button primary" href={speakerUrl}>Contribute a Problem or Experience</a>
+        </div>
+        <p class="case-microcopy center">Bring a real APIOps challenge: API, IAM, platform, or governance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sponsors-showcase" id="partners">
+    <div class="container">
+      <div class="section-shell">
+        <div class="sponsors-layout">
+          <div class="sponsors-copy">
+            <div class="section-title section-title-left section-title-compact">
+              <h2>Partners</h2>
+              <p>
+                APIOps Helsinki is supported by respected companies working with teams building real
+                <strong> API platforms.</strong>
+              </p>
+            </div>
+
+            {sponsorTiers.map((tier) => (
+              <div class="sponsor-tier-group sponsor-tier-group-modern">
+                <span class="sponsor-tier-label">{tier.label}</span>
+
+                <div class={`sponsor-logo-grid sponsor-logo-grid-${tier.className}`}>
+                  {tier.sponsors.map((sponsor) => (
+                    <article class={`sponsor-logo-card sponsor-card sponsor-card-${tier.className}`}>
+                      {sponsor.url ? (
+                        <a
+                          class="sponsor-card-link"
+                          href={sponsor.url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {sponsor.logo ? (
+                            <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                          ) : (
+                            <span class="sponsor-fallback-name">{sponsor.name}</span>
+                          )}
+                          <div class="sponsor-card-copy">
+                            {sponsor.description && (
+                              <p class="sponsor-card-description">{sponsor.description}</p>
+                            )}
+                          </div>
+                        </a>
+                      ) : (
+                        <>
+                          {sponsor.logo ? (
+                            <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                          ) : (
+                            <span class="sponsor-fallback-name">{sponsor.name}</span>
+                          )}
+                          <div class="sponsor-card-copy">
+                            {sponsor.description && (
+                              <p class="sponsor-card-description">{sponsor.description}</p>
+                            )}
+                          </div>
+                        </>
+                      )}
+                    </article>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <aside class="sponsor-cta-card">
+            <h3>Partner With Us, Too</h3>
+            <p>
+              Building API reliability, governance, and AI-ready platform capability matters in the next 1–2
+              years. Show your support in front of the right audience.
+            </p>
+
+            <div class="section-cta-row section-cta-row-left">
+              <a class="button secondary alt" href="/partners">Become a Partner</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-light section-system-map" id="program-narrative">
     <div class="container">
       <div class="section-shell">
@@ -576,98 +701,6 @@ function getSharedSessionType(item) {
               </ul>
             </article>
           ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section speakers-showcase" id="speakers">
-    <div class="container">
-      <div class="section-shell">
-        <div class="section-title section-title-left section-title-compact">
-          <h2>Speakers & Hosts</h2>
-          <p>Direct experience, not vendor marketing.</p>
-          <p>People doing APIOps in real organizations — not talking about it.</p>
-        </div>
-
-        <div class="grid speaker-grid speaker-grid-modern">
-          {speakers.map((speaker) => (
-            <article class="speaker-card-modern">
-              <div class="speaker-avatar speaker-avatar-modern">
-                {speaker.avatar ? (
-                  <img src={speaker.avatar} alt={`Portrait of ${speaker.name}`} loading="lazy" />
-                ) : (
-                  speaker.name
-                    .split(" ")
-                    .map((name) => name[0])
-                    .join("")
-                )}
-              </div>
-
-              <h3>{speaker.name}</h3>
-              <p class="speaker-role">{speaker.title}, {speaker.company}</p>
-              <p class="speaker-bio speaker-bio-clamped">{speaker.bio}</p>
-            </article>
-          ))}
-        </div>
-
-        <div class="section-cta-row">
-          <a class="button primary" href={speakerUrl}>Contribute a Problem or Experience</a>
-        </div>
-        <p class="case-microcopy center">Bring a real APIOps challenge: API, IAM, platform, or governance.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section sponsors-showcase" id="partners">
-    <div class="container">
-      <div class="section-shell">
-        <div class="sponsors-layout">
-          <div class="sponsors-copy">
-            <div class="section-title section-title-left section-title-compact">
-              <h2>Partners</h2>
-              <p>
-                APIOps Helsinki is supported by respected companies working with teams building real
-                <strong> API platforms.</strong>
-              </p>
-            </div>
-
-            <div class="sponsor-tier-group sponsor-tier-group-modern">
-              <span class="sponsor-tier-label">Featured</span>
-
-              <div class="sponsor-logo-grid">
-                {[...sponsors.gold, ...sponsors.silver, ...sponsors.community].map((sponsor) => (
-                  <div class="sponsor-logo-card sponsor-card">
-                    {sponsor.url ? (
-                      <a href={sponsor.url} target="_blank" rel="noreferrer">
-                        {sponsor.logo ? (
-                          <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                        ) : (
-                          <span class="sponsor-fallback-name">{sponsor.name}</span>
-                        )}
-                      </a>
-                    ) : sponsor.logo ? (
-                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                    ) : (
-                      <span class="sponsor-fallback-name">{sponsor.name}</span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <aside class="sponsor-cta-card">
-            <h3>Partner With Us, Too</h3>
-            <p>
-              Building API reliability, governance, and AI-ready platform capability matters in the next 1–2
-              years. Show your support in front of the right audience.
-            </p>
-
-            <div class="section-cta-row section-cta-row-left">
-              <a class="button secondary alt" href="/partners">Become a Partner</a>
-            </div>
-          </aside>
         </div>
       </div>
     </div>

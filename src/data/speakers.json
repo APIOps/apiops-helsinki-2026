@@ -96,5 +96,12 @@
     "title": "Head of Technical Marketing",
     "company": "Kong",
     "bio": "Driving MCP and API gateway innovation at Kong. Governance Board Member at AsyncAPI Initiative." 
+  },
+  {
+    "name": "Claire Barrett",
+    "avatar": "/images/speakers/claire-barrett.jpg",
+    "title": "Consultant and API Economist",
+    "company": "APIsFirst",
+    "bio": "Helping tech leaders and teams get strategies and API-related plans understood, agreed, and adopted without baffling or blindsiding people in the process."
   }
 ]

@@ -8,6 +8,17 @@ const storeLinks = {
   academic: "https://www.eventbrite.com/e/apiops-helsinki-2026-tickets-1985901765640",
   caseApply: "https://tally.so/r/Zjl5ey",
 };
+
+const sponsorTiers = [
+  { key: "gold", label: "Gold Sponsors", className: "gold", sponsors: sponsors.gold },
+  { key: "silver", label: "Silver Sponsors", className: "silver", sponsors: sponsors.silver },
+  {
+    key: "community",
+    label: "Community Sponsors",
+    className: "community",
+    sponsors: sponsors.community,
+  },
+];
 ---
 
 <BaseLayout title="Participation options — APIOps Helsinki 2026">
@@ -180,29 +191,50 @@ const storeLinks = {
               </p>
             </div>
 
-            <div class="sponsor-tier-group sponsor-tier-group-modern">
-              <span class="sponsor-tier-label">Featured</span>
+            {sponsorTiers.map((tier) => (
+              <div class="sponsor-tier-group sponsor-tier-group-modern">
+                <span class="sponsor-tier-label">{tier.label}</span>
 
-              <div class="sponsor-logo-grid">
-                {[...sponsors.gold, ...sponsors.silver, ...sponsors.community].map((sponsor) => (
-                  <div class="sponsor-logo-card sponsor-card">
-                    {sponsor.url ? (
-                      <a href={sponsor.url} target="_blank" rel="noreferrer">
-                        {sponsor.logo ? (
-                          <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                        ) : (
-                          <span class="sponsor-fallback-name">{sponsor.name}</span>
-                        )}
-                      </a>
-                    ) : sponsor.logo ? (
-                      <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-                    ) : (
-                      <span class="sponsor-fallback-name">{sponsor.name}</span>
-                    )}
-                  </div>
-                ))}
+                <div class={`sponsor-logo-grid sponsor-logo-grid-${tier.className}`}>
+                  {tier.sponsors.map((sponsor) => (
+                    <article class={`sponsor-logo-card sponsor-card sponsor-card-${tier.className}`}>
+                      {sponsor.url ? (
+                        <a
+                          class="sponsor-card-link"
+                          href={sponsor.url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {sponsor.logo ? (
+                            <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                          ) : (
+                            <span class="sponsor-fallback-name">{sponsor.name}</span>
+                          )}
+                          <div class="sponsor-card-copy">
+                            {sponsor.description && (
+                              <p class="sponsor-card-description">{sponsor.description}</p>
+                            )}
+                          </div>
+                        </a>
+                      ) : (
+                        <>
+                          {sponsor.logo ? (
+                            <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+                          ) : (
+                            <span class="sponsor-fallback-name">{sponsor.name}</span>
+                          )}
+                          <div class="sponsor-card-copy">
+                            {sponsor.description && (
+                              <p class="sponsor-card-description">{sponsor.description}</p>
+                            )}
+                          </div>
+                        </>
+                      )}
+                    </article>
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
 
           <aside class="sponsor-cta-card">

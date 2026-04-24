@@ -1,6 +1,14 @@
 {
   "gold": [
     {
+      "name": "Axway",
+      "logo": "/images/sponsors/axway-logo-dark-gray.svg",
+      "url": "https://www.axway.com",
+      "description": "Axway is a global software company specializing in API management, MFT, and B2B integration. Trusted by thousands of enterprises worldwide, we deliver proven solutions that enable secure, scalable, and reliable AI-ready ecosystems. "
+    }
+  ],
+  "silver": [
+    {
       "name": "Osaango",
       "logo": "/images/sponsors/osaango-black.svg",
       "url": "https://osaango.com",
@@ -11,17 +19,16 @@
       "logo": "/images/sponsors/apidays.jpg",
       "url": "https://www.apidays.global/",
       "description": "Global API strategy community connecting platform leaders and practitioners."
-    }
-  ],
-  "silver": [
+    },
     {
       "name": "Apiable",
       "logo": "/images/sponsors/apiable.svg",
       "url": "https://www.apiable.io/",
       "description": "API monetization platforms and commercial operating models."
-    }
+    } 
   ],
   "community": [
+
     {
       "name": "APIOps Cycles",
       "logo": "/images/sponsors/apiops-cycles-logo-dark.svg",

@@ -32,9 +32,10 @@
         "time": "14:00",
         "tracks": {
           "a": {
-            "title": "Your API Strategy Is Not a Strategy (Yet)",
-            "speaker": "Contribute - Bring an APIOps Problem",
-            "takeaway": "Understand the difference between having APIs and having a strategic API approach."
+            "title": "Your API Strategy Is Not Ready to Compete With AI Investments (Yet)",
+            "speaker": "Claire Barrett, Consultant and API Economist @APIsFirst",
+            "speakerId": "claire-barrett",
+            "takeaway": "Why most API strategies aren’t able to compete with funding with AI programs and what to do about it."
           },
           "b": {
             "title": "AI-Native APIs: Designing Platforms for Agentic Systems",
@@ -108,8 +109,9 @@
         "time": "15:45",
         "tracks": {
           "a": {
-            "title": "API Platform for AI-Ready Infrastructure",
-            "speaker": "Contribute - Bring an APIOps Problem"
+            "title": "TBA",
+            "speaker": "Axway (Speaker TBA)",
+            "speakerId": "axway"
           },
           "b": {
             "title": "From API Gateways to AI Gateways: The Next Platform Layer",
