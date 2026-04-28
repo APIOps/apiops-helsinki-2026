@@ -109,9 +109,10 @@
         "time": "15:45",
         "tracks": {
           "a": {
-            "title": "TBA",
+            "title": "Why AI Doesn’t Ship (Yet) — How enterprises move AI into production safely and confidently",
             "speaker": "Tim Sevenich, Principal Pre-Sales Architect @Axway",
-            "speakerId": "tim-sevenich"
+            "speakerId": "tim-sevenich",
+            "takeaway": "AI isn’t failing in enterprises—it’s stuck at the last mile; this talk shows how to cross it safely, compliantly, and at scale."
           },
           "b": {
             "title": "From API Gateways to AI Gateways: The Next Platform Layer",
