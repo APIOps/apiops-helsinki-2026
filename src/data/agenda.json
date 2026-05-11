@@ -42,13 +42,6 @@
             "speaker": "Mike Jackson, Founder & CTO @Narranor",
             "speakerId": "mike-jackson",
             "takeaway": "Learn how to design APIs that AI agents can reliably use—not just human developers."
-          },
-          "workshop": {
-            "title": "Create an MCP Wrapper for Your API (50 min workshop)",
-            "speaker": "Jürgen Buchmann, CEO @TPP Validation",
-            "speakerId": "jurgen-buchmann",
-            "sessionType": "HANDS-ON",
-            "takeaway": "Walk away with a working MCP wrapper implementation pattern."
           }
         }
       },
@@ -66,13 +59,6 @@
             "speaker": "Tomas Bolin, API Customer Success Manager @If Insurance",
             "speakerId": "tomas-bolin",
             "takeaway": "Learn how to structure identity and access so your APIs can support AI-driven use cases securely."
-          },
-          "workshop": {
-            "title": "Workshop CONTINUES: Create an MCP Wrapper for Your API",
-            "speaker": "Jürgen Buchmann, CEO @TPP Validation",
-            "speakerId": "jurgen-buchmann",
-            "sessionType": "HANDS-ON",
-            "takeaway": "Walk away with a working MCP wrapper implementation pattern."
           }
         }
       },
@@ -132,8 +118,8 @@
       {
         "time": "16:10",
         "title": "Panel - Are APIs Still the Platform, or Are AI Agents Replacing Them?",
-        "speaker": "Moderator: Oscar Santolalla, Senior Project Manager @Spinverse",
-        "speakerIds": ["oscar-santolalla"],
+        "speaker": "Moderator: Oscar Santolalla, Senior Project Manager @Spinverse, Panelists: Tim Sevenich, Principal Pre-Sales Architect @Axway; Claire Barrett, Consultant and API Economist @APIsFirst; Frank Kilcommins, Head of Enterprise Architecture @Jentic, BGB member @OpenAPI Initiative",
+        "speakerIds": ["oscar-santolalla", "tim-sevenich", "claire-barrett", "frank-kilcommins"],
         "sessionType": "PANEL",
         "takeaway": "Compare competing platform bets before locking your roadmap."
       },
@@ -188,11 +174,11 @@
             "takeaway": "Covers Arazzo 1.1 and why workflows matter for agent execution."
           },
           "workshop": {
-            "title": "API Product Design Clinic - with APIOps Cycles and AI skills (60 min clinic, come when you can, leave when you must)",
-            "speaker": "Marjukka Niinioja, Founding Partner @Osaango",
-            "speakerId": "marjukka-niinioja",
-            "sessionType": "CLINIC",
-            "takeaway": "Get feedback on your API design, governance and roadmap from an APIOps perspective, with a focus on AI-driven use cases."
+            "title": "Create an MCP Wrapper for Your API (50 min workshop)",
+            "speaker": "Jürgen Buchmann, CEO @TPP Validation",
+            "speakerId": "jurgen-buchmann",
+            "sessionType": "HANDS-ON",
+            "takeaway": "Walk away with a working MCP wrapper implementation pattern."
           }
         }
       },
