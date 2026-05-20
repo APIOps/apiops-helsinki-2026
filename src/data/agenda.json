@@ -15,14 +15,16 @@
         "speaker": "Valtter Rajakannas, Lead Product Owner @OP Financial Group",
         "speakerId": "valtter-rajakannas",
         "sessionType": "KEYNOTE",
-        "takeaway": "How product-platform shifts unlock AI-ready delivery at enterprise scale."
+        "takeaway": "How product-platform shifts unlock AI-ready delivery at enterprise scale.",
+        "abstract": "OP Financial Group is Finland's largest financial services group, serving over 4 million customers. In this keynote, Valtter shares how OP is transforming its legacy API platform into an AI-driven product platform to meet evolving customer needs and competitive pressures. He covers the strategic decisions, architectural changes, and organizational shifts required to move from a traditional API gateway to a modern platform that supports AI agents and new consumption patterns. Attendees will learn how to architect their platforms for the future of AI-driven ecosystems while maintaining reliability and security."
       },
       {
         "time": "13:30",
          "title": "APIOps in 20 Minutes (Orientation)",
          "speaker": "Marjukka Niinioja, Founding Partner @Osaango",
          "speakerId": "marjukka-niinioja",
-         "takeaway": "Get a clear starting point for APIOps—what to implement first and what to ignore to move faster."
+         "takeaway": "Get a clear starting point for APIOps—what to implement first and what to ignore to move faster.",
+         "abstract": "APIOps is a practical approach to managing APIs that focuses on continuous improvement and business outcomes. In this orientation session, Marjukka Niinioja breaks down the APIOps and the open APIOps Cycles framework into its essential components, providing a clear roadmap for teams new to APIOps or looking to refocus their efforts. She covers how to prioritize API governance, platform design, and operational practices to deliver value quickly without getting bogged down in unnecessary processes. Attendees will leave with a clear understanding of where to start and how to evolve their APIOps practice over time."
       },
       {
         "time": "13:50",
@@ -35,13 +37,15 @@
             "title": "Your API Strategy Is Not Ready to Compete With AI Investments (Yet)",
             "speaker": "Claire Barrett, Consultant and API Economist @APIsFirst",
             "speakerId": "claire-barrett",
-            "takeaway": "Why most API strategies aren’t able to compete with funding with AI programs and what to do about it."
+            "takeaway": "Why most API strategies aren’t able to compete with funding with AI programs and what to do about it.",
+            "abstract": "Many organizations are struggling to align their API strategies with the growing investment in AI. In this session, Claire Barrett explores the gap between API and AI investments and provides actionable insights on how to bridge this divide."
           },
           "b": {
             "title": "AI-Native APIs: Designing Platforms for Agentic Systems",
             "speaker": "Mike Jackson, Founder & CTO @Narranor",
             "speakerId": "mike-jackson",
-            "takeaway": "Learn how to design APIs that AI agents can reliably use—not just human developers."
+            "takeaway": "Learn how to design APIs that AI agents can reliably use—not just human developers.",
+            "abstract": "They assume a human reading documentation. Agents don’t “read”—they execute. If your API requires interpretation, it breaks automation. This is the gap: We built APIs for developers. Now we expect machines to use them. At APIOps Helsinki, Mike Jackson is breaking down what *agent-ready APIs* actually require in practice. → Not theory. Design changes."
           }
         }
       },
@@ -52,13 +56,15 @@
             "title": "SaaS Lives – Value Shifts to the Workspace",
             "speaker": "Jürgen Buchmann, CEO @TPP Validation",
             "speakerId": "jurgen-buchmann",
-            "takeaway": "Understand how value is shifting beyond APIs—and how to reposition your platform accordingly."
+            "takeaway": "Understand how value is shifting beyond APIs—and how to reposition your platform accordingly.",
+            "abstract": "Value is moving to: → workflows → agents → user-facing workspaces. APIs are still critical—but increasingly invisible. If your strategy is “more APIs,” you might be optimizing the wrong layer. Jürgen Buchmann will challenge where API value actually lives now."
           },
           "b": {
             "title": "No Identity, No Agents: Why IAM Is the Foundation of AI-Driven API Ecosystems",
             "speaker": "Tomas Bolin, API Customer Success Manager @If Insurance",
             "speakerId": "tomas-bolin",
-            "takeaway": "Learn how to structure identity and access so your APIs can support AI-driven use cases securely."
+            "takeaway": "Learn how to structure identity and access so your APIs can support AI-driven use cases securely.",
+            "abstract": "Agents don’t just call APIs. They act. That means: - permissions - delegation - traceability. Most IAM setups weren’t designed for that. If identity is wrong, everything built on top is fragile. Tomas Bolin is unpacking what changes when APIs become entry points for autonomous systems."
           }
         }
       },
@@ -74,7 +80,8 @@
             "speaker": "Allan Knabe, CEO @Apiable",
             "speakerId": "allan-knabe",
             "sessionType": "CASE STUDY",
-            "takeaway": "How API platforms move from cost center to measurable business value."
+            "takeaway": "How API platforms move from cost center to measurable business value.",
+            "abstract": "Most API programs will never make a cent. Not because the tech is broken. Because nobody designed them as products. No pricing. No segmentation. No P&L owner. Just a pile of endpoints behind a Swagger page. The shift from cost center → revenue driver isn't a gateway upgrade. It's a product decision your engineering team can't make for you."
           },
           "b": {
             "title": "Identity-First APIs: IAM as the Real Platform",
@@ -98,13 +105,15 @@
             "title": "Why AI Doesn’t Ship (Yet) — How enterprises move AI into production safely and confidently",
             "speaker": "Tim Sevenich, Principal Pre-Sales Architect @Axway",
             "speakerId": "tim-sevenich",
-            "takeaway": "AI isn’t failing in enterprises—it’s stuck at the last mile; this talk shows how to cross it safely, compliantly, and at scale."
+            "takeaway": "AI isn’t failing in enterprises—it’s stuck at the last mile; this talk shows how to cross it safely, compliantly, and at scale.",
+            "abstract": "Everyone is talking about it, using it to some extend, personally as well as professionally. AI is everywhere these days. But for larger organizations, where it is not yet is: in production. Why is that? And how can you change that with confidence and while mitigating risks? Join this speech to learn how technology might help you leverage the agentic AI revolution while being secure, confident and compliant. Hear our insights into the market from countless conversations with leading customers and learn what might make you accelerate your AI initiatives and move them to production."
           },
           "b": {
             "title": "From API Gateways to AI Gateways: The Next Platform Layer",
             "speaker": "Dan Erez, Chief Architect @Aman",
             "speakerId": "dan-erez",
-            "takeaway": "Understand what needs to change in your gateway layer to support AI agents and new traffic patterns."
+            "takeaway": "Understand what needs to change in your gateway layer to support AI agents and new traffic patterns.",
+            "abstract": "Gateways were designed for: → predictable requests → human-driven usage. AI introduces: → bursty behavior → chained calls → non-deterministic patterns. That breaks assumptions. Dan Erez is exploring what an **AI gateway** actually needs to handle."
           },
           "workshop": {
             "title": "Clinic CONTINUES: Design Your APIOps Operating Model (come when you can, leave when you must)",
@@ -121,7 +130,8 @@
         "speaker": "Moderator: Oscar Santolalla, Senior Project Manager @Spinverse, Panelists: Tim Sevenich, Principal Pre-Sales Architect @Axway; Claire Barrett, Consultant and API Economist @APIsFirst; Frank Kilcommins, Head of Enterprise Architecture @Jentic, BGB member @OpenAPI Initiative",
         "speakerIds": ["oscar-santolalla", "tim-sevenich", "claire-barrett", "frank-kilcommins"],
         "sessionType": "PANEL",
-        "takeaway": "Compare competing platform bets before locking your roadmap."
+        "takeaway": "Compare competing platform bets before locking your roadmap.",
+        "abstract": "Two competing views emerging: 1) APIs remain the core abstraction 2) AI agents + identity become the real platform. Both can’t be true long term. At APIOps Helsinki, we’re putting this debate on stage. → Which direction are you betting on?"
       },
       {
         "time": "16:40",
@@ -217,7 +227,8 @@
             "title": "From Dark APIs to Governed Platforms",
             "speaker": "Thomas Lawrence, Head of Professional Services North EMEA @Kong",
             "speakerId": "thomas-lawrence",
-            "takeaway": "Turn undocumented, drifting APIs into a governed, continuously improving APIOps platform using AI-assisted discovery, GitOps automation, and scalable governance controls."
+            "takeaway": "Turn undocumented, drifting APIs into a governed, continuously improving APIOps platform using AI-assisted discovery, GitOps automation, and scalable governance controls.",
+            "abstract": "Most API teams are caught between two uncomfortable realities: APIs in production with no specs, no contracts and no visibility, or platforms where specs exist but governance is already drifting across federated teams. This talk tackles both. Act 1 covers how to discover, retrofit, and productise dark APIs using Kong, GitOps tooling, and AI-generated OpenAPI specs from traffic logs. Act 2 covers what breaks once you get there - standards drift, schema divergence, governance bottlenecks - and how automated linting and AI-assisted gap analysis close the loop. Two acts, two maturity stages, one continuous APIOps journey, with live demos throughout."
           },
           "b": {
             "title": "AI Agents and Secure API Access",

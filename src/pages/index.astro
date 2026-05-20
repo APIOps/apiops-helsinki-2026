@@ -171,6 +171,78 @@ function inferSessionType(title = "") {
 function getSharedSessionType(item) {
   return item.sessionType || inferSessionType(item.title || "");
 }
+
+function getSpeakerId(speaker) {
+  const avatarFile = speaker.avatar?.split("/").pop() || "";
+  return avatarFile.replace(/\.[^.]+$/, "");
+}
+
+const speakerById = new Map(speakers.map((speaker) => [getSpeakerId(speaker), speaker]));
+
+function getSessionSpeakerIds(session) {
+  if (session.speakerIds?.length) return session.speakerIds;
+  if (session.speakerId) return [session.speakerId];
+  return [];
+}
+
+function getSessionSpeakers(session) {
+  return getSessionSpeakerIds(session)
+    .map((id) => speakerById.get(id))
+    .filter(Boolean);
+}
+
+function getAgendaDetailId(dayIndex, itemIndex, key = "shared") {
+  return `agenda-${dayIndex}-${itemIndex}-${key}`;
+}
+
+function getSessionType(session) {
+  return session.sessionType || inferSessionType(session.title || "");
+}
+
+const agendaDetails = agenda.flatMap((day, dayIndex) =>
+  day.items.flatMap((item, itemIndex) => {
+    if (item.tracks) {
+      return ["a", "b", "workshop"]
+        .map((key) => {
+          const block = item.tracks[key];
+          if (!block?.title && !block?.speaker) return null;
+
+          return {
+            id: getAgendaDetailId(dayIndex, itemIndex, key),
+            day: day.day,
+            date: day.date,
+            theme: day.theme,
+            time: item.time,
+            track: key === "a" ? "Track A" : key === "b" ? "Track B" : "Workshop",
+            title: block.title,
+            speakerLine: block.speaker || "",
+            takeaway: block.takeaway || "",
+            abstract: block.abstract || "",
+            sessionType: getSessionType(block),
+            speakers: getSessionSpeakers(block),
+          };
+        })
+        .filter(Boolean);
+    }
+
+    return [
+      {
+        id: getAgendaDetailId(dayIndex, itemIndex),
+        day: day.day,
+        date: day.date,
+        theme: day.theme,
+        time: item.time,
+        track: "Shared session",
+        title: item.title,
+        speakerLine: item.speaker || "",
+        takeaway: item.takeaway || "",
+        abstract: item.abstract || "",
+        sessionType: getSharedSessionType(item),
+        speakers: getSessionSpeakers(item),
+      },
+    ];
+  })
+);
 ---
 
 <BaseLayout title="APIOps Helsinki Conference 2026">
@@ -464,7 +536,7 @@ function getSharedSessionType(item) {
 
         <div class="grid speaker-grid speaker-grid-modern">
           {speakers.map((speaker) => (
-            <article class="speaker-card-modern">
+            <article class={`speaker-card-modern ${speaker.longBio ? "speaker-card-expandable" : ""}`}>
               <div class="speaker-avatar speaker-avatar-modern">
                 {speaker.avatar ? (
                   <img src={speaker.avatar} alt={`Portrait of ${speaker.name}`} loading="lazy" />
@@ -479,9 +551,37 @@ function getSharedSessionType(item) {
               <h3>{speaker.name}</h3>
               <p class="speaker-role">{speaker.title}, {speaker.company}</p>
               <p class="speaker-bio speaker-bio-clamped">{speaker.bio}</p>
+              {speaker.longBio && (
+                <>
+                  <div class="speaker-long-bio" hidden>
+                    <p>{speaker.longBio}</p>
+                  </div>
+                  <button class="speaker-bio-toggle" type="button" aria-expanded="false">
+                    <span>Bio</span>
+                    <iconify-icon icon="material-symbols-light:expand-more"></iconify-icon>
+                  </button>
+                </>
+              )}
             </article>
           ))}
         </div>
+
+        <script>
+          document.querySelectorAll(".speaker-bio-toggle").forEach((button) => {
+            button.addEventListener("click", () => {
+              const card = button.closest(".speaker-card-modern");
+              const longBio = card?.querySelector(".speaker-long-bio");
+              const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+              button.setAttribute("aria-expanded", String(!isExpanded));
+              card?.classList.toggle("is-expanded", !isExpanded);
+
+              if (longBio instanceof HTMLElement) {
+                longBio.hidden = isExpanded;
+              }
+            });
+          });
+        </script>
 
         <div class="section-cta-row">
           <a class="button primary" href={speakerUrl}>Contribute a Problem or Experience</a>
@@ -639,7 +739,7 @@ function getSharedSessionType(item) {
         </div>
 
         <div class="agenda-days">
-          {agenda.map((day) => (
+          {agenda.map((day, dayIndex) => (
             <article class="agenda-panel agenda-modern">
               <div class="agenda-panel-header agenda-modern-header">
                 <h3>
@@ -651,7 +751,7 @@ function getSharedSessionType(item) {
               </div>
 
               <ul class="agenda-modern-list">
-                {day.items.map((item) => (
+                {day.items.map((item, itemIndex) => (
                   <li class={`agenda-modern-row ${item.tracks ? "is-tracks" : "is-shared"}`}>
                     <div class="agenda-modern-time">{item.time}</div>
 
@@ -660,9 +760,15 @@ function getSharedSessionType(item) {
                         {["a", "b", "workshop"].map((key) => {
                           const block = item.tracks[key];
                           if (!block?.title && !block?.speaker) return null;
+                          const sessionSpeakers = getSessionSpeakers(block);
 
                           return (
-                            <div class="agenda-modern-item">
+                            <button
+                              class="agenda-modern-item agenda-detail-trigger"
+                              type="button"
+                              data-agenda-id={getAgendaDetailId(dayIndex, itemIndex, key)}
+                              aria-haspopup="dialog"
+                            >
                               <div class="agenda-modern-meta">
                                 <span class="agenda-modern-track">
                                   {key === "a" ? "Track A" : key === "b" ? "Track B" : "Workshop"}
@@ -675,14 +781,29 @@ function getSharedSessionType(item) {
                               </div>
 
                               <div class="agenda-topic">{block.title}</div>
+                              {sessionSpeakers.length > 0 && (
+                                <div class="agenda-speaker-strip" aria-label="Speakers">
+                                  {sessionSpeakers.map((speaker) => (
+                                    <span class="agenda-speaker-chip">
+                                      {speaker.avatar && <img src={speaker.avatar} alt="" loading="lazy" />}
+                                      <span>{speaker.name}</span>
+                                    </span>
+                                  ))}
+                                </div>
+                              )}
                               {block.speaker && <div class="agenda-speaker">{block.speaker}</div>}
                               {block.takeaway && <div class="agenda-takeaway">→ {block.takeaway}</div>}
-                            </div>
+                            </button>
                           );
                         })}
                       </div>
                     ) : (
-                      <div class="agenda-modern-item agenda-modern-item-shared">
+                      <button
+                        class="agenda-modern-item agenda-modern-item-shared agenda-detail-trigger"
+                        type="button"
+                        data-agenda-id={getAgendaDetailId(dayIndex, itemIndex)}
+                        aria-haspopup="dialog"
+                      >
                         <div class="agenda-modern-meta">
                           <span class="agenda-modern-track">Shared session</span>
                           {getSharedSessionType(item) && (
@@ -693,9 +814,19 @@ function getSharedSessionType(item) {
                         </div>
 
                         <div class="agenda-topic">{item.title}</div>
+                        {getSessionSpeakers(item).length > 0 && (
+                          <div class="agenda-speaker-strip" aria-label="Speakers">
+                            {getSessionSpeakers(item).map((speaker) => (
+                              <span class="agenda-speaker-chip">
+                                {speaker.avatar && <img src={speaker.avatar} alt="" loading="lazy" />}
+                                <span>{speaker.name}</span>
+                              </span>
+                            ))}
+                          </div>
+                        )}
                         {item.speaker && <div class="agenda-speaker">{item.speaker}</div>}
                         {item.takeaway && <div class="agenda-takeaway">→ {item.takeaway}</div>}
-                      </div>
+                      </button>
                     )}
                   </li>
                 ))}
@@ -705,6 +836,90 @@ function getSharedSessionType(item) {
         </div>
       </div>
     </div>
+    <dialog class="agenda-dialog" id="agenda-dialog" aria-labelledby="agenda-dialog-title">
+      <div class="agenda-dialog-card">
+        <button class="agenda-dialog-close" type="button" aria-label="Close agenda details">
+          <iconify-icon icon="material-symbols-light:close"></iconify-icon>
+        </button>
+        <div class="agenda-dialog-meta" id="agenda-dialog-meta"></div>
+        <h3 id="agenda-dialog-title"></h3>
+        <p class="agenda-dialog-takeaway" id="agenda-dialog-takeaway"></p>
+        <div class="agenda-dialog-abstract" id="agenda-dialog-abstract"></div>
+        <div class="agenda-dialog-speakers" id="agenda-dialog-speakers"></div>
+      </div>
+    </dialog>
+
+    <script define:vars={{ agendaDetails }}>
+      const agendaDialog = document.getElementById("agenda-dialog");
+      const agendaDialogTitle = document.getElementById("agenda-dialog-title");
+      const agendaDialogMeta = document.getElementById("agenda-dialog-meta");
+      const agendaDialogTakeaway = document.getElementById("agenda-dialog-takeaway");
+      const agendaDialogAbstract = document.getElementById("agenda-dialog-abstract");
+      const agendaDialogSpeakers = document.getElementById("agenda-dialog-speakers");
+      const agendaDialogClose = agendaDialog?.querySelector(".agenda-dialog-close");
+      const agendaDetailsById = new Map(agendaDetails.map((item) => [item.id, item]));
+
+      function appendTextElement(parent, tagName, className, text) {
+        if (!text) return null;
+        const element = document.createElement(tagName);
+        if (className) element.className = className;
+        element.textContent = text;
+        parent.append(element);
+        return element;
+      }
+
+      function renderAgendaDetail(detail) {
+        agendaDialogTitle.textContent = detail.title || "Agenda item";
+        agendaDialogMeta.textContent = [detail.date, detail.time, detail.track, detail.sessionType]
+          .filter(Boolean)
+          .join(" · ");
+        agendaDialogTakeaway.textContent = detail.takeaway ? `→ ${detail.takeaway}` : "";
+        agendaDialogTakeaway.hidden = !detail.takeaway;
+        agendaDialogAbstract.textContent = detail.abstract || "";
+        agendaDialogAbstract.hidden = !detail.abstract;
+        agendaDialogSpeakers.replaceChildren();
+
+        detail.speakers.forEach((speaker) => {
+          const speakerCard = document.createElement("article");
+          speakerCard.className = "agenda-dialog-speaker";
+
+          if (speaker.avatar) {
+            const image = document.createElement("img");
+            image.src = speaker.avatar;
+            image.alt = `Portrait of ${speaker.name}`;
+            speakerCard.append(image);
+          }
+
+          const content = document.createElement("div");
+          appendTextElement(content, "h4", "", speaker.name);
+          appendTextElement(
+            content,
+            "p",
+            "agenda-dialog-speaker-role",
+            [speaker.title, speaker.company].filter(Boolean).join(", ")
+          );
+          appendTextElement(content, "p", "agenda-dialog-speaker-bio", speaker.longBio || speaker.bio);
+          speakerCard.append(content);
+          agendaDialogSpeakers.append(speakerCard);
+        });
+
+        agendaDialogSpeakers.hidden = detail.speakers.length === 0;
+      }
+
+      document.querySelectorAll(".agenda-detail-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const detail = agendaDetailsById.get(trigger.dataset.agendaId);
+          if (!detail || !agendaDialog) return;
+          renderAgendaDetail(detail);
+          agendaDialog.showModal();
+        });
+      });
+
+      agendaDialogClose?.addEventListener("click", () => agendaDialog?.close());
+      agendaDialog?.addEventListener("click", (event) => {
+        if (event.target === agendaDialog) agendaDialog.close();
+      });
+    </script>
   </section>
 
   <section class="section cta-band cta-section">

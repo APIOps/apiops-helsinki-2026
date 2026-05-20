@@ -32,14 +32,16 @@
     "avatar": "/images/speakers/tim-sevenich.jpg",
     "title": "Principal Pre-Sales Architect",
     "company": "Axway",
-    "bio": "Tim Sevenich has over 10 years of IT experience, specializing in API Management and AI."
+    "bio": "Tim Sevenich has over 10 years of IT experience, specializing in API Management and AI.",
+    "longBio": "Tim Sevenich has been working in IT for more than 10 years in various roles in consulting, services and software development. He is currently part of Axway's German Solution Architect team with a strong focus on API Management and AI."
   },
   {
     "name": "Marjukka Niinioja",
     "avatar": "/images/speakers/marjukka-niinioja.jpg",
     "title": "Conference organizer & Founding partner",
     "company": "Osaango",
-    "bio": "Building practical APIOps connecting product, governance, and platform outcomes."
+    "bio": "Building practical APIOps connecting product, governance, and platform outcomes.",
+    "longBio": "I am an API consultant and founder of Osaango and the APIOps community, with over eight years of experience helping organizations improve how they design, deliver, and manage APIs. I created APIOps Cycles, an open method inspired by Lean and service design, which helps teams align API design, governance, delivery, and adoption. The method is free to use, supported by open-source tooling, and works with existing API platforms and tools. My work focuses on helping organizations reduce complexity in API programs, improve collaboration between business and technical teams, and create more consistent and scalable API practices. I am also co-author of API Economy 101 and actively contribute to building the global APIOps community."
   },
   {
     "name": "Oscar Santolalla",
@@ -116,6 +118,7 @@
     "avatar": "/images/speakers/thomas-lawrence.jpg",
     "title": "Head of Professional Services North EMEA",
     "company": "Kong",
-    "bio": "Helping enterprises transform fragmented API estates into governed, AI-assisted API platforms."
+    "bio": "Helping enterprises transform fragmented API estates into governed, AI-assisted API platforms.",
+    "longBio": "Thomas Lawrence is Head of Professional Services for North EMEA at Kong, based in Stockholm. An Imperial College London graduate, he began his career as a Solution Architect and brings hands-on technical depth to API platform strategy and delivery. Thomas has led API transformation programmes across the region, helping enterprises move from fragmented, undocumented API estates to governed, product-grade platforms. At Kong, his team works at the intersection of API lifecycle management, developer experience, and AI-assisted governance - the exact themes this talk brings to life."
   }
 ]
