@@ -214,9 +214,10 @@
         "time": "11:55",
         "tracks": {
           "a": {
-            "title": "Why Developers Ignore Your APIs",
-            "speaker": "Contribute - Bring an APIOps Problem",
-            "takeaway": "Identify why your APIs are not adopted and what to change to increase real usage."
+            "title": "From Dark APIs to Governed Platforms",
+            "speaker": "Thomas Lawrence, Head of Professional Services North EMEA @Kong",
+            "speakerId": "thomas-lawrence",
+            "takeaway": "Turn undocumented, drifting APIs into a governed, continuously improving APIOps platform using AI-assisted discovery, GitOps automation, and scalable governance controls."
           },
           "b": {
             "title": "AI Agents and Secure API Access",

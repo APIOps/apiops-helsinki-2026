@@ -36,6 +36,12 @@
       "description": "Open practical method for continuous API evolution with business impact."
     },
     {
+      "name": "Kong",
+      "logo": "/images/sponsors/kong.svg",
+      "url": "https://www.KongHQ.com",
+      "description": "Kong Inc. is a leading developer of API and AI connectivity technologies, building the connectivity layer for AI. Trusted by Fortune 500 companies and AI-native startups, Kong's unified platform enables organisations to secure, manage, accelerate, govern, and monetise intelligence across APIs and AI traffic on any model, any cloud. For more information, visit www.KongHQ.com"
+    },
+    {
       "name": "get 10% off with code API_10",
       "logo": "/images/sponsors/futurefrontend06w.svg",
       "url": "https://futurefrontend.com/"

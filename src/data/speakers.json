@@ -110,5 +110,12 @@
     "title": "Consultant and API Economist",
     "company": "APIsFirst",
     "bio": "Helping tech leaders and teams get strategies and API-related plans understood, agreed, and adopted without baffling or blindsiding people in the process."
+  },
+  {
+    "name": "Thomas Lawrence",
+    "avatar": "/images/speakers/thomas-lawrence.jpg",
+    "title": "Head of Professional Services North EMEA",
+    "company": "Kong",
+    "bio": "Helping enterprises transform fragmented API estates into governed, AI-assisted API platforms."
   }
 ]
