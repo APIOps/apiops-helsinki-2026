@@ -20,11 +20,11 @@
       },
       {
         "time": "13:30",
-         "title": "APIOps in 20 Minutes (Orientation)",
-         "speaker": "Marjukka Niinioja, Founding Partner @Osaango",
-         "speakerId": "marjukka-niinioja",
-         "takeaway": "Get a clear starting point for APIOps—what to implement first and what to ignore to move faster.",
-         "abstract": "APIOps is a practical approach to managing APIs that focuses on continuous improvement and business outcomes. In this orientation session, Marjukka Niinioja breaks down the APIOps and the open APIOps Cycles framework into its essential components, providing a clear roadmap for teams new to APIOps or looking to refocus their efforts. She covers how to prioritize API governance, platform design, and operational practices to deliver value quickly without getting bogged down in unnecessary processes. Attendees will leave with a clear understanding of where to start and how to evolve their APIOps practice over time."
+        "title": "APIOps in 20 Minutes (Orientation)",
+        "speaker": "Marjukka Niinioja, Founding Partner @Osaango",
+        "speakerId": "marjukka-niinioja",
+        "takeaway": "Get a clear starting point for APIOps—what to implement first and what to ignore to move faster.",
+        "abstract": "APIOps is a practical approach to managing APIs that focuses on continuous improvement and business outcomes. In this orientation session, Marjukka Niinioja explains how the conference connects different talks to APIOps and APIOps Cycles, the open framework. What do I need APIOps for? That is going to be the main question and start of networking, and thinking of what problems attendees want to focus on for the two days, especially in the clinics and unconferencing."
       },
       {
         "time": "13:50",
@@ -34,11 +34,11 @@
         "time": "14:00",
         "tracks": {
           "a": {
-            "title": "Your API Strategy Is Not Ready to Compete With AI Investments (Yet)",
+            "title": "Why API Strategies Struggle for Funding and What to Do About It",
             "speaker": "Claire Barrett, Consultant and API Economist @APIsFirst",
             "speakerId": "claire-barrett",
-            "takeaway": "Why most API strategies aren’t able to compete with funding with AI programs and what to do about it.",
-            "abstract": "Many organizations are struggling to align their API strategies with the growing investment in AI. In this session, Claire Barrett explores the gap between API and AI investments and provides actionable insights on how to bridge this divide."
+            "takeaway": "Learn why AI initiatives often attract investment more easily than API programs—and how to position APIs as strategic enablers that accelerate AI and business outcomes.",
+            "abstract": "AI programs are attracting budgets, executive attention, and strategic priority. API initiatives often aren't.\n\nBut here's the catch: most AI success depends on APIs.\n\nIn this session, Claire Barrett explores why API strategies struggle to compete for funding and how to change the conversation. Learn how to position APIs as business enablers, connect them to AI outcomes, and build a stronger case for investment in an AI-first world."
           },
           "b": {
             "title": "AI-Native APIs: Designing Platforms for Agentic Systems",
@@ -87,14 +87,16 @@
             "title": "Identity-First APIs: IAM as the Real Platform",
             "speaker": "Oscar Santolalla, Senior Project Manager @Spinverse",
             "speakerId": "oscar-santolalla",
-            "takeaway": "Why identity becomes the control layer for AI-driven systems."
+            "takeaway": "Why identity becomes the control layer for AI-driven systems.",
+            "abstract": "Year after year companies are hacked because of poor APIs security. To make things worse, the most exploited API vulnerabilities are well-known and solutions exist. Identity and Access Management (IAM) and the OAuth 2.0 standard are key foundations that API developers and architects should become very familiar with. However, AI agents are making API security more complex and demand that enterprises embrace a clear control layer that did not exist before. This talk will illustrate the importance of IAM as the control layer.\n\nHighlights:\n\n• Security vulnerabilities of APIs\n\n• IAM and OAuth 2.0\n\n• How IAM becomes the control layer"
           },
           "workshop": {
             "title": "Design Your APIOps Operating Model (50 min clinic, come when you can, leave when you must)",
             "speaker": "Marjukka Niinioja, Founding Partner @Osaango & APIOps Helsinki Conference Organizer",
             "speakerId": "marjukka-niinioja",
             "sessionType": "CLINIC",
-            "takeaway": "Define roles, responsibilities, and decision points for your API platform—so execution doesn’t stall."
+            "takeaway": "Define roles, responsibilities, and decision points for your API platform—so execution doesn’t stall.",
+            "abstract": "API execution often stalls because roles, decision points, and ownership are unclear.\n\nIn this hands-on clinic, participants map the operating model behind their API platform: who decides, who delivers, who governs, and where work gets blocked.\n\nJoin when you can, bring your real constraints, and leave with clearer next steps for improving API delivery."
           }
         }
       },
@@ -120,7 +122,8 @@
             "speaker": "Marjukka Niinioja, Founding Partner @Osaango & APIOps Helsinki Conference Organizer",
             "speakerId": "marjukka-niinioja",
             "sessionType": "CLINIC",
-            "takeaway": " Continued: Define roles, responsibilities, and decision points for your API platform—so execution doesn’t stall."
+            "takeaway": " Continued: Define roles, responsibilities, and decision points for your API platform—so execution doesn’t stall.",
+            "abstract": "API operating models rarely fail because people lack effort. They fail because responsibilities, governance, and decision rights are not explicit enough.\n\nThis continuing clinic gives participants space to refine their model, test assumptions, and identify practical changes that make API execution easier to manage."
           }
         }
       },
@@ -128,7 +131,12 @@
         "time": "16:10",
         "title": "Panel - Are APIs Still the Platform, or Are AI Agents Replacing Them?",
         "speaker": "Moderator: Oscar Santolalla, Senior Project Manager @Spinverse, Panelists: Tim Sevenich, Principal Pre-Sales Architect @Axway; Claire Barrett, Consultant and API Economist @APIsFirst; Frank Kilcommins, Head of Enterprise Architecture @Jentic, BGB member @OpenAPI Initiative",
-        "speakerIds": ["oscar-santolalla", "tim-sevenich", "claire-barrett", "frank-kilcommins"],
+        "speakerIds": [
+          "oscar-santolalla",
+          "tim-sevenich",
+          "claire-barrett",
+          "frank-kilcommins"
+        ],
         "sessionType": "PANEL",
         "takeaway": "Compare competing platform bets before locking your roadmap.",
         "abstract": "Two competing views emerging: 1) APIs remain the core abstraction 2) AI agents + identity become the real platform. Both can’t be true long term. At APIOps Helsinki, we’re putting this debate on stage. → Which direction are you betting on?"
@@ -154,7 +162,8 @@
         "title": "Day 2 Opening words",
         "speaker": "Marjukka Niinioja, Founding Partner @Osaango & APIOps Helsinki Conference Organizer",
         "speakerId": "marjukka-niinioja",
-        "takeaway": "Set the stage for a day of hands-on learning and community problem-solving."
+        "takeaway": "Set the stage for a day of hands-on learning and community problem-solving.",
+        "abstract": "Day 2 shifts from big-picture strategy into hands-on learning and community problem-solving.\n\nMarjukka Niinioja opens the day by connecting the previous discussions to practical work: what API leaders, architects, and teams can explore together during the workshops, clinics, and labs."
       },
       {
         "time": "09:15",
@@ -162,7 +171,8 @@
         "speaker": "Hanna Sillanpää, Director and Head of Product Line Management @ASSA ABLOY Opening Solutions",
         "speakerId": "hanna-sillanpaa",
         "sessionType": "KEYNOTE",
-        "takeaway": "Connect ecosystem decisions directly to platform execution."
+        "takeaway": "Connect ecosystem decisions directly to platform execution.",
+        "abstract": "Ecosystems do not become scalable by accident. They need clear choices about partners, products, platforms, and APIs.\n\nIn this keynote, Hanna Sillanpää explores how ecosystem design connects to API strategy and why platform decisions must support both business growth and operational execution."
       },
       {
         "time": "09:45",
@@ -175,20 +185,23 @@
             "title": "FIDA, Open Finance and the Future of API Ecosystems",
             "speaker": "Markus Petman, Senior Manager @Fennia",
             "speakerId": "markus-petman",
-            "takeaway": "FIDA turns APIs from integration points into regulated products — and most platforms aren’t ready for that shift."
+            "takeaway": "FIDA turns APIs from integration points into regulated products — and most platforms aren’t ready for that shift.",
+            "abstract": "Regulation is turning APIs into more than technical integration points.\n\nIn this session, Markus Petman explores what FIDA and open finance mean for API ecosystems, platform readiness, and financial services strategy.\n\nLearn why regulated data sharing requires stronger API product thinking, governance, and ecosystem coordination."
           },
           "b": {
             "title": "Beyond OpenAPI: Workflows That AI Agents Can Actually Execute",
             "speaker": "Frank Kilcommins, Head of Enterprise Architecture @Jentic, BGB member @OpenAPI Initiative",
             "speakerId": "frank-kilcommins",
-            "takeaway": "Covers Arazzo 1.1 and why workflows matter for agent execution."
+            "takeaway": "Covers Arazzo 1.1 and why workflows matter for agent execution.",
+            "abstract": "OpenAPI helps describe APIs. But AI agents need more than endpoint descriptions.\n\nIn this session, Frank Kilcommins explains why executable workflows matter when agents need to complete real tasks across multiple API calls.\n\nLearn how Arazzo 1.1 helps bridge the gap between API documentation and agent-ready execution."
           },
           "workshop": {
             "title": "Create an MCP Wrapper for Your API (50 min workshop)",
             "speaker": "Jürgen Buchmann, CEO @TPP Validation",
             "speakerId": "jurgen-buchmann",
             "sessionType": "HANDS-ON",
-            "takeaway": "Walk away with a working MCP wrapper implementation pattern."
+            "takeaway": "Walk away with a working MCP wrapper implementation pattern.",
+            "abstract": "MCP is quickly becoming a practical bridge between APIs and AI agents.\n\nIn this hands-on workshop, Jürgen Buchmann walks participants through how to create an MCP wrapper for an existing API and what design choices matter when exposing tools to agentic systems.\n\nBring questions, constraints, and curiosity."
           }
         }
       },
@@ -203,20 +216,23 @@
             "title": "Boosting API Testing",
             "speaker": "Katerina Kairo, Senior Consultant",
             "speakerId": "katerina-kairo",
-            "takeaway": "Test automation patterns and tools to keep up with the speed of API- and AI-driven development."
+            "takeaway": "Test automation patterns and tools to keep up with the speed of API- and AI-driven development.",
+            "abstract": "API and AI-driven development move fast. Testing needs to keep up.\n\nIn this session, Katerina Kairo explores practical patterns for improving API testing, from automation and coverage to feedback loops that help teams detect problems earlier and ship with more confidence."
           },
           "b": {
             "title": "Scaling MCP: Avoiding Context Bloat with Gateway & Registry Patterns",
             "speaker": "Hugo Guerrero, Head of Technical Marketing @Kong & Governance Board Member @AsyncAPI Initiative",
             "speakerId": "hugo-guerrero",
-            "takeaway": "Why MCP implementations hit scaling limits—and how to dynamically route and inject only the tools relevant to each request to maintain performance and reasoning quality."
+            "takeaway": "Why MCP implementations hit scaling limits—and how to dynamically route and inject only the tools relevant to each request to maintain performance and reasoning quality.",
+            "abstract": "MCP works well in simple cases. At scale, context bloat becomes a real problem.\n\nIn this session, Hugo Guerrero explores how gateway and registry patterns can help route, expose, and inject only the tools an agent actually needs.\n\nLearn how to improve performance, governance, and reasoning quality in larger MCP environments."
           },
           "workshop": {
             "title": "API Monetization Clinic  (60 min clinic, come when you can, leave when you must)",
             "speaker": "Allan Knabe, CEO @Apiable",
             "speakerId": "allan-knabe",
             "sessionType": "CLINIC",
-            "takeaway": "Pressure-test your monetization model with practitioners."
+            "takeaway": "Pressure-test your monetization model with practitioners.",
+            "abstract": "API monetization is not just pricing. It is positioning, packaging, ownership, and proof of value.\n\nIn this clinic, Allan Knabe helps participants pressure-test their monetization ideas and identify what needs to be clearer before an API program can become a revenue driver.\n\nJoin when you can and bring a real case."
           }
         }
       },
@@ -234,14 +250,16 @@
             "title": "AI Agents and Secure API Access",
             "speaker": "Merja Kajava, Founder @Aavista",
             "speakerId": "merja-kajava",
-            "takeaway": "Learn how to give AI agents access to APIs while maintaining control, security, and auditability."
+            "takeaway": "Learn how to give AI agents access to APIs while maintaining control, security, and auditability.",
+            "abstract": "AI agents need access to APIs. That does not mean they should get unlimited trust.\n\nIn this session, Merja Kajava explores how organizations can give agents controlled API access while maintaining security, auditability, and accountability.\n\nLearn what changes when API consumers become autonomous."
           },
           "workshop": {
             "title": "Clinic CONTINUES: API Monetization Clinic (come when you can, leave when you must)",
             "speaker": "Allan Knabe, CEO @Apiable",
             "speakerId": "allan-knabe",
             "sessionType": "CLINIC",
-            "takeaway": "Continued: Pressure-test your monetization model with practitioners."
+            "takeaway": "Continued: Pressure-test your monetization model with practitioners.",
+            "abstract": "Turning APIs into business value requires more than a good developer portal.\n\nThis continuing clinic gives participants time to refine monetization assumptions, discuss pricing and packaging questions, and identify the gaps that may block commercial success."
           }
         }
       },
@@ -255,23 +273,32 @@
           "a": {
             "title": "APIOps Clinic – Strategy, Governance and Platform Design",
             "speaker": "Coaches: Marjukka Niinioja, Founding Partner @Osaango; Allan Knabe, CEO @Apiable",
-            "speakerIds": ["marjukka-niinioja", "allan-knabe"],
+            "speakerIds": [
+              "marjukka-niinioja",
+              "allan-knabe"
+            ],
             "sessionType": "CLINIC",
-            "takeaway": "Get direct feedback on your governance and operating model."
+            "takeaway": "Get direct feedback on your governance and operating model.",
+            "abstract": "API strategy, governance, and platform design often get treated as separate topics. In practice, they succeed or fail together.\n\nIn this clinic, participants get direct feedback on their current challenges and explore how to align operating models, governance choices, and platform capabilities around real business goals."
           },
           "b": {
             "title": "AI Lab – APIs, MCP and Agent Integrations",
             "speaker": "Coaches: Merja Kajava, Founder @Aavista; Jürgen Buchmann, CEO @TPP Validation",
-            "speakerIds": ["merja-kajava", "jurgen-buchmann"],
+            "speakerIds": [
+              "merja-kajava",
+              "jurgen-buchmann"
+            ],
             "sessionType": "HANDS-ON",
-            "takeaway": "Test agent integrations and identify what breaks in practice. "
+            "takeaway": "Test agent integrations and identify what breaks in practice. ",
+            "abstract": "Agent integrations look promising in demos. Real environments expose the harder questions.\n\nIn this lab, participants explore APIs, MCP, and agent integration patterns with practical coaching.\n\nTest ideas, surface risks, and identify what needs to change before agent-driven API use can work reliably."
           },
           "workshop": {
             "title": "You May Have OpenAPI, But Is It AI-Ready?",
             "speaker": "Frank Kilcommins, Head of Enterprise Architecture @Jentic",
             "speakerId": "frank-kilcommins",
             "sessionType": "HANDS-ON",
-            "takeaway": "Hands-on scoring and improvement using agent skills combined with open-source frameworks and tooling."
+            "takeaway": "Hands-on scoring and improvement using agent skills combined with open-source frameworks and tooling.",
+            "abstract": "Having an OpenAPI description is not the same as being ready for AI agents.\n\nIn this hands-on session, Frank Kilcommins guides participants through how to assess and improve API descriptions for agent use.\n\nLearn what makes APIs easier for machines to understand, select, and execute safely."
           }
         }
       },
@@ -285,16 +312,25 @@
           "a": {
             "title": "Guided Unconference – API Strategy and Platform Leadership",
             "speaker": "Facilitators:  Marjukka Niinioja, Founding Partner @Osaango;Merja Kajava, Founder @Aavista; Allan Knabe, CEO @Apiable",
-            "speakerIds": ["marjukka-niinioja", "merja-kajava", "allan-knabe"],
+            "speakerIds": [
+              "marjukka-niinioja",
+              "merja-kajava",
+              "allan-knabe"
+            ],
             "sessionType": "CLINIC",
-            "takeaway": "Surface priority decisions with peers facing the same constraints."
+            "takeaway": "Surface priority decisions with peers facing the same constraints.",
+            "abstract": "API leaders are facing similar questions: where to invest, how to govern, and how to prove value.\n\nThis guided unconference creates space for participants to bring their own topics, compare experiences, and work through strategic trade-offs with peers and facilitators."
           },
           "b": {
             "title": "Guided Unconference – AI Agents and Developer Platforms",
             "speaker": "Facilitators: Jürgen Buchmann, CEO @TPP Validation; Frank Kilcommins, Head of Enterprise Architecture @Jentic, BGB member @OpenAPI Initiative",
-            "speakerIds": ["jurgen-buchmann", "frank-kilcommins"],
+            "speakerIds": [
+              "jurgen-buchmann",
+              "frank-kilcommins"
+            ],
             "sessionType": "CLINIC",
-            "takeaway": "Debate real trade-offs for agent-ready developer platforms."
+            "takeaway": "Debate real trade-offs for agent-ready developer platforms.",
+            "abstract": "AI agents are changing expectations for developer platforms, API design, and platform governance.\n\nThis guided unconference gives participants space to discuss real questions, emerging patterns, and unresolved trade-offs with peers working on agent-ready platforms."
           },
           "workshop": {
             "title": "",
@@ -309,7 +345,8 @@
         "speaker": "Frank Kilcommins, Head of Enterprise Architecture @Jentic, BGB member @OpenAPI Initiative",
         "speakerId": "frank-kilcommins",
         "sessionType": "KEYNOTE",
-        "takeaway": "Strategic roadmap for APIOps teams as agents become dominant API consumers."
+        "takeaway": "Strategic roadmap for APIOps teams as agents become dominant API consumers.",
+        "abstract": "AI agents are becoming a new class of API consumer. That changes what API teams need to prioritize.\n\nIn this keynote, Frank Kilcommins connects the day’s discussions into a practical roadmap for APIOps teams.\n\nLearn where to focus next as APIs, workflows, governance, and agent readiness converge."
       }
     ]
   }
