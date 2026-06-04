@@ -1,0 +1,358 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import agenda from "../../data/agenda.json";
+import speakers from "../../data/speakers.json";
+
+const companyUrls = {
+  "OP Financial Group": "https://www.op.fi/",
+  Fennia: "https://www.fennia.fi/",
+  "ASSA ABLOY Opening Solutions": "https://www.assaabloyopeningsolutions.com/",
+  "If Insurance": "https://www.if-insurance.com/",
+  Axway: "https://www.axway.com/",
+  Osaango: "https://www.osaango.com/",
+  Spinverse: "https://spinverse.com/",
+  Apiable: "https://apiable.io/",
+  Narranor: "https://narranor.com/",
+  Aavista: "https://aavista.com/",
+  Aman: "https://www.aman.co.il/",
+  "TPP Validation": "https://tppvalidation.com/",
+  Jentic: "https://jentic.com/",
+  Kong: "https://konghq.com/",
+  APIsFirst: "https://www.apisfirst.com/",
+};
+
+const speakerMeta = {
+  "valtter-rajakannas": {
+    name: "Valtter Rajakannas",
+    linkedin: "https://fi.linkedin.com/in/valtter",
+  },
+  "markus-petman": {
+    name: "Markus Petman",
+    linkedin: "https://fi.linkedin.com/in/mpetman",
+  },
+  "hanna-sillanpaa": {
+    name: "Hanna Sillanp\u00e4\u00e4",
+    linkedin: "https://fi.linkedin.com/in/hanna-sillanp%C3%A4%C3%A4",
+  },
+  "tomas-bolin": {
+    name: "Tomas Bolin",
+    linkedin: "https://www.linkedin.com/in/tomasbol/",
+  },
+  "tim-sevenich": {
+    name: "Tim Sevenich",
+    linkedin: "https://de.linkedin.com/in/tim-sevenich-b3057a219",
+  },
+  "marjukka-niinioja": {
+    name: "Marjukka Niinioja",
+    linkedin: "https://www.linkedin.com/in/marjukkaniinioja/",
+  },
+  "oscar-santolalla": {
+    name: "Oscar Santolalla",
+    linkedin: "https://fi.linkedin.com/in/oscarsantolalla",
+  },
+  "allan-knabe": {
+    name: "Allan Knabe",
+    linkedin: "https://fi.linkedin.com/in/allan-knabe",
+  },
+  "mike-jackson": {
+    name: "Mike Jackson",
+    linkedin: "https://www.linkedin.com/in/michael-jackson-technology-leader/",
+  },
+  "merja-kajava": {
+    name: "Merja Kajava",
+    linkedin: "https://fi.linkedin.com/in/merjakajava",
+  },
+  "dan-erez": {
+    name: "Dan Erez",
+    linkedin: "https://www.linkedin.com/in/dan-erez-8971891/",
+  },
+  "jurgen-buchmann": {
+    name: "J\u00fcrgen Buchmann",
+    linkedin: "https://www.linkedin.com/in/jurgenb/",
+  },
+  "katerina-kairo": {
+    name: "Katerina Kairo",
+    linkedin: "https://www.linkedin.com/in/katja-kairo-b3223546/",
+  },
+  "frank-kilcommins": {
+    name: "Frank Kilcommins",
+    linkedin: "https://www.linkedin.com/in/frank-kilcommins/",
+  },
+  "hugo-guerrero": {
+    name: "Hugo Guerrero",
+    linkedin: "https://www.linkedin.com/in/hugoguerrero",
+  },
+  "claire-barrett": {
+    name: "Claire Barrett",
+    linkedin: "https://www.linkedin.com/in/claire-global/",
+  },
+  "thomas-lawrence": {
+    name: "Thomas Lawrence",
+    linkedin: "https://www.linkedin.com/in/thomas-s-lawrence/",
+  },
+};
+
+const gallery = [
+  {
+    src: "/images/hero/apidays-hki-2025-crowd.jpg",
+    alt: "APIOps Helsinki audience and networking moment",
+    caption: "Community discussions and networking",
+  },
+  {
+    src: "/images/hero/apidays-hki-2025-mehdi.jpg",
+    alt: "Speaker presenting at APIOps Helsinki",
+    caption: "Practitioner talks and shared cases",
+  },
+  {
+    src: "/images/hero/apidays-hki-2019.jpg",
+    alt: "APIOps Helsinki event room",
+    caption: "APIOps community in Helsinki",
+  },
+];
+
+function getSpeakerId(speaker) {
+  const avatarFile = speaker.avatar?.split("/").pop() || "";
+  return avatarFile.replace(/\.[^.]+$/, "");
+}
+
+function getSpeakerIds(session) {
+  if (session.speakerIds?.length) return session.speakerIds;
+  if (session.speakerId) return [session.speakerId];
+  return [];
+}
+
+function getSessionsBySpeakerId() {
+  const sessions = new Map();
+
+  agenda.forEach((day) => {
+    day.items.forEach((item) => {
+      const blocks = item.tracks ? Object.values(item.tracks) : [item];
+
+      blocks.forEach((block) => {
+        if (!block?.title) return;
+
+        getSpeakerIds(block).forEach((speakerId) => {
+          const current = sessions.get(speakerId) || [];
+          current.push({
+            title: block.title,
+            time: `${day.date}, ${item.time}`,
+            type: block.sessionType || "",
+            slides: block.slides || "",
+          });
+          sessions.set(speakerId, current);
+        });
+      });
+    });
+  });
+
+  return sessions;
+}
+
+const sessionsBySpeakerId = getSessionsBySpeakerId();
+
+const archiveSpeakers = speakers.map((speaker) => {
+  const id = getSpeakerId(speaker);
+  const meta = speakerMeta[id] || {};
+  const companyUrl = companyUrls[speaker.company] || "";
+
+  return {
+    ...speaker,
+    id,
+    displayName: meta.name || speaker.name,
+    linkedin: meta.linkedin || "",
+    companyUrl,
+    sessions: sessionsBySpeakerId.get(id) || [],
+  };
+});
+
+const stats = [
+  { value: "2", label: "conference days" },
+  { value: "17", label: "speakers and hosts" },
+  { value: "25+", label: "talks, clinics, labs, and sessions" },
+];
+
+function cleanText(value = "") {
+  return value
+    .replaceAll("\u00c2\u00b7", "-")
+    .replaceAll("\u00e2\u20ac\u201c", "-")
+    .replaceAll("\u00e2\u20ac\u201d", "-")
+    .replaceAll("\u00e2\u20ac\u2122", "'")
+    .replaceAll("\u00e2\u20ac\u0153", '"')
+    .replaceAll("\u00e2\u20ac\u009d", '"')
+    .replaceAll("\u00e2\u2020\u2019", "->")
+    .replaceAll("\u00c3\u00a4", "\u00e4")
+    .replaceAll("\u00c3\u00bc", "\u00fc");
+}
+---
+
+<BaseLayout title="APIOps Helsinki 2026 Event Summary">
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/favicon-32x32.png" alt="APIOps Helsinki logo" />
+        <strong>APIOps Helsinki</strong>
+      </a>
+
+      <div class="nav-links archive-nav-links" id="top-navigation">
+        <a href="#summary">Summary</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#speakers">Speakers</a>
+        <a class="button primary" href="/">Current site</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="archive-hero">
+    <div class="container archive-hero-inner">
+      <div class="archive-hero-copy">
+        <span class="hero-kicker">APIOps Helsinki 2026 archive</span>
+        <h1>APIOps in the Age of AI Agents</h1>
+        <p class="hero-meta">June 2-3, 2026 at Epicenter Helsinki</p>
+        <p>
+          APIOps Helsinki 2026 brought together API platform leaders, architects, identity specialists,
+          product owners, and community practitioners for two days of talks, clinics, labs, and open
+          discussions on how APIs, governance, and operating models change when AI agents become real
+          API consumers.
+        </p>
+      </div>
+
+      <div class="archive-stats" aria-label="Event highlights">
+        {stats.map((item) => (
+          <div>
+            <strong>{item.value}</strong>
+            <span>{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section-light" id="summary">
+      <div class="container">
+        <div class="archive-summary-grid">
+          <article class="section-shell archive-summary-main">
+            <div class="section-title section-title-left section-title-compact">
+              <h2>Event Summary</h2>
+              <p>What the Helsinki community worked through together.</p>
+            </div>
+            <p>
+              The 2026 event focused on practical APIOps decisions: API platform strategy, identity and
+              access models for agents, API monetization, governance, OpenAPI and Arazzo readiness,
+              MCP patterns, AI gateway architecture, and the operating models needed to make API work
+              repeatable across teams.
+            </p>
+            <p>
+              The format mixed keynotes with parallel tracks, hands-on workshops, clinics, guided labs,
+              panels, and unconference sessions. Attendees were encouraged to bring real API and platform
+              problems so the program could move beyond passive conference listening into concrete
+              decisions and peer feedback.
+            </p>
+          </article>
+
+          <aside class="section-shell archive-summary-side">
+            <h2>Core Themes</h2>
+            <ul>
+              <li>AI agents as a new class of API consumer</li>
+              <li>Identity, authorization, and delegation as platform foundations</li>
+              <li>API product thinking and monetization</li>
+              <li>Governance that supports delivery instead of blocking it</li>
+              <li>MCP, workflows, registries, and gateway patterns</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section archive-gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>Event Gallery</h2>
+          <p>A small look at the APIOps Helsinki community atmosphere.</p>
+        </div>
+
+        <div class="archive-gallery">
+          {gallery.map((item) => (
+            <figure>
+              <img src={item.src} alt={item.alt} loading="lazy" />
+              <figcaption>{item.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="speakers">
+      <div class="container">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>Speakers, Talks, and Materials</h2>
+          <p>Speaker archive with talks, slide links, profiles, company links, and bios.</p>
+        </div>
+
+        <div class="archive-speaker-list">
+          {archiveSpeakers.map((speaker) => (
+            <article class="archive-speaker-card">
+              <div class="archive-speaker-head">
+                <img src={speaker.avatar} alt={`Portrait of ${speaker.displayName}`} loading="lazy" />
+                <div>
+                  <h3>{speaker.displayName}</h3>
+                  <p>{cleanText([speaker.title, speaker.company].filter(Boolean).join(", "))}</p>
+                  <div class="archive-link-row">
+                    {speaker.linkedin ? (
+                      <a href={speaker.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+                    ) : null}
+                    {speaker.companyUrl ? (
+                      <a href={speaker.companyUrl} target="_blank" rel="noreferrer">Company website</a>
+                    ) : null}
+                  </div>
+                </div>
+              </div>
+
+              <div class="archive-talks">
+                <h4>Talks / sessions</h4>
+                <ul>
+                  {speaker.sessions.map((session) => (
+                    <li>
+                      <div>
+                        <strong>{cleanText(session.title)}</strong>
+                        <span>{cleanText(session.time)}{session.type ? ` - ${cleanText(session.type)}` : ""}</span>
+                      </div>
+                      {session.slides ? (
+                        <a href={session.slides} target="_blank" rel="noreferrer">Slides</a>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="archive-bio">
+                <h4>Bio</h4>
+                <p>{cleanText(speaker.longBio || speaker.bio)}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>APIOps Helsinki 2026</h4>
+        <p>Epicenter Helsinki - June 2-3, 2026</p>
+        <p>Archive page for the completed 2026 event.</p>
+      </div>
+      <div>
+        <h4>Archive</h4>
+        <a href="#summary">Summary</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#speakers">Speakers</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="/">Back to current site</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>

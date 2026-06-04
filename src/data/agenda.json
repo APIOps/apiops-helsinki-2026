@@ -15,6 +15,7 @@
         "speaker": "Valtter Rajakannas, Lead Product Owner @OP Financial Group",
         "speakerId": "valtter-rajakannas",
         "sessionType": "KEYNOTE",
+        "slides": "/slides/helsinki2026/Architecting%20Happiness%20from%20Legacy%20to%20AI%20Driven%20Platform%20Rajakangas.pdf",
         "takeaway": "How product-platform shifts unlock AI-ready delivery at enterprise scale.",
         "abstract": "OP Financial Group is Finland's largest financial services group, serving over 4 million customers. In this keynote, Valtter shares how OP is transforming its legacy API platform into an AI-driven product platform to meet evolving customer needs and competitive pressures. He covers the strategic decisions, architectural changes, and organizational shifts required to move from a traditional API gateway to a modern platform that supports AI agents and new consumption patterns. Attendees will learn how to architect their platforms for the future of AI-driven ecosystems while maintaining reliability and security."
       },
@@ -37,6 +38,7 @@
             "title": "Why API Strategies Struggle for Funding and What to Do About It",
             "speaker": "Claire Barrett, Consultant and API Economist @APIsFirst",
             "speakerId": "claire-barrett",
+            "slides": "/slides/helsinki2026/2026-06-02%20_%20APIOps%20Helsinki%20talk%20-%20Claire%20Barrett%202pm.pdf",
             "takeaway": "Learn why AI initiatives often attract investment more easily than API programs—and how to position APIs as strategic enablers that accelerate AI and business outcomes.",
             "abstract": "AI programs are attracting budgets, executive attention, and strategic priority. API initiatives often aren't.\n\nBut here's the catch: most AI success depends on APIs.\n\nIn this session, Claire Barrett explores why API strategies struggle to compete for funding and how to change the conversation. Learn how to position APIs as business enablers, connect them to AI outcomes, and build a stronger case for investment in an AI-first world."
           },
@@ -44,6 +46,7 @@
             "title": "AI-Native APIs: Designing Platforms for Agentic Systems",
             "speaker": "Mike Jackson, Founder & CTO @Narranor",
             "speakerId": "mike-jackson",
+            "slides": "/slides/helsinki2026/AI-Native-APIs-Agentic-Systems%20%20-%20Mike%20Jackson.pdf",
             "takeaway": "Learn how to design APIs that AI agents can reliably use—not just human developers.",
             "abstract": "They assume a human reading documentation. Agents don’t “read”—they execute. If your API requires interpretation, it breaks automation. This is the gap: We built APIs for developers. Now we expect machines to use them. At APIOps Helsinki, Mike Jackson is breaking down what *agent-ready APIs* actually require in practice. → Not theory. Design changes."
           }
@@ -63,6 +66,7 @@
             "title": "No Identity, No Agents: Why IAM Is the Foundation of AI-Driven API Ecosystems",
             "speaker": "Tomas Bolin, API Customer Success Manager @If Insurance",
             "speakerId": "tomas-bolin",
+            "slides": "/slides/helsinki2026/TomasBolin_APIOPS_AI_APIs%20and%20IAM_novideo.pdf",
             "takeaway": "Learn how to structure identity and access so your APIs can support AI-driven use cases securely.",
             "abstract": "Agents don’t just call APIs. They act. That means: - permissions - delegation - traceability. Most IAM setups weren’t designed for that. If identity is wrong, everything built on top is fragile. Tomas Bolin is unpacking what changes when APIs become entry points for autonomous systems."
           }
@@ -80,6 +84,7 @@
             "speaker": "Allan Knabe, CEO @Apiable",
             "speakerId": "allan-knabe",
             "sessionType": "CASE STUDY",
+            "slides": "/slides/helsinki2026/apiops-2026-turning-api-programs-into-revenueallanknabe.pdf",
             "takeaway": "How API platforms move from cost center to measurable business value.",
             "abstract": "Most API programs will never make a cent. Not because the tech is broken. Because nobody designed them as products. No pricing. No segmentation. No P&L owner. Just a pile of endpoints behind a Swagger page. The shift from cost center → revenue driver isn't a gateway upgrade. It's a product decision your engineering team can't make for you."
           },
@@ -87,6 +92,7 @@
             "title": "Identity-First APIs: IAM as the Real Platform",
             "speaker": "Oscar Santolalla, Senior Project Manager @Spinverse",
             "speakerId": "oscar-santolalla",
+            "slides": "/slides/helsinki2026/APIOps%20Helsinki%202026%20Oscar%20Santolalla%20FINAL.pdf",
             "takeaway": "Why identity becomes the control layer for AI-driven systems.",
             "abstract": "Year after year companies are hacked because of poor APIs security. To make things worse, the most exploited API vulnerabilities are well-known and solutions exist. Identity and Access Management (IAM) and the OAuth 2.0 standard are key foundations that API developers and architects should become very familiar with. However, AI agents are making API security more complex and demand that enterprises embrace a clear control layer that did not exist before. This talk will illustrate the importance of IAM as the control layer.\n\nHighlights:\n\n• Security vulnerabilities of APIs\n\n• IAM and OAuth 2.0\n\n• How IAM becomes the control layer"
           },
@@ -95,6 +101,7 @@
             "speaker": "Marjukka Niinioja, Founding Partner @Osaango & APIOps Helsinki Conference Organizer",
             "speakerId": "marjukka-niinioja",
             "sessionType": "CLINIC",
+            "slides": "/slides/helsinki2026/niinioja-apiops-helsinki-2026.pdf",
             "takeaway": "Define roles, responsibilities, and decision points for your API platform—so execution doesn’t stall.",
             "abstract": "API execution often stalls because roles, decision points, and ownership are unclear.\n\nIn this hands-on clinic, participants map the operating model behind their API platform: who decides, who delivers, who governs, and where work gets blocked.\n\nJoin when you can, bring your real constraints, and leave with clearer next steps for improving API delivery."
           }
@@ -114,6 +121,7 @@
             "title": "From API Gateways to AI Gateways: The Next Platform Layer",
             "speaker": "Dan Erez, Chief Architect @Aman",
             "speakerId": "dan-erez",
+            "slides": "/slides/helsinki2026/API%20Ops-%20From%20API%20Gateway%20to%20AI%20Gateway%20danerez.pdf",
             "takeaway": "Understand what needs to change in your gateway layer to support AI agents and new traffic patterns.",
             "abstract": "Gateways were designed for: → predictable requests → human-driven usage. AI introduces: → bursty behavior → chained calls → non-deterministic patterns. That breaks assumptions. Dan Erez is exploring what an **AI gateway** actually needs to handle."
           },
@@ -122,6 +130,7 @@
             "speaker": "Marjukka Niinioja, Founding Partner @Osaango & APIOps Helsinki Conference Organizer",
             "speakerId": "marjukka-niinioja",
             "sessionType": "CLINIC",
+            "slides": "/slides/helsinki2026/niinioja-apiops-helsinki-2026.pdf",
             "takeaway": " Continued: Define roles, responsibilities, and decision points for your API platform—so execution doesn’t stall.",
             "abstract": "API operating models rarely fail because people lack effort. They fail because responsibilities, governance, and decision rights are not explicit enough.\n\nThis continuing clinic gives participants space to refine their model, test assumptions, and identify practical changes that make API execution easier to manage."
           }
@@ -185,6 +194,7 @@
             "title": "FIDA, Open Finance and the Future of API Ecosystems",
             "speaker": "Markus Petman, Senior Manager @Fennia",
             "speakerId": "markus-petman",
+            "slides": "/slides/helsinki2026/FiDA_APIOpsHelsinki2026_Petman.pdf",
             "takeaway": "FIDA turns APIs from integration points into regulated products — and most platforms aren’t ready for that shift.",
             "abstract": "Regulation is turning APIs into more than technical integration points.\n\nIn this session, Markus Petman explores what FIDA and open finance mean for API ecosystems, platform readiness, and financial services strategy.\n\nLearn why regulated data sharing requires stronger API product thinking, governance, and ecosystem coordination."
           },
@@ -192,6 +202,7 @@
             "title": "Beyond OpenAPI: Workflows That AI Agents Can Actually Execute",
             "speaker": "Frank Kilcommins, Head of Enterprise Architecture @Jentic, BGB member @OpenAPI Initiative",
             "speakerId": "frank-kilcommins",
+            "slides": "/slides/helsinki2026/Beyond%20OpenAPI%20-%20Workflows%20That%20AI%20Agents%20Can%20Actually%20Execute_frankkilcommins.pdf",
             "takeaway": "Covers Arazzo 1.1 and why workflows matter for agent execution.",
             "abstract": "OpenAPI helps describe APIs. But AI agents need more than endpoint descriptions.\n\nIn this session, Frank Kilcommins explains why executable workflows matter when agents need to complete real tasks across multiple API calls.\n\nLearn how Arazzo 1.1 helps bridge the gap between API documentation and agent-ready execution."
           },
@@ -243,6 +254,7 @@
             "title": "From Dark APIs to Governed Platforms",
             "speaker": "Thomas Lawrence, Head of Professional Services North EMEA @Kong",
             "speakerId": "thomas-lawrence",
+            "slides": "/slides/helsinki2026/Kong%20at%20APIOps%20Helsinki%20-%20Thomas%20Lawrence%20-%20Public%20Version.pdf",
             "takeaway": "Turn undocumented, drifting APIs into a governed, continuously improving APIOps platform using AI-assisted discovery, GitOps automation, and scalable governance controls.",
             "abstract": "Most API teams are caught between two uncomfortable realities: APIs in production with no specs, no contracts and no visibility, or platforms where specs exist but governance is already drifting across federated teams. This talk tackles both. Act 1 covers how to discover, retrofit, and productise dark APIs using Kong, GitOps tooling, and AI-generated OpenAPI specs from traffic logs. Act 2 covers what breaks once you get there - standards drift, schema divergence, governance bottlenecks - and how automated linting and AI-assisted gap analysis close the loop. Two acts, two maturity stages, one continuous APIOps journey, with live demos throughout."
           },
@@ -297,6 +309,7 @@
             "speaker": "Frank Kilcommins, Head of Enterprise Architecture @Jentic",
             "speakerId": "frank-kilcommins",
             "sessionType": "HANDS-ON",
+            "slides": "/slides/helsinki2026/you-may-have-openapi-but-is-it-ai-ready-frank-kilcommins.pdf",
             "takeaway": "Hands-on scoring and improvement using agent skills combined with open-source frameworks and tooling.",
             "abstract": "Having an OpenAPI description is not the same as being ready for AI agents.\n\nIn this hands-on session, Frank Kilcommins guides participants through how to assess and improve API descriptions for agent use.\n\nLearn what makes APIs easier for machines to understand, select, and execute safely."
           }
@@ -345,6 +358,7 @@
         "speaker": "Frank Kilcommins, Head of Enterprise Architecture @Jentic, BGB member @OpenAPI Initiative",
         "speakerId": "frank-kilcommins",
         "sessionType": "KEYNOTE",
+        "slides": "/slides/helsinki2026/APIOps%20in%20the%20Age%20of%20AI%20Agents%20-%20What%20to%20Prioritise%20Next_frankkilcommins.pdf",
         "takeaway": "Strategic roadmap for APIOps teams as agents become dominant API consumers.",
         "abstract": "AI agents are becoming a new class of API consumer. That changes what API teams need to prioritize.\n\nIn this keynote, Frank Kilcommins connects the day’s discussions into a practical roadmap for APIOps teams.\n\nLearn where to focus next as APIs, workflows, governance, and agent readiness converge."
       }
