@@ -263,6 +263,7 @@
             "title": "AI Agents and Secure API Access",
             "speaker": "Merja Kajava, Founder @Aavista",
             "speakerId": "merja-kajava",
+            "slides": "/slides/helsinki2026/APIOps-AISecurity-MerjaKajava-Final.pdf",
             "takeaway": "Learn how to give AI agents access to APIs while maintaining control, security, and auditability.",
             "abstract": "AI agents need access to APIs. That does not mean they should get unlimited trust.\n\nIn this session, Merja Kajava explores how organizations can give agents controlled API access while maintaining security, auditability, and accountability.\n\nLearn what changes when API consumers become autonomous."
           },
