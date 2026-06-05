@@ -15,7 +15,7 @@
         "speaker": "Valtter Rajakannas, Lead Product Owner @OP Financial Group",
         "speakerId": "valtter-rajakannas",
         "sessionType": "KEYNOTE",
-        "slides": "/slides/helsinki2026/Architecting%20Happiness%20from%20Legacy%20to%20AI%20Driven%20Platform%20Rajakangas.pdf",
+        "slides": "",
         "takeaway": "How product-platform shifts unlock AI-ready delivery at enterprise scale.",
         "abstract": "OP Financial Group is Finland's largest financial services group, serving over 4 million customers. In this keynote, Valtter shares how OP is transforming its legacy API platform into an AI-driven product platform to meet evolving customer needs and competitive pressures. He covers the strategic decisions, architectural changes, and organizational shifts required to move from a traditional API gateway to a modern platform that supports AI agents and new consumption patterns. Attendees will learn how to architect their platforms for the future of AI-driven ecosystems while maintaining reliability and security."
       },
@@ -38,7 +38,7 @@
             "title": "Why API Strategies Struggle for Funding and What to Do About It",
             "speaker": "Claire Barrett, Consultant and API Economist @APIsFirst",
             "speakerId": "claire-barrett",
-            "slides": "/slides/helsinki2026/2026-06-02%20_%20APIOps%20Helsinki%20talk%20-%20Claire%20Barrett%202pm.pdf",
+            "slides": "/slides/helsinki2026/2026-05-02%20_%20Why%20API%20Strategies%20Struggle%20for%20Funding%20and%20What%20To%20Do%20About%20It%20_%20APIOps%20Helsinki%20-%20FOR%20DISTRIBUTION.pdf",
             "takeaway": "Learn why AI initiatives often attract investment more easily than API programs—and how to position APIs as strategic enablers that accelerate AI and business outcomes.",
             "abstract": "AI programs are attracting budgets, executive attention, and strategic priority. API initiatives often aren't.\n\nBut here's the catch: most AI success depends on APIs.\n\nIn this session, Claire Barrett explores why API strategies struggle to compete for funding and how to change the conversation. Learn how to position APIs as business enablers, connect them to AI outcomes, and build a stronger case for investment in an AI-first world."
           },
@@ -114,6 +114,7 @@
             "title": "Why AI Doesn’t Ship (Yet) — How enterprises move AI into production safely and confidently",
             "speaker": "Tim Sevenich, Principal Pre-Sales Architect @Axway",
             "speakerId": "tim-sevenich",
+            "slides": "/slides/helsinki2026/APIOpsHelsinki_tim_sevenich_axway.pdf",
             "takeaway": "AI isn’t failing in enterprises—it’s stuck at the last mile; this talk shows how to cross it safely, compliantly, and at scale.",
             "abstract": "Everyone is talking about it, using it to some extend, personally as well as professionally. AI is everywhere these days. But for larger organizations, where it is not yet is: in production. Why is that? And how can you change that with confidence and while mitigating risks? Join this speech to learn how technology might help you leverage the agentic AI revolution while being secure, confident and compliant. Hear our insights into the market from countless conversations with leading customers and learn what might make you accelerate your AI initiatives and move them to production."
           },
