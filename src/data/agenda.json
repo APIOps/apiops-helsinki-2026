@@ -15,7 +15,7 @@
         "speaker": "Valtter Rajakannas, Lead Product Owner @OP Financial Group",
         "speakerId": "valtter-rajakannas",
         "sessionType": "KEYNOTE",
-        "slides": "",
+        "slides": "/slides/helsinki2026/Architecting%20Happiness%20from%20Legacy%20to%20AI%20Driven%20Platform%20%28Final%20for%20share%29.pdf",
         "takeaway": "How product-platform shifts unlock AI-ready delivery at enterprise scale.",
         "abstract": "OP Financial Group is Finland's largest financial services group, serving over 4 million customers. In this keynote, Valtter shares how OP is transforming its legacy API platform into an AI-driven product platform to meet evolving customer needs and competitive pressures. He covers the strategic decisions, architectural changes, and organizational shifts required to move from a traditional API gateway to a modern platform that supports AI agents and new consumption patterns. Attendees will learn how to architect their platforms for the future of AI-driven ecosystems while maintaining reliability and security."
       },
