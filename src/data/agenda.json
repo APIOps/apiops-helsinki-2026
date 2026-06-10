@@ -84,7 +84,7 @@
             "speaker": "Allan Knabe, CEO @Apiable",
             "speakerId": "allan-knabe",
             "sessionType": "CASE STUDY",
-            "slides": "/slides/helsinki2026/apiops-2026-turning-api-programs-into-revenueallanknabe.pdf",
+            "slides": "/slides/helsinki2026/apiops-2026-turning-api-programs-into-revenue%20apiops.pdf",
             "takeaway": "How API platforms move from cost center to measurable business value.",
             "abstract": "Most API programs will never make a cent. Not because the tech is broken. Because nobody designed them as products. No pricing. No segmentation. No P&L owner. Just a pile of endpoints behind a Swagger page. The shift from cost center → revenue driver isn't a gateway upgrade. It's a product decision your engineering team can't make for you."
           },
