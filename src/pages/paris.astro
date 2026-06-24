@@ -1,0 +1,646 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const ticketUrl = "#tickets";
+const challengeUrl = "mailto:info@apiops.info?subject=APIOps%20Paris%202026%20challenge";
+const contributorUrl = "mailto:info@apiops.info?subject=APIOps%20Paris%202026%20program%20contribution";
+const updatesUrl = "mailto:info@apiops.info?subject=APIOps%20Paris%202026%20program%20updates";
+const sponsorshipUrl = "#sponsorship";
+
+const participationRoutes = [
+  {
+    title: "Attend",
+    body: "Join the full-day APIOps Operating Model Day on December 1.",
+    cta: "Get Early Bird Ticket",
+    href: ticketUrl,
+    note: "Tickets are sold through FOST/apidays.",
+  },
+  {
+    title: "Share a challenge",
+    body: "Tell us what API operating-model problem you want the room to work on.",
+    cta: "Share an APIOps Challenge",
+    href: challengeUrl,
+    note: "This is not a speaker application. It helps shape station clinics, problem walls, and synthesis.",
+  },
+  {
+    title: "Contribute to the program",
+    body: "Apply to bring a practitioner spark, decision story, case, station clinic, or fishbowl contribution.",
+    cta: "Propose a Program Contribution",
+    href: contributorUrl,
+    note: "We are looking for practical operating-model contributions, not generic API talks.",
+  },
+  {
+    title: "Sponsor FOST / support APIOps participation",
+    body: "Official event sponsorship is handled by the FOST/apidays team.",
+    cta: "Talk to apidays about sponsorship",
+    href: sponsorshipUrl,
+    note: "Organizations may also propose practitioners as program contributors, but contribution roles are editorially selected and are not sponsor packages.",
+  },
+];
+
+const stationCards = [
+  {
+    title: "Business Goals",
+    body: "how to explain APIs to leadership",
+  },
+  {
+    title: "API Product Strategy",
+    body: "how to find the first proof capability",
+  },
+  {
+    title: "Portfolio Management",
+    body: "how to surface shadow APIs and duplicated integrations",
+  },
+  {
+    title: "Operating Guidelines",
+    body: "how to govern without becoming a bottleneck",
+  },
+  {
+    title: "Roles and Responsibilities",
+    body: "who owns what in the API operating model",
+  },
+  {
+    title: "API Platform Architecture",
+    body: "APIM, gateways, native platforms, and operating choices",
+  },
+  {
+    title: "Security and Privacy",
+    body: "IAM, trust, and control-team involvement",
+  },
+  {
+    title: "Legal and Compliance",
+    body: "regulatory impact on API programs",
+  },
+  {
+    title: "Design Standards",
+    body: "AI-assisted API design without inconsistency",
+  },
+  {
+    title: "API Consumer Adoption",
+    body: "B2B developer migration and ecosystem change",
+  },
+  {
+    title: "Monitoring and Improving",
+    body: "production adoption metrics and continuous learning",
+  },
+];
+
+const audience = [
+  "API strategy and program leaders",
+  "API platform and API management owners",
+  "Enterprise architects and integration leaders",
+  "Developer experience and platform engineering teams",
+  "Security, IAM, privacy, risk, legal, and compliance leaders",
+  "AI-enabled digital capability and product teams",
+  "B2B developer ecosystem and partner API owners",
+  "Public-sector and regulated data-sharing practitioners",
+];
+
+const agenda = [
+  {
+    time: "8:45-9:15",
+    title: "Breakfast, Networking, and APIOps Station Stickers",
+    detail: "Choose the APIOps Cycles stations that match the problems you want to work on during the day.",
+  },
+  {
+    time: "9:15-9:55",
+    title: "Welcome and Opening Provocation",
+    detail: "After API Management: why the hard part starts after the platform decision.",
+  },
+  {
+    time: "9:55-10:40",
+    title: "Practitioner Sparks and Station Marketplace",
+    detail: "Short practitioner provocations, followed by participant voting on station clinic questions.",
+  },
+  {
+    time: "11:00-12:15",
+    title: "Station Clinics Round 1: Get the Story Straight",
+    detail: "Work on leadership language, stakeholder understanding, shadow APIs, governance, and platform choices.",
+  },
+  {
+    time: "12:15-13:00",
+    title: "Guided Clinic: Find the First Proof Capability",
+    detail: "Identify a narrowly scoped API, event, integration, or capability that can prove the operating model.",
+  },
+  {
+    time: "14:15-15:15",
+    title: "Station Clinics Round 2: Make the Change Happen",
+    detail: "Move from diagnosis to operating-model interventions, owners, first 30 days, and evidence.",
+  },
+  {
+    time: "15:55-16:25",
+    title: "Fishbowl: API Teams at AI Speed",
+    detail: "Are API teams becoming AI-speed enablers or enterprise bottlenecks?",
+  },
+  {
+    time: "16:25-16:50",
+    title: "Live Synthesis and Closing",
+    detail: "Paris APIOps Operating Notes, one station, one decision, one next step.",
+  },
+];
+
+const outcomes = [
+  "Clearer language for explaining API programs to senior leadership",
+  "A sharper view of where your organization is stuck in the operating model",
+  "Peer-tested patterns from people facing similar enterprise API problems",
+  "A first proof capability candidate or comparable next-step opportunity",
+  "Ideas for involving control teams earlier in the paved road",
+  "A practical 90-day APIOps proof-plan structure",
+];
+
+const contributorRoles = [
+  "practitioner spark speakers",
+  "decision story speakers",
+  "APIOps Cycles station hosts",
+  "clinic facilitators",
+  "case contributors",
+  "fishbowl contributors",
+  "synthesis contributors",
+];
+
+const contributionQuestions = [
+  "What decision did your organization face?",
+  "What made it difficult?",
+  "Who had to change behavior?",
+  "What failed first?",
+  "What pattern worked better?",
+  "What can others reuse?",
+];
+
+const faqs = [
+  {
+    question: "Do I need a ticket to attend APIOps Paris?",
+    answer: "Yes. APIOps Paris is part of FOST Paris. Tickets are handled through FOST/apidays.",
+  },
+  {
+    question: "Is Share an APIOps Challenge the same as applying to speak?",
+    answer:
+      "No. Sharing a challenge helps shape the station clinics and problem wall. It is not a speaker application.",
+  },
+  {
+    question: "How do I propose a talk or facilitation role?",
+    answer:
+      "Use Propose a Program Contribution. We are looking for practitioner sparks, decision stories, station hosts, clinic facilitators, case contributors, fishbowl contributors, and synthesis contributors.",
+  },
+  {
+    question: "Can vendors or consultants contribute?",
+    answer:
+      "Yes, if they bring practical operating-model experience and respect the format. Product pitches, demos, and lead harvesting do not fit the program.",
+  },
+  {
+    question: "Is APIOps Cycles a product or a vendor framework?",
+    answer:
+      "No. APIOps Cycles is an open method for understanding and creating APIOps operating models. At APIOps Paris, it is used as a shared navigation tool for station stickers, clinics, and synthesis.",
+  },
+  {
+    question: "Who handles sponsorship?",
+    answer:
+      "Official FOST/apidays sponsorship is handled by the FOST/apidays team. Program contribution roles at APIOps Paris are selected editorially and are not sponsorship packages.",
+  },
+];
+---
+
+<BaseLayout
+  title="APIOps Paris 2026 - After API Management"
+  description="APIOps Paris 2026 is the APIOps Operating Model Day for senior practitioners turning API platform investment into enterprise adoption, AI-speed, and governed digital capabilities."
+>
+  <nav class="paris-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/favicon-32x32.png" alt="APIOps Paris logo" />
+        <strong>APIOps Paris</strong>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="top-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="top-navigation">
+        <a href="#take-part">Take Part</a>
+        <a href="#cycles">APIOps Cycles</a>
+        <a href="#stations">Stations</a>
+        <a href="#program">Program</a>
+        <a href="#updates">Get Program Updates</a>
+        <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    navToggle?.addEventListener("click", () => {
+      navLinks?.classList.toggle("is-open");
+      const isExpanded = navLinks?.classList.contains("is-open") || false;
+      navToggle.setAttribute("aria-expanded", String(isExpanded));
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 720 && navLinks?.classList.contains("is-open")) {
+        navLinks.classList.remove("is-open");
+        navToggle?.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
+
+  <main class="paris-page">
+    <header class="paris-hero">
+      <div class="container paris-hero-grid">
+        <div class="paris-hero-copy">
+          <p class="paris-eyebrow">December 1, 2026 - FOST Paris</p>
+          <h1>APIOps Paris 2026</h1>
+          <p class="paris-hero-subtitle">After API Management</p>
+          <p class="paris-hero-day">The APIOps Operating Model Day</p>
+          <p class="paris-hero-lede">
+            From API platform investment to enterprise adoption, AI-speed, and governed digital capabilities.
+          </p>
+          <p>
+            API management platforms, gateways, portals, standards, and governance models are only the
+            beginning.
+          </p>
+          <p>
+            The hard part starts after the platform decision: getting product teams to adopt the paved road,
+            making APIs visible and reusable, engaging security and compliance early, reducing shadow APIs,
+            supporting AI-speed, managing B2B developer change, and proving business value before the full
+            enterprise capability is ready.
+          </p>
+          <div class="paris-actions">
+            <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
+            <a class="button secondary" href={contributorUrl}>Propose a Program Contribution</a>
+          </div>
+          <a class="paris-hero-link" href={challengeUrl}>
+            Already planning to attend? Share an APIOps challenge to help shape the station clinics.
+          </a>
+        </div>
+
+        <div class="paris-visual" aria-label="Paris operating model map">
+          <div class="paris-skyline" aria-hidden="true">
+            <span class="tower"></span>
+            <span class="block block-1"></span>
+            <span class="block block-2"></span>
+            <span class="block block-3"></span>
+          </div>
+          <div class="paris-map-card">
+            <span>Platform</span>
+            <span>Adoption</span>
+            <span>Controls</span>
+            <span>AI-speed</span>
+            <span>Evidence</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="paris-proof-strip">
+      <div class="container paris-proof-grid">
+        <div>
+          <strong>1 day</strong>
+          <span>working conference</span>
+        </div>
+        <div>
+          <strong>11</strong>
+          <span>APIOps Cycles stations</span>
+        </div>
+        <div>
+          <strong>90 days</strong>
+          <span>proof-plan horizon</span>
+        </div>
+        <div>
+          <strong>No pitches</strong>
+          <span>practical patterns only</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="take-part">
+      <div class="container">
+        <div class="community-section-head">
+          <p class="small-pill">How to take part</p>
+          <h2>Four clear routes into APIOps Paris.</h2>
+          <p>
+            Choose the path that matches what you need: attend, shape the station clinics, contribute to the
+            program, or discuss official FOST/apidays sponsorship.
+          </p>
+        </div>
+
+        <div class="paris-take-part-grid">
+          {participationRoutes.map((route) => (
+            <article class="paris-take-part-card">
+              <h3>{route.title}</h3>
+              <p>{route.body}</p>
+              <a href={route.href}>{route.cta}</a>
+              <small>{route.note}</small>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="why">
+      <div class="container paris-two-column">
+        <div class="paris-section-intro">
+          <p class="small-pill">Why After API Management?</p>
+          <h2>The hard part starts after the platform decision.</h2>
+        </div>
+        <div class="paris-copy-stack">
+          <p>
+            APIOps Paris is a full-day working conference for senior practitioners turning API platform
+            investment into enterprise adoption, production use, governance, and reusable digital capabilities.
+          </p>
+          <p>
+            Many organizations already have API management initiatives, cloud gateways, developer portals, API
+            standards, platform roadmaps, or integration modernization programs. They still struggle with
+            adoption, ownership, funding, governance, production usage, and executive understanding.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paris-image-band">
+      <div class="container paris-image-grid">
+        <figure>
+          <img src="/images/hero/apiops-helsinki2026-allan-knabe-jurgen-buchmann-preparing-clinic.jpg" alt="APIOps practitioners preparing a working clinic" loading="lazy" />
+        </figure>
+        <div>
+          <p class="small-pill">Bring a real problem</p>
+          <h2>A participant-shaped working room.</h2>
+          <p>
+            The day combines short practitioner provocations, APIOps Cycles station stickers, guided station
+            clinics, peer problem-solving, facilitated roundtables, live synthesis, and practical operating-model
+            outputs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="cycles">
+      <div class="container paris-two-column">
+        <div class="paris-section-intro">
+          <p class="small-pill">How APIOps Cycles is used</p>
+          <h2>An open and optional method for navigating API operating-model work.</h2>
+        </div>
+        <div class="paris-copy-stack">
+          <p>
+            APIOps Cycles is an open method for understanding, designing, and improving the operating model
+            behind APIs and related digital capabilities.
+          </p>
+          <p>
+            It is not a vendor product. It is not a mandatory framework. It is one practical way to make the
+            APIOps conversation visible across business, governance, platform, design, delivery, publishing,
+            adoption, and continuous improvement.
+          </p>
+          <p>
+            At APIOps Paris, APIOps Cycles is used as a shared navigation tool.
+          </p>
+          <p>
+            Participants choose APIOps Cycles station stickers to show where their organization is currently
+            stuck. The stations help people find relevant peers, join focused clinics, and connect their local
+            challenges to a broader operating model.
+          </p>
+          <p>
+            The goal is not to follow a method. The goal is to help participants understand and create a better
+            APIOps operating model for their own organization.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="format">
+      <div class="container">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>What This Day Is About</h2>
+          <p>Questions senior API practitioners are already facing.</p>
+        </div>
+
+        <div class="paris-question-grid">
+          <article>
+            <h3>What happens after API platform investment?</h3>
+            <p>Move from rollout to adoption, reuse, production usage, governance, and measurable value.</p>
+          </article>
+          <article>
+            <h3>How do we talk to CXOs about API programs?</h3>
+            <p>Find language that creates traction instead of making APIs sound like a technical side topic.</p>
+          </article>
+          <article>
+            <h3>How do we support AI-speed without chaos?</h3>
+            <p>Use AI in API design, development, documentation, testing, and governance without multiplying inconsistency.</p>
+          </article>
+          <article>
+            <h3>How do we manage B2B developer change?</h3>
+            <p>Handle migration pressure, roadmap tension, ecosystem expectations, and partner trust.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="stations">
+      <div class="container">
+        <div class="paris-stations-head">
+          <div>
+            <p class="small-pill">Choose your APIOps stations</p>
+            <h2>The stickers are the routing system for the day.</h2>
+          </div>
+          <div>
+            <p>
+              At the start of the day, participants choose APIOps Cycles station stickers that match the
+              problems they want to work on.
+            </p>
+            <p>
+              The stickers are not decoration. They help participants find others working on similar problems,
+              join the right station clinics, and make the room's priorities visible.
+            </p>
+          </div>
+        </div>
+
+        <div class="paris-station-grid paris-station-grid-detailed">
+          {stationCards.map((station) => (
+            <article class="paris-station-card">
+              <h3>{station.title}</h3>
+              <p>{station.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container paris-audience-layout">
+        <div>
+          <p class="small-pill">Who Should Attend</p>
+          <h2>Built for senior practitioners and decision-shapers.</h2>
+          <p>
+            This is especially relevant if your organization has already invested in API platforms or API
+            strategy, but still struggles with adoption, ownership, funding, governance, production usage, or
+            executive understanding.
+          </p>
+          <div class="paris-inline-actions">
+            <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
+            <a class="button secondary alt" href={challengeUrl}>Share an APIOps Challenge</a>
+          </div>
+        </div>
+        <ul class="paris-audience-list">
+          {audience.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section agenda-showcase" id="program">
+      <div class="container">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>Program</h2>
+          <p>One focused day from diagnosis to next decision.</p>
+        </div>
+
+        <div class="paris-agenda">
+          {agenda.map((item) => (
+            <article class="paris-agenda-row">
+              <time>{item.time}</time>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.detail}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div class="paris-section-actions">
+          <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
+          <a class="button secondary alt" href={contributorUrl}>Propose a Program Contribution</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container paris-outcomes-grid">
+        <div>
+          <p class="small-pill">What You Leave With</p>
+          <h2>Practical outputs, not just notes from talks.</h2>
+        </div>
+        <div class="paris-outcome-list">
+          {outcomes.map((outcome) => <p>{outcome}</p>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section paris-contributors" id="contributors">
+      <div class="container paris-contributor-grid">
+        <div>
+          <p class="small-pill">For program contributors and station hosts</p>
+          <h2>Practical patterns do. Product demos do not.</h2>
+          <p>
+            APIOps Paris is shaped by selected program contributors: practitioners who bring real decision
+            stories, facilitation, case examples, and reusable operating patterns.
+          </p>
+          <p>
+            Some contributors work in enterprises. Some work in consultancies. Some work for vendors. That is
+            fine. Their role in this program is not to sell. Their role is to help the room work through real
+            APIOps questions.
+          </p>
+          <a class="button primary" href={contributorUrl}>Propose a Program Contribution</a>
+        </div>
+        <div class="paris-contributor-panel">
+          <h3>Program contributors may take part as:</h3>
+          <div class="paris-patterns">
+            {contributorRoles.map((role) => <span>{role}</span>)}
+          </div>
+          <h3>A strong contribution helps participants answer:</h3>
+          <ul>
+            {contributionQuestions.map((question) => <li>{question}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="sponsorship">
+      <div class="container paris-two-column">
+        <div class="paris-section-intro">
+          <p class="small-pill">Sponsorship and commercial visibility</p>
+          <h2>A clean boundary between sponsorship and program contribution.</h2>
+        </div>
+        <div class="paris-copy-stack">
+          <p>
+            Official sponsorship for FOST Paris and apidays is handled by the FOST/apidays team.
+          </p>
+          <p>
+            APIOps Paris may also include selected program contributors and station hosts. These roles are based
+            on relevance, experience, and facilitation value. They are not sponsorship packages and do not
+            include sponsor rights, lead capture, booth visibility, or product promotion.
+          </p>
+          <p>
+            Organizations that want event-level sponsor visibility should contact the FOST/apidays sponsorship
+            team. Organizations that want to contribute expertise should propose a program contribution.
+          </p>
+          <div class="paris-inline-actions">
+            <a class="button primary" href={sponsorshipUrl}>Talk to apidays about sponsorship</a>
+            <a class="button secondary alt" href={contributorUrl}>Propose a Program Contribution</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="faq">
+      <div class="container">
+        <div class="community-section-head">
+          <p class="small-pill">FAQ</p>
+          <h2>Common questions about tickets, challenges, contributors, and sponsorship.</h2>
+        </div>
+        <div class="paris-faq-grid">
+          {faqs.map((faq) => (
+            <article>
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band cta-section" id="tickets">
+      <div class="container">
+        <h2>Bring a real API operating-model problem.</h2>
+        <p>
+          Leave with better language, practical patterns, and a sharper next decision for your own organization.
+        </p>
+        <div class="hero-actions cta-actions">
+          <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
+          <a class="button secondary" href={updatesUrl}>Get Program Updates</a>
+        </div>
+        <p class="paris-cta-note" id="updates">
+          Not ready to buy a ticket yet? Get APIOps Paris updates as the program develops. This does not reserve
+          a seat. Tickets are sold through FOST/apidays.
+        </p>
+        <a class="paris-cta-link" href={challengeUrl}>Share an APIOps Challenge</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>APIOps Paris 2026</h4>
+        <p>December 1, 2026 - FOST Paris</p>
+        <p>The APIOps Operating Model Day.</p>
+      </div>
+      <div>
+        <h4>Conference</h4>
+        <a href="#take-part">How to take part</a>
+        <a href="#stations">Stations</a>
+        <a href="#program">Program</a>
+      </div>
+      <div>
+        <h4>Contribute</h4>
+        <a href="#contributors">Program contributors</a>
+        <a href="#sponsorship">Sponsorship boundary</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>

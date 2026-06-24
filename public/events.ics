@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//APIOps Community//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:munich-2026@apiops.info
+DTSTAMP:20260623T000000Z
+DTSTART;VALUE=DATE:20260708
+DTEND;VALUE=DATE:20260710
+SUMMARY:APIOps Cycles workshop at apidays Munich
+LOCATION:Munich
+DESCRIPTION:A practical APIOps Cycles workshop at apidays Munich.
+URL:https://www.apidays.global/events/munich
+END:VEVENT
+BEGIN:VEVENT
+UID:india-2026@apiops.info
+DTSTAMP:20260623T000000Z
+DTSTART;VALUE=DATE:20260819
+DTEND;VALUE=DATE:20260821
+SUMMARY:APIOps Cycles workshop and talk at apidays India
+LOCATION:Bengaluru, India
+DESCRIPTION:APIOps Cycles workshop and talk at apidays India.
+URL:https://www.apidays.global/events/india
+END:VEVENT
+BEGIN:VEVENT
+UID:berlin-2026@apiops.info
+DTSTAMP:20260623T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261121
+SUMMARY:APIOps talk at APICon Berlin
+LOCATION:Berlin and online
+DESCRIPTION:APIOps talk at API Conference Berlin.
+URL:https://apiconference.net/berlin/
+END:VEVENT
+BEGIN:VEVENT
+UID:paris-2026@apiops.info
+DTSTAMP:20260623T000000Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:APIOps Paris 2026: After API Management
+LOCATION:Paris
+DESCRIPTION:A full-day APIOps Operating-Model Day at FOST/apidays Paris.
+URL:https://www.apidays.global/events/paris
+END:VEVENT
+END:VCALENDAR

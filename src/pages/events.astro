@@ -1,0 +1,312 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import events from "../data/events.json";
+
+const joinUrl = "https://join.apiops.info/";
+
+const whenFilters = [
+  { label: "Upcoming", value: "upcoming" },
+  { label: "This quarter", value: "quarter" },
+  { label: "2026", value: "2026" },
+  { label: "TBA", value: "tba" },
+  { label: "Past events", value: "past" },
+];
+
+const formatFilters = [
+  { label: "All", value: "all" },
+  { label: "In person", value: "in-person" },
+  { label: "Online", value: "online" },
+  { label: "Hybrid", value: "hybrid" },
+  { label: "Workshops", value: "workshop" },
+  { label: "Talks", value: "talk" },
+  { label: "Full-day events", value: "full-day" },
+];
+
+function getActionLabel(event) {
+  if (event.status === "Past event") return "View archive";
+  if (event.status === "Get updates") return "Get updates";
+  if (event.status === "Save the date") return "Save the date";
+  return "Get ticket";
+}
+
+function getMonthGroup(event) {
+  if (!event.year) return "Date to be announced";
+  return `${event.month} ${event.year}`;
+}
+
+function getFormatTokens(event) {
+  const format = event.format.toLowerCase();
+  const tokens = [];
+  if (format.includes("conference")) tokens.push("conference");
+  if (format.includes("full-day")) tokens.push("full-day");
+  if (format.includes("workshop")) tokens.push("workshop");
+  if (format.includes("talk")) tokens.push("talk");
+  return tokens.length ? tokens.join(" ") : format;
+}
+
+function getModeToken(event) {
+  return event.mode.toLowerCase().replace(" ", "-");
+}
+---
+
+<BaseLayout
+  title="APIOps Events Calendar"
+  description="Upcoming APIOps community events, workshops, talks, webinars, meetups, clinics, and APIOps Operating-Model Days."
+>
+  <nav class="community-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/favicon-32x32.png" alt="APIOps logo" />
+        <strong>APIOps Events</strong>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="top-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="top-navigation">
+        <a href="/">Community</a>
+        <a href="#calendar">Calendar</a>
+        <a href="/paris">APIOps Paris</a>
+        <a class="button primary" href={joinUrl}>Join the Community</a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    navToggle?.addEventListener("click", () => {
+      navLinks?.classList.toggle("is-open");
+      const isExpanded = navLinks?.classList.contains("is-open") || false;
+      navToggle.setAttribute("aria-expanded", String(isExpanded));
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 720 && navLinks?.classList.contains("is-open")) {
+        navLinks.classList.remove("is-open");
+        navToggle?.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
+
+  <main class="community-page">
+    <header class="events-hero">
+      <div class="container events-hero-grid">
+        <div class="events-hero-copy">
+          <p class="community-eyebrow">Events page</p>
+          <h1>APIOps calendar</h1>
+          <p class="events-hero-kicker">Upcoming APIOps events</p>
+          <p>
+            Workshops, clinics, talks, online sessions, and full-day APIOps Operating Model Days for people
+            improving the operating model behind APIs.
+          </p>
+        </div>
+        <div class="events-hero-actions">
+          <a class="button secondary alt" href={joinUrl}>Join the Community</a>
+          <a class="button secondary alt" href={joinUrl}>Get Updates</a>
+          <a class="events-suggest-link" href="mailto:info@apiops.info?subject=Suggest%20an%20APIOps%20event">Suggest an event</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="section section-light" id="calendar">
+      <div class="container">
+        <div class="community-section-head">
+          <p class="small-pill">Calendar</p>
+          <h2>Confirmed and planned community touchpoints.</h2>
+          <p>
+            Use the filters to scan by location format, online or in-person participation, and session type.
+          </p>
+        </div>
+
+        <div class="events-filter-stack" aria-label="Filter events">
+          <div class="events-filter-row">
+            <span>When</span>
+            <div class="events-filter-bar">
+              {whenFilters.map((filter) => (
+                <button
+                  type="button"
+                  data-filter-group="when"
+                  data-filter-value={filter.value}
+                  class={filter.value === "upcoming" ? "is-active" : ""}
+                >
+                  {filter.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div class="events-filter-row">
+            <span>Format</span>
+            <div class="events-filter-bar">
+              {formatFilters.map((filter) => (
+                <button
+                  type="button"
+                  data-filter-group="format"
+                  data-filter-value={filter.value}
+                  class={filter.value === "all" ? "is-active" : ""}
+                >
+                  {filter.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="events-timeline">
+          {events.map((event) => (
+            <section class="events-timeline-group" data-group={getMonthGroup(event)}>
+              <h3>{getMonthGroup(event)}</h3>
+              <article
+                class={`events-calendar-card ${event.id === "paris-2026" ? "is-featured" : ""}`}
+                data-mode={getModeToken(event)}
+                data-format={getFormatTokens(event)}
+                data-year={event.year || "tba"}
+                data-tba={event.year ? "false" : "true"}
+                data-past={event.status === "Past event" ? "true" : "false"}
+                data-start={event.startDate}
+              >
+                <div class="community-date-tile">
+                  <span>{event.month}</span>
+                  {event.day ? <strong>{event.day}</strong> : <strong>TBA</strong>}
+                  {event.year && <small>{event.year}</small>}
+                </div>
+                <div class="events-calendar-body">
+                  <div class="events-calendar-title-row">
+                    <h3>{event.title}</h3>
+                    <span
+                      class={`community-status-pill ${
+                        event.status.includes("Early")
+                          ? "is-early"
+                          : event.status === "Past event"
+                            ? "is-past"
+                            : ""
+                      }`}
+                    >
+                      {event.status}
+                    </span>
+                  </div>
+                  <p class="community-event-meta">{event.location} - {event.mode} - {event.format}</p>
+                  <p>{event.description}</p>
+                </div>
+                <div class="events-calendar-actions">
+                  <a class={`community-action-primary ${event.id === "paris-2026" ? "is-purple" : ""}`} href={event.ticketUrl}>
+                    {event.id === "paris-2026" ? "Get early-bird ticket" : getActionLabel(event)}
+                  </a>
+                  <a href={event.learnUrl}>Learn more</a>
+                </div>
+              </article>
+            </section>
+          ))}
+        </div>
+
+        <p class="events-empty" hidden>No events match this filter yet.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>APIOps Events</h4>
+        <p>Workshops, talks, clinics, online sessions, meetups, and APIOps Operating-Model Days.</p>
+      </div>
+        <div>
+          <h4>Calendar</h4>
+        <a href={joinUrl}>Join the Community</a>
+          <a href="#calendar">All events</a>
+        </div>
+      <div>
+        <h4>Community</h4>
+        <a href="/">Community home</a>
+        <a href="/paris">APIOps Paris</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const filterButtons = document.querySelectorAll("[data-filter-group]");
+    const eventCards = document.querySelectorAll(".events-calendar-card");
+    const timelineGroups = document.querySelectorAll(".events-timeline-group");
+    const emptyState = document.querySelector(".events-empty");
+    const activeFilters = {
+      when: "upcoming",
+      format: "all",
+    };
+
+    function isNextThreeMonths(date) {
+      if (!(date instanceof Date) || Number.isNaN(date.getTime())) return false;
+      const now = new Date();
+      const windowEnd = new Date(now);
+      windowEnd.setMonth(windowEnd.getMonth() + 3);
+      return date >= now && date <= windowEnd;
+    }
+
+    function matchesWhen(card) {
+      const when = activeFilters.when;
+      const isTba = card.getAttribute("data-tba") === "true";
+      const isPast = card.getAttribute("data-past") === "true";
+      const year = card.getAttribute("data-year");
+      const start = card.getAttribute("data-start");
+      const date = start ? new Date(`${start}T00:00:00`) : null;
+
+      if (when === "upcoming") return !isPast;
+      if (when === "past") return isPast;
+      if (when === "tba") return isTba;
+      if (when === "2026") return year === "2026" && !isPast;
+      if (when === "quarter") return !isPast && date ? isNextThreeMonths(date) : false;
+      return true;
+    }
+
+    function matchesFormat(card) {
+      const format = activeFilters.format;
+      if (format === "all") return true;
+      return card.getAttribute("data-mode") === format || (card.getAttribute("data-format") || "").split(" ").includes(format);
+    }
+
+    function applyFilters() {
+      let visibleCount = 0;
+
+      eventCards.forEach((card) => {
+        const matches = matchesWhen(card) && matchesFormat(card);
+        card.hidden = !matches;
+        if (matches) visibleCount += 1;
+      });
+
+      timelineGroups.forEach((group) => {
+        const hasVisibleCard = Array.from(group.querySelectorAll(".events-calendar-card")).some((card) => !card.hidden);
+        group.hidden = !hasVisibleCard;
+      });
+
+      if (emptyState instanceof HTMLElement) {
+        emptyState.hidden = visibleCount > 0;
+      }
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const group = button.getAttribute("data-filter-group");
+        const value = button.getAttribute("data-filter-value");
+        if (!group || !value) return;
+
+        activeFilters[group] = value;
+        document.querySelectorAll(`[data-filter-group="${group}"]`).forEach((item) => {
+          item.classList.toggle("is-active", item === button);
+        });
+
+        applyFilters();
+      });
+    });
+
+    applyFilters();
+  </script>
+</BaseLayout>
