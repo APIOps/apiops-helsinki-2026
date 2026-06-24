@@ -35,7 +35,7 @@
     "description": "A practical APIOps Cycles workshop for mapping API operating-model friction across strategy, platform, governance, and adoption.",
     "ticketUrl": "https://www.apidays.global/events/munich",
     "learnUrl": "https://www.apidays.global/events/munich",
-    "challengeUrl": "mailto:info@apiops.info?subject=APIOps%20Munich%202026%20challenge"
+    "challengeUrl": "https://tally.so/r/dWgy2D"
   },
   {
     "id": "india-2026",
@@ -54,7 +54,7 @@
     "description": "A workshop and talk on practical APIOps Cycles work for teams connecting API programs to adoption, controls, and business capability.",
     "ticketUrl": "https://www.apidays.global/events/india",
     "learnUrl": "https://www.apidays.global/events/india",
-    "challengeUrl": "mailto:info@apiops.info?subject=APIOps%20India%202026%20challenge"
+    "challengeUrl": "https://tally.so/r/dWgy2D"
   },
   {
     "id": "berlin-2026",
@@ -73,7 +73,7 @@
     "description": "A conference talk on the operating model behind APIs, integrations, governance, platforms, and AI-ready digital capabilities.",
     "ticketUrl": "https://apiconference.net/berlin/",
     "learnUrl": "https://apiconference.net/berlin/",
-    "challengeUrl": "mailto:info@apiops.info?subject=APICon%20Berlin%202026%20APIOps%20challenge"
+    "challengeUrl": "https://tally.so/r/dWgy2D"
   },
   {
     "id": "paris-2026",
@@ -90,9 +90,9 @@
     "topic": "After API Management",
     "status": "Early-bird open",
     "description": "A full-day working conference for turning API platform investment into enterprise adoption, AI-speed, governance, and digital capabilities.",
-    "ticketUrl": "https://www.apidays.global/events/paris",
+    "ticketUrl": "https://portal.joinfost.io/event/future-of-software-technologies-paris-2026/5e27c773-7fa8-4169-b6a7-93494701212a/apiops-conference",
     "learnUrl": "/paris",
-    "challengeUrl": "mailto:info@apiops.info?subject=APIOps%20Paris%202026%20challenge"
+    "challengeUrl": "https://tally.so/r/dWgy2D"
   },
   {
     "id": "webinars-2026",
@@ -111,6 +111,6 @@
     "description": "Online sessions for practitioner patterns, operating-model questions, and APIOps Cycles station topics as the community calendar develops.",
     "ticketUrl": "https://join.apiops.info/",
     "learnUrl": "https://join.apiops.info/",
-    "challengeUrl": "mailto:info@apiops.info?subject=APIOps%20online%20session%20challenge"
+    "challengeUrl": "https://tally.so/r/dWgy2D"
   }
 ]

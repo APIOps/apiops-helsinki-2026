@@ -1,11 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const ticketUrl = "#tickets";
-const challengeUrl = "mailto:info@apiops.info?subject=APIOps%20Paris%202026%20challenge";
+const ticketUrl =
+  "https://portal.joinfost.io/event/future-of-software-technologies-paris-2026/5e27c773-7fa8-4169-b6a7-93494701212a/apiops-conference";
+const challengeUrl = "https://tally.so/r/dWgy2D";
 const contributorUrl = "https://tally.so/r/zxg8Wa";
 const updatesUrl = "mailto:info@apiops.info?subject=APIOps%20Paris%202026%20program%20updates";
-const sponsorshipUrl = "#sponsorship";
+const partnershipUrl = "https://tally.so/r/3yQEpp";
 
 const participationRoutes = [
   {
@@ -30,11 +31,11 @@ const participationRoutes = [
     note: "We are looking for practical operating-model contributions, not generic API talks.",
   },
   {
-    title: "Sponsor FOST / support APIOps participation",
-    body: "Official event sponsorship is handled by the FOST/apidays team.",
-    cta: "Talk to apidays about sponsorship",
-    href: sponsorshipUrl,
-    note: "Organizations may also propose practitioners as program contributors, but contribution roles are editorially selected and are not sponsor packages.",
+    title: "Support the APIOps community",
+    body: "Official Paris event sponsorship is handled by the FOST/apidays team.",
+    cta: "Contact about partnerships and collaboration",
+    href: partnershipUrl,
+    note: "We are happy to talk about possibilities to support and collaborate with the APIOps Community and APIOps Cycles method.",
   },
 ];
 
@@ -193,9 +194,9 @@ const faqs = [
       "No. APIOps Cycles is an open method for understanding and creating APIOps operating models. At APIOps Paris, it is used as a shared navigation tool for station stickers, clinics, and synthesis.",
   },
   {
-    question: "Who handles sponsorship?",
+    question: "Who handles partnerships and collaboration?",
     answer:
-      "Official FOST/apidays sponsorship is handled by the FOST/apidays team. Program contribution roles at APIOps Paris are selected editorially and are not sponsorship packages.",
+      "Official Paris event sponsorship is handled by the FOST/apidays team. We are happy to talk about possibilities to support and collaborate with the APIOps Community and APIOps Cycles method.",
   },
 ];
 ---
@@ -325,11 +326,11 @@ const faqs = [
       <div class="container">
         <div class="community-section-head">
           <p class="small-pill">How to take part</p>
-          <h2>Four clear routes into APIOps Paris.</h2>
-          <p>
-            Choose the path that matches what you need: attend, shape the station clinics, contribute to the
-            program, or discuss official FOST/apidays sponsorship.
-          </p>
+            <h2>Four clear routes into APIOps Paris.</h2>
+            <p>
+              Choose the path that matches what you need: attend, shape the station clinics, contribute to the
+            program, or discuss support and collaboration with the APIOps community.
+            </p>
         </div>
 
         <div class="paris-take-part-grid">
@@ -560,27 +561,19 @@ const faqs = [
       </div>
     </section>
 
-    <section class="section section-light" id="sponsorship">
+    <section class="section section-light" id="support">
       <div class="container paris-two-column">
         <div class="paris-section-intro">
-          <p class="small-pill">Sponsorship and commercial visibility</p>
-          <h2>A clean boundary between sponsorship and program contribution.</h2>
+          <p class="small-pill">Support and collaboration</p>
+          <h2>Support the APIOps community.</h2>
         </div>
         <div class="paris-copy-stack">
           <p>
-            Official sponsorship for FOST Paris and apidays is handled by the FOST/apidays team.
-          </p>
-          <p>
-            APIOps Paris may also include selected program contributors and station hosts. These roles are based
-            on relevance, experience, and facilitation value. They are not sponsorship packages and do not
-            include sponsor rights, lead capture, booth visibility, or product promotion.
-          </p>
-          <p>
-            Organizations that want event-level sponsor visibility should contact the FOST/apidays sponsorship
-            team. Organizations that want to contribute expertise should propose a program contribution.
+            Official Paris event sponsorship is handled by the FOST/apidays team, but we are happy to talk to you
+            about possibilities to support and collaborate with the APIOps Community and APIOps Cycles method.
           </p>
           <div class="paris-inline-actions">
-            <a class="button primary" href={sponsorshipUrl}>Talk to apidays about sponsorship</a>
+            <a class="button primary" href={partnershipUrl}>Contact about partnerships and collaboration</a>
             <a class="button secondary alt" href={contributorUrl}>Propose a Program Contribution</a>
           </div>
         </div>
@@ -637,10 +630,10 @@ const faqs = [
         <a href="#program">Program</a>
       </div>
       <div>
-        <h4>Contribute</h4>
-        <a href="#contributors">Program contributors</a>
-        <a href="#sponsorship">Sponsorship boundary</a>
-      </div>
+          <h4>Contribute</h4>
+          <a href="#contributors">Program contributors</a>
+        <a href="#support">Support the community</a>
+        </div>
     </div>
   </footer>
 </BaseLayout>
