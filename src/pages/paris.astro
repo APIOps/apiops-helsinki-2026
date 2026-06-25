@@ -177,45 +177,167 @@ const audience = [
 
 const agenda = [
   {
+    type: "stop",
+    stop: "01",
+    phase: { label: "Morning", text: "Find your people and frame the challenge" },
     time: "8:45-9:15",
+    duration: "30 min",
+    icon: "☕",
     title: "Breakfast, Networking, and APIOps Station Stickers",
-    detail: "Choose the APIOps Cycles stations that match the problems you want to work on during the day.",
+    purpose: "Find your people before the program starts.",
+    happens: [
+      "Grab breakfast",
+      "Choose your APIOps station stickers",
+      "Meet peers working on similar problems",
+    ],
+    output: ["Your stations selected", "First peer connections"],
+    chips: ["Networking", "Station stickers", "Self-selection"],
   },
   {
+    type: "stop",
+    stop: "02",
     time: "9:15-9:55",
+    duration: "40 min",
+    icon: "⚡",
     title: "Welcome and Opening Provocation",
-    detail: "After API Management: why the hard part starts after the platform decision.",
+    purpose: "Create a shared picture of why the hard part starts after the platform decision.",
+    happens: [
+      'Frame "After API Management"',
+      "Name common operating-model failure modes",
+      "Connect platform investment to adoption, governance, AI-speed, and evidence",
+    ],
+    output: ["Shared vocabulary", "Common problem statement"],
+    chips: ["Provocation", "Framing", "Shared language"],
   },
   {
+    type: "stop",
+    stop: "03",
     time: "9:55-10:40",
+    duration: "45 min",
+    icon: "✦",
     title: "Practitioner Sparks and Station Marketplace",
-    detail: "Short practitioner provocations, followed by participant voting on station clinic questions.",
+    purpose: "Surface the questions worth working on.",
+    happens: [
+      "Hear short practitioner provocations",
+      "Compare decision stories, not product demos",
+      "Vote on station clinic priorities",
+    ],
+    output: ["Clinic priorities for the day", "Better understanding of peer challenges"],
+    chips: ["Practitioner sparks", "Voting", "Marketplace"],
   },
   {
+    type: "stop",
+    stop: "04",
+    phase: { label: "Midday", text: "Work the problem and choose a proof" },
     time: "11:00-12:15",
+    duration: "75 min",
+    icon: "◇",
+    featured: true,
     title: "Station Clinics Round 1: Get the Story Straight",
-    detail: "Work on leadership language, stakeholder understanding, shadow APIs, governance, and platform choices.",
+    purpose: "Work with peers facing similar organisational challenges.",
+    happens: [
+      "Join a facilitated station clinic",
+      "Bring your own problem",
+      "Compare language, governance, shadow APIs, and platform choices",
+    ],
+    output: ["Better stakeholder language", "Shared operating notes"],
+    connections: [
+      "Business Goals",
+      "Portfolio Management",
+      "Operating Guidelines",
+      "API Platform Architecture",
+      "Security and Privacy",
+      "API Consumer Adoption",
+    ],
+    chips: ["Facilitated", "Small groups", "Working session"],
   },
   {
+    type: "stop",
+    stop: "05",
     time: "12:15-13:00",
+    duration: "45 min",
+    icon: "◎",
     title: "Guided Clinic: Find the First Proof Capability",
-    detail: "Identify a narrowly scoped API, event, integration, or capability that can prove the operating model.",
+    purpose: "Leave with one realistic proof, not a transformation roadmap.",
+    happens: [
+      "Identify a narrow API, event, integration, or capability",
+      "Test whether it can prove the operating model",
+      "Look for adoption, controls, platform value, and evidence",
+    ],
+    output: ["First proof capability candidate", "Clearer next-step opportunity"],
+    chips: ["Guided clinic", "Proof capability", "Decision support"],
   },
   {
+    type: "break",
+    time: "13:00-14:00",
+    duration: "60 min",
+    title: "Lunch and FOST Networking",
+    purpose: "Take a break, explore the wider FOST event, or continue station conversations informally.",
+    label: "Break / transfer",
+  },
+  {
+    type: "stop",
+    stop: "06",
+    phase: { label: "Afternoon", text: "Turn diagnosis into action" },
     time: "14:15-15:15",
+    duration: "60 min",
+    icon: "↗",
+    featured: true,
     title: "Station Clinics Round 2: Make the Change Happen",
-    detail: "Move from diagnosis to operating-model interventions, owners, first 30 days, and evidence.",
+    purpose: "Turn diagnosis into operating-model intervention.",
+    happens: [
+      "Define owners and first 30 days",
+      "Discuss adoption incentives and blockers",
+      "Clarify evidence needed for progress",
+    ],
+    output: ["First 30-day actions", "Evidence and risk notes"],
+    connections: [
+      "Operating Guidelines",
+      "Roles and Responsibilities",
+      "Monitoring and Improving",
+      "API Consumer Adoption",
+      "Legal and Compliance",
+      "Design Standards",
+    ],
+    chips: ["Working session", "Change planning", "Evidence"],
   },
   {
+    type: "stop",
+    stop: "07",
     time: "15:55-16:25",
+    duration: "30 min",
+    icon: "◌",
     title: "Fishbowl: API Teams at AI Speed",
-    detail: "Are API teams becoming AI-speed enablers or enterprise bottlenecks?",
+    purpose: "Challenge assumptions in an open discussion.",
+    happens: [
+      "Rotate into the discussion",
+      "Debate AI-speed enablers vs enterprise bottlenecks",
+      "Bring hard questions from the clinics",
+    ],
+    output: ["New perspectives", "Open questions for the community"],
+    chips: ["Fishbowl", "Open discussion", "AI-speed"],
   },
   {
+    type: "stop",
+    stop: "08",
+    phase: { label: "Final stop", text: "Synthesis and next decision" },
     time: "16:25-16:50",
+    duration: "25 min",
+    icon: "▤",
     title: "Live Synthesis and Closing",
-    detail: "Paris APIOps Operating Notes, one station, one decision, one next step.",
+    purpose: "Bring the stations back together.",
+    happens: ["Create Paris APIOps Operating Notes", "Choose one station, one decision, and one next step"],
+    output: ["Shared synthesis", "Personal next action"],
+    chips: ["Synthesis", "Operating notes", "Next decision"],
   },
+];
+
+const routeLegend = [
+  { icon: "↗", label: "Working session" },
+  { icon: "✦", label: "Practitioner story" },
+  { icon: "◌", label: "Discussion" },
+  { icon: "☕", label: "Networking" },
+  { icon: "▤", label: "Shared output" },
 ];
 
 const outcomes = [
@@ -484,25 +606,101 @@ const faqs = [
     <section class="section agenda-showcase" id="program">
       <div class="container">
         <div class="section-title section-title-left section-title-compact">
-          <h2>Program</h2>
+          <h2>Your route through the day</h2>
           <p>One focused day from diagnosis to next decision.</p>
         </div>
 
-        <div class="paris-agenda">
-          {agenda.map((item) => (
-            <article class="paris-agenda-row">
-              <time>{item.time}</time>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.detail}</p>
-              </div>
-            </article>
+        <div class="paris-route-legend" aria-label="Route activity types">
+          {routeLegend.map((item) => (
+            <span>
+              <span class="paris-route-symbol" aria-hidden="true">{item.icon}</span>
+              {item.label}
+            </span>
           ))}
         </div>
+
+        <ol class="paris-program-route" aria-label="APIOps Paris route through the day">
+          {agenda.map((item) => (
+            <li class={`paris-route-stop ${item.type === "break" ? "is-break" : ""} ${item.featured ? "is-featured" : ""}`}>
+              {item.phase && (
+                <p class="paris-route-phase">
+                  <strong>{item.phase.label}</strong>
+                  <span>{item.phase.text}</span>
+                </p>
+              )}
+
+              {item.type === "break" ? (
+                <>
+                  <div class="paris-route-time">
+                    <time>{item.time} · {item.duration}</time>
+                    <span class="paris-route-break-marker" aria-hidden="true"></span>
+                  </div>
+                  <article class="paris-route-break-card">
+                    <span>{item.label}</span>
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.purpose}</p>
+                    </div>
+                  </article>
+                </>
+              ) : (
+                <>
+                  <div class="paris-route-time">
+                    <time>{item.time} · {item.duration}</time>
+                    <span class="paris-route-marker" aria-hidden="true">{item.stop}</span>
+                  </div>
+                  <article class="paris-route-card">
+                    <div class="paris-route-card-head">
+                      <span>Stop {item.stop}</span>
+                      <h3>
+                        <span class="paris-route-title-icon" aria-hidden="true">{item.icon}</span>
+                        {item.title}
+                      </h3>
+                    </div>
+
+                    <div class="paris-route-purpose">
+                      <span>Purpose</span>
+                      <p>{item.purpose}</p>
+                    </div>
+
+                    <div class="paris-route-details">
+                      <div>
+                        <h4>You'll do</h4>
+                        <ul>
+                          {item.happens.map((detail) => <li>{detail}</li>)}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4>You'll leave with</h4>
+                        <ul>
+                          {item.output.map((output) => <li>{output}</li>)}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {item.connections && (
+                      <div class="paris-route-connections">
+                        <span>Connections</span>
+                        <div>
+                          {item.connections.map((connection) => <span>{connection}</span>)}
+                        </div>
+                      </div>
+                    )}
+
+                    <div class="paris-route-chips" aria-label={`Participation types for stop ${item.stop}`}>
+                      {item.chips.map((chip) => <span>{chip}</span>)}
+                    </div>
+                  </article>
+                </>
+              )}
+            </li>
+          ))}
+        </ol>
 
         <div class="paris-section-actions">
           <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
           <a class="button secondary alt" href={contributorUrl}>Propose a Program Contribution</a>
+          <a class="paris-program-text-link" href={challengeUrl}>Share an APIOps Challenge</a>
         </div>
       </div>
     </section>

@@ -3165,7 +3165,6 @@ nav {
 
 .paris-question-grid article,
 .paris-station-card,
-.paris-agenda-row,
 .paris-outcome-list p {
   background: #fff;
   border: 1px solid #ded9cf;
@@ -3614,31 +3613,376 @@ nav {
   font-weight: 700;
 }
 
-.paris-agenda {
-  display: grid;
-  gap: 0.75rem;
+.paris-route-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  max-width: 1040px;
+  margin: -0.55rem auto 1.35rem;
 }
 
-.paris-agenda-row {
-  display: grid;
-  gap: 0.75rem;
-  padding: 1rem;
+.paris-route-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 32px;
+  padding: 0.3rem 0.58rem;
+  border: 1px solid #e0d8ca;
+  border-radius: 999px;
+  background: #fff;
+  color: #334155;
+  font-size: 0.78rem;
+  font-weight: 850;
 }
 
-.paris-agenda-row time {
-  color: #b45309;
+.paris-route-symbol {
+  display: inline-grid;
+  place-items: center;
+  width: 1rem;
+  height: 1rem;
+  color: #315fdb;
+  font-size: 0.92rem;
+  line-height: 1;
+}
+
+.paris-program-route {
+  list-style: none;
+  display: grid;
+  gap: 0;
+  position: relative;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.paris-program-route::before {
+  content: "";
+  position: absolute;
+  left: 167px;
+  top: 3.35rem;
+  bottom: 3.35rem;
+  width: 7px;
+  border-radius: 999px;
+  background: #315fdb;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.42);
+  opacity: 0.92;
+}
+
+.paris-route-stop {
+  display: grid;
+  grid-template-columns: 132px 68px minmax(0, 1fr);
+  gap: 1rem;
+  position: relative;
+  padding: 0.3rem 0 1.15rem;
+}
+
+.paris-route-phase {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  width: fit-content;
+  margin: 0.95rem 0 0.15rem 206px;
+  padding: 0.3rem 0.68rem;
+  border: 1px solid #d9c9ff;
+  border-radius: 999px;
+  background: #f7f2ff;
+  color: #5c3fe0;
+  font-size: 0.78rem;
   font-weight: 900;
 }
 
-.paris-agenda-row h3 {
-  color: #111827;
-  font-size: 1.15rem;
-  line-height: 1.2;
-  margin-bottom: 0.25rem;
+.paris-route-phase span {
+  color: #475569;
+  font-weight: 800;
 }
 
-.paris-agenda-row p {
+.paris-route-time {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 68px;
+  gap: 1rem;
+  align-items: start;
+  grid-column: 1 / 3;
+}
+
+.paris-route-time time {
+  display: inline-flex;
+  justify-content: flex-end;
+  padding-top: 1.25rem;
+  color: #111827;
+  font-size: 0.9rem;
+  font-weight: 950;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.paris-route-marker,
+.paris-route-break-marker {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-inline: auto;
+  border: 5px solid #fff;
+  border-radius: 999px;
+  background: #315fdb;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 950;
+  box-shadow:
+    0 0 0 2px rgba(49, 95, 219, 0.22),
+    0 12px 24px rgba(15, 23, 42, 0.12);
+}
+
+.paris-route-break-marker {
+  width: 34px;
+  height: 34px;
+  margin-top: 0.65rem;
+  border-width: 4px;
+  background: #94a3b8;
+  box-shadow:
+    0 0 0 2px rgba(148, 163, 184, 0.22),
+    0 10px 20px rgba(15, 23, 42, 0.08);
+}
+
+.paris-route-card {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.08rem 1.15rem;
+  border: 1px solid #ded9cf;
+  border-left: 5px solid #315fdb;
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(49, 95, 219, 0.045), transparent 32%),
+    #fff;
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.055);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.paris-route-stop.is-featured .paris-route-marker {
+  background: #7e22ce;
+  box-shadow:
+    0 0 0 3px rgba(126, 34, 206, 0.2),
+    0 14px 28px rgba(15, 23, 42, 0.16);
+}
+
+.paris-route-stop.is-featured .paris-route-card {
+  border-color: #c7b5ff;
+  border-left-color: #7e22ce;
+  background:
+    linear-gradient(90deg, rgba(126, 34, 206, 0.08), transparent 36%),
+    linear-gradient(180deg, #ffffff, #fbf8ff);
+  box-shadow: 0 16px 38px rgba(17, 24, 39, 0.08);
+}
+
+.paris-route-stop.is-break {
+  align-items: center;
+  padding: 0.1rem 0 0.95rem;
+}
+
+.paris-route-stop:hover .paris-route-card,
+.paris-route-stop:focus-within .paris-route-card {
+  border-color: #c7b5ff;
+  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.1);
+  transform: translateY(-1px);
+}
+
+.paris-route-card-head {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.paris-route-card-head span,
+.paris-route-purpose span,
+.paris-route-connections > span {
+  color: #315fdb;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.paris-route-card-head h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #111827;
+  font-size: clamp(1.18rem, 1.8vw, 1.42rem);
+  line-height: 1.14;
+}
+
+.paris-route-title-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #315fdb;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.paris-route-stop.is-featured .paris-route-title-icon {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+
+.paris-route-purpose {
+  display: grid;
+  gap: 0.18rem;
+  padding: 0.7rem 0.82rem;
+  border-left: 4px solid #c7d2fe;
+  border-radius: 8px;
+  background: #f8faff;
+}
+
+.paris-route-purpose p {
+  color: #111827;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.paris-route-details {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.paris-route-details h4 {
+  margin-bottom: 0.45rem;
+  color: #111827;
+  font-size: 0.92rem;
+  line-height: 1.2;
+}
+
+.paris-route-details ul {
+  display: grid;
+  gap: 0.28rem;
+  list-style: none;
+}
+
+.paris-route-details li {
+  position: relative;
+  padding-left: 1rem;
+  color: #475569;
+  font-size: 0.92rem;
+  line-height: 1.42;
+}
+
+.paris-route-details li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.42rem;
+  height: 0.42rem;
+  border: 2px solid #315fdb;
+  border-radius: 999px;
+  transform: translateY(-50%);
+}
+
+.paris-route-connections {
+  display: grid;
+  gap: 0.5rem;
+  padding-top: 0.15rem;
+}
+
+.paris-route-connections > div,
+.paris-route-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.paris-route-connections > div span,
+.paris-route-chips span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0.28rem 0.58rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 850;
+  line-height: 1.15;
+}
+
+.paris-route-connections > div span {
+  border: 1px solid #c7d2fe;
+  background: #eef2ff;
+  color: #315fdb;
+}
+
+.paris-route-stop.is-featured .paris-route-connections {
+  padding: 0.72rem;
+  border: 1px dashed #c7b5ff;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.paris-route-stop.is-featured .paris-route-connections > div span {
+  min-height: 34px;
+  border-color: #bba7ff;
+  background: #f3e8ff;
+  color: #5c3fe0;
+  font-weight: 900;
+}
+
+.paris-route-chips span {
+  border: 1px solid #e5e0d8;
+  background: #fffdf8;
+  color: #334155;
+}
+
+.paris-route-break-card {
+  display: grid;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.86rem 1rem;
+  border: 1px solid #d8d3c8;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.paris-route-break-card > span {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 28px;
+  align-items: center;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 0.74rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.paris-route-break-card h3 {
+  color: #111827;
+  font-size: 1.05rem;
+  line-height: 1.15;
+}
+
+.paris-route-break-card p {
+  margin-top: 0.12rem;
   color: #64748b;
+  font-size: 0.92rem;
+  line-height: 1.42;
+}
+
+.paris-program-text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  color: #315fdb;
+  font-weight: 900;
 }
 
 .paris-outcome-list {
@@ -3800,8 +4144,8 @@ nav {
     min-width: 650px;
   }
 
-  .paris-agenda-row {
-    grid-template-columns: 140px minmax(0, 1fr);
+  .paris-route-details {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.85fr);
   }
 }
 
@@ -3830,8 +4174,84 @@ nav {
   }
 
   .paris-actions .button,
-  .paris-page .cta-actions .button {
+  .paris-page .cta-actions .button,
+  .paris-section-actions .button,
+  .paris-program-text-link {
     width: 100%;
+    justify-content: center;
+  }
+
+  .paris-program-route {
+    gap: 0.8rem;
+  }
+
+  .paris-route-legend {
+    margin-top: -0.35rem;
+  }
+
+  .paris-program-route::before {
+    display: none;
+  }
+
+  .paris-route-stop {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .paris-route-phase {
+    margin: 0.4rem 0 0;
+    border-radius: 8px;
+  }
+
+  .paris-route-time {
+    grid-template-columns: auto 42px;
+    grid-column: auto;
+    justify-content: start;
+    gap: 0.65rem;
+    align-items: center;
+  }
+
+  .paris-route-time time {
+    justify-content: flex-start;
+    padding-top: 0;
+    min-height: 34px;
+    align-items: center;
+    padding-inline: 0.65rem;
+    border: 1px solid #ded9cf;
+    border-radius: 999px;
+    background: #fff;
+  }
+
+  .paris-route-marker,
+  .paris-route-break-marker {
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+    font-size: 0.78rem;
+  }
+
+  .paris-route-break-marker {
+    margin-top: 0;
+    width: 28px;
+    height: 28px;
+  }
+
+  .paris-route-card {
+    padding: 1rem;
+  }
+
+  .paris-route-card-head h3 {
+    align-items: flex-start;
+  }
+
+  .paris-route-break-card {
+    gap: 0.55rem;
+  }
+
+  .paris-route-connections > div span,
+  .paris-route-chips span {
+    max-width: 100%;
   }
 
   .paris-badge-stack {
