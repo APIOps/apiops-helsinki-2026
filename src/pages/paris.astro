@@ -39,52 +39,130 @@ const participationRoutes = [
   },
 ];
 
-const stationCards = [
+const stationSteps = [
+  "Pick your station stickers",
+  "Find people working on similar problems",
+  "Join the matching station clinics",
+  "Leave with shared patterns and a next decision",
+];
+
+const stationStickers = [
   {
-    title: "Business Goals",
-    body: "how to explain APIs to leadership",
+    id: "business-goals",
+    name: "Business Goals",
+    problem: "explain APIs to leadership",
+    color: "green",
+    line: "Business Opportunities",
+    position: { left: 38, top: 19 },
+    rotation: -2,
+    featured: true,
   },
   {
-    title: "API Product Strategy",
-    body: "how to find the first proof capability",
+    id: "api-product-strategy",
+    name: "API Product Strategy",
+    problem: "find the first proof capability",
+    color: "green",
+    line: "Business Opportunities",
+    position: { left: 50, top: 39 },
+    rotation: 1,
   },
   {
-    title: "Portfolio Management",
-    body: "how to surface shadow APIs and duplicated integrations",
+    id: "portfolio-management",
+    name: "Portfolio Management",
+    problem: "surface shadow APIs",
+    color: "blue",
+    line: "Operating Model",
+    position: { left: 66.5, top: 25 },
+    rotation: -1,
+    featured: true,
   },
   {
-    title: "Operating Guidelines",
-    body: "how to govern without becoming a bottleneck",
+    id: "operating-guidelines",
+    name: "Operating Guidelines",
+    problem: "govern without bottlenecks",
+    color: "blue",
+    line: "Operating Model",
+    position: { left: 63, top: 28 },
+    rotation: 2,
+    featured: true,
   },
   {
-    title: "Roles and Responsibilities",
-    body: "who owns what in the API operating model",
+    id: "api-platform-architecture",
+    name: "API Platform Architecture",
+    problem: "APIM, gateways, platforms",
+    color: "magenta",
+    line: "Platform Architecture",
+    position: { left: 60, top: 50 },
+    rotation: -2,
+    featured: true,
   },
   {
-    title: "API Platform Architecture",
-    body: "APIM, gateways, native platforms, and operating choices",
+    id: "security-and-privacy",
+    name: "Security and Privacy",
+    problem: "IAM, trust, controls early",
+    color: "magenta",
+    line: "Platform Architecture",
+    position: { left: 75, top: 52.5 },
+    rotation: 1,
   },
   {
-    title: "Security and Privacy",
-    body: "IAM, trust, and control-team involvement",
+    id: "legal-and-compliance",
+    name: "Legal and Compliance",
+    problem: "regulatory impact",
+    color: "magenta",
+    line: "Platform Architecture",
+    position: { left: 70, top: 50 },
+    rotation: -1,
   },
   {
-    title: "Legal and Compliance",
-    body: "regulatory impact on API programs",
+    id: "design-standards",
+    name: "Design Standards",
+    problem: "AI-assisted design consistency",
+    color: "magenta",
+    line: "Platform Architecture",
+    position: { left: 80, top: 55 },
+    rotation: 2,
   },
   {
-    title: "Design Standards",
-    body: "AI-assisted API design without inconsistency",
+    id: "api-consumer-adoption",
+    name: "API Consumer Adoption",
+    problem: "B2B developer migration",
+    color: "cyan",
+    line: "Publishing and Adoption",
+    position: { left: 19, top: 43 },
+    rotation: -2,
+    featured: true,
   },
   {
-    title: "API Consumer Adoption",
-    body: "B2B developer migration and ecosystem change",
-  },
-  {
-    title: "Monitoring and Improving",
-    body: "production adoption metrics and continuous learning",
+    id: "monitoring-and-improving",
+    name: "Monitoring and Improving",
+    problem: "production adoption metrics",
+    color: "cyan",
+    line: "Publishing and Adoption",
+    position: { left: 43, top: 43 },
+    rotation: 1,
   },
 ];
+
+const badgeExamples = [
+  {
+    name: "Anna",
+    role: "Enterprise Architecture",
+    stickers: ["Business Goals", "Portfolio Management"],
+  },
+  {
+    name: "Marco",
+    role: "Platform / Security",
+    stickers: ["API Platform Architecture", "Security and Privacy"],
+  },
+  {
+    name: "Priya",
+    role: "Developer Ecosystem",
+    stickers: ["API Consumer Adoption", "Design Standards"],
+  },
+];
+
+const stickerByName = new Map(stationStickers.map((station) => [station.name, station]));
 
 const audience = [
   "API strategy and program leaders",
@@ -194,6 +272,16 @@ const faqs = [
       "No. APIOps Cycles is an open method for understanding and creating APIOps operating models. At APIOps Paris, it is used as a shared navigation tool for station stickers, clinics, and synthesis.",
   },
   {
+    question: "Is this only about APIs?",
+    answer:
+      "No. Most APIOps conversations naturally expand into integrations, platforms, governance, operating models, developer ecosystems, organizational change, regulation, and AI-enabled digital capabilities. APIs remain the starting point, but the event focuses on the operating model around them.",
+  },
+  {
+    question: "Is APIOps Cycles required?",
+    answer:
+      "No. APIOps Cycles is used as an open navigation method for the day. You do not need prior experience with it. The stations simply help people find relevant conversations and structure the clinics.",
+  },
+  {
     question: "Who handles partnerships and collaboration?",
     answer:
       "Official Paris event sponsorship is handled by the FOST/apidays team. We are happy to talk about possibilities to support and collaborate with the APIOps Community and APIOps Cycles method.",
@@ -225,10 +313,10 @@ const faqs = [
       </button>
 
       <div class="nav-links" id="top-navigation">
-        <a href="#take-part">Take Part</a>
-        <a href="#cycles">APIOps Cycles</a>
-        <a href="#stations">Stations</a>
+        <a href="#why">Why</a>
         <a href="#program">Program</a>
+        <a href="#stations">Stations</a>
+        <a href="#cycles">APIOps Cycles</a>
         <a href="#updates">Get Program Updates</a>
         <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
       </div>
@@ -278,9 +366,7 @@ const faqs = [
             <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
             <a class="button secondary" href={contributorUrl}>Propose a Program Contribution</a>
           </div>
-          <a class="paris-hero-link" href={challengeUrl}>
-            Already planning to attend? Share an APIOps challenge to help shape the station clinics.
-          </a>
+          <a class="paris-hero-link" href={challengeUrl}>Share an APIOps Challenge</a>
         </div>
 
         <div class="paris-visual" aria-label="Paris operating model map">
@@ -291,11 +377,11 @@ const faqs = [
             <span class="block block-3"></span>
           </div>
           <div class="paris-map-card">
-            <span>Platform</span>
-            <span>Adoption</span>
-            <span>Controls</span>
-            <span>AI-speed</span>
-            <span>Evidence</span>
+            <span>How do we get adoption?</span>
+            <span>How do we explain APIs to executives?</span>
+            <span>Where are our shadow APIs?</span>
+            <span>Can AI help without creating chaos?</span>
+            <span>How do we prove business value?</span>
           </div>
         </div>
       </div>
@@ -322,31 +408,7 @@ const faqs = [
       </div>
     </section>
 
-    <section class="section section-light" id="take-part">
-      <div class="container">
-        <div class="community-section-head">
-          <p class="small-pill">How to take part</p>
-            <h2>Four clear routes into APIOps Paris.</h2>
-            <p>
-              Choose the path that matches what you need: attend, shape the station clinics, contribute to the
-            program, or discuss support and collaboration with the APIOps community.
-            </p>
-        </div>
-
-        <div class="paris-take-part-grid">
-          {participationRoutes.map((route) => (
-            <article class="paris-take-part-card">
-              <h3>{route.title}</h3>
-              <p>{route.body}</p>
-              <a href={route.href}>{route.cta}</a>
-              <small>{route.note}</small>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="why">
+    <section class="section section-light" id="why">
       <div class="container paris-two-column">
         <div class="paris-section-intro">
           <p class="small-pill">Why After API Management?</p>
@@ -366,109 +428,34 @@ const faqs = [
       </div>
     </section>
 
-    <section class="section paris-image-band">
-      <div class="container paris-image-grid">
-        <figure>
-          <img src="/images/hero/apiops-helsinki2026-allan-knabe-jurgen-buchmann-preparing-clinic.jpg" alt="APIOps practitioners preparing a working clinic" loading="lazy" />
-        </figure>
+    <section class="section section-soft">
+      <div class="container paris-outcomes-grid">
         <div>
-          <p class="small-pill">Bring a real problem</p>
-          <h2>A participant-shaped working room.</h2>
-          <p>
-            The day combines short practitioner provocations, APIOps Cycles station stickers, guided station
-            clinics, peer problem-solving, facilitated roundtables, live synthesis, and practical operating-model
-            outputs.
-          </p>
+          <p class="small-pill">What You Leave With</p>
+          <h2>Practical outputs, not just notes from talks.</h2>
+        </div>
+        <div class="paris-outcome-list">
+          {outcomes.map((outcome) => <p>{outcome}</p>)}
         </div>
       </div>
     </section>
 
-    <section class="section section-light" id="cycles">
+    <section class="section section-light" id="credibility">
       <div class="container paris-two-column">
         <div class="paris-section-intro">
-          <p class="small-pill">How APIOps Cycles is used</p>
-          <h2>An open and optional method for navigating API operating-model work.</h2>
+          <p class="small-pill">Built from practitioner conversations</p>
+          <h2>This day comes from real APIOps clinics, not a generic call for talks.</h2>
         </div>
         <div class="paris-copy-stack">
           <p>
-            APIOps Cycles is an open method for understanding, designing, and improving the operating model
-            behind APIs and related digital capabilities.
+            APIOps Paris is shaped by recurring questions from APIOps clinics, workshops, and senior practitioner
+            conversations. The same themes keep coming back: platform adoption after API management investment,
+            shadow APIs, executive language, control-team involvement, AI-speed, B2B developer change, and how to
+            prove progress before the full enterprise capability is ready.
           </p>
           <p>
-            It is not a vendor product. It is not a mandatory framework. It is one practical way to make the
-            APIOps conversation visible across business, governance, platform, design, delivery, publishing,
-            adoption, and continuous improvement.
+            The agenda is built around these recurring operating-model questions, not sponsor tracks.
           </p>
-          <p>
-            At APIOps Paris, APIOps Cycles is used as a shared navigation tool.
-          </p>
-          <p>
-            Participants choose APIOps Cycles station stickers to show where their organization is currently
-            stuck. The stations help people find relevant peers, join focused clinics, and connect their local
-            challenges to a broader operating model.
-          </p>
-          <p>
-            The goal is not to follow a method. The goal is to help participants understand and create a better
-            APIOps operating model for their own organization.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="format">
-      <div class="container">
-        <div class="section-title section-title-left section-title-compact">
-          <h2>What This Day Is About</h2>
-          <p>Questions senior API practitioners are already facing.</p>
-        </div>
-
-        <div class="paris-question-grid">
-          <article>
-            <h3>What happens after API platform investment?</h3>
-            <p>Move from rollout to adoption, reuse, production usage, governance, and measurable value.</p>
-          </article>
-          <article>
-            <h3>How do we talk to CXOs about API programs?</h3>
-            <p>Find language that creates traction instead of making APIs sound like a technical side topic.</p>
-          </article>
-          <article>
-            <h3>How do we support AI-speed without chaos?</h3>
-            <p>Use AI in API design, development, documentation, testing, and governance without multiplying inconsistency.</p>
-          </article>
-          <article>
-            <h3>How do we manage B2B developer change?</h3>
-            <p>Handle migration pressure, roadmap tension, ecosystem expectations, and partner trust.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light" id="stations">
-      <div class="container">
-        <div class="paris-stations-head">
-          <div>
-            <p class="small-pill">Choose your APIOps stations</p>
-            <h2>The stickers are the routing system for the day.</h2>
-          </div>
-          <div>
-            <p>
-              At the start of the day, participants choose APIOps Cycles station stickers that match the
-              problems they want to work on.
-            </p>
-            <p>
-              The stickers are not decoration. They help participants find others working on similar problems,
-              join the right station clinics, and make the room's priorities visible.
-            </p>
-          </div>
-        </div>
-
-        <div class="paris-station-grid paris-station-grid-detailed">
-          {stationCards.map((station) => (
-            <article class="paris-station-card">
-              <h3>{station.title}</h3>
-              <p>{station.body}</p>
-            </article>
-          ))}
         </div>
       </div>
     </section>
@@ -520,14 +507,246 @@ const faqs = [
       </div>
     </section>
 
-    <section class="section section-light">
-      <div class="container paris-outcomes-grid">
+    <section class="section paris-image-band">
+      <div class="container paris-image-grid">
+        <figure>
+          <img src="/images/hero/apiops-helsinki2026-allan-knabe-jurgen-buchmann-preparing-clinic.jpg" alt="APIOps practitioners preparing a working clinic" loading="lazy" />
+        </figure>
         <div>
-          <p class="small-pill">What You Leave With</p>
-          <h2>Practical outputs, not just notes from talks.</h2>
+          <p class="small-pill">How the day works</p>
+          <h2>A participant-shaped working room.</h2>
+          <p>
+            The day combines short practitioner provocations, APIOps Cycles station stickers, guided station
+            clinics, peer problem-solving, facilitated roundtables, live synthesis, and practical outputs.
+          </p>
         </div>
-        <div class="paris-outcome-list">
-          {outcomes.map((outcome) => <p>{outcome}</p>)}
+      </div>
+    </section>
+
+    <section class="section section-light" id="stations">
+      <div class="container">
+        <div class="paris-stations-layout" data-station-system>
+          <div class="paris-stations-copy">
+            <p class="small-pill">Choose your APIOps stations</p>
+            <h2>Your stickers help you find the right conversations.</h2>
+            <div class="paris-stations-intro">
+              <p>
+                APIOps Cycles is an open method. At APIOps Paris, we use its stations as a shared navigation
+                system for the day.
+              </p>
+              <p>
+                At registration, you'll choose station stickers that match the challenges you want to work on.
+              </p>
+              <p>
+                The stickers help you find relevant peers, join the right station clinics, and make the room's
+                priorities visible.
+              </p>
+            </div>
+
+            <ol class="paris-station-steps" aria-label="How APIOps station stickers work">
+              {stationSteps.map((step) => <li>{step}</li>)}
+            </ol>
+
+            <div class="paris-badge-stack" aria-label="Example APIOps Paris badges with station stickers">
+              {badgeExamples.map((badge, index) => (
+                <article class={`paris-badge-mockup badge-angle-${index + 1}`}>
+                  <div class="paris-badge-lanyard" aria-hidden="true"></div>
+                  <header>
+                    <span>APIOps Paris</span>
+                    <small>Dec 1 / FOST Paris</small>
+                  </header>
+                  <strong>{badge.name}</strong>
+                  <small>{badge.role}</small>
+                  <div class="paris-badge-stickers">
+                    {badge.stickers.map((stickerName) => {
+                      const sticker = stickerByName.get(stickerName);
+                      return (
+                        <button
+                          class={`station-mini-sticker station-${sticker?.color ?? "blue"}`}
+                          type="button"
+                          data-station-trigger={sticker?.id}
+                          aria-label={`Highlight ${stickerName} station: ${sticker?.problem ?? "APIOps challenge"}`}
+                        >
+                          {stickerName}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div class="paris-stations-visual">
+            <div class="apiops-map-card">
+              <div class="apiops-map-label">APIOps Cycles open method</div>
+              <div class="apiops-map-scroll">
+                <div class="apiops-map-stage">
+                  <img
+                    src="/images/metro_map.svg"
+                    alt="APIOps Cycles metro map showing stations used as the APIOps Paris navigation system"
+                    loading="lazy"
+                  />
+                  <div class="apiops-map-pins" aria-hidden="true">
+                    {stationStickers.map((station) => (
+                      <span
+                        class={`apiops-map-pin station-${station.color}`}
+                        data-station-pin={station.id}
+                        style={`left: ${station.position.left}%; top: ${station.position.top}%;`}
+                      ></span>
+                    ))}
+                  </div>
+                  <div class="apiops-floating-stickers">
+                    {stationStickers
+                      .filter((station) => station.featured)
+                      .map((station) => (
+                        <button
+                          class={`station-sticker station-${station.color}`}
+                          type="button"
+                          data-station-trigger={station.id}
+                          style={`--pin-left: ${station.position.left}%; --pin-top: ${station.position.top}%; --sticker-rotate: ${station.rotation}deg;`}
+                          aria-label={`Highlight ${station.name} station: ${station.problem}`}
+                        >
+                          <span>{station.name}</span>
+                          <small>{station.problem}</small>
+                        </button>
+                      ))}
+                  </div>
+                </div>
+              </div>
+              <p class="apiops-map-caption" data-station-caption>
+                Pick a station to find peers working on the same challenge.
+              </p>
+            </div>
+
+            <div class="station-sticker-strip" aria-label="Popular APIOps Cycles station stickers">
+              {stationStickers.map((station) => (
+                <button
+                  class={`station-sticker station-${station.color}`}
+                  type="button"
+                  data-station-trigger={station.id}
+                  aria-label={`Highlight ${station.name} station: ${station.problem}`}
+                >
+                  <span>{station.name}</span>
+                  <small>{station.problem}</small>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="paris-station-links">
+          <a href="#cycles">Explore APIOps Cycles stations</a>
+          <a href={challengeUrl}>Share an APIOps challenge</a>
+        </div>
+      </div>
+    </section>
+
+    <script define:vars={{ stations: stationStickers }}>
+      const stationSystem = document.querySelector("[data-station-system]");
+
+      if (stationSystem) {
+        const triggers = Array.from(stationSystem.querySelectorAll("[data-station-trigger]"));
+        const pins = Array.from(stationSystem.querySelectorAll("[data-station-pin]"));
+        const caption = stationSystem.querySelector("[data-station-caption]");
+        const stationMap = new Map(stations.map((station) => [station.id, station]));
+
+        const setActiveStation = (stationId) => {
+          const station = stationMap.get(stationId);
+
+          triggers.forEach((trigger) => {
+            trigger.classList.toggle("is-active", trigger.dataset.stationTrigger === stationId);
+          });
+
+          pins.forEach((pin) => {
+            pin.classList.toggle("is-active", pin.dataset.stationPin === stationId);
+          });
+
+          if (caption && station) {
+            caption.textContent = `${station.name} - ${station.problem}`;
+          }
+        };
+
+        const clearActiveStation = () => {
+          triggers.forEach((trigger) => trigger.classList.remove("is-active"));
+          pins.forEach((pin) => pin.classList.remove("is-active"));
+
+          if (caption) {
+            caption.textContent = "Pick a station to find peers working on the same challenge.";
+          }
+        };
+
+        triggers.forEach((trigger) => {
+          trigger.addEventListener("mouseenter", () => setActiveStation(trigger.dataset.stationTrigger));
+          trigger.addEventListener("focus", () => setActiveStation(trigger.dataset.stationTrigger));
+          trigger.addEventListener("mouseleave", clearActiveStation);
+          trigger.addEventListener("blur", clearActiveStation);
+          trigger.addEventListener("click", () => setActiveStation(trigger.dataset.stationTrigger));
+        });
+      }
+    </script>
+
+    <section class="section section-soft" id="format">
+      <div class="container">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>Questions senior practitioners are asking</h2>
+          <p>The day is built around recurring APIOps challenges from clinics, workshops, and enterprise conversations.</p>
+        </div>
+
+        <div class="paris-question-grid">
+          <article>
+            <h3>What happens after API platform investment?</h3>
+            <p>Move from rollout to adoption, reuse, production usage, governance, and measurable value.</p>
+          </article>
+          <article>
+            <h3>How do we talk to CXOs about API programs?</h3>
+            <p>Find language that creates traction instead of making APIs sound like a technical side topic.</p>
+          </article>
+          <article>
+            <h3>How do we support AI-speed without chaos?</h3>
+            <p>Use AI in API design and delivery without multiplying inconsistency.</p>
+          </article>
+          <article>
+            <h3>How do we manage B2B developer change?</h3>
+            <p>Handle migration pressure, roadmap tension, ecosystem expectations, and partner trust.</p>
+          </article>
+          <article>
+            <h3>Where are our shadow APIs and duplicated integrations?</h3>
+            <p>Make hidden interfaces visible without launching a heavy governance program.</p>
+          </article>
+          <article>
+            <h3>How do we involve control teams earlier?</h3>
+            <p>Bring security, privacy, legal, risk, and compliance into the paved road before they become blockers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="cycles">
+      <div class="container paris-two-column">
+        <div class="paris-section-intro">
+          <p class="small-pill">How APIOps Cycles is used</p>
+          <h2>An open and optional method for navigating API program work.</h2>
+        </div>
+        <div class="paris-copy-stack">
+          <p>
+            APIOps Cycles is an open method for understanding, designing, and improving the digital capability
+            operating model behind APIs and related capabilities.
+          </p>
+          <p>
+            It is not a vendor product. It is not a mandatory framework. It is one practical way to make the
+            APIOps conversation visible across business, governance, platform, design, delivery, publishing,
+            adoption, and continuous improvement.
+          </p>
+          <p>
+            At APIOps Paris, APIOps Cycles is used as a shared navigation tool. Participants choose station
+            stickers to show where their organization is currently stuck, find relevant peers, join focused
+            clinics, and connect local challenges to a broader enterprise API capability.
+          </p>
+          <p>
+            The goal is not to follow a method. The goal is to help participants understand and improve the
+            operating model for their own organization.
+          </p>
         </div>
       </div>
     </section>
@@ -565,12 +784,12 @@ const faqs = [
       <div class="container paris-two-column">
         <div class="paris-section-intro">
           <p class="small-pill">Support and collaboration</p>
-          <h2>Support the APIOps community.</h2>
+          <h2>Collaborate with APIOps.</h2>
         </div>
         <div class="paris-copy-stack">
           <p>
-            Official Paris event sponsorship is handled by the FOST/apidays team, but we are happy to talk to you
-            about possibilities to support and collaborate with the APIOps Community and APIOps Cycles method.
+            Official Paris event sponsorship is handled by the FOST/apidays team. We are happy to talk about
+            possibilities to support and collaborate with the APIOps Community and the open APIOps Cycles method.
           </p>
           <div class="paris-inline-actions">
             <a class="button primary" href={partnershipUrl}>Contact about partnerships and collaboration</a>
@@ -584,7 +803,7 @@ const faqs = [
       <div class="container">
         <div class="community-section-head">
           <p class="small-pill">FAQ</p>
-          <h2>Common questions about tickets, challenges, contributors, and sponsorship.</h2>
+          <h2>Common questions about tickets, challenges, contributors, and collaboration.</h2>
         </div>
         <div class="paris-faq-grid">
           {faqs.map((faq) => (
@@ -599,7 +818,7 @@ const faqs = [
 
     <section class="section cta-band cta-section" id="tickets">
       <div class="container">
-        <h2>Bring a real API operating-model problem.</h2>
+        <h2>Bring a real APIOps problem.</h2>
         <p>
           Leave with better language, practical patterns, and a sharper next decision for your own organization.
         </p>
@@ -625,7 +844,7 @@ const faqs = [
       </div>
       <div>
         <h4>Conference</h4>
-        <a href="#take-part">How to take part</a>
+        <a href="#why">Why</a>
         <a href="#stations">Stations</a>
         <a href="#program">Program</a>
       </div>
