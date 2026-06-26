@@ -184,6 +184,8 @@ const agenda = [
     duration: "30 min",
     icon: "☕",
     title: "Breakfast, Networking, and APIOps Station Stickers",
+    experience: "Networking + self-selection",
+    audience: "Everyone together",
     purpose: "Find your people before the program starts.",
     happens: [
       "Grab breakfast",
@@ -200,6 +202,8 @@ const agenda = [
     duration: "40 min",
     icon: "⚡",
     title: "Welcome and Opening Provocation",
+    experience: "Shared framing",
+    audience: "Everyone together",
     purpose: "Create a shared picture of why the hard part starts after the platform decision.",
     happens: [
       'Frame "After API Management"',
@@ -216,6 +220,8 @@ const agenda = [
     duration: "45 min",
     icon: "✦",
     title: "Practitioner Sparks and Station Marketplace",
+    experience: "Practitioner stories + voting",
+    audience: "Everyone together",
     purpose: "Surface the questions worth working on.",
     happens: [
       "Hear short practitioner provocations",
@@ -234,7 +240,11 @@ const agenda = [
     icon: "◇",
     featured: true,
     title: "Station Clinics Round 1: Get the Story Straight",
+    experience: "Facilitated station clinics",
+    audience: "Split into stations",
     purpose: "Work with peers facing similar organisational challenges.",
+    note:
+      "Small facilitated groups where participants work on their own APIOps challenges using shared APIOps Cycles stations.",
     happens: [
       "Join a facilitated station clinic",
       "Bring your own problem",
@@ -258,6 +268,8 @@ const agenda = [
     duration: "45 min",
     icon: "◎",
     title: "Guided Clinic: Find the First Proof Capability",
+    experience: "Guided decision clinic",
+    audience: "Guided groups",
     purpose: "Leave with one realistic proof, not a transformation roadmap.",
     happens: [
       "Identify a narrow API, event, integration, or capability",
@@ -274,6 +286,7 @@ const agenda = [
     title: "Lunch and FOST Networking",
     purpose: "Take a break, explore the wider FOST event, or continue station conversations informally.",
     label: "Break / transfer",
+    audience: "Optional / informal",
   },
   {
     type: "stop",
@@ -284,7 +297,11 @@ const agenda = [
     icon: "↗",
     featured: true,
     title: "Station Clinics Round 2: Make the Change Happen",
+    experience: "Facilitated change planning",
+    audience: "Split into stations",
     purpose: "Turn diagnosis into operating-model intervention.",
+    note:
+      "Small facilitated groups where participants work on their own APIOps challenges using shared APIOps Cycles stations.",
     happens: [
       "Define owners and first 30 days",
       "Discuss adoption incentives and blockers",
@@ -308,6 +325,8 @@ const agenda = [
     duration: "30 min",
     icon: "◌",
     title: "Fishbowl: API Teams at AI Speed",
+    experience: "Open discussion",
+    audience: "Everyone together",
     purpose: "Challenge assumptions in an open discussion.",
     happens: [
       "Rotate into the discussion",
@@ -325,6 +344,8 @@ const agenda = [
     duration: "25 min",
     icon: "▤",
     title: "Live Synthesis and Closing",
+    experience: "Live synthesis",
+    audience: "Everyone together",
     purpose: "Bring the stations back together.",
     happens: ["Create Paris APIOps Operating Notes", "Choose one station, one decision, and one next step"],
     output: ["Shared synthesis", "Personal next action"],
@@ -338,6 +359,17 @@ const routeLegend = [
   { icon: "◌", label: "Discussion" },
   { icon: "☕", label: "Networking" },
   { icon: "▤", label: "Shared output" },
+];
+
+const routeSummary = [
+  { icon: "☕", label: "Breakfast" },
+  { icon: "⚡", label: "Sparks" },
+  { icon: "◇", label: "Clinics" },
+  { icon: "◎", label: "Proof" },
+  { icon: "□", label: "Lunch" },
+  { icon: "◇", label: "Clinics" },
+  { icon: "◌", label: "Fishbowl" },
+  { icon: "▤", label: "Notes" },
 ];
 
 const outcomes = [
@@ -619,6 +651,15 @@ const faqs = [
           ))}
         </div>
 
+        <div class="paris-route-summary" aria-label="Route rhythm of the day">
+          {routeSummary.map((item) => (
+            <span>
+              <span aria-hidden="true">{item.icon}</span>
+              {item.label}
+            </span>
+          ))}
+        </div>
+
         <ol class="paris-program-route" aria-label="APIOps Paris route through the day">
           {agenda.map((item) => (
             <li class={`paris-route-stop ${item.type === "break" ? "is-break" : ""} ${item.featured ? "is-featured" : ""}`}>
@@ -636,7 +677,10 @@ const faqs = [
                     <span class="paris-route-break-marker" aria-hidden="true"></span>
                   </div>
                   <article class="paris-route-break-card">
-                    <span>{item.label}</span>
+                    <div class="paris-route-break-labels">
+                      <span>{item.label}</span>
+                      <span>{item.audience}</span>
+                    </div>
                     <div>
                       <h3>{item.title}</h3>
                       <p>{item.purpose}</p>
@@ -651,17 +695,23 @@ const faqs = [
                   </div>
                   <article class="paris-route-card">
                     <div class="paris-route-card-head">
-                      <span>Stop {item.stop}</span>
+                      <span>Route Stop {item.stop}</span>
                       <h3>
                         <span class="paris-route-title-icon" aria-hidden="true">{item.icon}</span>
                         {item.title}
                       </h3>
+                      <div class="paris-route-experience">
+                        <span>{item.experience}</span>
+                        <span>{item.audience}</span>
+                      </div>
                     </div>
 
                     <div class="paris-route-purpose">
                       <span>Purpose</span>
                       <p>{item.purpose}</p>
                     </div>
+
+                    {item.note && <p class="paris-route-note">{item.note}</p>}
 
                     <div class="paris-route-details">
                       <div>
@@ -687,9 +737,18 @@ const faqs = [
                       </div>
                     )}
 
-                    <div class="paris-route-chips" aria-label={`Participation types for stop ${item.stop}`}>
-                      {item.chips.map((chip) => <span>{chip}</span>)}
-                    </div>
+                    {item.connections ? (
+                      <div class="paris-route-session">
+                        <span>Session</span>
+                        <div class="paris-route-chips" aria-label={`Session attributes for stop ${item.stop}`}>
+                          {item.chips.map((chip) => <span>{chip}</span>)}
+                        </div>
+                      </div>
+                    ) : (
+                      <div class="paris-route-chips" aria-label={`Participation types for stop ${item.stop}`}>
+                        {item.chips.map((chip) => <span>{chip}</span>)}
+                      </div>
+                    )}
                   </article>
                 </>
               )}
