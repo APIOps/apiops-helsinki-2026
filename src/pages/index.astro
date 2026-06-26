@@ -8,26 +8,76 @@ const featuredEvents = upcomingEvents.slice(0, 3);
 const parisEvent = events.find((event) => event.id === "paris-2026");
 const joinUrl = "https://join.apiops.info/";
 
-const communityFormats = [
-  "APIOps Cycles workshops",
-  "Conference talks",
-  "Full-day working events",
-  "Webinars",
-  "Meetups",
-  "Program contributor sessions",
-  "Peer problem-solving clinics",
-  "Operating-model synthesis notes",
+const cycleStations = [
+  {
+    title: "Business Goals",
+    text: "explain APIs to leadership",
+    color: "green",
+  },
+  {
+    title: "API Platform Architecture",
+    text: "platforms, APIM, and gateways",
+    color: "purple",
+  },
+  {
+    title: "Operating Guidelines",
+    text: "governance without bottlenecks",
+    color: "blue",
+  },
+  {
+    title: "Portfolio Management",
+    text: "shadow APIs and reuse",
+    color: "blue",
+  },
+  {
+    title: "Security and Privacy",
+    text: "IAM, trust, and controls",
+    color: "purple",
+  },
+  {
+    title: "API Consumer Adoption",
+    text: "B2B developer and partner change",
+    color: "cyan",
+  },
+  {
+    title: "Monitoring and Improving",
+    text: "production evidence",
+    color: "cyan",
+  },
 ];
 
 const focusAreas = [
-  "API strategy and business language",
-  "Platform adoption after API management",
-  "Governance without bottlenecks",
-  "Shadow APIs and portfolio visibility",
-  "Security, privacy, legal, risk, and compliance",
-  "AI-assisted API design and delivery",
-  "B2B developer migration and partner change",
-  "Production adoption metrics and evidence",
+  "API strategy",
+  "Platform adoption",
+  "Governance",
+  "Shadow APIs",
+  "AI-assisted API design",
+  "B2B developer change",
+  "Regulation",
+  "Production evidence",
+];
+
+const mapUses = [
+  {
+    title: "Workshops",
+    text: "Hands-on APIOps Cycles work with teams mapping API strategy, platforms, governance, and adoption.",
+  },
+  {
+    title: "Clinics",
+    text: "Small-group problem solving around real API operating-model challenges.",
+  },
+  {
+    title: "Talks",
+    text: "Practitioner patterns, decision stories, and lessons from API, platform, and governance work.",
+  },
+  {
+    title: "Full-day events",
+    text: "Working conferences like APIOps Paris and Helsinki, built around stations, clinics, and synthesis.",
+  },
+  {
+    title: "Online sessions",
+    text: "Webinars, meetups, and community discussions that keep APIOps conversations moving between events.",
+  },
 ];
 
 function getActionLabel(event) {
@@ -284,65 +334,72 @@ function getActionLabel(event) {
       </section>
     )}
 
-    <section class="section community-image-band" id="cycles">
-      <div class="container community-image-grid">
-        <figure>
-          <img src="/images/hero/apiops-helsinki2026-mike-jackson-allanknabe.jpg" alt="APIOps practitioners in conversation at a community event" loading="lazy" />
-        </figure>
-        <div>
-          <p class="small-pill">APIOps Cycles</p>
-          <h2>A shared map for better API operating-model conversations.</h2>
-          <p>
-            APIOps Cycles helps teams make the work behind APIs visible across business goals, platform
-            architecture, governance, roles, legal, security, design, publishing, adoption, monitoring, and
-            continuous improvement.
-          </p>
-          <p>
-            APIOps Cycles is an open method - free to use, adapt, and share - which helps teams map API
-            strategy, platforms, governance, and adoption. It is not a product or commercial framework.
-          </p>
-          <p>
-            The goal is not to follow a method for its own sake. The goal is to create clearer decisions and
-            reusable patterns for each organization.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="formats">
-      <div class="container community-two-column">
-        <div>
-          <p class="small-pill">Formats</p>
-          <h2>Different rooms, same operating-model focus.</h2>
-          <p>
-            APIOps community formats are designed for people who already have real API, integration, platform,
-            governance, or adoption problems to solve.
-          </p>
-        </div>
-
-        <div class="community-format-grid">
-          {communityFormats.map((format) => (
-            <span>{format}</span>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light">
+    <section class="section community-cycles-section" id="cycles">
       <div class="container">
-        <div class="community-section-head">
-          <p class="small-pill">Focus Areas</p>
-          <h2>What the community works on.</h2>
-          <p>
-            These focus areas map to APIOps Cycles stations. At events, we use station stickers to help you find
-            peers facing similar challenges.
-          </p>
+        <div class="community-cycles-layout">
+          <div class="community-cycles-copy">
+            <p class="small-pill">APIOps Cycles</p>
+            <h2>One shared map. Many ways to work.</h2>
+            <p>
+              APIOps Cycles is an open method for making API operating-model work visible across business,
+              platforms, governance, security, design, delivery, adoption, and improvement.
+            </p>
+            <p>
+              It is not a product or commercial framework. It gives the community a shared way to talk about API
+              strategy, platforms, governance, design, delivery, adoption, and improvement.
+            </p>
+            <p>
+              The community uses it in workshops, clinics, talks, meetups, full-day events, and synthesis notes -
+              not as a rigid framework, but as a shared language for better conversations.
+            </p>
+            <p>
+              Station stickers help people find peers at events. The map helps the community keep the conversation
+              connected between events.
+            </p>
+            <div class="community-cycle-links">
+              <a href="/paris#cycles">Explore APIOps Cycles</a>
+              <a href="/events">View upcoming events</a>
+            </div>
+          </div>
+
+          <div class="community-cycles-visual">
+            <figure class="community-cycles-map">
+              <img
+                src="/images/metro_map.svg"
+                alt="APIOps Cycles metro map showing stations for API strategy, platform architecture, governance, design, delivery, publishing, adoption, and operating model work."
+                loading="lazy"
+              />
+              <div class="community-cycle-stickers" aria-label="Example APIOps Cycles stations">
+                {cycleStations.map((station) => (
+                  <span class={`community-cycle-sticker is-${station.color}`}>
+                    <strong>{station.title}</strong>
+                    <small>{station.text}</small>
+                  </span>
+                ))}
+              </div>
+            </figure>
+          </div>
         </div>
 
-        <div class="community-focus-grid">
-          {focusAreas.map((item) => (
-            <article>{item}</article>
-          ))}
+        <div class="community-map-uses" id="formats">
+          <div class="community-subsection-head">
+            <h3>How the community uses the map</h3>
+          </div>
+          <div class="community-map-use-grid">
+            {mapUses.map((item) => (
+              <article>
+                <h4>{item.title}</h4>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div class="community-focus-strip" aria-labelledby="community-focus-heading">
+          <h3 id="community-focus-heading">Current focus areas</h3>
+          <div>
+            {focusAreas.map((item) => <span>{item}</span>)}
+          </div>
         </div>
       </div>
     </section>
