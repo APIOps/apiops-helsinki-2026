@@ -9,7 +9,7 @@ export default defineConfig({
   adapter: netlify(),
   vite: {
     define: {
-      'import.meta.env.PUBLIC_DEFAULT_OG_IMAGE': JSON.stringify('/images/hero/hero-bg.jpg'),
+      'import.meta.env.PUBLIC_DEFAULT_OG_IMAGE': JSON.stringify('/images/hero/apiops-hero.png'),
     },
   },
   image: {
