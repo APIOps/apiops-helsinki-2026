@@ -1,8 +1,56 @@
 [
-  {"slug":"finland","name":"Finland","intro":"A community for API practitioners across Finland, connecting platform, product, architecture and governance peers.","cities":["Helsinki","Tampere","Turku"],"organizers":["Local organizer team forming"],"partners":["Local hosts and partners welcome"],"meetupUrl":"https://www.meetup.com/find/?keywords=apiops&location=fi--Helsinki"},
-  {"slug":"germany","name":"Germany","intro":"A growing network for practitioners improving API operating models in Germany.","cities":["Berlin","Munich","Frankfurt"],"organizers":["Local organizer team forming"],"partners":["Local hosts and partners welcome"],"meetupUrl":"https://www.meetup.com/find/?keywords=apiops&location=de--Berlin"},
-  {"slug":"north-africa","name":"North Africa","intro":"A regional community connecting API and platform practitioners across North Africa.","cities":["Cairo","Casablanca","Tunis"],"organizers":["Local organizer team forming"],"partners":["Regional hosts and partners welcome"],"meetupUrl":"https://www.meetup.com/find/?keywords=apiops&location=eg--Cairo"},
-  {"slug":"poland","name":"Poland","intro":"A local network for sharing practical API, integration and platform lessons in Poland.","cities":["Warsaw","Kraków","Wrocław"],"organizers":["Local organizer team forming"],"partners":["Local hosts and partners welcome"],"meetupUrl":"https://www.meetup.com/find/?keywords=apiops&location=pl--Warsaw"},
-  {"slug":"spain","name":"Spain","intro":"A community bringing together API practitioners and platform teams throughout Spain.","cities":["Madrid","Barcelona","Valencia"],"organizers":["Local organizer team forming"],"partners":["Local hosts and partners welcome"],"meetupUrl":"https://www.meetup.com/find/?keywords=apiops&location=es--Madrid"},
-  {"slug":"us","name":"United States","intro":"A distributed community for US-based practitioners working on APIs, platforms and governance.","cities":["New York","Austin","San Francisco"],"organizers":["Local organizer team forming"],"partners":["Local hosts and partners welcome"],"meetupUrl":"https://www.meetup.com/find/?keywords=apiops&location=us--New-York"}
+  {
+    "slug": "finland",
+    "name": "Finland",
+    "intro": "A community for API practitioners across Finland, connecting platform, product, architecture and governance peers.",
+    "cities": ["Helsinki", "Tampere"],
+    "organizers": ["Marjukka Niinoja", "Kristiina Kivivuori"],
+    "partners": ["Local hosts and partners welcome"],
+    "meetupUrl": "https://www.meetup.com/find/?keywords=apiops&location=fi--Helsinki"
+  },
+  {
+    "slug": "germany",
+    "name": "Germany",
+    "intro": "A growing network for practitioners improving API operating models in Germany.",
+    "cities": ["Köln", "Nürnberg"],
+    "organizers": ["Audrey Kolski", "Daniel Kocot"],
+    "partners": ["Local hosts and partners welcome"],
+    "meetupUrl": "https://www.meetup.com/find/?keywords=apiops&location=de--Cologne"
+  },
+  {
+    "slug": "north-africa",
+    "name": "North Africa",
+    "intro": "A regional community connecting API and platform practitioners across North Africa.",
+    "cities": ["Casablanca", "Tunis"],
+    "organizers": ["Local organizer team forming"],
+    "partners": ["Regional hosts and partners welcome"],
+    "meetupUrl": "https://www.meetup.com/find/?keywords=apiops&location=ma--Casablanca"
+  },
+  {
+    "slug": "poland",
+    "name": "Poland",
+    "intro": "A local network for sharing practical API, integration and platform lessons in Poland.",
+    "cities": ["Warsaw"],
+    "organizers": ["Local organizer team forming"],
+    "partners": ["Local hosts and partners welcome"],
+    "meetupUrl": "https://www.meetup.com/find/?keywords=apiops&location=pl--Warsaw"
+  },
+  {
+    "slug": "spain",
+    "name": "Spain",
+    "intro": "A community bringing together API practitioners and platform teams throughout Spain.",
+    "cities": ["Barcelona"],
+    "organizers": ["Local organizer team forming"],
+    "partners": ["Local hosts and partners welcome"],
+    "meetupUrl": "https://www.meetup.com/find/?keywords=apiops&location=es--Barcelona"
+  },
+  {
+    "slug": "us",
+    "name": "United States",
+    "intro": "A distributed community for US-based practitioners working on APIs, platforms and governance.",
+    "cities": ["Dallas", "Atlanta", "New York"],
+    "organizers": ["Local organizer team forming"],
+    "partners": ["Local hosts and partners welcome"],
+    "meetupUrl": "https://www.meetup.com/find/?keywords=apiops&location=us--New-York"
+  }
 ]
