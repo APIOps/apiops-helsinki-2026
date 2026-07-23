@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import communities from "../../data/communities.json";
+const sponsorForm = "https://tally.so/r/3yQEpp";
+const speakerForm = "https://tally.so/r/zxg8Wa";
+---
+<BaseLayout title="Local APIOps Communities" description="Find and join APIOps communities, meetups, organizers and events near you.">
+  <nav class="community-nav"><div class="container nav-inner"><a class="brand" href="/"><img class="brand-logo" src="/favicon-32x32.png" alt="APIOps logo" /><strong>APIOps Community</strong></a><div class="nav-links"><a href="/">Home</a><a href="/events">Event Calendar</a><a class="button primary" href="https://join.apiops.info/">Join the Community</a></div></div></nav>
+  <main class="community-page">
+    <header class="local-hero"><div class="container"><p class="community-eyebrow">Meet people near you</p><h1>Local communities</h1><p>APIOps Community brings people together globally – but also locally. We are currently planning local activities in six regions.</p></div></header>
+    <section class="section section-light"><div class="container"><div class="community-section-head"><p class="small-pill">Find your community</p><h2>Connect locally. Learn globally.</h2><p>Join your local community to hear about upcoming meetups, connect with fellow practitioners, and stay up to date with local activities.</p></div><div class="local-card-grid">{communities.map((community) => <article class="local-card"><span>{community.name}</span><h3>{community.name}</h3><p>{community.intro}</p><p class="community-event-meta">{community.cities.join(" · ")}</p><a href={`/communities/${community.slug}`}>Explore the community →</a></article>)}</div><div class="community-section-actions"><a class="button primary" href="/events">View all upcoming events</a></div></div></section>
+    <section class="section"><div class="container local-opportunity-grid"><article><p class="small-pill">Start something local</p><h2>Can’t find a community near you?</h2><p>We're always looking to grow. If you'd like to see a meetup in your city or region—or help start one—we'd love to hear from you.</p><a class="button secondary alt" href={sponsorForm}>Express your interest</a></article><article><p class="small-pill">Share your experience</p><h2>Practitioner stories wanted.</h2><p>Share practical insights, lessons learned, successes and failures—not product demos or sales pitches. Propose a talk, workshop, clinic or panel contribution.</p><a class="button secondary alt" href={speakerForm}>Submit a speaker proposal</a></article></div></section>
+    <section class="section cta-band"><div class="container"><h2>Partner with us.</h2><p>Support the community as a sponsor, partner, organizer, host or local community partner. Let’s find a way to collaborate.</p><div class="cta-actions"><a class="button primary" href={sponsorForm}>Explore partnership opportunities</a></div></div></section>
+  </main>
+</BaseLayout>
