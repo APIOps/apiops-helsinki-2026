@@ -6,7 +6,10 @@
     "cities": ["Helsinki", "Tampere"],
     "organizers": ["Marjukka Niinoja", "Kristiina Kivivuori"],
     "partners": ["Local hosts and partners welcome"],
-    "meetupUrl": "https://www.meetup.com/find/?keywords=apiops&location=fi--Helsinki"
+    "meetupLinks": [
+      { "label": "Helsinki", "url": "https://www.meetup.com/apiops-helsinki/" },
+      { "label": "Tampere", "url": "https://www.meetup.com/apiops-tampere/" }
+    ]
   },
   {
     "slug": "germany",
@@ -15,7 +18,9 @@
     "cities": ["Köln", "Nürnberg"],
     "organizers": ["Audrey Kolski", "Daniel Kocot"],
     "partners": ["Local hosts and partners welcome"],
-    "meetupUrl": "https://www.meetup.com/find/?keywords=apiops&location=de--Cologne"
+    "meetupLinks": [
+      { "label": "Germany", "url": "https://www.meetup.com/apiops-germany/" }
+    ]
   },
   {
     "slug": "north-africa",
@@ -24,7 +29,9 @@
     "cities": ["Casablanca", "Tunis"],
     "organizers": ["Local organizer team forming"],
     "partners": ["Regional hosts and partners welcome"],
-    "meetupUrl": "https://www.meetup.com/find/?keywords=apiops&location=ma--Casablanca"
+    "meetupLinks": [
+      { "label": "North Africa", "url": "https://www.meetup.com/apiops-north-africa/" }
+    ]
   },
   {
     "slug": "poland",
@@ -33,7 +40,9 @@
     "cities": ["Warsaw"],
     "organizers": ["Local organizer team forming"],
     "partners": ["Local hosts and partners welcome"],
-    "meetupUrl": "https://www.meetup.com/find/?keywords=apiops&location=pl--Warsaw"
+    "meetupLinks": [
+      { "label": "Poland", "url": "https://www.meetup.com/find/?keywords=apiops&location=pl--Warsaw" }
+    ]
   },
   {
     "slug": "spain",
@@ -42,7 +51,9 @@
     "cities": ["Barcelona"],
     "organizers": ["Local organizer team forming"],
     "partners": ["Local hosts and partners welcome"],
-    "meetupUrl": "https://www.meetup.com/find/?keywords=apiops&location=es--Barcelona"
+    "meetupLinks": [
+      { "label": "Spain", "url": "https://www.meetup.com/find/?keywords=apiops&location=es--Barcelona" }
+    ]
   },
   {
     "slug": "us",
@@ -51,6 +62,9 @@
     "cities": ["Dallas", "Atlanta", "New York"],
     "organizers": ["Local organizer team forming"],
     "partners": ["Local hosts and partners welcome"],
-    "meetupUrl": "https://www.meetup.com/find/?keywords=apiops&location=us--New-York"
+    "meetupLinks": [
+      { "label": "Dallas", "url": "https://www.meetup.com/apiops-dallas/" },
+      { "label": "Atlanta", "url": "https://www.meetup.com/apiops-atlanta/" }
+    ]
   }
 ]
