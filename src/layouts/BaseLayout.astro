@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import SubscribeForm from "../components/SubscribeForm.astro";
 
 const {
   title = "APIOps Helsinki 2026",
@@ -29,5 +30,6 @@ const defaultOgImage = new URL(import.meta.env.PUBLIC_DEFAULT_OG_IMAGE, Astro.si
   </head>
   <body>
     <slot />
+    <SubscribeForm />
   </body>
 </html>
