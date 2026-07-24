@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title description">
+  <title id="title">APIOps local communities around the world</title>
+  <desc id="description">A simplified world map highlighting communities in the United States, Finland, Germany, Poland, Spain, and North Africa.</desc>
+  <defs>
+    <linearGradient id="ocean" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101b38"/><stop offset="1" stop-color="#192556"/></linearGradient>
+    <linearGradient id="land" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7786b8"/><stop offset="1" stop-color="#4b5b8d"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="960" height="500" rx="28" fill="url(#ocean)"/>
+  <g fill="none" stroke="#aebbf0" stroke-opacity=".09">
+    <path d="M0 125H960M0 250H960M0 375H960M240 0V500M480 0V500M720 0V500"/>
+    <ellipse cx="480" cy="250" rx="430" ry="190"/><ellipse cx="480" cy="250" rx="430" ry="100"/>
+  </g>
+  <g fill="url(#land)" stroke="#aebbf0" stroke-opacity=".18" stroke-width="2">
+    <path d="M72 136l54-57 90-30 88 25 42 49-28 42-48 16-22 45-55 22-35-23-50-9-31-37z"/>
+    <path d="M245 252l42 18 30 55-13 65-35 72-27-19-4-64-25-63z"/>
+    <path d="M412 105l35-31 42 7 14 35-31 25-24 55-35-14 12-38z"/>
+    <path d="M438 205l73-33 88 19 41 55-20 96-49 91-49-12-31-80-45-44-25-48z"/>
+    <path d="M493 121l77-44 134 7 116 63-34 59-98 19-42 59-42-36-55-5-47-49-56-20z"/>
+    <path d="M744 351l67-26 68 38-19 56-77 10-45-35z"/>
+  </g>
+  <g fill="#b83ee5" stroke="#fff" stroke-width="3" filter="url(#glow)">
+    <circle cx="221" cy="205" r="6"/><circle cx="248" cy="193" r="6"/><circle cx="284" cy="171" r="6"/>
+    <circle cx="518" cy="171" r="6"/><circle cx="533" cy="156" r="6"/><circle cx="550" cy="151" r="6"/><circle cx="563" cy="126" r="6"/><circle cx="574" cy="139" r="6"/>
+    <circle cx="484" cy="250" r="6"/><circle cx="524" cy="246" r="6"/>
+  </g>
+  <g font-family="Inter,Segoe UI,sans-serif">
+    <g transform="translate(72 275)"><rect width="245" height="72" rx="12" fill="#fff" fill-opacity=".94"/><text x="16" y="27" fill="#10172c" font-size="16" font-weight="700">United States</text><text x="16" y="51" fill="#4a5674" font-size="13">Dallas · Atlanta · New York</text></g>
+    <g transform="translate(600 70)"><rect width="270" height="122" rx="12" fill="#fff" fill-opacity=".94"/><text x="16" y="27" fill="#10172c" font-size="15" font-weight="700">Europe</text><text x="16" y="51" fill="#4a5674" font-size="13">Finland · Helsinki, Tampere</text><text x="16" y="73" fill="#4a5674" font-size="13">Germany · Köln, Nürnberg</text><text x="16" y="95" fill="#4a5674" font-size="13">Poland · Warsaw  /  Spain · Barcelona</text></g>
+    <g transform="translate(565 285)"><rect width="225" height="72" rx="12" fill="#fff" fill-opacity=".94"/><text x="16" y="27" fill="#10172c" font-size="16" font-weight="700">North Africa</text><text x="16" y="51" fill="#4a5674" font-size="13">Casablanca · Tunis</text></g>
+  </g>
+</svg>

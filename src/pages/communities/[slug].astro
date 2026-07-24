@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import communities from "../../data/communities.json";
+import events from "../../data/events.json";
+export function getStaticPaths() { return communities.map((community) => ({ params: { slug: community.slug }, props: { community } })); }
+const { community } = Astro.props;
+const localEvents = events.filter((event) => event.region === community.slug && event.status !== "Past event");
+---
+<BaseLayout title={`APIOps ${community.name}`} description={community.intro}>
+  <nav class="community-nav"><div class="container nav-inner"><a class="brand" href="/"><img class="brand-logo" src="/favicon-32x32.png" alt="APIOps logo" /><strong>APIOps {community.name}</strong></a><div class="nav-links"><a href="/communities">All communities</a><a href="/events">Event Calendar</a></div></div></nav>
+  <main class="community-page"><header class="local-hero"><div class="container"><p class="community-eyebrow">Local APIOps community</p><h1>{community.name}</h1><p>{community.intro}</p><div class="community-actions"><a class="button primary" href={community.meetupUrl}>Find us on Meetup</a><a class="button secondary" href="/communities">All local communities</a></div></div></header>
+  <section class="section section-light"><div class="container local-detail-grid"><article><p class="small-pill">Local organizers</p><h2>People making it happen</h2>{community.organizers.map((item) => <p>{item}</p>)}</article><article><p class="small-pill">Cities</p><h2>Where we connect</h2><p>{community.cities.join(", ")}</p></article><article><p class="small-pill">Partners</p><h2>Community support</h2>{community.partners.map((item) => <p>{item}</p>)}</article></div></section>
+  <section class="section"><div class="container"><div class="community-section-head"><p class="small-pill">Event calendar</p><h2>Upcoming events in {community.name}</h2><p>Events are filtered for this local community.</p></div>{localEvents.length ? <div class="community-home-calendar">{localEvents.map((event) => <article class="community-date-card"><div class="community-date-tile"><span>{event.month}</span><strong>{event.day || "TBA"}</strong><small>{event.year}</small></div><div class="community-date-body"><h3>{event.title}</h3><p class="community-event-meta">{event.location} · {event.format}</p><p>{event.description}</p><a class="community-action-primary" href={event.learnUrl}>Learn more</a></div></article>)}</div> : <div class="local-empty"><h3>New dates are being planned.</h3><p>Join the local group to be the first to hear when an event is announced.</p><a class="button primary" href={community.meetupUrl}>Join the local community</a></div>}</div></section></main>
+</BaseLayout>

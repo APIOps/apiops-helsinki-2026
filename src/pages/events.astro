@@ -21,6 +21,12 @@ const formatFilters = [
   { label: "Talks", value: "talk" },
   { label: "Full-day events", value: "full-day" },
 ];
+const regionFilters = [
+  { label: "All regions", value: "all" }, { label: "Finland", value: "finland" },
+  { label: "Germany", value: "germany" }, { label: "North Africa", value: "north-africa" },
+  { label: "Poland", value: "poland" }, { label: "Spain", value: "spain" },
+  { label: "United States", value: "us" }, { label: "Online", value: "online" },
+];
 
 function getActionLabel(event) {
   if (event.status === "Past event") return "View archive";
@@ -160,6 +166,7 @@ function getModeToken(event) {
               ))}
             </div>
           </div>
+          <div class="events-filter-row"><span>Region</span><div class="events-filter-bar">{regionFilters.map((filter) => <button type="button" data-filter-group="region" data-filter-value={filter.value} class={filter.value === "all" ? "is-active" : ""}>{filter.label}</button>)}</div></div>
         </div>
 
         <div class="events-timeline">
@@ -174,6 +181,7 @@ function getModeToken(event) {
                 data-tba={event.year ? "false" : "true"}
                 data-past={event.status === "Past event" ? "true" : "false"}
                 data-start={event.startDate}
+                data-region={event.region || (event.mode === "Online" ? "online" : "other")}
               >
                 <div class="community-date-tile">
                   <span>{event.month}</span>
@@ -241,6 +249,7 @@ function getModeToken(event) {
     const activeFilters = {
       when: "upcoming",
       format: "all",
+      region: "all",
     };
 
     function isNextThreeMonths(date) {
@@ -277,7 +286,8 @@ function getModeToken(event) {
       let visibleCount = 0;
 
       eventCards.forEach((card) => {
-        const matches = matchesWhen(card) && matchesFormat(card);
+        const matchesRegion = activeFilters.region === "all" || card.getAttribute("data-region") === activeFilters.region;
+        const matches = matchesWhen(card) && matchesFormat(card) && matchesRegion;
         card.hidden = !matches;
         if (matches) visibleCount += 1;
       });

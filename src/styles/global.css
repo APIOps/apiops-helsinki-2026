@@ -1985,6 +1985,26 @@ nav {
    PARTNERS PAGE
 ------------------------------ */
 
+.local-hero { padding: 6rem 0; color: #fff; background: radial-gradient(circle at 80% 20%, rgba(111,78,246,.4), transparent 35%), linear-gradient(135deg, var(--navy), #172554); }
+.local-hero h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); line-height: 1; margin: .7rem 0 1.2rem; }
+.local-hero p:not(.community-eyebrow) { max-width: 720px; color: #dbe4f0; font-size: 1.15rem; }
+.local-hero .community-actions { margin-top: 1.8rem; }
+.local-card-grid, .local-detail-grid, .local-opportunity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+.local-card, .local-detail-grid article, .local-opportunity-grid article, .local-empty, .local-home-callout { padding: 1.6rem; border: 1px solid var(--border); border-radius: 18px; background: #fff; }
+.local-card > span { color: var(--accent); text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; font-weight: 800; }
+.local-card h3, .local-detail-grid h2, .local-opportunity-grid h2, .local-empty h3, .local-home-callout h2 { color: var(--navy); margin: .35rem 0 .6rem; }
+.local-card a { display: inline-block; margin-top: 1rem; color: var(--accent); font-weight: 800; }
+.local-detail-grid article { min-height: 190px; }
+.local-opportunity-grid article { padding: 2rem; }
+.local-opportunity-grid .button { margin-top: 1.2rem; }
+.local-empty { text-align: center; padding: 3rem; background: #f8fafc; }
+.local-empty .button { margin-top: 1.2rem; }
+.local-home-callout { display: grid; grid-template-columns: minmax(260px, .75fr) minmax(0, 1.25fr); align-items: center; gap: 2rem; background: linear-gradient(135deg, #fff, #f3f0ff); }
+.local-home-copy .community-section-actions { justify-content: flex-start; flex-wrap: wrap; margin-top: 1.5rem; }
+.local-world-map { overflow: hidden; border: 1px solid rgba(111, 78, 246, .22); border-radius: 22px; box-shadow: 0 18px 40px rgba(15, 23, 42, .16); }
+.local-world-map img { width: 100%; height: auto; }
+@media (max-width: 720px) { .local-home-callout { grid-template-columns: 1fr; } .local-hero { padding: 4rem 0; } }
+
 .partners-hero {
   min-height: 620px;
 }
