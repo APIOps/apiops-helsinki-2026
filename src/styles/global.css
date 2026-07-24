@@ -1798,6 +1798,44 @@ nav {
   margin-top: 1.5rem;
 }
 
+.subscribe-section {
+  padding: 3.5rem 0;
+  background: linear-gradient(135deg, #f8faff, #f4efff);
+  border-top: 1px solid var(--border);
+}
+
+.subscribe-shell {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.subscribe-intro {
+  max-width: 36rem;
+}
+
+.subscribe-intro h2 {
+  margin: 0.8rem 0 0.6rem;
+  color: var(--navy);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.12;
+}
+
+.subscribe-intro p {
+  color: var(--slate-light);
+  font-size: 1.05rem;
+}
+
+.subscribe-form {
+  min-width: 0;
+}
+
+@media (min-width: 800px) {
+  .subscribe-shell {
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  }
+}
+
 .footer {
   background: #0f172a;
   color: #cbd5f5;
