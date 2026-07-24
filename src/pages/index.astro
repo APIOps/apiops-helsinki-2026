@@ -6,8 +6,6 @@ const upcomingEvents = events.filter((event) => event.status !== "Past event");
 const pastEvents = events.filter((event) => event.status === "Past event");
 const featuredEvents = upcomingEvents.slice(0, 3);
 const parisEvent = events.find((event) => event.id === "paris-2026");
-const joinUrl = "https://join.apiops.info/";
-
 const cycleStations = [
   {
     title: "Business Goals",
@@ -151,7 +149,7 @@ function getActionLabel(event) {
           </p>
           <div class="community-actions">
             <a class="button primary" href="/events">Event Calendar</a>
-            <a class="button secondary" href={joinUrl}>Join the Community</a>
+            <a class="button secondary" href="#subscribe-section">Join the Community</a>
           </div>
         </div>
 
@@ -322,7 +320,7 @@ function getActionLabel(event) {
 
         <div class="community-section-actions">
           <a class="button primary" href="/events">View full events calendar</a>
-          <a class="button secondary alt" href={joinUrl}>Join the Community</a>
+          <a class="button secondary alt" href="#subscribe-section">Join the Community</a>
         </div>
       </div>
     </section>
@@ -447,7 +445,7 @@ function getActionLabel(event) {
             <li>A decision story others can learn from</li>
             <li>A question that deserves a working room</li>
           </ul>
-          <a class="button primary" href={joinUrl}>Join the Community</a>
+          <a class="button primary" href="#subscribe-section">Join the Community</a>
         </div>
       </div>
     </section>
@@ -460,7 +458,7 @@ function getActionLabel(event) {
         </p>
           <div class="hero-actions cta-actions">
             <a class="button primary" href="/events">Event Calendar</a>
-            <a class="button secondary" href={joinUrl}>Get Updates</a>
+            <a class="button secondary" href="#subscribe-section">Get Updates</a>
           </div>
       </div>
     </section>
@@ -485,7 +483,7 @@ function getActionLabel(event) {
         <a href="#cycles">APIOps Cycles</a>
         <a href="#formats">Formats</a>
         <a href="/communities">Local communities</a>
-        <a href={joinUrl}>Join the Community</a>
+        <a href="#subscribe-section">Join the Community</a>
       </div>
     </div>
   </footer>

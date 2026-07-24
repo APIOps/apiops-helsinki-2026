@@ -2,8 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import events from "../data/events.json";
 
-const joinUrl = "https://join.apiops.info/";
-
 const whenFilters = [
   { label: "Upcoming", value: "upcoming" },
   { label: "This quarter", value: "quarter" },
@@ -82,7 +80,7 @@ function getModeToken(event) {
         <a href="/">Community</a>
         <a href="#calendar">Calendar</a>
         <a href="/paris">APIOps Paris</a>
-        <a class="button primary" href={joinUrl}>Join the Community</a>
+        <a class="button primary" href="#subscribe-section">Join the Community</a>
       </div>
     </div>
   </nav>
@@ -118,8 +116,8 @@ function getModeToken(event) {
           </p>
         </div>
         <div class="events-hero-actions">
-          <a class="button secondary alt" href={joinUrl}>Join the Community</a>
-          <a class="button secondary alt" href={joinUrl}>Get Updates</a>
+          <a class="button secondary alt" href="#subscribe-section">Join the Community</a>
+          <a class="button secondary alt" href="#subscribe-section">Get Updates</a>
           <a class="events-suggest-link" href="https://tally.so/r/3yQEpp">Suggest an event</a>
         </div>
       </div>
@@ -230,7 +228,7 @@ function getModeToken(event) {
       </div>
         <div>
           <h4>Calendar</h4>
-        <a href={joinUrl}>Join the Community</a>
+        <a href="#subscribe-section">Join the Community</a>
           <a href="#calendar">All events</a>
         </div>
       <div>
