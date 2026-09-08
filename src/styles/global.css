@@ -3978,6 +3978,71 @@ nav {
   color: #315fdb;
 }
 
+.paris-route-guide-role {
+  width: fit-content;
+  max-width: 100%;
+  color: #315fdb;
+  font-size: 0.74rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.paris-route-guide-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  align-items: center;
+}
+
+.paris-person-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  min-height: 32px;
+  max-width: 100%;
+  padding: 0.18rem 0.58rem 0.18rem 0.22rem;
+  border: 1px solid #dbe4ff;
+  border-radius: 999px;
+  background: #fff;
+  color: #334155;
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.paris-person-pill img,
+.paris-person-initials,
+.paris-spark-grid img,
+.paris-spark-initials,
+.paris-practitioner-card-head img,
+.paris-practitioner-initials {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.paris-person-pill img,
+.paris-person-initials {
+  width: 26px;
+  height: 26px;
+}
+
+.paris-person-initials,
+.paris-spark-initials,
+.paris-practitioner-initials {
+  background: #eef2ff;
+  color: #315fdb;
+  font-weight: 950;
+}
+
+.paris-person-initials {
+  font-size: 0.68rem;
+}
+
 .paris-route-stop.is-featured .paris-route-experience span:last-child {
   background: #f3e8ff;
   color: #6d28d9;
@@ -4009,21 +4074,179 @@ nav {
   line-height: 1.45;
 }
 
-.paris-route-details {
+.paris-practitioner-sparks {
   display: grid;
-  gap: 0.9rem;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  border: 1px solid #c7d2fe;
+  border-radius: 8px;
+  background: #f8faff;
 }
 
-.paris-route-details h4 {
-  margin-bottom: 0.45rem;
+.paris-practitioner-sparks > div:first-child {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.paris-practitioner-sparks > div:first-child span {
+  color: #315fdb;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.paris-practitioner-sparks > div:first-child p {
+  color: #334155;
+  font-size: 0.88rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.paris-spark-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.paris-spark-grid article {
+  display: grid;
+  gap: 0.18rem;
+  min-height: 100%;
+  padding: 0.68rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.paris-spark-grid img,
+.paris-spark-initials {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 0.28rem;
+}
+
+.paris-spark-initials {
+  font-size: 0.82rem;
+}
+
+.paris-spark-grid strong {
+  color: #111827;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.paris-spark-grid span {
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.paris-route-callout {
+  display: grid;
+  gap: 0.25rem;
+  max-width: 78ch;
+  padding: 0.78rem 0.86rem;
+  border: 1px solid #d9c9ff;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.paris-route-callout strong {
   color: #111827;
   font-size: 0.92rem;
   line-height: 1.2;
 }
 
+.paris-route-callout p {
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.42;
+}
+
+.paris-route-callout span {
+  color: #5c3fe0;
+  font-size: 0.8rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.paris-route-details {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.paris-route-details details {
+  border: 1px solid #e5e0d8;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.paris-route-details details[open] {
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(17, 24, 39, 0.04);
+}
+
+.paris-route-details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 42px;
+  padding: 0.58rem 0.72rem;
+  color: #111827;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1.2;
+  list-style: none;
+}
+
+.paris-route-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.paris-route-details summary::after {
+  content: "+";
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #315fdb;
+  font-size: 1rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.paris-route-details details[open] summary::after {
+  content: "-";
+}
+
+.paris-route-details summary small {
+  margin-left: auto;
+  color: #64748b;
+  font-size: 0.74rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.paris-route-details summary:focus-visible {
+  outline: 3px solid rgba(49, 95, 219, 0.25);
+  outline-offset: 2px;
+}
+
+.paris-route-details summary span {
+  color: #111827;
+}
+
 .paris-route-details ul {
   display: grid;
   gap: 0.28rem;
+  padding: 0 0.82rem 0.78rem;
   list-style: none;
 }
 
@@ -4161,6 +4384,59 @@ nav {
   color: #64748b;
   font-size: 0.92rem;
   line-height: 1.42;
+}
+
+.paris-practitioners-section {
+  border-top: 1px solid #e5e0d8;
+}
+
+.paris-practitioner-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.paris-practitioner-card {
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+  min-height: 118px;
+  padding: 1rem;
+  border: 1px solid #ded9cf;
+  border-left: 4px solid #315fdb;
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, #ffffff, #f8faff);
+  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.05);
+}
+
+.paris-practitioner-card-head {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.paris-practitioner-card-head img,
+.paris-practitioner-initials {
+  width: 46px;
+  height: 46px;
+}
+
+.paris-practitioner-initials {
+  font-size: 0.88rem;
+}
+
+.paris-practitioner-card strong {
+  color: #111827;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.paris-practitioner-card span {
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 750;
+  line-height: 1.38;
 }
 
 .paris-program-text-link {
@@ -4343,6 +4619,11 @@ nav {
   .apiops-map-stage {
     min-width: 620px;
   }
+
+  .paris-spark-grid,
+  .paris-practitioner-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px) {
@@ -4442,6 +4723,11 @@ nav {
   .paris-route-connections > div span,
   .paris-route-chips span {
     max-width: 100%;
+  }
+
+  .paris-spark-grid,
+  .paris-practitioner-grid {
+    grid-template-columns: 1fr;
   }
 
   .paris-badge-stack {

@@ -175,6 +175,54 @@ const audience = [
   "Public-sector and regulated data-sharing practitioners",
 ];
 
+const practitionerGuides = [
+  {
+    id: "claire",
+    name: "Claire Barrett",
+    focus: "Strategy, organizations & change",
+    avatar: "/images/speakers/claire-barrett.jpg",
+  },
+  {
+    id: "daniel",
+    name: "Daniel Kocot",
+    focus: "API architecture, governance & engineering",
+    avatar: "/images/speakers/daniel-kocot.jpg",
+  },
+  {
+    id: "kin",
+    name: "Kin Lane",
+    focus: "API discovery, governance & ecosystem thinking",
+    avatar: "/images/speakers/kin-lane.png",
+  },
+  {
+    id: "marjukka",
+    name: "Marjukka Niinioja",
+    focus: "API operating models & APIOps Cycles",
+    avatar: "/images/speakers/marjukka-niinioja.jpg",
+  },
+];
+
+const practitionerPeople = {
+  claire: practitionerGuides[0],
+  daniel: practitionerGuides[1],
+  kin: practitionerGuides[2],
+  marjukka: practitionerGuides[3],
+  french1: {
+    id: "french1",
+    name: "To be confirmed",
+    focus: "TBA",
+    initials: "FR",
+    mocked: true,
+  },
+  french2: {
+    id: "french2",
+    name: "To be confirmed",
+    focus: "TBA",
+    initials: "FR",
+    mocked: true,
+  },
+};
+
 const agenda = [
   {
     type: "stop",
@@ -190,7 +238,7 @@ const agenda = [
     happens: [
       "Grab breakfast",
       "Choose your APIOps station stickers",
-      "Meet peers working on similar problems",
+      "Meet peers and Practitioner Guides working on similar problems",
     ],
     output: ["Your stations selected", "First peer connections"],
     chips: ["Networking", "Station stickers", "Self-selection"],
@@ -204,13 +252,16 @@ const agenda = [
     title: "After API Management",
     experience: "Shared framing",
     audience: "Everyone together",
+    guideRole: "Framing",
+    guides: [practitionerPeople.marjukka],
     purpose: "Why platform technology is not the hardest part anymore.",
     happens: [
       'Frame "After API Management"',
       "Name common operating-model failure modes",
       "Connect platform investment to adoption, governance, AI-speed, and evidence",
+      "Explain how the participant-shaped day will work",
     ],
-    output: ["Shared vocabulary", "Common problem statement"],
+    output: ["Shared vocabulary", "Common problem statement", "Understanding of how to participate in the day"],
     chips: ["Provocation", "Framing", "Shared language"],
   },
   {
@@ -223,12 +274,30 @@ const agenda = [
     experience: "Practitioner stories + voting",
     audience: "Everyone together",
     purpose: "Real stories, participant challenges, and a vote on what the room should work on.",
+    sparks: [
+      {
+        ...practitionerPeople.kin,
+        focus: "Why we still don't know what APIs we have",
+      },
+      {
+        ...practitionerPeople.claire,
+        focus: "Why operating-model change gets stuck",
+      },
+      {
+        ...practitionerPeople.french1,
+        focus: "Spark to be confirmed",
+      },
+      {
+        ...practitionerPeople.french2,
+        focus: "Spark to be confirmed",
+      },
+    ],
     happens: [
-      "Hear practitioner sparks: what did not work, and what changed",
+      "Hear four short practitioner provocations: what did not work, what changed, or what remains difficult",
       "Add participant-submitted challenges to the marketplace",
       "Vote on which station clinic priorities deserve the room's attention",
     ],
-    output: ["Clinic priorities for the day", "A sharper view of peer challenges"],
+    output: ["Clinic priorities for the day", "Sharper view of the problems represented in the room"],
     chips: ["Practitioner sparks", "Voting", "Marketplace"],
   },
   {
@@ -242,6 +311,14 @@ const agenda = [
     title: "Station Clinics: Where Are We Actually Stuck?",
     experience: "Facilitated station clinics",
     audience: "Split into stations",
+    guideRole: "Practitioner Guides",
+    guides: [
+      practitionerPeople.claire,
+      practitionerPeople.daniel,
+      practitionerPeople.kin,
+      practitionerPeople.marjukka,
+      practitionerPeople.french1,
+    ],
     purpose: "Choose the APIOps station closest to your current challenge and work it through with peers facing similar problems.",
     note:
       "Topics are shaped by the room: platform adoption, shadow APIs, governance, executive buy-in, security, developer experience, or the problems participants bring with them.",
@@ -251,14 +328,6 @@ const agenda = [
       "Diagnose what is actually blocking progress",
     ],
     output: ["Clearer diagnosis", "Useful peer patterns", "Questions worth taking forward"],
-    connections: [
-      "Business Goals",
-      "Portfolio Management",
-      "Operating Guidelines",
-      "API Platform Architecture",
-      "Security and Privacy",
-      "API Consumer Adoption",
-    ],
     chips: ["Facilitated", "Small groups", "Working session"],
   },
   {
@@ -270,7 +339,13 @@ const agenda = [
     title: "Choose Something Worth Proving",
     experience: "Guided decision clinic",
     audience: "Guided groups",
+    guideRole: "Practitioner Challenge",
+    guides: [practitionerPeople.marjukka, practitionerPeople.claire, practitionerPeople.daniel],
     purpose: "Do not redesign the whole operating model. Find one API, integration, event, product journey, or capability where a different way of working could demonstrate measurable improvement.",
+    callout: {
+      title: "Practitioner challenge",
+      text: "Is it small enough to try? Important enough to matter? Can you tell whether it worked?",
+    },
     happens: [
       "Identify one small enough proof capability or comparable experiment",
       "Decide what evidence would make it convincing",
@@ -284,7 +359,7 @@ const agenda = [
     time: "13:00-14:00",
     duration: "60 min",
     title: "Lunch + FOST",
-    purpose: "Take a break, explore the wider FOST event, or continue station conversations informally.",
+    purpose: "Take a break, explore the wider FOST event, or continue station conversations informally. Practitioner Guides participate informally; there is no special expert programming.",
     label: "Break / transfer",
     audience: "Optional / informal",
   },
@@ -299,6 +374,14 @@ const agenda = [
     title: "Station Clinics: What Do We Change First?",
     experience: "Facilitated change planning",
     audience: "Split into stations",
+    guideRole: "Practitioner Guides",
+    guides: [
+      practitionerPeople.claire,
+      practitionerPeople.daniel,
+      practitionerPeople.kin,
+      practitionerPeople.marjukka,
+      practitionerPeople.french1,
+    ],
     purpose: "Turn the morning's diagnosis into ownership, actions, evidence, and a credible 90-day move.",
     note:
       "Do not design the transformation. Define the first credible move and what needs to happen in the first 30 days.",
@@ -308,14 +391,6 @@ const agenda = [
       "Clarify the evidence needed over a rough 90-day path",
     ],
     output: ["A rough 90-day path", "First 30-day actions", "Evidence and risk notes"],
-    connections: [
-      "Operating Guidelines",
-      "Roles and Responsibilities",
-      "Monitoring and Improving",
-      "API Consumer Adoption",
-      "Legal and Compliance",
-      "Design Standards",
-    ],
     chips: ["Working session", "Change planning", "Evidence"],
   },
   {
@@ -325,15 +400,27 @@ const agenda = [
     duration: "30 min",
     icon: "◌",
     title: "Fishbowl: The Question We Couldn't Resolve",
-    experience: "Open discussion",
+    experience: "Open fishbowl discussion",
     audience: "Everyone together",
+    guideRole: "Open Fishbowl",
+    guides: [
+      practitionerPeople.claire,
+      practitionerPeople.daniel,
+      practitionerPeople.kin,
+      practitionerPeople.marjukka,
+      practitionerPeople.french1,
+    ],
     purpose: "Bring the hardest unresolved question from the station clinics back into the room.",
+    callout: {
+      title: "Not a panel",
+      text: "Practitioners and participants rotate into the conversation. No panel.",
+    },
     happens: [
       "Rotate into the discussion",
       "Challenge the assumptions that survived the clinics",
       "Debate the question the room decides deserves the final conversation",
     ],
-    output: ["New perspectives", "Open questions for the community"],
+    output: ["New perspectives", "Assumptions challenged", "Open questions for the community"],
     chips: ["Fishbowl", "Open discussion", "Unresolved questions"],
   },
   {
@@ -346,9 +433,15 @@ const agenda = [
     title: "Paris Operating Notes",
     experience: "Live synthesis",
     audience: "Everyone together",
+    guideRole: "Facilitation",
+    guides: [practitionerPeople.marjukka],
     purpose: "What did we learn, what patterns emerged, and what will you do next?",
-    happens: ["Create Paris APIOps Operating Notes", "Choose one station, one decision, and one next step"],
-    output: ["Shared synthesis", "Personal next action"],
+    happens: [
+      "Create the Paris APIOps Operating Notes",
+      "Capture patterns and unresolved questions from the day",
+      "Choose one station, one decision, and one next step",
+    ],
+    output: ["Shared synthesis", "Personal next action", "Community learning that can continue after Paris"],
     chips: ["Synthesis", "Operating notes", "Next decision"],
   },
 ];
@@ -707,6 +800,21 @@ const faqs = [
                         <span>{item.experience}</span>
                         <span>{item.audience}</span>
                       </div>
+                      {item.guideRole && <p class="paris-route-guide-role">{item.guideRole}</p>}
+                      {item.guides && (
+                        <div class="paris-route-guide-pills" aria-label={`Practitioner Guides for ${item.title}`}>
+                          {item.guides.map((guide) => (
+                            <span class="paris-person-pill">
+                              {guide.avatar ? (
+                                <img src={guide.avatar} alt="" loading="lazy" />
+                              ) : (
+                                <span class="paris-person-initials" aria-hidden="true">{guide.initials}</span>
+                              )}
+                              <span>{guide.name}</span>
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
 
                     <div class="paris-route-purpose">
@@ -716,19 +824,55 @@ const faqs = [
 
                     {item.note && <p class="paris-route-note">{item.note}</p>}
 
+                    {item.sparks && (
+                      <div class="paris-practitioner-sparks">
+                        <div>
+                          <span>Practitioner Sparks</span>
+                          <p>Short provocations from people in the room - no presentations, no product pitches.</p>
+                        </div>
+                        <div class="paris-spark-grid">
+                          {item.sparks.map((spark) => (
+                            <article>
+                              {spark.avatar ? (
+                                <img src={spark.avatar} alt="" loading="lazy" />
+                              ) : (
+                                <span class="paris-spark-initials" aria-hidden="true">{spark.initials}</span>
+                              )}
+                              <strong>{spark.name}</strong>
+                              <span>{spark.focus}</span>
+                            </article>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {item.callout && (
+                      <div class="paris-route-callout">
+                        <strong>{item.callout.title}</strong>
+                        <p>{item.callout.text}</p>
+                        {item.callout.names && <span>{item.callout.names}</span>}
+                      </div>
+                    )}
+
                     <div class="paris-route-details">
-                      <div>
-                        <h4>What happens</h4>
+                      <details>
+                        <summary>
+                          <span>What happens</span>
+                          <small>{item.happens.length} points</small>
+                        </summary>
                         <ul>
                           {item.happens.map((detail) => <li>{detail}</li>)}
                         </ul>
-                      </div>
-                      <div>
-                        <h4>Outcome</h4>
+                      </details>
+                      <details>
+                        <summary>
+                          <span>Outcome</span>
+                          <small>{item.output.length} outputs</small>
+                        </summary>
                         <ul>
                           {item.output.map((output) => <li>{output}</li>)}
                         </ul>
-                      </div>
+                      </details>
                     </div>
 
                     {item.connections && (
@@ -763,6 +907,35 @@ const faqs = [
           <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
           <a class="button secondary alt" href={contributorUrl}>Propose a Program Contribution</a>
           <a class="paris-program-text-link" href={challengeUrl}>Share an APIOps Challenge</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light paris-practitioners-section" id="practitioners">
+      <div class="container">
+        <div class="section-title section-title-left section-title-compact">
+          <p class="small-pill">Practitioners in the Room</p>
+          <h2>No speaker/audience divide.</h2>
+          <p>
+            Our invited Practitioner Guides bring short provocations, experience and difficult questions - then
+            work in the clinics alongside everyone else.
+          </p>
+        </div>
+
+        <div class="paris-practitioner-grid">
+          {practitionerGuides.map((guide) => (
+            <article class="paris-practitioner-card">
+              <div class="paris-practitioner-card-head">
+                {guide.avatar ? (
+                  <img src={guide.avatar} alt="" loading="lazy" />
+                ) : (
+                  <span class="paris-practitioner-initials" aria-hidden="true">{guide.initials}</span>
+                )}
+                <strong>{guide.name}</strong>
+              </div>
+              <span>{guide.focus}</span>
+            </article>
+          ))}
         </div>
       </div>
     </section>
