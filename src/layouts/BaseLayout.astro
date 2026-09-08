@@ -5,6 +5,7 @@ import SubscribeForm from "../components/SubscribeForm.astro";
 const {
   title = "APIOps Helsinki 2026",
   description = "APIOps Helsinki Conference 2026 brings together API leaders, platform teams, and practitioners for two days of strategy, AI-driven APIs, and community co-creation.",
+  showSubscribe = true,
 } = Astro.props;
 const defaultOgImage = new URL(import.meta.env.PUBLIC_DEFAULT_OG_IMAGE, Astro.site).toString();
 ---
@@ -30,6 +31,6 @@ const defaultOgImage = new URL(import.meta.env.PUBLIC_DEFAULT_OG_IMAGE, Astro.si
   </head>
   <body>
     <slot />
-    <SubscribeForm />
+    {showSubscribe && <SubscribeForm />}
   </body>
 </html>

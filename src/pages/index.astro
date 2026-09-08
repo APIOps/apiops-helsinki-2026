@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SubscribeForm from "../components/SubscribeForm.astro";
 import events from "../data/events.json";
 
 const upcomingEvents = events.filter((event) => event.status !== "Past event");
@@ -81,11 +82,13 @@ const mapUses = [
 function getActionLabel(event) {
   if (event.status === "Get updates") return "Get updates";
   if (event.status === "Save the date") return "Save the date";
+  if (event.status.includes("RSVP")) return "RSVP";
   return "Get ticket";
 }
 ---
 
 <BaseLayout
+  showSubscribe={false}
   title="APIOps Community - Operating Models for APIs"
   description="APIOps is a global community for practitioners improving the operating model behind APIs, integrations, platforms, governance, AI-ready digital capabilities, and API consumer adoption."
 >
@@ -324,6 +327,8 @@ function getActionLabel(event) {
         </div>
       </div>
     </section>
+
+    <SubscribeForm />
 
     {pastEvents.length > 0 && (
       <section class="section section-soft">

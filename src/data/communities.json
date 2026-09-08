@@ -4,7 +4,7 @@
     "name": "Finland",
     "intro": "A community for API practitioners across Finland, connecting platform, product, architecture and governance peers.",
     "cities": ["Helsinki", "Tampere"],
-    "organizers": ["Marjukka Niinoja", "Kristiina Kivivuori"],
+    "organizers": ["Marjukka Niinioja", "Kristiina Kivivuori"],
     "partners": ["Local hosts and partners welcome"],
     "meetupLinks": [
       { "label": "Helsinki", "url": "https://www.meetup.com/apiops-helsinki/" },
@@ -14,9 +14,12 @@
   {
     "slug": "germany",
     "name": "Germany",
-    "intro": "A growing network for practitioners improving API operating models in Germany.",
+    "intro": "A growing Meetup group for practitioners improving API operating models in Germany.",
     "cities": ["Köln", "Nürnberg"],
-    "organizers": ["Audrey Kolski", "Daniel Kocot"],
+    "organizers": [
+      { "name": "Audrey Kolski", "url": "https://www.linkedin.com/in/audreykolski/" },
+      { "name": "Daniel Kocot", "url": "https://www.linkedin.com/in/danielkocot/" }
+    ],
     "partners": ["Local hosts and partners welcome"],
     "meetupLinks": [
       { "label": "Germany", "url": "https://www.meetup.com/apiops-germany/" }
@@ -25,9 +28,11 @@
   {
     "slug": "north-africa",
     "name": "North Africa",
-    "intro": "A regional community connecting API and platform practitioners across North Africa.",
+    "intro": "A regional Meetup group connecting API and platform practitioners across North Africa.",
     "cities": ["Casablanca", "Tunis"],
-    "organizers": ["Local organizer team forming"],
+    "organizers": [
+      { "name": "Saif Eddine Layouni", "url": "https://www.linkedin.com/in/saifeddinelayouni/" }
+    ],
     "partners": ["Regional hosts and partners welcome"],
     "meetupLinks": [
       { "label": "North Africa", "url": "https://www.meetup.com/apiops-north-africa/" }
@@ -38,7 +43,9 @@
     "name": "Poland",
     "intro": "A local network for sharing practical API, integration and platform lessons in Poland.",
     "cities": ["Warsaw"],
-    "organizers": ["Local organizer team forming"],
+    "organizers": [
+      { "name": "Andrzej Jarzyna", "url": "https://www.linkedin.com/in/andrzej-jarzyna/" }
+    ],
     "partners": ["Local hosts and partners welcome"],
     "meetupLinks": [
       { "label": "Poland", "url": "https://www.meetup.com/find/?keywords=apiops&location=pl--Warsaw" }
@@ -58,9 +65,9 @@
   {
     "slug": "us",
     "name": "United States",
-    "intro": "A distributed community for US-based practitioners working on APIs, platforms and governance.",
-    "cities": ["Dallas", "Atlanta", "New York"],
-    "organizers": ["Local organizer team forming"],
+    "intro": "Distributed Meetup groups for US-based practitioners working on APIs, platforms and governance.",
+    "cities": ["Dallas", "Atlanta"],
+    "organizers": ["Marjukka Niinioja", "Local organizer team forming"],
     "partners": ["Local hosts and partners welcome"],
     "meetupLinks": [
       { "label": "Dallas", "url": "https://www.meetup.com/apiops-dallas/" },

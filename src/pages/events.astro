@@ -17,12 +17,13 @@ const formatFilters = [
   { label: "Hybrid", value: "hybrid" },
   { label: "Workshops", value: "workshop" },
   { label: "Talks", value: "talk" },
+  { label: "Meetups", value: "meetup" },
   { label: "Full-day events", value: "full-day" },
 ];
 const regionFilters = [
   { label: "All regions", value: "all" }, { label: "Finland", value: "finland" },
   { label: "Germany", value: "germany" }, { label: "North Africa", value: "north-africa" },
-  { label: "Poland", value: "poland" }, { label: "Spain", value: "spain" },
+  { label: "France", value: "france" }, { label: "Poland", value: "poland" }, { label: "Spain", value: "spain" },
   { label: "United States", value: "us" }, { label: "Online", value: "online" },
 ];
 
@@ -30,6 +31,7 @@ function getActionLabel(event) {
   if (event.status === "Past event") return "View archive";
   if (event.status === "Get updates") return "Get updates";
   if (event.status === "Save the date") return "Save the date";
+  if (event.status.includes("RSVP")) return "RSVP";
   return "Get ticket";
 }
 
@@ -45,6 +47,7 @@ function getFormatTokens(event) {
   if (format.includes("full-day")) tokens.push("full-day");
   if (format.includes("workshop")) tokens.push("workshop");
   if (format.includes("talk")) tokens.push("talk");
+  if (format.includes("meetup")) tokens.push("meetup");
   return tokens.length ? tokens.join(" ") : format;
 }
 
