@@ -60,7 +60,7 @@ const stationStickers = [
   {
     id: "api-product-strategy",
     name: "API Product Strategy",
-    problem: "find the first proof capability",
+    problem: "choose something worth proving",
     color: "green",
     line: "Business Opportunities",
     position: { left: 50, top: 39 },
@@ -183,10 +183,10 @@ const agenda = [
     time: "8:45-9:15",
     duration: "30 min",
     icon: "☕",
-    title: "Breakfast, Networking, and APIOps Station Stickers",
+    title: "Breakfast & Find Your People",
     experience: "Networking + self-selection",
     audience: "Everyone together",
-    purpose: "Find your people before the program starts.",
+    purpose: "Pick your APIOps station stickers and meet practitioners working on similar problems.",
     happens: [
       "Grab breakfast",
       "Choose your APIOps station stickers",
@@ -201,10 +201,10 @@ const agenda = [
     time: "9:15-9:55",
     duration: "40 min",
     icon: "⚡",
-    title: "Welcome and Opening Provocation",
+    title: "After API Management",
     experience: "Shared framing",
     audience: "Everyone together",
-    purpose: "Create a shared picture of why the hard part starts after the platform decision.",
+    purpose: "Why platform technology is not the hardest part anymore.",
     happens: [
       'Frame "After API Management"',
       "Name common operating-model failure modes",
@@ -219,16 +219,16 @@ const agenda = [
     time: "9:55-10:40",
     duration: "45 min",
     icon: "✦",
-    title: "Practitioner Sparks and Station Marketplace",
+    title: "Practitioner Sparks & Station Marketplace",
     experience: "Practitioner stories + voting",
     audience: "Everyone together",
-    purpose: "Surface the questions worth working on.",
+    purpose: "Real stories, participant challenges, and a vote on what the room should work on.",
     happens: [
-      "Hear short practitioner provocations",
-      "Compare decision stories, not product demos",
-      "Vote on station clinic priorities",
+      "Hear practitioner sparks: what did not work, and what changed",
+      "Add participant-submitted challenges to the marketplace",
+      "Vote on which station clinic priorities deserve the room's attention",
     ],
-    output: ["Clinic priorities for the day", "Better understanding of peer challenges"],
+    output: ["Clinic priorities for the day", "A sharper view of peer challenges"],
     chips: ["Practitioner sparks", "Voting", "Marketplace"],
   },
   {
@@ -239,18 +239,18 @@ const agenda = [
     duration: "75 min",
     icon: "◇",
     featured: true,
-    title: "Station Clinics Round 1: Get the Story Straight",
+    title: "Station Clinics: Where Are We Actually Stuck?",
     experience: "Facilitated station clinics",
     audience: "Split into stations",
-    purpose: "Work with peers facing similar organisational challenges.",
+    purpose: "Choose the APIOps station closest to your current challenge and work it through with peers facing similar problems.",
     note:
-      "Small facilitated groups where participants work on their own APIOps challenges using shared APIOps Cycles stations.",
+      "Topics are shaped by the room: platform adoption, shadow APIs, governance, executive buy-in, security, developer experience, or the problems participants bring with them.",
     happens: [
-      "Join a facilitated station clinic",
-      "Bring your own problem",
-      "Compare language, governance, shadow APIs, and platform choices",
+      "Join one of the highest-priority station clinics",
+      "Bring your own operating-model problem",
+      "Diagnose what is actually blocking progress",
     ],
-    output: ["Better stakeholder language", "Shared operating notes"],
+    output: ["Clearer diagnosis", "Useful peer patterns", "Questions worth taking forward"],
     connections: [
       "Business Goals",
       "Portfolio Management",
@@ -267,23 +267,23 @@ const agenda = [
     time: "12:15-13:00",
     duration: "45 min",
     icon: "◎",
-    title: "Guided Clinic: Find the First Proof Capability",
+    title: "Choose Something Worth Proving",
     experience: "Guided decision clinic",
     audience: "Guided groups",
-    purpose: "Leave with one realistic proof, not a transformation roadmap.",
+    purpose: "Do not redesign the whole operating model. Find one API, integration, event, product journey, or capability where a different way of working could demonstrate measurable improvement.",
     happens: [
-      "Identify a narrow API, event, integration, or capability",
-      "Test whether it can prove the operating model",
-      "Look for adoption, controls, platform value, and evidence",
+      "Identify one small enough proof capability or comparable experiment",
+      "Decide what evidence would make it convincing",
+      "Connect the experiment to adoption, controls, platform value, or business impact",
     ],
-    output: ["First proof capability candidate", "Clearer next-step opportunity"],
-    chips: ["Guided clinic", "Proof capability", "Decision support"],
+    output: ["One candidate experiment", "An idea of what evidence would make it credible"],
+    chips: ["Guided clinic", "Evidence", "Decision support"],
   },
   {
     type: "break",
     time: "13:00-14:00",
     duration: "60 min",
-    title: "Lunch and FOST Networking",
+    title: "Lunch + FOST",
     purpose: "Take a break, explore the wider FOST event, or continue station conversations informally.",
     label: "Break / transfer",
     audience: "Optional / informal",
@@ -296,18 +296,18 @@ const agenda = [
     duration: "60 min",
     icon: "↗",
     featured: true,
-    title: "Station Clinics Round 2: Make the Change Happen",
+    title: "Station Clinics: What Do We Change First?",
     experience: "Facilitated change planning",
     audience: "Split into stations",
-    purpose: "Turn diagnosis into operating-model intervention.",
+    purpose: "Turn the morning's diagnosis into ownership, actions, evidence, and a credible 90-day move.",
     note:
-      "Small facilitated groups where participants work on their own APIOps challenges using shared APIOps Cycles stations.",
+      "Do not design the transformation. Define the first credible move and what needs to happen in the first 30 days.",
     happens: [
-      "Define owners and first 30 days",
-      "Discuss adoption incentives and blockers",
-      "Clarify evidence needed for progress",
+      "Work through ownership, stakeholders, incentives, controls, and blockers",
+      "Define the first 30 days",
+      "Clarify the evidence needed over a rough 90-day path",
     ],
-    output: ["First 30-day actions", "Evidence and risk notes"],
+    output: ["A rough 90-day path", "First 30-day actions", "Evidence and risk notes"],
     connections: [
       "Operating Guidelines",
       "Roles and Responsibilities",
@@ -324,17 +324,17 @@ const agenda = [
     time: "15:55-16:25",
     duration: "30 min",
     icon: "◌",
-    title: "Fishbowl: API Teams at AI Speed",
+    title: "Fishbowl: The Question We Couldn't Resolve",
     experience: "Open discussion",
     audience: "Everyone together",
-    purpose: "Challenge assumptions in an open discussion.",
+    purpose: "Bring the hardest unresolved question from the station clinics back into the room.",
     happens: [
       "Rotate into the discussion",
-      "Debate AI-speed enablers vs enterprise bottlenecks",
-      "Bring hard questions from the clinics",
+      "Challenge the assumptions that survived the clinics",
+      "Debate the question the room decides deserves the final conversation",
     ],
     output: ["New perspectives", "Open questions for the community"],
-    chips: ["Fishbowl", "Open discussion", "AI-speed"],
+    chips: ["Fishbowl", "Open discussion", "Unresolved questions"],
   },
   {
     type: "stop",
@@ -343,10 +343,10 @@ const agenda = [
     time: "16:25-16:50",
     duration: "25 min",
     icon: "▤",
-    title: "Live Synthesis and Closing",
+    title: "Paris Operating Notes",
     experience: "Live synthesis",
     audience: "Everyone together",
-    purpose: "Bring the stations back together.",
+    purpose: "What did we learn, what patterns emerged, and what will you do next?",
     happens: ["Create Paris APIOps Operating Notes", "Choose one station, one decision, and one next step"],
     output: ["Shared synthesis", "Personal next action"],
     chips: ["Synthesis", "Operating notes", "Next decision"],
@@ -376,7 +376,7 @@ const outcomes = [
   "Clearer language for explaining API programs to senior leadership",
   "A sharper view of where your organization is stuck in the operating model",
   "Peer-tested patterns from people facing similar enterprise API problems",
-  "A first proof capability candidate or comparable next-step opportunity",
+  "One candidate experiment and the evidence that would make it convincing",
   "Ideas for involving control teams earlier in the paved road",
   "A practical 90-day APIOps proof-plan structure",
 ];
@@ -548,7 +548,7 @@ const faqs = [
           <span>working conference</span>
         </div>
         <div>
-          <strong>11</strong>
+          <strong>10</strong>
           <span>APIOps Cycles stations</span>
         </div>
         <div>
@@ -556,8 +556,8 @@ const faqs = [
           <span>proof-plan horizon</span>
         </div>
         <div>
-          <strong>No pitches</strong>
-          <span>practical patterns only</span>
+          <strong>No pitches.</strong>
+          <span>Practical patterns only.</span>
         </div>
       </div>
     </section>
@@ -639,7 +639,10 @@ const faqs = [
       <div class="container">
         <div class="section-title section-title-left section-title-compact">
           <h2>Your route through the day</h2>
-          <p>One focused day from diagnosis to next decision.</p>
+          <p>
+            The structure is fixed. The questions are not. We start with real practitioner challenges and use the
+            morning marketplace to decide which station conversations deserve the room's attention.
+          </p>
         </div>
 
         <div class="paris-route-legend" aria-label="Route activity types">
@@ -707,7 +710,7 @@ const faqs = [
                     </div>
 
                     <div class="paris-route-purpose">
-                      <span>Purpose</span>
+                      <span>Session</span>
                       <p>{item.purpose}</p>
                     </div>
 
@@ -715,13 +718,13 @@ const faqs = [
 
                     <div class="paris-route-details">
                       <div>
-                        <h4>You'll do</h4>
+                        <h4>What happens</h4>
                         <ul>
                           {item.happens.map((detail) => <li>{detail}</li>)}
                         </ul>
                       </div>
                       <div>
-                        <h4>You'll leave with</h4>
+                        <h4>Outcome</h4>
                         <ul>
                           {item.output.map((output) => <li>{output}</li>)}
                         </ul>
@@ -730,7 +733,7 @@ const faqs = [
 
                     {item.connections && (
                       <div class="paris-route-connections">
-                        <span>Connections</span>
+                        <span>Possible station connections</span>
                         <div>
                           {item.connections.map((connection) => <span>{connection}</span>)}
                         </div>
