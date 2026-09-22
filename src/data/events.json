@@ -20,6 +20,26 @@
     "challengeUrl": "https://tally.so/r/dWgy2D"
   },
   {
+    "id": "germany-modern-apis-production-ready-ai-2026",
+    "title": "Modern APIs & Production-Ready AI",
+    "date": "October 6, 2026",
+    "month": "OCT",
+    "day": "6",
+    "year": "2026",
+    "startDate": "2026-10-06",
+    "endDate": "2026-10-06",
+    "location": "Netlight, Cologne",
+    "region": "germany",
+    "mode": "In person",
+    "format": "Meetup",
+    "topic": "Modern APIs and production-ready AI",
+    "status": "RSVP open",
+    "description": "A Cologne APIOps Germany meetup with Rilind Harizaj on modern API toolsets and Tim Sevenich on moving enterprise AI into production safely and confidently.",
+    "ticketUrl": "https://www.meetup.com/apiops-germany/events/316466920/",
+    "learnUrl": "https://www.meetup.com/apiops-germany/events/316466920/",
+    "challengeUrl": "https://tally.so/r/dWgy2D"
+  },
+  {
     "id": "berlin-2026",
     "title": "APIOps talk at APICon Berlin",
     "date": "November 16-20, 2026",
