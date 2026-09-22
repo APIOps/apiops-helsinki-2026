@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import authors from "../../data/authors.json";
+import insights from "../../data/insights.json";
+
+export function getStaticPaths() {
+  return authors.map((author) => ({ params: { slug: author.slug }, props: { author } }));
+}
+
+const { author } = Astro.props;
+const authoredInsights = insights.filter((insight) => insight.author.slug === author.slug);
+const formatDate = (date) => new Intl.DateTimeFormat("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+}).format(new Date(`${date}T12:00:00Z`));
+---
+
+<BaseLayout title={`${author.name} | APIOps Insights`} description={author.bio}>
+  <nav class="community-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/favicon.svg" alt="APIOps logo" />
+        <strong>APIOps Insights</strong>
+      </a>
+      <div class="nav-links">
+        <a href="/insights">Insights</a>
+        <a href="/events">Events</a>
+        <a href="/communities">Local communities</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="community-page">
+    <header class="author-profile-hero">
+      <div class="container author-profile-grid">
+        <img class="author-profile-photo" src={author.avatar} alt={author.name} />
+        <div>
+          <p class="community-eyebrow">Insights author</p>
+          <h1>{author.name}</h1>
+          <p class="author-profile-title">{author.title}</p>
+          <p class="author-profile-bio">{author.bio}</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="community-section-head">
+          <p class="small-pill">Published insights</p>
+          <h2>Articles by {author.name}</h2>
+        </div>
+        <div class="insights-list">
+          {authoredInsights.map((item) => (
+            <article class="insight-card">
+              <div class="insight-card-meta">
+                <span>{item.category}</span>
+                {item.communities.map((community) => <a href={community.href}>{community.name}</a>)}
+                <time datetime={item.date}>{formatDate(item.date)}</time>
+                <span>{item.readTime}</span>
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.excerpt}</p>
+              <a class="community-action-primary" href={`/insights/${item.slug}`}>Read the story</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

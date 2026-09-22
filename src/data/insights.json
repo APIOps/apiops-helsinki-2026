@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "what-we-learned-building-api-governance-with-open-standards",
+    "title": "What We Learned Building API Governance with Open Standards",
+    "subtitle": "A practitioner story with Aleksei Popov",
+    "author": {
+      "name": "Marjukka Niinioja",
+      "slug": "marjukka-niinioja"
+    },
+    "communities": [
+      {
+        "name": "APIOps Helsinki",
+        "href": "/communities/finland"
+      }
+    ],
+    "category": "Practitioner Stories",
+    "format": "APIOps Cycles in Practice",
+    "date": "2026-09-21",
+    "image": {
+      "src": "/images/insights/api-governance-open-standards/apiops-helsinki-presentation.jpg",
+      "alt": "APIOps Helsinki presentation showing the APIOps Cycles metro map"
+    },
+    "ogImage": "/images/insights/api-governance-open-standards/api-governance-open-standards-og.jpg",
+    "excerpt": "API governance does not need to begin with a platform selection. Aleksei Popov's APIOps Helsinki story shows how teams can start with shared standards, automation, and real API work.",
+    "readTime": "5 min read"
+  }
+]

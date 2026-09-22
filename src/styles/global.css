@@ -5470,7 +5470,7 @@ nav {
 .community-cycles-map {
   position: relative;
   overflow: hidden;
-  min-height: 460px;
+  padding: 1rem;
   border: 1px solid #d9dfe8;
   border-radius: 8px;
   background:
@@ -5480,98 +5480,9 @@ nav {
 }
 
 .community-cycles-map img {
-  width: 112%;
-  max-width: none;
-  margin: 1rem 0 0 -6%;
-  opacity: 0.74;
-}
-
-.community-cycle-stickers {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.community-cycle-sticker {
-  position: absolute;
-  display: grid;
-  gap: 0.12rem;
-  max-width: 178px;
-  padding: 0.52rem 0.62rem;
-  border: 1px solid color-mix(in srgb, currentColor 36%, #ffffff);
-  border-radius: 8px;
-  background: rgba(255, 253, 248, 0.94);
-  color: #315fdb;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.8) inset,
-    0 10px 22px rgba(15, 23, 42, 0.12);
-}
-
-.community-cycle-sticker::before {
-  content: "";
-  position: absolute;
-  top: 0.55rem;
-  right: 0.6rem;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 999px;
-  background: currentColor;
-}
-
-.community-cycle-sticker strong {
-  color: #111827;
-  font-size: 0.78rem;
-  line-height: 1.1;
-  padding-right: 0.8rem;
-}
-
-.community-cycle-sticker small {
-  color: #475569;
-  font-size: 0.68rem;
-  font-weight: 750;
-  line-height: 1.2;
-}
-
-.community-cycle-sticker.is-green {
-  color: #16a34a;
-  left: 7%;
-  top: 10%;
-}
-
-.community-cycle-sticker.is-purple:nth-child(2) {
-  color: #7e22ce;
-  right: 7%;
-  top: 14%;
-}
-
-.community-cycle-sticker.is-blue:nth-child(3) {
-  color: #315fdb;
-  left: 12%;
-  top: 42%;
-}
-
-.community-cycle-sticker.is-blue:nth-child(4) {
-  color: #2563eb;
-  right: 12%;
-  top: 42%;
-}
-
-.community-cycle-sticker.is-purple:nth-child(5) {
-  color: #9333ea;
-  left: 22%;
-  bottom: 16%;
-}
-
-.community-cycle-sticker.is-cyan:nth-child(6) {
-  color: #0891b2;
-  right: 22%;
-  bottom: 14%;
-}
-
-.community-cycle-sticker.is-cyan:nth-child(7) {
-  color: #0e7490;
-  left: 39%;
-  top: 28%;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .community-map-uses {
@@ -5958,6 +5869,324 @@ nav {
   font-weight: 850;
 }
 
+.insights-hero,
+.insight-article-hero {
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(16, 24, 32, 0.94), rgba(16, 24, 32, 0.68)),
+    url("/images/hero/apiops-helsinki2026-mike-jackson-allanknabe.jpg") center / cover;
+}
+
+.insights-hero {
+  padding: 5.5rem 0 4.5rem;
+}
+
+.insights-hero-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.insights-hero h1,
+.insight-article-hero h1 {
+  color: #fff;
+  max-width: 900px;
+  font-size: clamp(2.8rem, 5.4vw, 5.4rem);
+  line-height: 0.95;
+  margin: 0.7rem 0 1rem;
+}
+
+.insights-hero p {
+  max-width: 66ch;
+  color: #e2e8f0;
+  font-size: 1.08rem;
+}
+
+.insights-category-panel {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  background: rgba(16, 24, 32, 0.68);
+}
+
+.insights-category-panel span {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #f8fafc;
+  font-weight: 850;
+}
+
+.insights-category-panel span::before {
+  content: "->";
+  color: #facc15;
+  font-weight: 900;
+}
+
+.insights-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.insight-card {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.2rem;
+  border: 1px solid #d7dde0;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.insight-card-featured {
+  max-width: 880px;
+}
+
+.insight-card-meta,
+.insight-article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.insight-card-meta span,
+.insight-card-meta a,
+.insight-card-meta time,
+.insight-article-meta span,
+.insight-article-meta a,
+.insight-article-meta time {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: #eef6ff;
+  color: #1d4ed8;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.insight-byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: baseline;
+  color: #334155 !important;
+  font-size: 0.92rem;
+  font-weight: 750;
+}
+
+.insight-byline span {
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.insight-byline a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.insight-byline-on-dark {
+  color: #fff !important;
+}
+
+.insight-byline-on-dark span {
+  color: #cbd5e1;
+}
+
+.insight-card h3 {
+  color: #101820;
+  font-size: clamp(1.45rem, 2.2vw, 2.25rem);
+  line-height: 1.05;
+}
+
+.insight-card p {
+  max-width: 70ch;
+  color: #64748b;
+}
+
+.insight-article-hero {
+  padding: 4.8rem 0 4rem;
+}
+
+.insight-article-meta a,
+.insight-article-meta span,
+.insight-article-meta time {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+.insight-subtitle {
+  max-width: 760px;
+  color: #e2e8f0;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-style: italic;
+}
+
+.insight-article-shell {
+  display: grid;
+  gap: 2rem;
+  padding: 3rem 0 4rem;
+}
+
+.insight-aside {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+}
+
+.insight-aside span {
+  color: #101820;
+  font-weight: 900;
+}
+
+.insight-aside a {
+  width: fit-content;
+  color: #315fdb;
+  font-weight: 850;
+}
+
+.insight-body {
+  max-width: 760px;
+}
+
+.insight-body h2,
+.insight-body h3 {
+  color: #101820;
+  line-height: 1.1;
+}
+
+.insight-body h2 {
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  margin-bottom: 1rem;
+}
+
+.insight-body h3 {
+  font-size: clamp(1.45rem, 2.3vw, 2rem);
+  margin: 2rem 0 0.8rem;
+}
+
+.insight-body p {
+  color: #334155;
+  font-size: 1.05rem;
+  margin-top: 1rem;
+}
+
+.insight-body strong {
+  color: #101820;
+}
+
+.insight-body a {
+  color: #1d4ed8;
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.insight-media {
+  margin: 2rem 0;
+}
+
+.insight-media-lead {
+  margin-top: 0;
+}
+
+.insight-media-lead img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.insight-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.insight-media-map {
+  padding: 1rem;
+  border: 1px solid #d7dde0;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.insight-media-map img {
+  max-height: 620px;
+  object-fit: contain;
+}
+
+.insight-media-community img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.insight-media figcaption {
+  margin-top: 0.65rem;
+  color: #64748b;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.author-profile-hero {
+  padding: 4.5rem 0 3.5rem;
+  background: #101820;
+  color: #fff;
+}
+
+.author-profile-grid {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.author-profile-photo {
+  width: min(180px, 48vw);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.author-profile-hero h1 {
+  margin: 0.5rem 0;
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  line-height: 1;
+}
+
+.author-profile-title {
+  color: #facc15;
+  font-weight: 850;
+}
+
+.author-profile-bio {
+  max-width: 68ch;
+  color: #e2e8f0;
+  font-size: 1.08rem;
+}
+
+.insight-body blockquote {
+  margin: 1.2rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #315fdb;
+  border-radius: 8px;
+  background: #eef6ff;
+  color: #101820;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.insight-credit {
+  margin-top: 2rem !important;
+  color: #64748b !important;
+  font-style: italic;
+}
+
 @media (min-width: 900px) {
   .community-hero-grid {
     grid-template-columns: minmax(0, 1fr) minmax(360px, 0.8fr);
@@ -6012,6 +6241,18 @@ nav {
   .events-calendar-actions {
     justify-content: flex-end;
   }
+
+  .insights-hero-grid {
+    grid-template-columns: minmax(0, 1fr) 330px;
+  }
+
+  .insight-article-shell {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+
+  .author-profile-grid {
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
 }
 
 @media (max-width: 720px) {
@@ -6057,28 +6298,6 @@ nav {
   .events-calendar-actions a {
     width: 100%;
     justify-content: center;
-  }
-
-  .community-cycles-map {
-    min-height: 420px;
-  }
-
-  .community-cycles-map img {
-    width: 132%;
-    margin-left: -16%;
-  }
-
-  .community-cycle-sticker {
-    max-width: 150px;
-    padding: 0.45rem 0.52rem;
-  }
-
-  .community-cycle-sticker strong {
-    font-size: 0.72rem;
-  }
-
-  .community-cycle-sticker small {
-    font-size: 0.64rem;
   }
 
   .community-map-use-grid {

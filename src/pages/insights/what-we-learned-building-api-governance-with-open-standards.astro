@@ -1,0 +1,201 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import insights from "../../data/insights.json";
+
+const insight = insights.find((item) => item.slug === "what-we-learned-building-api-governance-with-open-standards");
+const publishedDate = new Intl.DateTimeFormat("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+}).format(new Date(`${insight?.date}T12:00:00Z`));
+---
+
+<BaseLayout
+  title="What We Learned Building API Governance with Open Standards"
+  description="A practitioner story from APIOps Helsinki with Aleksei Popov on starting API governance with shared problems, open standards, and automation."
+  type="article"
+  publishedTime={insight?.date}
+  author={insight?.author.name}
+  image={insight?.ogImage}
+  imageAlt={insight?.image.alt}
+  imageWidth="1200"
+  imageHeight="630"
+>
+  <nav class="community-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/favicon.svg" alt="APIOps logo" />
+        <strong>APIOps Insights</strong>
+      </a>
+      <div class="nav-links">
+        <a href="/insights">Insights</a>
+        <a href="/events">Events</a>
+        <a href="/">Community</a>
+        <a class="button primary" href="#subscribe-section">Join the Community</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="community-page">
+    <article class="insight-article">
+      <header class="insight-article-hero">
+        <div class="container">
+          <div class="insight-article-meta">
+            <a href="/insights">Insights</a>
+            <span>{insight?.category}</span>
+            {insight?.communities.map((community) => <a href={community.href}>{community.name}</a>)}
+            <time datetime={insight?.date}>{publishedDate}</time>
+            <span>{insight?.readTime}</span>
+          </div>
+          <h1>What We Learned Building API Governance with Open Standards</h1>
+          <p class="insight-subtitle">
+            {insight?.subtitle}
+          </p>
+          <p class="insight-byline insight-byline-on-dark">
+            <span>Author</span>
+            <a href={`/authors/${insight?.author.slug}`}>{insight?.author.name}</a>
+          </p>
+        </div>
+      </header>
+
+      <div class="container insight-article-shell">
+        <aside class="insight-aside">
+          <span>Insights</span>
+          <a href="/insights">Practitioner Stories</a>
+          <a href="/insights">Patterns & Lessons</a>
+          <a href="/insights">APIOps Cycles in Practice</a>
+          <a href="/insights">Event Notes / Synthesis</a>
+        </aside>
+
+        <div class="insight-body">
+          <figure class="insight-media insight-media-lead">
+            <img
+              src={insight?.image.src}
+              alt={insight?.image.alt}
+              width="1600"
+              height="1600"
+              fetchpriority="high"
+            />
+            <figcaption>API governance and APIOps Cycles in practice at APIOps Helsinki.</figcaption>
+          </figure>
+
+          <h2>API Governance Doesn't Have to Start With a Platform</h2>
+          <p>
+            When organisations decide they need better API governance, it is surprisingly easy to end up shopping
+            for technology before agreeing on what problem governance is supposed to solve.
+          </p>
+          <p>
+            At the September <a href="/communities/finland">APIOps Helsinki</a> meetup, Aleksei Popov shared a very
+            practical story of building API governance from a considerably less-than-perfect starting point: more than
+            2,000 endpoints, three API versions, four authentication methods, several names for the same parameters,
+            and no common API standards or clearly defined ownership.
+          </p>
+          <p>The initial challenge wasn't a lack of available solutions. Quite the opposite.</p>
+          <p>
+            Once you start researching API governance, you quickly encounter API strategy, management, gateways,
+            developer portals, security, productization and a long list of commercial platforms. Evaluating all those
+            alternatives can easily become another problem of its own. Aleksei described this rather accurately as
+            <strong>"analysis paralysis."</strong>
+          </p>
+
+          <h3>Start with the problems, not the tools</h3>
+          <p>
+            Instead of beginning with a large technology selection exercise, the team started breaking the problem into
+            manageable pieces.
+          </p>
+          <p>
+            <a href="/#cycles">APIOps Cycles</a> provided a way of looking at APIs from the perspective of the
+            organisation and the API lifecycle, including questions such as who the API is for, what business
+            opportunities it supports and what product owners need to understand about APIs.
+          </p>
+          <p>From there, the work could become much more concrete.</p>
+          <p>For each area, the team could ask:</p>
+          <blockquote>
+            Where are we now? What does good look like? What happens if we don't change? What do we gain if we do? How
+            could we get there, and how important is it?
+          </blockquote>
+          <p>That is a much easier conversation to have than "Which API management platform should we buy?"</p>
+
+          <figure class="insight-media insight-media-map">
+            <a href="/#cycles">
+              <img
+                src="/images/metro_map.svg"
+                alt="APIOps Cycles metro map showing the connected areas of API operating-model work"
+                width="1000"
+                height="1000"
+                loading="lazy"
+              />
+            </a>
+            <figcaption>
+              The APIOps Cycles metro map provides a shared view of API work across business, governance, platforms,
+              delivery, and adoption. <a href="/#cycles">Explore APIOps Cycles</a>.
+            </figcaption>
+          </figure>
+
+          <h3>Governance became something teams could actually use</h3>
+          <p>The result wasn't a giant governance programme.</p>
+          <p>
+            The API team created a company API Style Guide, introduced CI automation for API contracts and testing,
+            applied the governance approach while building APIs themselves, migrated an existing product API to the new
+            process, created documentation and AI-assisted guidance, and helped other teams build and support their
+            APIs.
+          </p>
+          <p>
+            Open standards and open-source tooling played an important role. The implementation used OpenAPI together
+            with tools such as Spectral for linting, oasdiff for detecting breaking changes and Schemathesis for
+            testing, supported by CI/CD automation. The stack also generated interactive documentation, a Python SDK
+            and a CLI.
+          </p>
+          <p>
+            This is an important distinction:
+            <strong>
+              governance wasn't just documentation telling teams what they should do. It increasingly became part of the
+              way APIs were built.
+            </strong>
+          </p>
+
+          <figure class="insight-media insight-media-community">
+            <img
+              src="/images/insights/api-governance-open-standards/apiops-helsinki-community.jpg"
+              alt="Practitioners listening to a talk at an APIOps Helsinki meetup"
+              width="1600"
+              height="1600"
+              loading="lazy"
+            />
+            <figcaption>Practitioners gathering to compare real API governance experiences at APIOps Helsinki.</figcaption>
+          </figure>
+
+          <h3>You can start surprisingly small</h3>
+          <p>
+            Perhaps the most useful lesson from Aleksei's talk was that improving API governance doesn't require
+            solving everything first.
+          </p>
+          <p>
+            His suggested starting point is refreshingly concrete: draft an API Style Guide, start linting and testing
+            OpenAPI definitions, and then work on adoption through documentation, shared automation, AI skills and
+            internal workshops.
+          </p>
+          <p>
+            For organisations currently debating governance models, tooling or API management platforms, that's worth
+            remembering.
+          </p>
+          <p>
+            <strong>
+              You don't need to have your final API governance architecture figured out before you start improving API
+              governance.
+            </strong>
+          </p>
+          <p>
+            Start with the problems you actually have. Establish shared practices. Automate what can be automated. Try
+            them on real APIs. Learn what works.
+          </p>
+          <p>Then iterate.</p>
+          <p class="insight-credit">
+            Aleksei Popov presented "What I Learned Building API Governance with Open Standards" at
+            <a href="/communities/finland">APIOps Helsinki</a> 2026.
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+</BaseLayout>
