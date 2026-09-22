@@ -6,8 +6,17 @@ const {
   title = "APIOps Helsinki 2026",
   description = "APIOps Helsinki Conference 2026 brings together API leaders, platform teams, and practitioners for two days of strategy, AI-driven APIs, and community co-creation.",
   showSubscribe = true,
+  type = "website",
+  publishedTime,
+  author,
+  image,
+  imageAlt = title,
+  imageWidth,
+  imageHeight,
 } = Astro.props;
 const defaultOgImage = new URL(import.meta.env.PUBLIC_DEFAULT_OG_IMAGE, Astro.site).toString();
+const ogImage = image ? new URL(image, Astro.site).toString() : defaultOgImage;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 <!doctype html>
 <html lang="en">
@@ -19,15 +28,24 @@ const defaultOgImage = new URL(import.meta.env.PUBLIC_DEFAULT_OG_IMAGE, Astro.si
       content={description}
     />
     <title>{title}</title>
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
     <meta
       property="og:description"
       content={description}
     />
-    <meta property="og:image" content={defaultOgImage} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={imageAlt} />
+    {imageWidth && <meta property="og:image:width" content={imageWidth} />}
+    {imageHeight && <meta property="og:image:height" content={imageHeight} />}
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {author && <meta name="author" content={author} />}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content={defaultOgImage} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={imageAlt} />
   </head>
   <body>
     <slot />

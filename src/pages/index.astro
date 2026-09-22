@@ -2,48 +2,18 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SubscribeForm from "../components/SubscribeForm.astro";
 import events from "../data/events.json";
+import insights from "../data/insights.json";
 
 const upcomingEvents = events.filter((event) => event.status !== "Past event");
 const pastEvents = events.filter((event) => event.status === "Past event");
 const featuredEvents = upcomingEvents.slice(0, 3);
+const featuredInsight = insights[0];
+const formatInsightDate = (date) => new Intl.DateTimeFormat("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+}).format(new Date(`${date}T12:00:00Z`));
 const parisEvent = events.find((event) => event.id === "paris-2026");
-const cycleStations = [
-  {
-    title: "Business Goals",
-    text: "explain APIs to leadership",
-    color: "green",
-  },
-  {
-    title: "API Platform Architecture",
-    text: "platforms, APIM, and gateways",
-    color: "purple",
-  },
-  {
-    title: "Operating Guidelines",
-    text: "governance without bottlenecks",
-    color: "blue",
-  },
-  {
-    title: "Portfolio Management",
-    text: "shadow APIs and reuse",
-    color: "blue",
-  },
-  {
-    title: "Security and Privacy",
-    text: "IAM, trust, and controls",
-    color: "purple",
-  },
-  {
-    title: "API Consumer Adoption",
-    text: "B2B developer and partner change",
-    color: "cyan",
-  },
-  {
-    title: "Monitoring and Improving",
-    text: "production evidence",
-    color: "cyan",
-  },
-];
 
 const focusAreas = [
   "API strategy",
@@ -113,6 +83,7 @@ function getActionLabel(event) {
 
       <div class="nav-links" id="top-navigation">
         <a href="#events">Events</a>
+        <a href="/insights">Insights</a>
         <a href="#cycles">APIOps Cycles</a>
         <a href="#formats">Formats</a>
         <a href="#community">Community</a>
@@ -330,6 +301,42 @@ function getActionLabel(event) {
 
     <SubscribeForm />
 
+    <section class="section section-light" id="insights">
+      <div class="container">
+        <div class="community-section-head">
+          <p class="small-pill">Insights</p>
+          <h2>Practitioner stories and patterns.</h2>
+          <p>
+            Blog-type material from the APIOps community: practitioner stories, patterns and lessons, APIOps Cycles in
+            practice, and event notes or synthesis.
+          </p>
+        </div>
+
+        <article class="insight-card insight-card-featured">
+          <div class="insight-card-meta">
+            <span>{featuredInsight.category}</span>
+            <span>{featuredInsight.format}</span>
+            {featuredInsight.communities.map((community) => <a href={community.href}>{community.name}</a>)}
+            <time datetime={featuredInsight.date}>{formatInsightDate(featuredInsight.date)}</time>
+            <span>{featuredInsight.readTime}</span>
+          </div>
+          <h3>{featuredInsight.title}</h3>
+          <p>{featuredInsight.subtitle}</p>
+          <p class="insight-byline">
+            <span>Author</span>
+            <a href={`/authors/${featuredInsight.author.slug}`}>{featuredInsight.author.name}</a>
+          </p>
+          <p>{featuredInsight.excerpt}</p>
+          <a
+            class="community-action-primary"
+            href={`/insights/${featuredInsight.slug}`}
+          >
+            Read the story
+          </a>
+        </article>
+      </div>
+    </section>
+
     {pastEvents.length > 0 && (
       <section class="section section-soft">
         <div class="container community-two-column">
@@ -394,17 +401,11 @@ function getActionLabel(event) {
             <figure class="community-cycles-map">
               <img
                 src="/images/metro_map.svg"
-                alt="APIOps Cycles metro map showing stations for API strategy, platform architecture, governance, design, delivery, publishing, adoption, and operating model work."
+                alt="Current APIOps Cycles capability productization metro map showing stations, supporting activities, perspectives, and metro lines."
                 loading="lazy"
+                width="1000"
+                height="1000"
               />
-              <div class="community-cycle-stickers" aria-label="Example APIOps Cycles stations">
-                {cycleStations.map((station) => (
-                  <span class={`community-cycle-sticker is-${station.color}`}>
-                    <strong>{station.title}</strong>
-                    <small>{station.text}</small>
-                  </span>
-                ))}
-              </div>
             </figure>
           </div>
         </div>
@@ -485,6 +486,7 @@ function getActionLabel(event) {
       </div>
       <div>
         <h4>Community</h4>
+        <a href="/insights">Insights</a>
         <a href="#cycles">APIOps Cycles</a>
         <a href="#formats">Formats</a>
         <a href="/communities">Local communities</a>

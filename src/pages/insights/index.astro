@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import insights from "../../data/insights.json";
+
+const categories = [
+  "Practitioner Stories",
+  "Patterns & Lessons",
+  "APIOps Cycles in Practice",
+  "Event Notes / Synthesis",
+];
+
+const formatDate = (date) => new Intl.DateTimeFormat("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+}).format(new Date(`${date}T12:00:00Z`));
+---
+
+<BaseLayout
+  title="APIOps Insights"
+  description="Practitioner stories, patterns, APIOps Cycles examples, and synthesis notes from the APIOps community."
+>
+  <nav class="community-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/favicon.svg" alt="APIOps logo" />
+        <strong>APIOps Insights</strong>
+      </a>
+      <div class="nav-links">
+        <a href="/">Community</a>
+        <a href="/events">Events</a>
+        <a href="/communities">Local communities</a>
+        <a class="button primary" href="#subscribe-section">Join the Community</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="community-page">
+    <header class="insights-hero">
+      <div class="container insights-hero-grid">
+        <div>
+          <p class="community-eyebrow">Insights</p>
+          <h1>Practitioner notes from API operating-model work.</h1>
+          <p>
+            Stories, patterns, lessons, APIOps Cycles examples, and event synthesis from the people improving
+            governance, platforms, adoption, and delivery in practice.
+          </p>
+        </div>
+        <div class="insights-category-panel" aria-label="Insight categories">
+          {categories.map((category) => <span>{category}</span>)}
+        </div>
+      </div>
+    </header>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="community-section-head">
+          <p class="small-pill">Latest insight</p>
+          <h2>What the community is learning.</h2>
+        </div>
+
+        <div class="insights-list">
+          {insights.map((item) => (
+            <article class="insight-card">
+              <div class="insight-card-meta">
+                <span>{item.category}</span>
+                <span>{item.format}</span>
+                {item.communities.map((community) => <a href={community.href}>{community.name}</a>)}
+                <time datetime={item.date}>{formatDate(item.date)}</time>
+                <span>{item.readTime}</span>
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.subtitle}</p>
+              <p class="insight-byline">
+                <span>Author</span>
+                <a href={`/authors/${item.author.slug}`}>{item.author.name}</a>
+              </p>
+              <p>{item.excerpt}</p>
+              <a class="community-action-primary" href={`/insights/${item.slug}`}>Read the story</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>APIOps Insights</h4>
+        <p>Practitioner stories, patterns, APIOps Cycles examples, and synthesis notes.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="/">Community home</a>
+        <a href="/events">Events calendar</a>
+        <a href="/communities">Local communities</a>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <a href="#subscribe-section">Join the Community</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
