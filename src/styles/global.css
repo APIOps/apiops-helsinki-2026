@@ -2957,18 +2957,26 @@ nav {
   max-width: 760px;
 }
 
-.paris-eyebrow {
-  display: inline-flex;
+.paris-event-facts {
+  display: flex;
+  flex-wrap: wrap;
   width: fit-content;
-  margin-bottom: 1rem;
-  padding: 0.45rem 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  background: rgba(255, 255, 255, 0.1);
+  gap: 0.55rem;
+  margin-bottom: 1.1rem;
+}
+
+.paris-event-facts span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.52rem 0.82rem;
+  border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
   color: #f8fafc;
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-size: 0.94rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
@@ -2991,14 +2999,15 @@ nav {
   max-width: 54ch;
   margin-bottom: 0.75rem;
   color: #f8fafc;
-  font-size: 1.12rem;
+  font-size: 1.18rem;
   font-weight: 850;
 }
 
 .paris-hero-lede {
-  max-width: 62ch;
+  max-width: 58ch;
   color: #e5e7eb;
-  font-size: 1.12rem;
+  font-size: clamp(1.18rem, 2vw, 1.55rem);
+  line-height: 1.35;
 }
 
 .paris-actions {
@@ -3084,7 +3093,7 @@ nav {
   border-radius: 6px;
   color: #f8fafc;
   font-weight: 800;
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.25;
 }
 
@@ -3230,19 +3239,22 @@ nav {
 }
 
 .paris-question-grid article {
-  min-height: 220px;
-  padding: 1.3rem;
+  min-height: 238px;
+  padding: 1.45rem;
+  box-shadow: none;
 }
 
 .paris-question-grid h3 {
   color: #111827;
-  font-size: 1.25rem;
-  line-height: 1.15;
+  font-size: clamp(1.42rem, 2.1vw, 1.85rem);
+  line-height: 1.08;
   margin-bottom: 0.7rem;
 }
 
 .paris-question-grid p {
   color: #64748b;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .paris-stations-layout {
@@ -3671,86 +3683,6 @@ nav {
   font-weight: 700;
 }
 
-.paris-route-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  max-width: 1040px;
-  margin: -0.55rem auto 1.35rem;
-}
-
-.paris-route-legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  min-height: 32px;
-  padding: 0.3rem 0.58rem;
-  border: 1px solid #e0d8ca;
-  border-radius: 999px;
-  background: #fff;
-  color: #334155;
-  font-size: 0.78rem;
-  font-weight: 850;
-}
-
-.paris-route-symbol {
-  display: inline-grid;
-  place-items: center;
-  width: 1rem;
-  height: 1rem;
-  color: #315fdb;
-  font-size: 0.92rem;
-  line-height: 1;
-}
-
-.paris-route-summary {
-  display: flex;
-  gap: 0.5rem;
-  max-width: 1040px;
-  margin: 0 auto 1.35rem;
-  padding: 0.72rem;
-  overflow-x: auto;
-  border: 1px solid #e0d8ca;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.72);
-}
-
-.paris-route-summary span {
-  position: relative;
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  gap: 0.38rem;
-  min-height: 34px;
-  padding: 0.32rem 0.68rem;
-  border-radius: 999px;
-  background: #f8faff;
-  color: #111827;
-  font-size: 0.82rem;
-  font-weight: 900;
-  white-space: nowrap;
-}
-
-.paris-route-summary span:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: -0.48rem;
-  width: 0.48rem;
-  height: 2px;
-  background: #c7d2fe;
-}
-
-.paris-route-summary span span {
-  min-height: 0;
-  padding: 0;
-  background: transparent;
-  color: #315fdb;
-}
-
-.paris-route-summary span span::after {
-  display: none;
-}
-
 .paris-program-route {
   list-style: none;
   display: grid;
@@ -3862,7 +3794,7 @@ nav {
   background:
     linear-gradient(90deg, rgba(49, 95, 219, 0.045), transparent 32%),
     #fff;
-  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.06);
+  box-shadow: none;
   position: relative;
   transition:
     border-color 160ms ease,
@@ -3895,7 +3827,7 @@ nav {
   background:
     linear-gradient(90deg, rgba(126, 34, 206, 0.095), transparent 36%),
     linear-gradient(180deg, #ffffff, #faf7ff);
-  box-shadow: 0 18px 42px rgba(17, 24, 39, 0.11);
+  box-shadow: none;
 }
 
 .paris-route-stop.is-featured .paris-route-card::before {
@@ -3911,7 +3843,7 @@ nav {
 .paris-route-stop:hover .paris-route-card,
 .paris-route-stop:focus-within .paris-route-card {
   border-color: #c7b5ff;
-  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.1);
+  box-shadow: none;
   transform: translateY(-1px);
 }
 
@@ -3965,17 +3897,12 @@ nav {
   min-height: 28px;
   padding: 0.24rem 0.55rem;
   border-radius: 999px;
-  background: #f1f5f9;
-  color: #475569;
+  background: #eef2ff;
+  color: #315fdb;
   font-size: 0.76rem;
   font-weight: 850;
   letter-spacing: 0;
   text-transform: none;
-}
-
-.paris-route-experience span:last-child {
-  background: #eef2ff;
-  color: #315fdb;
 }
 
 .paris-route-guide-role {
@@ -4010,6 +3937,14 @@ nav {
   font-size: 0.78rem;
   font-weight: 900;
   line-height: 1.15;
+  text-decoration: none;
+}
+
+.paris-person-pill:hover,
+.paris-person-pill:focus-visible {
+  border-color: #b8c6ff;
+  color: #315fdb;
+  outline: none;
 }
 
 .paris-person-pill img,
@@ -4392,7 +4327,7 @@ nav {
 
 .paris-practitioner-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 0.8rem;
 }
 
@@ -4426,10 +4361,19 @@ nav {
   font-size: 0.88rem;
 }
 
-.paris-practitioner-card strong {
+.paris-practitioner-card strong,
+.paris-practitioner-card a {
   color: #111827;
   font-size: 1rem;
+  font-weight: 900;
   line-height: 1.2;
+  text-decoration: none;
+}
+
+.paris-practitioner-card a:hover,
+.paris-practitioner-card a:focus-visible {
+  color: #315fdb;
+  outline: none;
 }
 
 .paris-practitioner-card span {
@@ -4650,10 +4594,6 @@ nav {
 
   .paris-program-route {
     gap: 0.8rem;
-  }
-
-  .paris-route-legend {
-    margin-top: -0.35rem;
   }
 
   .paris-program-route::before {

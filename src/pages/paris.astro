@@ -200,6 +200,27 @@ const practitionerGuides = [
     focus: "API operating models & APIOps Cycles",
     avatar: "/images/speakers/marjukka-niinioja.jpg",
   },
+  {
+    id: "miriam",
+    name: "Miriam Greis",
+    focus: "API operating models & practitioner facilitation",
+    avatar: "/images/speakers/miriam-greis.png",
+    href: "https://www.linkedin.com/in/miriam-greis/",
+  },
+  {
+    id: "miguel",
+    name: "Miguel Quintero",
+    focus: "API strategy & platform change",
+    avatar: "/images/speakers/miguel-quintero.jpg",
+    href: "https://www.linkedin.com/in/miguel-quintero-a558531/",
+  },
+  {
+    id: "aiswarya",
+    name: "Aiswarya Balasubramanian",
+    focus: "API programs & implementation practice",
+    avatar: "/images/speakers/aiswarya-balasubramanian.jpg",
+    href: "https://www.linkedin.com/in/aiswarya-balasubramanian-66abb363/",
+  },
 ];
 
 const practitionerPeople = {
@@ -207,20 +228,9 @@ const practitionerPeople = {
   daniel: practitionerGuides[1],
   kin: practitionerGuides[2],
   marjukka: practitionerGuides[3],
-  french1: {
-    id: "french1",
-    name: "To be confirmed",
-    focus: "TBA",
-    initials: "FR",
-    mocked: true,
-  },
-  french2: {
-    id: "french2",
-    name: "To be confirmed",
-    focus: "TBA",
-    initials: "FR",
-    mocked: true,
-  },
+  miriam: practitionerGuides[4],
+  miguel: practitionerGuides[5],
+  aiswarya: practitionerGuides[6],
 };
 
 const agenda = [
@@ -284,12 +294,12 @@ const agenda = [
         focus: "Why operating-model change gets stuck",
       },
       {
-        ...practitionerPeople.french1,
-        focus: "Spark to be confirmed",
+        ...practitionerPeople.miriam,
+        focus: "Practitioner spark to be confirmed",
       },
       {
-        ...practitionerPeople.french2,
-        focus: "Spark to be confirmed",
+        ...practitionerPeople.miguel,
+        focus: "Practitioner spark to be confirmed",
       },
     ],
     happens: [
@@ -317,7 +327,9 @@ const agenda = [
       practitionerPeople.daniel,
       practitionerPeople.kin,
       practitionerPeople.marjukka,
-      practitionerPeople.french1,
+      practitionerPeople.miriam,
+      practitionerPeople.miguel,
+      practitionerPeople.aiswarya,
     ],
     purpose: "Choose the APIOps station closest to your current challenge and work it through with peers facing similar problems.",
     note:
@@ -340,7 +352,13 @@ const agenda = [
     experience: "Guided decision clinic",
     audience: "Guided groups",
     guideRole: "Practitioner Challenge",
-    guides: [practitionerPeople.marjukka, practitionerPeople.claire, practitionerPeople.daniel],
+    guides: [
+      practitionerPeople.marjukka,
+      practitionerPeople.claire,
+      practitionerPeople.daniel,
+      practitionerPeople.miriam,
+      practitionerPeople.aiswarya,
+    ],
     purpose: "Do not redesign the whole operating model. Find one API, integration, event, product journey, or capability where a different way of working could demonstrate measurable improvement.",
     callout: {
       title: "Practitioner challenge",
@@ -380,7 +398,9 @@ const agenda = [
       practitionerPeople.daniel,
       practitionerPeople.kin,
       practitionerPeople.marjukka,
-      practitionerPeople.french1,
+      practitionerPeople.miriam,
+      practitionerPeople.miguel,
+      practitionerPeople.aiswarya,
     ],
     purpose: "Turn the morning's diagnosis into ownership, actions, evidence, and a credible 90-day move.",
     note:
@@ -408,7 +428,9 @@ const agenda = [
       practitionerPeople.daniel,
       practitionerPeople.kin,
       practitionerPeople.marjukka,
-      practitionerPeople.french1,
+      practitionerPeople.miriam,
+      practitionerPeople.miguel,
+      practitionerPeople.aiswarya,
     ],
     purpose: "Bring the hardest unresolved question from the station clinics back into the room.",
     callout: {
@@ -434,7 +456,7 @@ const agenda = [
     experience: "Live synthesis",
     audience: "Everyone together",
     guideRole: "Facilitation",
-    guides: [practitionerPeople.marjukka],
+    guides: [practitionerPeople.marjukka, practitionerPeople.aiswarya],
     purpose: "What did we learn, what patterns emerged, and what will you do next?",
     happens: [
       "Create the Paris APIOps Operating Notes",
@@ -444,25 +466,6 @@ const agenda = [
     output: ["Shared synthesis", "Personal next action", "Community learning that can continue after Paris"],
     chips: ["Synthesis", "Operating notes", "Next decision"],
   },
-];
-
-const routeLegend = [
-  { icon: "↗", label: "Working session" },
-  { icon: "✦", label: "Practitioner story" },
-  { icon: "◌", label: "Discussion" },
-  { icon: "☕", label: "Networking" },
-  { icon: "▤", label: "Shared output" },
-];
-
-const routeSummary = [
-  { icon: "☕", label: "Breakfast" },
-  { icon: "⚡", label: "Sparks" },
-  { icon: "◇", label: "Clinics" },
-  { icon: "◎", label: "Proof" },
-  { icon: "□", label: "Lunch" },
-  { icon: "◇", label: "Clinics" },
-  { icon: "◌", label: "Fishbowl" },
-  { icon: "▤", label: "Notes" },
 ];
 
 const outcomes = [
@@ -592,22 +595,16 @@ const faqs = [
     <header class="paris-hero">
       <div class="container paris-hero-grid">
         <div class="paris-hero-copy">
-          <p class="paris-eyebrow">December 1, 2026 - FOST Paris</p>
+          <div class="paris-event-facts" aria-label="Event date and host event">
+            <span>December 1, 2026</span>
+            <span>FOST Paris</span>
+          </div>
           <h1>APIOps Paris 2026</h1>
           <p class="paris-hero-subtitle">After API Management</p>
-          <p class="paris-hero-day">The APIOps Operating Model Day</p>
+          <p class="paris-hero-day">The APIOps Operating Model Day at FOST Paris</p>
           <p class="paris-hero-lede">
-            From API platform investment to enterprise adoption, AI-speed, and governed digital capabilities.
-          </p>
-          <p>
-            API management platforms, gateways, portals, standards, and governance models are only the
-            beginning.
-          </p>
-          <p>
-            The hard part starts after the platform decision: getting product teams to adopt the paved road,
-            making APIs visible and reusable, engaging security and compliance early, reducing shadow APIs,
-            supporting AI-speed, managing B2B developer change, and proving business value before the full
-            enterprise capability is ready.
+            A hands-on day for senior API practitioners working on strategy, platforms, governance, adoption,
+            and AI-driven change.
           </p>
           <div class="paris-actions">
             <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
@@ -738,24 +735,6 @@ const faqs = [
           </p>
         </div>
 
-        <div class="paris-route-legend" aria-label="Route activity types">
-          {routeLegend.map((item) => (
-            <span>
-              <span class="paris-route-symbol" aria-hidden="true">{item.icon}</span>
-              {item.label}
-            </span>
-          ))}
-        </div>
-
-        <div class="paris-route-summary" aria-label="Route rhythm of the day">
-          {routeSummary.map((item) => (
-            <span>
-              <span aria-hidden="true">{item.icon}</span>
-              {item.label}
-            </span>
-          ))}
-        </div>
-
         <ol class="paris-program-route" aria-label="APIOps Paris route through the day">
           {agenda.map((item) => (
             <li class={`paris-route-stop ${item.type === "break" ? "is-break" : ""} ${item.featured ? "is-featured" : ""}`}>
@@ -798,20 +777,30 @@ const faqs = [
                       </h3>
                       <div class="paris-route-experience">
                         <span>{item.experience}</span>
-                        <span>{item.audience}</span>
                       </div>
                       {item.guideRole && <p class="paris-route-guide-role">{item.guideRole}</p>}
                       {item.guides && (
                         <div class="paris-route-guide-pills" aria-label={`Practitioner Guides for ${item.title}`}>
                           {item.guides.map((guide) => (
-                            <span class="paris-person-pill">
-                              {guide.avatar ? (
-                                <img src={guide.avatar} alt="" loading="lazy" />
-                              ) : (
-                                <span class="paris-person-initials" aria-hidden="true">{guide.initials}</span>
-                              )}
-                              <span>{guide.name}</span>
-                            </span>
+                            guide.href ? (
+                              <a class="paris-person-pill" href={guide.href}>
+                                {guide.avatar ? (
+                                  <img src={guide.avatar} alt="" loading="lazy" />
+                                ) : (
+                                  <span class="paris-person-initials" aria-hidden="true">{guide.initials}</span>
+                                )}
+                                <span>{guide.name}</span>
+                              </a>
+                            ) : (
+                              <span class="paris-person-pill">
+                                {guide.avatar ? (
+                                  <img src={guide.avatar} alt="" loading="lazy" />
+                                ) : (
+                                  <span class="paris-person-initials" aria-hidden="true">{guide.initials}</span>
+                                )}
+                                <span>{guide.name}</span>
+                              </span>
+                            )
                           ))}
                         </div>
                       )}
@@ -884,18 +873,6 @@ const faqs = [
                       </div>
                     )}
 
-                    {item.connections ? (
-                      <div class="paris-route-session">
-                        <span>Session</span>
-                        <div class="paris-route-chips" aria-label={`Session attributes for stop ${item.stop}`}>
-                          {item.chips.map((chip) => <span>{chip}</span>)}
-                        </div>
-                      </div>
-                    ) : (
-                      <div class="paris-route-chips" aria-label={`Participation types for stop ${item.stop}`}>
-                        {item.chips.map((chip) => <span>{chip}</span>)}
-                      </div>
-                    )}
                   </article>
                 </>
               )}
@@ -931,7 +908,7 @@ const faqs = [
                 ) : (
                   <span class="paris-practitioner-initials" aria-hidden="true">{guide.initials}</span>
                 )}
-                <strong>{guide.name}</strong>
+                {guide.href ? <a href={guide.href}>{guide.name}</a> : <strong>{guide.name}</strong>}
               </div>
               <span>{guide.focus}</span>
             </article>
