@@ -13,7 +13,7 @@
     "mode": "In person",
     "format": "Meetup",
     "topic": "AI discovery and API governance",
-    "status": "RSVP open",
+    "status": "Past event",
     "description": "A Helsinki meetup with Allan Knabe on how AI discovers APIs and Aleksei Popov on using the APIOps Cycles Metro Map to improve API development practices.",
     "ticketUrl": "https://www.meetup.com/apiops-helsinki/events/316084189/",
     "learnUrl": "https://www.meetup.com/apiops-helsinki/events/316084189/",
@@ -33,10 +33,10 @@
     "mode": "In person",
     "format": "Meetup",
     "topic": "Modern APIs and production-ready AI",
-    "status": "RSVP open",
+    "status": "Past event",
     "description": "A Cologne APIOps Germany meetup with Rilind Harizaj on modern API toolsets and Tim Sevenich on moving enterprise AI into production safely and confidently.",
     "ticketUrl": "https://www.meetup.com/apiops-germany/events/316466920/",
-    "learnUrl": "https://www.meetup.com/apiops-germany/events/316466920/",
+    "learnUrl": "/insights/from-api-first-to-ai-agents-apiops-cologne",
     "challengeUrl": "https://tally.so/r/dWgy2D"
   },
   {

@@ -1,11 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SubscribeForm from "../components/SubscribeForm.astro";
-import events from "../data/events.json";
+import eventData from "../data/events.json";
+import { getCurrentEvents } from "../utils/events";
 import insights from "../data/insights.json";
 
-const upcomingEvents = events.filter((event) => event.status !== "Past event");
-const pastEvents = events.filter((event) => event.status === "Past event");
+const events = getCurrentEvents(eventData);
+const upcomingEvents = events.filter((event) => event.status !== "Past event" && event.year);
+const pastEvents = events.filter((event) => event.status === "Past event").reverse();
 const featuredEvents = upcomingEvents.slice(0, 3);
 const featuredInsight = insights[0];
 const formatInsightDate = (date) => new Intl.DateTimeFormat("en-GB", {

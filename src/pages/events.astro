@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import events from "../data/events.json";
+import eventData from "../data/events.json";
+import { getCurrentEvents } from "../utils/events";
+
+const events = getCurrentEvents(eventData);
 
 const whenFilters = [
   { label: "Upcoming", value: "upcoming" },
@@ -173,7 +176,7 @@ function getModeToken(event) {
 
         <div class="events-timeline">
           {events.map((event) => (
-            <section class="events-timeline-group" data-group={getMonthGroup(event)}>
+            <section class="events-timeline-group" data-group={getMonthGroup(event)} hidden={event.status === "Past event"}>
               <h3>{getMonthGroup(event)}</h3>
               <article
                 class={`events-calendar-card ${event.id === "paris-2026" ? "is-featured" : ""}`}
@@ -183,6 +186,8 @@ function getModeToken(event) {
                 data-tba={event.year ? "false" : "true"}
                 data-past={event.status === "Past event" ? "true" : "false"}
                 data-start={event.startDate}
+                data-end={event.endDate}
+                hidden={event.status === "Past event"}
                 data-region={event.region || (event.mode === "Online" ? "online" : "other")}
               >
                 <div class="community-date-tile">
@@ -209,8 +214,8 @@ function getModeToken(event) {
                   <p>{event.description}</p>
                 </div>
                 <div class="events-calendar-actions">
-                  <a class={`community-action-primary ${event.id === "paris-2026" ? "is-purple" : ""}`} href={event.ticketUrl}>
-                    {event.id === "paris-2026" ? "Get early-bird ticket" : getActionLabel(event)}
+                  <a class={`community-action-primary ${event.id === "paris-2026" ? "is-purple" : ""}`} href={event.status === "Past event" ? event.learnUrl : event.ticketUrl}>
+                    {event.id === "paris-2026" && event.status !== "Past event" ? "Get early-bird ticket" : getActionLabel(event)}
                   </a>
                   <a href={event.learnUrl}>Learn more</a>
                 </div>
@@ -245,6 +250,8 @@ function getModeToken(event) {
   </footer>
 
   <script>
+    import { getToday } from "../utils/events";
+
     const filterButtons = document.querySelectorAll("[data-filter-group]");
     const eventCards = document.querySelectorAll(".events-calendar-card");
     const timelineGroups = document.querySelectorAll(".events-timeline-group");
@@ -255,18 +262,19 @@ function getModeToken(event) {
       region: "all",
     };
 
-    function isNextThreeMonths(date) {
+    function isNextThreeMonths(date, end) {
       if (!(date instanceof Date) || Number.isNaN(date.getTime())) return false;
-      const now = new Date();
+      const now = new Date(`${getToday()}T00:00:00`);
       const windowEnd = new Date(now);
       windowEnd.setMonth(windowEnd.getMonth() + 3);
-      return date >= now && date <= windowEnd;
+      return end >= getToday() && date <= windowEnd;
     }
 
     function matchesWhen(card) {
       const when = activeFilters.when;
       const isTba = card.getAttribute("data-tba") === "true";
-      const isPast = card.getAttribute("data-past") === "true";
+      const end = card.getAttribute("data-end");
+      const isPast = card.getAttribute("data-past") === "true" || (!isTba && Boolean(end && end < getToday()));
       const year = card.getAttribute("data-year");
       const start = card.getAttribute("data-start");
       const date = start ? new Date(`${start}T00:00:00`) : null;
@@ -275,7 +283,7 @@ function getModeToken(event) {
       if (when === "past") return isPast;
       if (when === "tba") return isTba;
       if (when === "2026") return year === "2026" && !isPast;
-      if (when === "quarter") return !isPast && date ? isNextThreeMonths(date) : false;
+      if (when === "quarter") return !isPast && !isTba && date && end ? isNextThreeMonths(date, end) : false;
       return true;
     }
 
@@ -289,6 +297,22 @@ function getModeToken(event) {
       let visibleCount = 0;
 
       eventCards.forEach((card) => {
+        const end = card.getAttribute("data-end");
+        if (card.getAttribute("data-tba") !== "true" && end && end < getToday()) {
+          card.setAttribute("data-past", "true");
+          const status = card.querySelector(".community-status-pill");
+          if (status) {
+            status.textContent = "Past event";
+            status.classList.remove("is-early");
+            status.classList.add("is-past");
+          }
+          const action = card.querySelector(".community-action-primary");
+          const learnMore = card.querySelector(".events-calendar-actions a:last-child");
+          if (action && learnMore) {
+            action.textContent = "View archive";
+            action.setAttribute("href", learnMore.getAttribute("href") || "");
+          }
+        }
         const matchesRegion = activeFilters.region === "all" || card.getAttribute("data-region") === activeFilters.region;
         const matches = matchesWhen(card) && matchesFormat(card) && matchesRegion;
         card.hidden = !matches;
