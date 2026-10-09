@@ -1,5 +1,30 @@
 [
   {
+    "slug": "from-api-first-to-ai-agents-apiops-cologne",
+    "title": "From API-First to AI Agents: Real Conversations at APIOps Cologne",
+    "subtitle": "Practitioner conversations from the 6 October 2026 meetup",
+    "author": {
+      "name": "Marjukka Niinioja",
+      "slug": "marjukka-niinioja"
+    },
+    "communities": [
+      {
+        "name": "APIOps Germany",
+        "href": "/communities/germany"
+      }
+    ],
+    "category": "Event Notes / Synthesis",
+    "format": "Meetup Reflections",
+    "date": "2026-10-09",
+    "image": {
+      "src": "/images/insights/apiops-cologne-2026/ai-in-production.jpg",
+      "alt": "A speaker discussing data and the move to production with the APIOps Cologne audience"
+    },
+    "ogImage": "/images/insights/apiops-cologne-2026/apiops-cologne-og.jpg",
+    "excerpt": "Do companies need MCP on top of their APIs? What does API-first mean in practice? APIOps Cologne explored AI in production, API lifecycle promises and governance across connected digital capabilities.",
+    "readTime": "4 min read"
+  },
+  {
     "slug": "what-we-learned-building-api-governance-with-open-standards",
     "title": "What We Learned Building API Governance with Open Standards",
     "subtitle": "A practitioner story with Aleksei Popov",
