@@ -1,9 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import communities from "../../data/communities.json";
-import events from "../../data/events.json";
+import eventData from "../../data/events.json";
+import { getCurrentEvents } from "../../utils/events";
 export function getStaticPaths() { return communities.map((community) => ({ params: { slug: community.slug }, props: { community } })); }
 const { community } = Astro.props;
+const events = getCurrentEvents(eventData);
 const localEvents = events.filter((event) => event.region === community.slug && event.status !== "Past event");
 function getOrganizerName(organizer) {
   return typeof organizer === "string" ? organizer : organizer.name;

@@ -73,110 +73,159 @@ const publishedDate = new Intl.DateTimeFormat("en-GB", {
             <figcaption>Exploring the move from AI experiments to production at APIOps Cologne.</figcaption>
           </figure>
 
-          <p><strong>Do companies really need MCP on top of their APIs? Is API-first actually a thing in Germany? And how do we keep governance practical when APIs, integrations, workflows and AI agents are increasingly connected?</strong></p>
+          <p><strong>Is API-first even a thing in Germany? Do companies really need MCP on top of their existing APIs? And what happens to API governance when AI agents and workflows enter the picture?</strong></p>
 
-          <p>These were just some of the questions that sparked conversations at the <strong>APIOps Cologne meetup on 6 October 2026</strong>.</p>
+          <p>These were some of the questions that sparked lively conversations at the <strong>APIOps Cologne meetup on 6 October 2026</strong>, hosted by <strong>Netlight</strong> at its Cologne office, with food and drinks sponsored by <strong>Axway</strong>.</p>
 
-          <p>The evening brought together practitioners interested in API architecture, integration, AI and software delivery for an exchange of experiences, ideas and some healthy questioning of established approaches.</p>
+          <p>The evening brought together practitioners working with APIs, integration, architecture, AI and software delivery. Rather than looking for universal answers, we exchanged experiences, challenged assumptions and explored what actually works in different organisational contexts.</p>
 
-          <h2>From AI experiments to production reality</h2>
+          <h2>Modern APIs: tools, lifecycles and long-term commitments</h2>
 
-          <p>One of the evening's themes was the gap between experimenting with AI and making it work reliably in production.</p>
+          <p><strong>Rilind Harizaj, Fullstack Software Engineer Consultant at Netlight Cologne</strong>, opened the evening with <em>“The Modern API: A Toolset.”</em></p>
 
-          <p>As organisations move beyond proofs of concept, the challenges become familiar to anyone working with enterprise architecture and integration: governance, security, access to data, existing systems, ownership and operational responsibility.</p>
+          <p>His presentation explored practical tools and approaches for designing, developing and maintaining modern APIs, including a technical demonstration.</p>
 
-          <p>The interesting question is no longer simply whether we can build an AI-powered solution. It's how we make it part of a sustainable technology landscape.</p>
+          <p>One particularly interesting part was the generic API lifecycle presented during the talk.</p>
 
-          <p>And that naturally leads to another question: <strong>how much of what we've already learned about APIs and integrations still applies to AI agents?</strong></p>
+          <p>The lifecycle was remarkably similar to the lifecycle thinking behind <strong>APIOps Cycles</strong>, which also considers API design, development, testing, publishing and ongoing management as connected activities rather than isolated steps.</p>
 
-          <p>Quite a lot, as it turns out.</p>
+          <p>There are, however, two important differences in emphasis.</p>
 
-          <h2>API-first, lifecycle management and the promises we make</h2>
+          <p>First, <strong>APIOps Cycles starts with consumer and business needs</strong>, rather than starting from API design or implementation. The question is not simply how to create an API correctly, but why the capability is needed, who will consume it and what value it should enable.</p>
 
-          <p>The discussions also returned to some surprisingly fundamental API questions.</p>
+          <p>Second, APIOps Cycles explicitly considers <strong>API productisation and packaging</strong>: how APIs become understandable, discoverable, reusable and manageable products for their intended consumers.</p>
 
-          <p>At one point, someone asked:</p>
+          <p>These perspectives complement the technical lifecycle. They connect the work of API designers and developers with product management, business strategy and adoption.</p>
 
-          <p><strong>"Is that even a thing in Germany?"</strong></p>
+          <p>And they remind us of something easy to overlook:</p>
 
-          <p>The subject was API-first.</p>
-
-          <p>It was a humorous moment, but it also captured something important: practices that sound well established in industry discussions are not necessarily equally understood, adopted or applied across organisations.</p>
-
-          <p>We explored API product lifecycles, design practices and the responsibilities that come with publishing APIs for others to use.</p>
-
-          <p>An API isn't just an endpoint that a development team delivers. It's a capability that other teams, products and organisations may come to depend on.</p>
-
-          <p>And as one of the presentations put it, a team shipping a quick endpoint today is making a promise it may have to keep for years.</p>
-
-          <p>That promise involves much more than the initial implementation.</p>
+          <p><strong>A team shipping a quick endpoint today may be making a promise it will have to keep for years.</strong></p>
 
           <figure class="insight-media">
             <img src="/images/insights/apiops-cologne-2026/api-lifecycle.jpg" alt="A speaker presenting a slide about the long-term promise made when shipping an API endpoint" width="1600" height="720" loading="lazy" />
             <figcaption>Publishing an API creates a promise that teams may need to keep for years.</figcaption>
           </figure>
 
-          <h2>The MCP question: do we really need another layer?</h2>
+          <h2>Is API-first even a thing in Germany?</h2>
 
-          <p>One of the particularly interesting discussion topics was Model Context Protocol (MCP).</p>
+          <p>This question came up during the discussions, and it turned out to be more interesting than it initially sounded.</p>
 
-          <p>As organisations explore AI agents and their ability to interact with enterprise systems, MCP is attracting considerable attention.</p>
+          <p>Because the answer depends on what we mean by <em>API-first</em>.</p>
 
-          <p>But <strong>does every organisation really need MCP servers on top of its existing APIs?</strong></p>
+          <p>There are at least two interpretations:</p>
 
-          <p>Or are there situations where established API and integration approaches would be simpler, more maintainable or more appropriate?</p>
+          <p><strong>1. API-first as a software design approach</strong></p>
 
-          <p>There isn't a universal answer.</p>
+          <p>Teams begin by designing API contracts and interfaces before implementing the underlying functionality.</p>
 
-          <p>The important thing is to understand the actual use case, the consumers, the security and governance requirements, and the architecture already in place before introducing another technology layer.</p>
+          <p>This is the more common interpretation of API-first. It encourages better collaboration, clearer contracts, independent development and more consistent interfaces.</p>
 
-          <p>These are exactly the kinds of conversations we want APIOps meetups to encourage: not simply celebrating the latest technology, but examining when it makes sense, what problems it solves and what responsibilities it creates.</p>
+          <p>Even this approach is far from universally adopted. But there are encouraging signs that awareness and practical adoption are improving.</p>
+
+          <p><strong>2. API-first as a business and product approach</strong></p>
+
+          <p>Organisations begin by thinking about reusable business capabilities, business modules and API products, rather than treating APIs primarily as interfaces created to support individual applications.</p>
+
+          <p>Here, API-first becomes much more than a development practice.</p>
+
+          <p>It affects how organisations structure digital capabilities, design products, organise ownership and enable reuse across teams, channels and ecosystems.</p>
+
+          <p>The discussions suggested that <strong>both interpretations still have a long way to go</strong>, although there is more reason for optimism around the first, technically oriented approach.</p>
+
+          <p>The second requires a more fundamental change in how businesses and technology organisations think about products, capabilities and architecture.</p>
+
+          <p>And that's one reason why the APIOps community brings together people from business, product management, architecture and engineering — not just API developers.</p>
 
           <figure class="insight-media">
             <img src="/images/insights/apiops-cologne-2026/openapi-demo.jpg" alt="A live API demonstration with an OpenAPI contract, C++ server, Go client and testing tools shown on screen" width="1600" height="720" loading="lazy" />
             <figcaption>A practical demonstration connecting API contracts, implementation, clients and testing.</figcaption>
           </figure>
 
-          <h2>Governance that enables rather than obstructs</h2>
+          <h2>Why AI doesn't ship: moving beyond experiments</h2>
 
-          <p>Across the evening, another theme connected many of the discussions: governance.</p>
+          <p><strong>Tim Sevenich from Axway's Solution Architect team</strong> continued with <em>“Why AI Doesn't Ship (Yet) – How Enterprises Move AI into Production Safely and Confidently.”</em></p>
+
+          <p>His presentation explored the challenges organisations encounter when moving from AI experimentation to production.</p>
+
+          <p>The familiar challenges of enterprise technology don't disappear when AI is introduced. If anything, they become more visible.</p>
+
+          <p>Governance, access to data, security, integration, operational responsibility and organisational readiness all matter when AI solutions need to work reliably at scale.</p>
+
+          <p>The discussion also highlighted the difference between adopting AI tools and actually integrating AI into core business operations.</p>
+
+          <p>Running a pilot is one thing. Creating sustainable business value is another.</p>
+
+          <p>And as organisations introduce AI agents and increasingly complex workflows, questions about API management and integration architecture become even more relevant.</p>
+
+          <h2>The MCP question: do we really need another layer?</h2>
+
+          <p>One of the evening's particularly interesting discussion topics was <strong>Model Context Protocol (MCP)</strong>.</p>
+
+          <p>As organisations explore AI agents interacting with enterprise systems, MCP is attracting considerable attention.</p>
+
+          <p>But does every organisation really need MCP servers on top of its existing APIs?</p>
+
+          <p>Or are there situations where established APIs, integration patterns or workflow orchestration would be simpler, more maintainable or better suited to the problem?</p>
+
+          <p>The answer depends on the use case.</p>
+
+          <p>MCP can offer useful standardisation for how AI applications discover and interact with tools. But that doesn't automatically mean it is the right architectural choice for every interaction between an AI agent and an enterprise system.</p>
+
+          <p>We need to understand the consumers, security requirements, existing architecture, governance responsibilities and actual benefits before introducing another technology layer.</p>
+
+          <p>This is exactly the kind of conversation APIOps meetups are intended to encourage: questioning assumptions, sharing experiences and making technology choices based on real needs rather than trends.</p>
+
+          <h2>Governance across APIs, integrations, workflows and AI</h2>
+
+          <p>Another recurring theme was governance.</p>
 
           <p>API governance. Integration governance. Workflow governance. AI governance.</p>
 
-          <p>These are often discussed separately, even though the systems and teams involved increasingly overlap.</p>
+          <p>These are often discussed as separate disciplines, even though the systems, data, capabilities and teams involved increasingly overlap.</p>
 
-          <p>How do we maintain appropriate controls without slowing development to a crawl? How do we make good architectural decisions easier? And how do we balance local team autonomy with the needs of an organisation that depends on shared capabilities?</p>
+          <p>How do we maintain appropriate controls without making delivery unnecessarily difficult?</p>
 
-          <p>The answers rarely come from a single tool or policy.</p>
+          <p>How do we make good architectural decisions easier?</p>
 
-          <p>They come from understanding responsibilities, making architectural choices explicit, and sharing practical experiences of what works — and what doesn't.</p>
+          <p>And how do we balance team autonomy with the need to manage shared capabilities across an organisation?</p>
+
+          <p>The answers rarely come from a single platform or policy.</p>
+
+          <p>They depend on understanding responsibilities, making architectural choices explicit and learning from practical experiences.</p>
 
           <figure class="insight-media">
             <img src="/images/insights/apiops-cologne-2026/ai-governance.jpg" alt="The APIOps Cologne audience listening to a presentation about governance when moving AI into production" width="1600" height="720" loading="lazy" />
             <figcaption>Governance was a shared theme across APIs, integrations, workflows and AI.</figcaption>
           </figure>
 
-          <h2>Why practitioner meetups matter</h2>
+          <h2>The best part: conversations between practitioners</h2>
 
-          <p>What made the evening valuable wasn't just the presentations or technical demonstrations. It was the opportunity to challenge assumptions, compare experiences and explore questions that don't always have neat answers.</p>
+          <p>What made the evening valuable wasn't just the presentations and technical demonstrations. It was the opportunity to compare experiences, challenge assumptions and discuss questions without expecting everyone to agree.</p>
 
-          <p>The discussions moved naturally between AI in production, API-first development, lifecycle management, integration architecture and the increasingly blurry boundaries between APIs, workflows and AI agents.</p>
+          <p>The conversations moved naturally between API-first development, API product lifecycles, enterprise integration, AI adoption, governance and the evolving role of MCP.</p>
 
-          <p>A big thank you to <strong>Netlight for hosting us in Cologne, Axway for supporting the evening, our speakers Rilind Harizaj and Tim Sevenich, and everyone who joined and contributed to the conversations.</strong></p>
+          <p>A big thank you to our speakers <strong>Rilind Harizaj (Netlight)</strong> and <strong>Tim Sevenich (Axway)</strong> for sharing their knowledge and perspectives.</p>
 
-          <p>This is what APIOps Community is about: bringing people together across organisations, roles and technologies to learn from one another and improve how we design, deliver and operate digital capabilities.</p>
+          <p>Special thanks to <strong>Netlight Cologne for hosting the meetup</strong> and <strong>Axway for sponsoring the food and drinks</strong>.</p>
+
+          <p>And thank you to <strong>Audrey Kolski</strong>, who helped make the Cologne meetup happen together with <strong>Marjukka Niinioja and Kristiina Kivivuori from Osaango and the APIOps Community</strong>.</p>
+
+          <p>Most importantly, thank you to everyone who joined, asked questions and contributed to the discussions.</p>
+
+          <p>This is what APIOps Community is about: bringing practitioners together across organisations, roles and technologies to learn from one another and improve how we design, deliver and operate digital capabilities.</p>
 
           <h2>Join the APIOps community in Germany</h2>
 
-          <p>We're growing the APIOps practitioner community in Germany, and Cologne is just one part of that journey.</p>
+          <p>We're growing the APIOps practitioner community in Germany, and Cologne is just the beginning.</p>
 
-          <p>Our next German meetup is planned for <strong><a href="https://www.meetup.com/apiops-germany/events/316382906/">Nuremberg on 17 November 2026</a></strong>.</p>
+          <p>Our next meetup takes place in <strong>Nuremberg on 17 November 2026</strong>.</p>
 
           <p>Whether you're working with APIs, integration, platform engineering, AI, architecture, product management or governance, you're welcome to join the conversation.</p>
 
-          <p><strong><a href="https://www.meetup.com/apiops-germany/">Join APIOps Germany on Meetup</a> and explore upcoming events at <a href="https://www.apiops.info/">apiops.info</a>.</strong></p>
+          <p><strong><a href="https://www.meetup.com/apiops-germany/">Join APIOps Germany on Meetup</a></strong> and explore upcoming events at <strong><a href="https://www.apiops.info/">apiops.info</a></strong>.</p>
 
           <p>Have a topic, experience or difficult architectural question worth discussing? We'd love to hear from you.</p>
+
         </div>
       </div>
     </article>
