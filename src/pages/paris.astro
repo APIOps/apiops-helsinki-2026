@@ -181,30 +181,49 @@ const practitionerGuides = [
     name: "Claire Barrett",
     focus: "Strategy, organizations & change",
     avatar: "/images/speakers/claire-barrett.jpg",
+    title: "Consultant and API Economist",
+    company: "APIsFirst",
+    href: "https://www.linkedin.com/in/claire-global/",
+    bio: "Claire Barrett is director and founder of APIsFirst based in the UK, and co-founder of The API Collective. She has over 25 years' experience consulting to medium and large organisations with globally recognised brands, on justifying, executing and communicating technology and API-enabled change.",
   },
   {
     id: "daniel",
     name: "Daniel Kocot",
     focus: "API architecture, governance & engineering",
     avatar: "/images/speakers/daniel-kocot.jpg",
+    title: "Principal API Consultant",
+    company: "Adorsys",
+    href: "https://www.linkedin.com/in/danielkocot/",
+    bio: "Daniel Kocot has been part of the adorsys GmbH & Co. KG team as a Principal Integration Architect since January 2026. For nearly ten years, he has been dedicated to topics around integration. He began with a strong focus on gateways and the early days of API operations (APIOps), and later shifted his focus toward methodologies, strategy, and enterprise architecture.",
   },
   {
     id: "kin",
     name: "Kin Lane",
     focus: "API discovery, governance & ecosystem thinking",
     avatar: "/images/speakers/kin-lane.png",
+    title: "Founder",
+    company: "API Evangelist",
+    href: "https://www.linkedin.com/in/kinlane/",
+    bio: "Kin Lane is the founder and operator of API Evangelist. Kin has been in the technology industry for 35 years with the last 15 years dedicated to HTTP APIs. During the fifteen years operating API Evangelist Kin has been a Presidential Innovation Fellow for the Obama administration, worked with the European Commission on API standards, was Chief Evangelist for Postman, and more recently stood up an API governance program for Bloomberg.",
   },
   {
     id: "marjukka",
     name: "Marjukka Niinioja",
     focus: "API operating models & APIOps Cycles",
     avatar: "/images/speakers/marjukka-niinioja.jpg",
+    title: "Founding Partner, API Consultant & APIOps Community Lead",
+    company: "Osaango",
+    href: "https://www.linkedin.com/in/marjukkaniinioja/",
+    bio: "Marjukka is the founder of Osaango Ltd, which offers services in the API and Data Economy.\n\nMarjukka is a business and technical consultant, speaker at API conferences, co-author of the API Economy 101 book, as well as the ‘Mother’ of the lean, open, and business-oriented APIOps Cycles method. She has more than ten years of experience with the API and data economy across manufacturing, process, forest, retail, energy, ICT, construction, and traffic industries. She teaches API and data economy and has created open university online and remote courses on the subject with universities as well as KONE and Cisco Solutions.",
   },
   {
     id: "miriam",
     name: "Miriam Greis",
     focus: "API operating models & practitioner facilitation",
     avatar: "/images/speakers/miriam-greis.png",
+    title: "Principal Integration Architect",
+    company: "Adorsys",
+    bio: "Due to her PhD in human-computer interaction, Miri's technical focus was originally on front-end development. Over time, however, she has discovered her enthusiasm for APIs. That is why she is currently working in API Consulting as an enabler specialising in API Experience & Operations. Miri pays particular attention to the continuous improvement and automation of processes. She also enjoys passing on her knowledge in trainings and workshops and loves giving talks.",
     href: "https://www.linkedin.com/in/miriam-greis/",
   },
   {
@@ -212,6 +231,9 @@ const practitionerGuides = [
     name: "Miguel Quintero",
     focus: "API strategy & platform change",
     avatar: "/images/speakers/miguel-quintero.jpg",
+    title: "API Platform & AI Workflows Engineering",
+    company: "",
+    bio: "Miguel is an experienced platform engineer specializing in API platforms, governance, security, and developer experience, with a current focus on making API systems production-ready. As a maintainer of OpenAPI Specification, Miguel brings deep expertise in API standards and platform engineering.",
     href: "https://www.linkedin.com/in/miguel-quintero-a558531/",
   },
   {
@@ -219,6 +241,9 @@ const practitionerGuides = [
     name: "Aiswarya Balasubramanian",
     focus: "API programs & implementation practice",
     avatar: "/images/speakers/aiswarya-balasubramanian.jpg",
+    title: "API Architect",
+    company: "",
+    bio: "Aiswarya is an experienced enterprise and cloud architect with over 15 years of expertise in API-first architecture, cloud-native solutions, and enterprise integration.",
     href: "https://www.linkedin.com/in/aiswarya-balasubramanian-66abb363/",
   },
 ];
@@ -311,6 +336,14 @@ const agenda = [
     chips: ["Practitioner sparks", "Voting", "Marketplace"],
   },
   {
+    type: "break",
+    time: "10:40",
+    title: "Coffee Break / Networking / Expo",
+    purpose: "Partners Village",
+    label: "Break",
+    audience: "Optional / informal",
+  },
+  {
     type: "stop",
     stop: "04",
     phase: { label: "Midday", text: "Work the problem and choose a proof" },
@@ -374,11 +407,10 @@ const agenda = [
   },
   {
     type: "break",
-    time: "13:00-14:00",
-    duration: "60 min",
-    title: "Lunch + FOST",
-    purpose: "Take a break, explore the wider FOST event, or continue station conversations informally. Practitioner Guides participate informally; there is no special expert programming.",
-    label: "Break / transfer",
+    time: "13:00",
+    title: "Lunch Break / Networking / Expo",
+    purpose: "Partners Village",
+    label: "Break",
     audience: "Optional / informal",
   },
   {
@@ -416,7 +448,7 @@ const agenda = [
   {
     type: "stop",
     stop: "07",
-    time: "15:55-16:25",
+    time: "15:25-15:55",
     duration: "30 min",
     icon: "◌",
     title: "Fishbowl: The Question We Couldn't Resolve",
@@ -446,10 +478,18 @@ const agenda = [
     chips: ["Fishbowl", "Open discussion", "Unresolved questions"],
   },
   {
+    type: "break",
+    time: "16:00",
+    title: "Coffee Break / Networking / Expo",
+    purpose: "Partners Village",
+    label: "Break",
+    audience: "Optional / informal",
+  },
+  {
     type: "stop",
     stop: "08",
     phase: { label: "Final stop", text: "Synthesis and next decision" },
-    time: "16:25-16:50",
+    time: "16:30-16:55",
     duration: "25 min",
     icon: "▤",
     title: "Paris Operating Notes",
@@ -465,6 +505,14 @@ const agenda = [
     ],
     output: ["Shared synthesis", "Personal next action", "Community learning that can continue after Paris"],
     chips: ["Synthesis", "Operating notes", "Next decision"],
+  },
+  {
+    type: "break",
+    time: "17:30",
+    title: "End of Day 1",
+    purpose: "The FOST Paris day concludes.",
+    label: "End of day",
+    audience: "Everyone",
   },
 ];
 
@@ -742,7 +790,7 @@ const faqs = [
               {item.type === "break" ? (
                 <>
                   <div class="paris-route-time">
-                    <time>{item.time} · {item.duration}</time>
+                    <time>{item.time}{item.duration && ` · ${item.duration}`}</time>
                     <span class="paris-route-break-marker" aria-hidden="true"></span>
                   </div>
                   <article class="paris-route-break-card">
@@ -905,6 +953,11 @@ const faqs = [
                 {guide.href ? <a href={guide.href}>{guide.name}</a> : <strong>{guide.name}</strong>}
               </div>
               <span>{guide.focus}</span>
+              <p class="paris-practitioner-role">{guide.title}{guide.company && `, ${guide.company}`}</p>
+              <details class="paris-practitioner-bio">
+                <summary>About {guide.name}</summary>
+                {guide.bio.split("\n\n").map((paragraph) => <p>{paragraph}</p>)}
+              </details>
             </article>
           ))}
         </div>
