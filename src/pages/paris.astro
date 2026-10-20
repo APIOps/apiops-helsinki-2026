@@ -3,16 +3,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const ticketUrl =
   "https://portal.joinfost.io/event/future-of-software-technologies-paris-2026/5e27c773-7fa8-4169-b6a7-93494701212a/apiops-conference";
-const challengeUrl = "https://tally.so/forms/GxW52L/edit2";
-const contributorUrl = "https://tally.so/forms/GxW52L/edit2";
+const challengeUrl = "https://tally.so/r/GxW52L";
 const updatesUrl = "mailto:info@apiops.info?subject=APIOps%20Paris%202026%20program%20updates";
-const partnershipUrl = "https://tally.so/forms/GxW52L/edit2";
+const partnershipUrl = "https://tally.so/r/GxW52L";
 
 const participationRoutes = [
   {
     title: "Attend",
     body: "Join the full-day APIOps Operating Model Day on December 1.",
-    cta: "Get Early Bird Ticket",
+    cta: "Get Ticket",
     href: ticketUrl,
     note: "Tickets are sold through FOST/apidays.",
   },
@@ -22,13 +21,6 @@ const participationRoutes = [
     cta: "Share an APIOps Challenge",
     href: challengeUrl,
     note: "This is not a speaker application. It helps shape station clinics, problem walls, and synthesis.",
-  },
-  {
-    title: "Contribute to the program",
-    body: "Apply to bring a practitioner spark, decision story, case, station clinic, or fishbowl contribution.",
-    cta: "Propose a Program Contribution",
-    href: contributorUrl,
-    note: "We are looking for practical operating-model contributions, not generic API talks.",
   },
   {
     title: "Support the APIOps community",
@@ -555,11 +547,6 @@ const faqs = [
       "No. Sharing a challenge helps shape the station clinics and problem wall. It is not a speaker application.",
   },
   {
-    question: "How do I propose a talk or facilitation role?",
-    answer:
-      "Use Propose a Program Contribution. We are looking for practitioner sparks, decision stories, station hosts, clinic facilitators, case contributors, fishbowl contributors, and synthesis contributors.",
-  },
-  {
     question: "Can vendors or consultants contribute?",
     answer:
       "Yes, if they bring practical operating-model experience and respect the format. Product pitches, demos, and lead harvesting do not fit the program.",
@@ -616,7 +603,7 @@ const faqs = [
         <a href="#stations">Stations</a>
         <a href="#cycles">APIOps Cycles</a>
         <a href="#updates">Get Program Updates</a>
-        <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
+        <a class="button primary" href={ticketUrl}>Get Ticket</a>
       </div>
     </div>
   </nav>
@@ -655,8 +642,7 @@ const faqs = [
             and AI-driven change.
           </p>
           <div class="paris-actions">
-            <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
-            <a class="button secondary" href={contributorUrl}>Propose a Program Contribution</a>
+            <a class="button primary" href={ticketUrl}>Get Ticket</a>
           </div>
           <a class="paris-hero-link" href={challengeUrl}>Share an APIOps Challenge</a>
         </div>
@@ -757,7 +743,7 @@ const faqs = [
             executive understanding.
           </p>
           <div class="paris-inline-actions">
-            <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
+            <a class="button primary" href={ticketUrl}>Get Ticket</a>
             <a class="button secondary alt" href={challengeUrl}>Share an APIOps Challenge</a>
           </div>
         </div>
@@ -923,8 +909,7 @@ const faqs = [
         </ol>
 
         <div class="paris-section-actions">
-          <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
-          <a class="button secondary alt" href={contributorUrl}>Propose a Program Contribution</a>
+          <a class="button primary" href={ticketUrl}>Get Ticket</a>
           <a class="paris-program-text-link" href={challengeUrl}>Share an APIOps Challenge</a>
         </div>
       </div>
@@ -1222,7 +1207,6 @@ const faqs = [
             fine. Their role in this program is not to sell. Their role is to help the room work through real
             APIOps questions.
           </p>
-          <a class="button primary" href={contributorUrl}>Propose a Program Contribution</a>
         </div>
         <div class="paris-contributor-panel">
           <h3>Program contributors may take part as:</h3>
@@ -1250,7 +1234,6 @@ const faqs = [
           </p>
           <div class="paris-inline-actions">
             <a class="button primary" href={partnershipUrl}>Contact about partnerships and collaboration</a>
-            <a class="button secondary alt" href={contributorUrl}>Propose a Program Contribution</a>
           </div>
         </div>
       </div>
@@ -1280,7 +1263,7 @@ const faqs = [
           Leave with better language, practical patterns, and a sharper next decision for your own organization.
         </p>
         <div class="hero-actions cta-actions">
-          <a class="button primary" href={ticketUrl}>Get Early Bird Ticket</a>
+          <a class="button primary" href={ticketUrl}>Get Ticket</a>
           <a class="button secondary" href={updatesUrl}>Get Program Updates</a>
         </div>
         <p class="paris-cta-note" id="updates">
