@@ -4344,6 +4344,25 @@ nav {
   line-height: 1.38;
 }
 
+.paris-practitioner-role,
+.paris-practitioner-bio p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.paris-practitioner-bio summary {
+  cursor: pointer;
+  color: #315fdb;
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.paris-practitioner-bio p {
+  margin-top: 0.6rem;
+}
+
 .paris-program-text-link {
   display: inline-flex;
   align-items: center;

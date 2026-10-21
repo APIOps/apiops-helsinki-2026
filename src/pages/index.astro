@@ -52,6 +52,7 @@ const mapUses = [
 ];
 
 function getActionLabel(event) {
+  if (event.id === "paris-2026") return "FOST Paris - 20% for APIOps Community";
   if (event.status === "Get updates") return "Get updates";
   if (event.status === "Save the date") return "Save the date";
   if (event.status.includes("RSVP")) return "RSVP";
@@ -286,7 +287,7 @@ function getActionLabel(event) {
               <p class="community-event-meta">{parisEvent.date} - {parisEvent.location} - {parisEvent.mode} - {parisEvent.format}</p>
               <p>{parisEvent.description}</p>
               <div class="community-card-actions">
-                <a class="community-action-primary is-purple" href={parisEvent.ticketUrl}>Get early-bird ticket</a>
+                <a class="community-action-primary is-purple" href={parisEvent.ticketUrl}>{getActionLabel(parisEvent)}</a>
                 <a href={parisEvent.learnUrl}>Learn more</a>
               </div>
             </div>

@@ -32,6 +32,7 @@ const regionFilters = [
 
 function getActionLabel(event) {
   if (event.status === "Past event") return "View archive";
+  if (event.id === "paris-2026") return "FOST Paris - 20% for APIOps Community";
   if (event.status === "Get updates") return "Get updates";
   if (event.status === "Save the date") return "Save the date";
   if (event.status.includes("RSVP")) return "RSVP";
@@ -215,7 +216,7 @@ function getModeToken(event) {
                 </div>
                 <div class="events-calendar-actions">
                   <a class={`community-action-primary ${event.id === "paris-2026" ? "is-purple" : ""}`} href={event.status === "Past event" ? event.learnUrl : event.ticketUrl}>
-                    {event.id === "paris-2026" && event.status !== "Past event" ? "Get early-bird ticket" : getActionLabel(event)}
+                    {getActionLabel(event)}
                   </a>
                   <a href={event.learnUrl}>Learn more</a>
                 </div>
