@@ -269,7 +269,10 @@ function getActionLabel(event) {
                   </span>
                 </div>
                 <p class="community-event-meta">{event.location} - {event.mode} - {event.format}</p>
+                {event.time && <p class="community-event-meta">{event.time}</p>}
+                {event.venueAddress && <p class="community-event-meta">{event.venueAddress}</p>}
                 <p>{event.description}</p>
+                {event.practicalInfo && <p>{event.practicalInfo}</p>}
                 <div class="community-card-actions">
                   <a class="community-action-primary" href={event.ticketUrl}>{getActionLabel(event)}</a>
                   <a href={event.learnUrl}>Learn more</a>

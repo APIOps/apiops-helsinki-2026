@@ -12,6 +12,10 @@ function nextDay(value: string) {
   return date.toISOString().slice(0, 10).replace(/-/g, "");
 }
 
+function utcDateTime(value: string) {
+  return new Date(value).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+}
+
 // iCalendar lines must be folded at 75 UTF-8 bytes, without splitting a character.
 function foldLine(line: string) {
   const parts: string[] = [];
@@ -40,11 +44,12 @@ export function GET() {
       "BEGIN:VEVENT",
       `UID:${event.id}@apiops.info`,
       `DTSTAMP:${stamp}`,
-      `DTSTART;VALUE=DATE:${event.startDate.replace(/-/g, "")}`,
-      `DTEND;VALUE=DATE:${nextDay(event.endDate)}`,
+      ...(event.startDateTime && event.endDateTime
+        ? [`DTSTART:${utcDateTime(event.startDateTime)}`, `DTEND:${utcDateTime(event.endDateTime)}`]
+        : [`DTSTART;VALUE=DATE:${event.startDate.replace(/-/g, "")}`, `DTEND;VALUE=DATE:${nextDay(event.endDate)}`]),
       `SUMMARY:${escapeText(event.title)}`,
-      `LOCATION:${escapeText(event.location)}`,
-      `DESCRIPTION:${escapeText(event.description)}`,
+      `LOCATION:${escapeText([event.location, event.venueAddress].filter(Boolean).join(", "))}`,
+      `DESCRIPTION:${escapeText([event.description, event.time, event.practicalInfo].filter(Boolean).join("\n\n"))}`,
       `URL:${new URL(event.learnUrl, "https://www.apiops.info").href}`,
       "END:VEVENT",
     ]),
