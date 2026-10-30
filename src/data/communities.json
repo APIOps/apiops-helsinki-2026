@@ -41,14 +41,14 @@
   {
     "slug": "poland",
     "name": "Poland",
-    "intro": "A local network for sharing practical API, integration and platform lessons in Poland.",
-    "cities": ["Warsaw"],
+    "intro": "API Meetup Polska with APIOps connects practitioners working on APIs, integrations, platforms, governance, and AI across Poland, starting with a meetup in Poznań.",
+    "cities": ["Poznań", "Warsaw"],
     "organizers": [
       { "name": "Andrzej Jarzyna", "url": "https://www.linkedin.com/in/andrzej-jarzyna/" }
     ],
-    "partners": ["Local hosts and partners welcome"],
+    "partners": ["STX Next — Poznań meetup host", "Curity — meetup sponsor"],
     "meetupLinks": [
-      { "label": "Poland", "url": "https://www.meetup.com/find/?keywords=apiops&location=pl--Warsaw" }
+      { "label": "Poland", "url": "https://www.meetup.com/api-meetup-polska-with-apiops/" }
     ]
   },
   {
