@@ -2918,6 +2918,27 @@ nav {
   background: #111827;
 }
 
+.paris-agenda-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-left: auto;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: 700;
+}
+
+.paris-agenda-link:hover,
+.paris-agenda-link:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.paris-page #program {
+  scroll-margin-top: 7rem;
+}
+
 .paris-page {
   background: #f7f6f2;
 }
@@ -3015,6 +3036,10 @@ nav {
   flex-wrap: wrap;
   gap: 0.8rem;
   margin-top: 1.8rem;
+}
+
+.paris-actions .button {
+  gap: 0.5rem;
 }
 
 .paris-hero-link,

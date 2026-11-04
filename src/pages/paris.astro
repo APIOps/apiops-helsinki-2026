@@ -588,6 +588,8 @@ const faqs = [
         <strong>APIOps Paris</strong>
       </a>
 
+      <a class="paris-agenda-link" href="#program">Agenda</a>
+
       <button
         class="nav-toggle"
         type="button"
@@ -602,7 +604,6 @@ const faqs = [
 
       <div class="nav-links" id="top-navigation">
         <a href="#why">Why</a>
-        <a href="#program">Program</a>
         <a href="#stations">Stations</a>
         <a href="#cycles">APIOps Cycles</a>
         <a href="#updates">Get Program Updates</a>
@@ -619,6 +620,13 @@ const faqs = [
       navLinks?.classList.toggle("is-open");
       const isExpanded = navLinks?.classList.contains("is-open") || false;
       navToggle.setAttribute("aria-expanded", String(isExpanded));
+    });
+
+    document.querySelectorAll('.paris-nav a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks?.classList.remove("is-open");
+        navToggle?.setAttribute("aria-expanded", "false");
+      });
     });
 
     window.addEventListener("resize", () => {
@@ -645,8 +653,8 @@ const faqs = [
             and AI-driven change.
           </p>
           <div class="paris-actions">
+            <a class="button secondary" href="#program">View the agenda <span aria-hidden="true">↓</span></a>
             <a class="button primary" href={ticketUrl}>FOST Paris - 20% for APIOps Community</a>
-            <a class="button secondary" href={challengeUrl}>Share an APIOps Challenge</a>
           </div>
         </div>
 
@@ -683,83 +691,10 @@ const faqs = [
       </div>
     </section>
 
-    <section class="section section-light" id="why">
-      <div class="container paris-two-column">
-        <div class="paris-section-intro">
-          <p class="small-pill">Why After API Management?</p>
-          <h2>The hard part starts after the platform decision.</h2>
-        </div>
-        <div class="paris-copy-stack">
-          <p>
-            APIOps Paris is a full-day working conference for senior practitioners turning API platform
-            investment into enterprise adoption, production use, governance, and reusable digital capabilities.
-          </p>
-          <p>
-            Many organizations already have API management initiatives, cloud gateways, developer portals, API
-            standards, platform roadmaps, or integration modernization programs. They still struggle with
-            adoption, ownership, funding, governance, production usage, and executive understanding.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="container paris-outcomes-grid">
-        <div>
-          <p class="small-pill">What You Leave With</p>
-          <h2>Practical outputs, not just notes from talks.</h2>
-        </div>
-        <div class="paris-outcome-list">
-          {outcomes.map((outcome) => <p>{outcome}</p>)}
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light" id="credibility">
-      <div class="container paris-two-column">
-        <div class="paris-section-intro">
-          <p class="small-pill">Built from practitioner conversations</p>
-          <h2>This day comes from real APIOps clinics, not a generic call for talks.</h2>
-        </div>
-        <div class="paris-copy-stack">
-          <p>
-            APIOps Paris is shaped by recurring questions from APIOps clinics, workshops, and senior practitioner
-            conversations. The same themes keep coming back: platform adoption after API management investment,
-            shadow APIs, executive language, control-team involvement, AI-speed, B2B developer change, and how to
-            prove progress before the full enterprise capability is ready.
-          </p>
-          <p>
-            The agenda is built around these recurring operating-model questions, not sponsor tracks.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="container paris-audience-layout">
-        <div>
-          <p class="small-pill">Who Should Attend</p>
-          <h2>Built for senior practitioners and decision-shapers.</h2>
-          <p>
-            This is especially relevant if your organization has already invested in API platforms or API
-            strategy, but still struggles with adoption, ownership, funding, governance, production usage, or
-            executive understanding.
-          </p>
-          <div class="paris-inline-actions">
-            <a class="button primary" href={ticketUrl}>FOST Paris - 20% for APIOps Community</a>
-            <a class="button secondary alt" href={challengeUrl}>Share an APIOps Challenge</a>
-          </div>
-        </div>
-        <ul class="paris-audience-list">
-          {audience.map((item) => <li>{item}</li>)}
-        </ul>
-      </div>
-    </section>
-
     <section class="section agenda-showcase" id="program">
       <div class="container">
         <div class="section-title section-title-left section-title-compact">
-          <h2>Your route through the day</h2>
+          <h2>Agenda · December 1, 2026</h2>
           <p>
             The structure is fixed. The questions are not. We start with real practitioner challenges and use the
             morning marketplace to decide which station conversations deserve the room's attention.
@@ -870,6 +805,79 @@ const faqs = [
           <a class="button primary" href={ticketUrl}>FOST Paris - 20% for APIOps Community</a>
           <a class="button secondary alt" href={challengeUrl}>Share an APIOps Challenge</a>
         </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="why">
+      <div class="container paris-two-column">
+        <div class="paris-section-intro">
+          <p class="small-pill">Why After API Management?</p>
+          <h2>The hard part starts after the platform decision.</h2>
+        </div>
+        <div class="paris-copy-stack">
+          <p>
+            APIOps Paris is a full-day working conference for senior practitioners turning API platform
+            investment into enterprise adoption, production use, governance, and reusable digital capabilities.
+          </p>
+          <p>
+            Many organizations already have API management initiatives, cloud gateways, developer portals, API
+            standards, platform roadmaps, or integration modernization programs. They still struggle with
+            adoption, ownership, funding, governance, production usage, and executive understanding.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container paris-outcomes-grid">
+        <div>
+          <p class="small-pill">What You Leave With</p>
+          <h2>Practical outputs, not just notes from talks.</h2>
+        </div>
+        <div class="paris-outcome-list">
+          {outcomes.map((outcome) => <p>{outcome}</p>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="credibility">
+      <div class="container paris-two-column">
+        <div class="paris-section-intro">
+          <p class="small-pill">Built from practitioner conversations</p>
+          <h2>This day comes from real APIOps clinics, not a generic call for talks.</h2>
+        </div>
+        <div class="paris-copy-stack">
+          <p>
+            APIOps Paris is shaped by recurring questions from APIOps clinics, workshops, and senior practitioner
+            conversations. The same themes keep coming back: platform adoption after API management investment,
+            shadow APIs, executive language, control-team involvement, AI-speed, B2B developer change, and how to
+            prove progress before the full enterprise capability is ready.
+          </p>
+          <p>
+            The agenda is built around these recurring operating-model questions, not sponsor tracks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container paris-audience-layout">
+        <div>
+          <p class="small-pill">Who Should Attend</p>
+          <h2>Built for senior practitioners and decision-shapers.</h2>
+          <p>
+            This is especially relevant if your organization has already invested in API platforms or API
+            strategy, but still struggles with adoption, ownership, funding, governance, production usage, or
+            executive understanding.
+          </p>
+          <div class="paris-inline-actions">
+            <a class="button primary" href={ticketUrl}>FOST Paris - 20% for APIOps Community</a>
+            <a class="button secondary alt" href={challengeUrl}>Share an APIOps Challenge</a>
+          </div>
+        </div>
+        <ul class="paris-audience-list">
+          {audience.map((item) => <li>{item}</li>)}
+        </ul>
       </div>
     </section>
 
@@ -1244,7 +1252,7 @@ const faqs = [
         <h4>Conference</h4>
         <a href="#why">Why</a>
         <a href="#stations">Stations</a>
-        <a href="#program">Program</a>
+        <a href="#program">Agenda</a>
       </div>
       <div>
           <h4>Contribute</h4>
