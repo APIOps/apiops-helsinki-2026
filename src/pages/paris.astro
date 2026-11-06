@@ -701,105 +701,107 @@ const faqs = [
           </p>
         </div>
 
-        <ol class="paris-program-route" aria-label="APIOps Paris route through the day">
-          {agenda.map((item) => {
-            const isCompact = item.type === "break" || item.experience === "NETWORKING";
-            const people = item.guides ?? item.sparks ?? [];
+        <div class="paris-program-frame">
+          <ol class="paris-program-route" aria-label="APIOps Paris route through the day">
+            {agenda.map((item) => {
+              const isCompact = item.type === "break" || item.experience === "NETWORKING";
+              const people = item.guides ?? item.sparks ?? [];
 
-            return (
-              <li class={`paris-route-stop ${isCompact ? "is-break" : ""}`}>
-                {item.phase && (
-                  <p class="paris-route-phase">
-                    <strong>{item.phase.label}</strong>
-                    <span>{item.phase.text}</span>
-                  </p>
-                )}
-                <div class="paris-route-time">
-                  <time>{item.time}{item.duration && ` · ${item.duration}`}</time>
-                  <span class={isCompact ? "paris-route-break-marker" : "paris-route-marker"} aria-hidden="true">
-                    {!isCompact && item.stop}
-                  </span>
-                </div>
-                {isCompact ? (
-                  <article class="paris-route-break-card">
-                    <h3>{item.title}</h3>
-                    <p>{item.purpose}</p>
-                  </article>
-                ) : (
-                  <article class="paris-route-card">
-                    <header class="paris-route-card-head">
-                      <p class="paris-route-experience">{item.experience.toLowerCase()}</p>
+              return (
+                <li class={`paris-route-stop ${isCompact ? "is-break" : ""}`}>
+                  {item.phase && (
+                    <p class="paris-route-phase">
+                      <strong>{item.phase.label}:</strong>
+                      <span>{item.phase.text}</span>
+                    </p>
+                  )}
+                  <div class="paris-route-time">
+                    <time>{item.time}{item.duration && ` · ${item.duration}`}</time>
+                    <span class={isCompact ? "paris-route-break-marker" : "paris-route-marker"} aria-hidden="true">
+                      {!isCompact && item.stop}
+                    </span>
+                  </div>
+                  {isCompact ? (
+                    <article class="paris-route-break-card">
                       <h3>{item.title}</h3>
-                    </header>
-                    <p class="paris-route-purpose">{item.purpose}</p>
-                    {people.length > 0 && (
-                      <div class="paris-route-guide-pills" aria-label={`Practitioners for ${item.title}`}>
-                        {people.map((person) => (
-                          person.href ? (
-                            <a class="paris-person-pill" href={person.href}>
-                              {person.avatar ? (
-                                <img src={person.avatar} alt="" loading="lazy" />
-                              ) : (
-                                <span class="paris-person-initials" aria-hidden="true">{person.initials}</span>
-                              )}
-                              <span>{person.name}</span>
-                            </a>
-                          ) : (
-                            <span class="paris-person-pill">
-                              {person.avatar ? (
-                                <img src={person.avatar} alt="" loading="lazy" />
-                              ) : (
-                                <span class="paris-person-initials" aria-hidden="true">{person.initials}</span>
-                              )}
-                              <span>{person.name}</span>
-                            </span>
-                          )
-                        ))}
-                      </div>
-                    )}
-                    <details class="paris-route-details">
-                      <summary>Session details</summary>
-                      <div class="paris-route-details-content">
-                        {item.note && <p>{item.note}</p>}
-                        {item.sparks && (
+                      <p>{item.purpose}</p>
+                    </article>
+                  ) : (
+                    <article class="paris-route-card">
+                      <header class="paris-route-card-head">
+                        <p class="paris-route-experience">{item.experience.toLowerCase()}</p>
+                        <h3>{item.title}</h3>
+                      </header>
+                      <p class="paris-route-purpose">{item.purpose}</p>
+                      {people.length > 0 && (
+                        <div class="paris-route-guide-pills" aria-label={`Practitioners for ${item.title}`}>
+                          {people.map((person) => (
+                            person.href ? (
+                              <a class="paris-person-pill" href={person.href}>
+                                {person.avatar ? (
+                                  <img src={person.avatar} alt="" loading="lazy" />
+                                ) : (
+                                  <span class="paris-person-initials" aria-hidden="true">{person.initials}</span>
+                                )}
+                                <span>{person.name}</span>
+                              </a>
+                            ) : (
+                              <span class="paris-person-pill">
+                                {person.avatar ? (
+                                  <img src={person.avatar} alt="" loading="lazy" />
+                                ) : (
+                                  <span class="paris-person-initials" aria-hidden="true">{person.initials}</span>
+                                )}
+                                <span>{person.name}</span>
+                              </span>
+                            )
+                          ))}
+                        </div>
+                      )}
+                      <details class="paris-route-details">
+                        <summary>Session details</summary>
+                        <div class="paris-route-details-content">
+                          {item.note && <p>{item.note}</p>}
+                          {item.sparks && (
+                            <section>
+                              <h4>Speaker topics</h4>
+                              <ul>
+                                {item.sparks.map((spark) => (
+                                  <li><strong>{spark.name}:</strong> {spark.focus}</li>
+                                ))}
+                              </ul>
+                            </section>
+                          )}
+                          {item.callout && (
+                            <section>
+                              <h4>{item.callout.title}</h4>
+                              <p>{item.callout.text}</p>
+                              {item.callout.names && <p>{item.callout.names}</p>}
+                            </section>
+                          )}
                           <section>
-                            <h4>Speaker topics</h4>
-                            <ul>
-                              {item.sparks.map((spark) => (
-                                <li><strong>{spark.name}:</strong> {spark.focus}</li>
-                              ))}
-                            </ul>
+                            <h4>What happens</h4>
+                            <ul>{item.happens.map((detail) => <li>{detail}</li>)}</ul>
                           </section>
-                        )}
-                        {item.callout && (
                           <section>
-                            <h4>{item.callout.title}</h4>
-                            <p>{item.callout.text}</p>
-                            {item.callout.names && <p>{item.callout.names}</p>}
+                            <h4>Outcome</h4>
+                            <ul>{item.output.map((output) => <li>{output}</li>)}</ul>
                           </section>
-                        )}
-                        <section>
-                          <h4>What happens</h4>
-                          <ul>{item.happens.map((detail) => <li>{detail}</li>)}</ul>
-                        </section>
-                        <section>
-                          <h4>Outcome</h4>
-                          <ul>{item.output.map((output) => <li>{output}</li>)}</ul>
-                        </section>
-                        {item.connections && (
-                          <section>
-                            <h4>Possible station connections</h4>
-                            <ul>{item.connections.map((connection) => <li>{connection}</li>)}</ul>
-                          </section>
-                        )}
-                      </div>
-                    </details>
-                  </article>
-                )}
-              </li>
-            );
-          })}
-        </ol>
+                          {item.connections && (
+                            <section>
+                              <h4>Possible station connections</h4>
+                              <ul>{item.connections.map((connection) => <li>{connection}</li>)}</ul>
+                            </section>
+                          )}
+                        </div>
+                      </details>
+                    </article>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+        </div>
 
         <div class="paris-section-actions">
           <a class="button primary" href={ticketUrl}>FOST Paris - 20% for APIOps Community</a>

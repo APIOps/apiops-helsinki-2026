@@ -3701,20 +3701,24 @@ nav {
 
 .paris-route-phase {
   grid-column: 1 / -1;
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
-  width: fit-content;
-  margin: 0.95rem 0 0.15rem 232px;
-  padding: 0.3rem 1.18rem;
-  color: #475569;
-  font-size: 0.78rem;
-  font-weight: 900;
+  gap: 0.2rem 0.4rem;
+  position: relative;
+  z-index: 1;
+  margin: 0.95rem 0 0.4rem;
+  padding: 0.85rem 1.1rem;
+  border-left: 4px solid #6f4ef6;
+  border-radius: 0 8px 8px 0;
+  background: #efe9ff;
+  color: #452a96;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.4;
+  font-weight: 700;
 }
 
 .paris-route-phase span {
-  color: #475569;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .paris-route-time {
@@ -3920,6 +3924,7 @@ nav {
 
 .paris-route-break-card {
   padding: 1rem 1.18rem;
+  border-bottom: 1px solid #ded9cf;
   color: #64748b;
 }
 
@@ -4153,6 +4158,18 @@ nav {
 
 .cta-band .paris-cta-link {
   margin-inline: auto;
+}
+
+@media (min-width: 721px) {
+  .paris-program-frame {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    border: 1px solid #ded9cf;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.05);
+  }
 }
 
 @media (min-width: 900px) {
