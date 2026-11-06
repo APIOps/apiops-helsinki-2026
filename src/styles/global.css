@@ -2935,7 +2935,8 @@ nav {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.paris-page #program {
+.paris-page #program,
+.paris-page #practitioners {
   scroll-margin-top: 7rem;
 }
 
