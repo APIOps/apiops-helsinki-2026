@@ -3095,9 +3095,9 @@ nav {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1px;
   overflow: hidden;
-  border: 1px solid #d8d3c8;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
-  background: #d8d3c8;
+  background: #d1d5db;
 }
 
 .paris-proof-grid div {
@@ -3158,7 +3158,7 @@ nav {
   align-content: start;
   min-height: 300px;
   padding: 1.25rem;
-  border: 1px solid #ded9cf;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
   background: #fff;
 }
@@ -3196,7 +3196,7 @@ nav {
 .paris-image-grid figure {
   overflow: hidden;
   border-radius: 8px;
-  border: 1px solid #ded9cf;
+  border: 1px solid #d1d5db;
   background: #e5e7eb;
 }
 
@@ -3221,7 +3221,7 @@ nav {
 .paris-station-card,
 .paris-outcome-list p {
   background: #fff;
-  border: 1px solid #ded9cf;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
 }
 
@@ -3317,7 +3317,7 @@ nav {
   overflow: hidden;
   min-height: 190px;
   padding: 0 0.85rem 0.85rem;
-  border: 1px solid #ded9cf;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
   background:
     linear-gradient(180deg, #eef6ff 0 38px, #ffffff 38px 70%, #f7f9ff 70% 100%);
@@ -3776,7 +3776,7 @@ nav {
   display: grid;
   gap: 0.7rem;
   padding: 1rem 1.18rem 1.25rem;
-  border-bottom: 1px solid #ded9cf;
+  border-bottom: 1px solid #d1d5db;
 }
 
 .paris-route-card-head {
@@ -3925,7 +3925,7 @@ nav {
 
 .paris-route-break-card {
   padding: 1rem 1.18rem;
-  border-bottom: 1px solid #ded9cf;
+  border-bottom: 1px solid #d1d5db;
   color: #64748b;
 }
 
@@ -3943,7 +3943,7 @@ nav {
 }
 
 .paris-practitioners-section {
-  border-top: 1px solid #e5e0d8;
+  border-top: 1px solid #e5e7eb;
 }
 
 .paris-practitioner-grid {
@@ -3958,7 +3958,7 @@ nav {
   gap: 0.55rem;
   min-height: 118px;
   padding: 1rem;
-  border: 1px solid #ded9cf;
+  border: 1px solid #d1d5db;
   border-left: 4px solid #315fdb;
   border-radius: 8px;
   background:
@@ -4134,7 +4134,7 @@ nav {
 
 .paris-faq-grid article {
   padding: 1.15rem;
-  border: 1px solid #ded9cf;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
   background: #fff;
 }
@@ -4166,7 +4166,7 @@ nav {
     max-width: 1120px;
     margin: 0 auto;
     padding: 1.5rem 2rem;
-    border: 1px solid #ded9cf;
+    border: 1px solid #d1d5db;
     border-radius: 14px;
     background: #fff;
     box-shadow: 0 8px 28px rgba(15, 23, 42, 0.05);
@@ -4274,7 +4274,7 @@ nav {
     min-height: 34px;
     align-items: center;
     padding-inline: 0.65rem;
-    border: 1px solid #ded9cf;
+    border: 1px solid #d1d5db;
     border-radius: 999px;
     background: #fff;
   }
