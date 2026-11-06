@@ -275,7 +275,11 @@ function getActionLabel(event) {
                 {event.practicalInfo && <p>{event.practicalInfo}</p>}
                 <div class="community-card-actions">
                   <a class="community-action-primary" href={event.ticketUrl}>{getActionLabel(event)}</a>
-                  <a href={event.learnUrl}>Learn more</a>
+                  {event.id === "paris-2026" ? (
+                    <a class="button secondary alt" href="/paris#program">Agenda</a>
+                  ) : (
+                    <a href={event.learnUrl}>Learn more</a>
+                  )}
                 </div>
               </div>
             </article>
@@ -291,7 +295,7 @@ function getActionLabel(event) {
               <p>{parisEvent.description}</p>
               <div class="community-card-actions">
                 <a class="community-action-primary is-purple" href={parisEvent.ticketUrl}>{getActionLabel(parisEvent)}</a>
-                <a href={parisEvent.learnUrl}>Learn more</a>
+                <a class="button secondary alt" href="/paris#program">Agenda</a>
               </div>
             </div>
             <div class="community-paris-sketch" aria-hidden="true"></div>

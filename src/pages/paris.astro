@@ -258,8 +258,8 @@ const agenda = [
     time: "8:30-9:00",
     duration: "30 min",
     icon: "☕",
-    title: "Breakfast & Find Your People",
-    experience: "Networking + self-selection",
+    title: "Breakfast & Meet Your Peers",
+    experience: "NETWORKING",
     audience: "Everyone together",
     purpose: "Pick your APIOps station stickers and meet practitioners working on similar problems.",
     happens: [
@@ -276,8 +276,8 @@ const agenda = [
     time: "9:15-9:55",
     duration: "40 min",
     icon: "⚡",
-    title: "After API Management",
-    experience: "Shared framing",
+    title: "Why API Management Isn't Enough",
+    experience: "TALK",
     audience: "Everyone together",
     guideRole: "Framing",
     guides: [practitionerPeople.marjukka],
@@ -297,8 +297,8 @@ const agenda = [
     time: "9:55-10:40",
     duration: "45 min",
     icon: "✦",
-    title: "Practitioner Sparks & Station Marketplace",
-    experience: "Practitioner stories + voting",
+    title: "Real-World API & Integration Challenges",
+    experience: "SHORT TALKS + VOTING",
     audience: "Everyone together",
     purpose: "Real stories, participant challenges, and a vote on what the room should work on.",
     sparks: [
@@ -331,9 +331,9 @@ const agenda = [
     type: "break",
     time: "10:40-11:00",
     duration: "20 min",
-    title: "Coffee Break / Networking / Expo",
+    title: "Coffee & Networking",
     purpose: "Partners Village",
-    label: "Break",
+    label: "BREAK",
     audience: "Optional / informal",
   },
   {
@@ -344,8 +344,8 @@ const agenda = [
     duration: "75 min",
     icon: "◇",
     featured: true,
-    title: "Station Clinics: Where Are We Actually Stuck?",
-    experience: "Facilitated station clinics",
+    title: "What's Blocking API & Integration Success?",
+    experience: "GROUP WORK",
     audience: "Split into stations",
     guideRole: "Practitioner Guides",
     guides: [
@@ -374,8 +374,8 @@ const agenda = [
     time: "12:15-13:00",
     duration: "45 min",
     icon: "◎",
-    title: "Choose Something Worth Proving",
-    experience: "Guided decision clinic",
+    title: "Choosing How to Tackle the Challenges",
+    experience: "GROUP WORK",
     audience: "Guided groups",
     guideRole: "Practitioner Challenge",
     guides: [
@@ -402,9 +402,9 @@ const agenda = [
     type: "break",
     time: "13:00-14:00",
     duration: "60 min",
-    title: "Lunch Break / Networking / Expo",
+    title: "Lunch & Networking",
     purpose: "Partners Village",
-    label: "Break",
+    label: "LUNCH",
     audience: "Optional / informal",
   },
   {
@@ -415,8 +415,8 @@ const agenda = [
     duration: "105 min",
     icon: "↗",
     featured: true,
-    title: "Station Clinics: What Do We Change First?",
-    experience: "Facilitated change planning",
+    title: "From API Challenges to Action Plans",
+    experience: "GROUP WORK",
     audience: "Split into stations",
     guideRole: "Practitioner Guides",
     guides: [
@@ -443,7 +443,7 @@ const agenda = [
     type: "break",
     time: "16:00-16:30",
     duration: "30 min",
-    title: "Coffee Break / Networking / Expo",
+    title: "Coffee & Networking",
     purpose: "Partners Village",
     label: "Break",
     audience: "Optional / informal",
@@ -454,8 +454,8 @@ const agenda = [
     time: "16:30-16:55",
     duration: "25 min",
     icon: "◌",
-    title: "Fishbowl: The Question We Couldn't Resolve",
-    experience: "Open fishbowl discussion",
+    title: "The Toughest API Questions We Still Face",
+    experience: "OPEN DISCUSSION",
     audience: "Everyone together",
     guideRole: "Open Fishbowl",
     guides: [
@@ -487,8 +487,8 @@ const agenda = [
     time: "17:00-17:25",
     duration: "25 min",
     icon: "▤",
-    title: "Paris Operating Notes",
-    experience: "Live synthesis",
+    title: "Key Takeaways & Next Steps",
+    experience: "WRAP-UP",
     audience: "Everyone together",
     guideRole: "Facilitation",
     guides: [practitionerPeople.marjukka, practitionerPeople.aiswarya],
@@ -588,6 +588,8 @@ const faqs = [
         <strong>APIOps Paris</strong>
       </a>
 
+      <a class="paris-agenda-link" href="#program">Agenda</a>
+
       <button
         class="nav-toggle"
         type="button"
@@ -602,10 +604,9 @@ const faqs = [
 
       <div class="nav-links" id="top-navigation">
         <a href="#why">Why</a>
-        <a href="#program">Program</a>
+        <a href="#practitioners">Speakers</a>
         <a href="#stations">Stations</a>
         <a href="#cycles">APIOps Cycles</a>
-        <a href="#updates">Get Program Updates</a>
         <a class="button primary" href={ticketUrl}>FOST Paris - 20% for APIOps Community</a>
       </div>
     </div>
@@ -619,6 +620,13 @@ const faqs = [
       navLinks?.classList.toggle("is-open");
       const isExpanded = navLinks?.classList.contains("is-open") || false;
       navToggle.setAttribute("aria-expanded", String(isExpanded));
+    });
+
+    document.querySelectorAll('.paris-nav a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks?.classList.remove("is-open");
+        navToggle?.setAttribute("aria-expanded", "false");
+      });
     });
 
     window.addEventListener("resize", () => {
@@ -645,8 +653,8 @@ const faqs = [
             and AI-driven change.
           </p>
           <div class="paris-actions">
+            <a class="button secondary" href="#program">View the agenda <span aria-hidden="true">↓</span></a>
             <a class="button primary" href={ticketUrl}>FOST Paris - 20% for APIOps Community</a>
-            <a class="button secondary" href={challengeUrl}>Share an APIOps Challenge</a>
           </div>
         </div>
 
@@ -679,6 +687,125 @@ const faqs = [
         <div>
           <strong>No pitches.</strong>
           <span>Practical patterns only.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section agenda-showcase" id="program">
+      <div class="container">
+        <div class="section-title section-title-left section-title-compact">
+          <h2>Agenda · December 1, 2026</h2>
+          <p>
+            The structure is fixed. The questions are not. We start with real practitioner challenges and use the
+            morning marketplace to decide which station conversations deserve the room's attention.
+          </p>
+        </div>
+
+        <div class="paris-program-frame">
+          <ol class="paris-program-route" aria-label="APIOps Paris route through the day">
+            {agenda.map((item) => {
+              const isCompact = item.type === "break" || item.experience === "NETWORKING";
+              const people = item.guides ?? item.sparks ?? [];
+
+              return (
+                <li class={`paris-route-stop ${isCompact ? "is-break" : ""}`}>
+                  {item.phase && (
+                    <p class="paris-route-phase">
+                      <strong>{item.phase.label}:</strong>
+                      <span>{item.phase.text}</span>
+                    </p>
+                  )}
+                  <div class="paris-route-time">
+                    <time>{item.time}{item.duration && ` · ${item.duration}`}</time>
+                    <span class={isCompact ? "paris-route-break-marker" : "paris-route-marker"} aria-hidden="true">
+                      {!isCompact && item.stop}
+                    </span>
+                  </div>
+                  {isCompact ? (
+                    <article class="paris-route-break-card">
+                      <h3>{item.title}</h3>
+                      <p>{item.purpose}</p>
+                    </article>
+                  ) : (
+                    <article class="paris-route-card">
+                      <header class="paris-route-card-head">
+                        <p class="paris-route-experience">{item.experience.toLowerCase()}</p>
+                        <h3>{item.title}</h3>
+                      </header>
+                      <p class="paris-route-purpose">{item.purpose}</p>
+                      {people.length > 0 && (
+                        <div class="paris-route-guide-pills" aria-label={`Practitioners for ${item.title}`}>
+                          {people.map((person) => (
+                            person.href ? (
+                              <a class="paris-person-pill" href={person.href}>
+                                {person.avatar ? (
+                                  <img src={person.avatar} alt="" loading="lazy" />
+                                ) : (
+                                  <span class="paris-person-initials" aria-hidden="true">{person.initials}</span>
+                                )}
+                                <span>{person.name}</span>
+                              </a>
+                            ) : (
+                              <span class="paris-person-pill">
+                                {person.avatar ? (
+                                  <img src={person.avatar} alt="" loading="lazy" />
+                                ) : (
+                                  <span class="paris-person-initials" aria-hidden="true">{person.initials}</span>
+                                )}
+                                <span>{person.name}</span>
+                              </span>
+                            )
+                          ))}
+                        </div>
+                      )}
+                      <details class="paris-route-details">
+                        <summary>Session details</summary>
+                        <div class="paris-route-details-content">
+                          {item.note && <p>{item.note}</p>}
+                          {item.sparks && (
+                            <section>
+                              <h4>Speaker topics</h4>
+                              <ul>
+                                {item.sparks.map((spark) => (
+                                  <li><strong>{spark.name}:</strong> {spark.focus}</li>
+                                ))}
+                              </ul>
+                            </section>
+                          )}
+                          {item.callout && (
+                            <section>
+                              <h4>{item.callout.title}</h4>
+                              <p>{item.callout.text}</p>
+                              {item.callout.names && <p>{item.callout.names}</p>}
+                            </section>
+                          )}
+                          <section>
+                            <h4>What happens</h4>
+                            <ul>{item.happens.map((detail) => <li>{detail}</li>)}</ul>
+                          </section>
+                          <section>
+                            <h4>Outcome</h4>
+                            <ul>{item.output.map((output) => <li>{output}</li>)}</ul>
+                          </section>
+                          {item.connections && (
+                            <section>
+                              <h4>Possible station connections</h4>
+                              <ul>{item.connections.map((connection) => <li>{connection}</li>)}</ul>
+                            </section>
+                          )}
+                        </div>
+                      </details>
+                    </article>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+
+        <div class="paris-section-actions">
+          <a class="button primary" href={ticketUrl}>FOST Paris - 20% for APIOps Community</a>
+          <a class="button secondary alt" href={challengeUrl}>Share an APIOps Challenge</a>
         </div>
       </div>
     </section>
@@ -756,175 +883,13 @@ const faqs = [
       </div>
     </section>
 
-    <section class="section agenda-showcase" id="program">
-      <div class="container">
-        <div class="section-title section-title-left section-title-compact">
-          <h2>Your route through the day</h2>
-          <p>
-            The structure is fixed. The questions are not. We start with real practitioner challenges and use the
-            morning marketplace to decide which station conversations deserve the room's attention.
-          </p>
-        </div>
-
-        <ol class="paris-program-route" aria-label="APIOps Paris route through the day">
-          {agenda.map((item) => (
-            <li class={`paris-route-stop ${item.type === "break" ? "is-break" : ""} ${item.featured ? "is-featured" : ""}`}>
-              {item.phase && (
-                <p class="paris-route-phase">
-                  <strong>{item.phase.label}</strong>
-                  <span>{item.phase.text}</span>
-                </p>
-              )}
-
-              {item.type === "break" ? (
-                <>
-                  <div class="paris-route-time">
-                    <time>{item.time}{item.duration && ` · ${item.duration}`}</time>
-                    <span class="paris-route-break-marker" aria-hidden="true"></span>
-                  </div>
-                  <article class="paris-route-break-card">
-                    <div class="paris-route-break-labels">
-                      <span>{item.label}</span>
-                      <span>{item.audience}</span>
-                    </div>
-                    <div>
-                      <h3>{item.title}</h3>
-                      <p>{item.purpose}</p>
-                    </div>
-                  </article>
-                </>
-              ) : (
-                <>
-                  <div class="paris-route-time">
-                    <time>{item.time} · {item.duration}</time>
-                    <span class="paris-route-marker" aria-hidden="true">{item.stop}</span>
-                  </div>
-                  <article class="paris-route-card">
-                    <div class="paris-route-card-head">
-                      <span>Route Stop {item.stop}</span>
-                      <h3>
-                        <span class="paris-route-title-icon" aria-hidden="true">{item.icon}</span>
-                        {item.title}
-                      </h3>
-                      <div class="paris-route-experience">
-                        <span>{item.experience}</span>
-                      </div>
-                      {item.guideRole && <p class="paris-route-guide-role">{item.guideRole}</p>}
-                      {item.guides && (
-                        <div class="paris-route-guide-pills" aria-label={`Practitioner Guides for ${item.title}`}>
-                          {item.guides.map((guide) => (
-                            guide.href ? (
-                              <a class="paris-person-pill" href={guide.href}>
-                                {guide.avatar ? (
-                                  <img src={guide.avatar} alt="" loading="lazy" />
-                                ) : (
-                                  <span class="paris-person-initials" aria-hidden="true">{guide.initials}</span>
-                                )}
-                                <span>{guide.name}</span>
-                              </a>
-                            ) : (
-                              <span class="paris-person-pill">
-                                {guide.avatar ? (
-                                  <img src={guide.avatar} alt="" loading="lazy" />
-                                ) : (
-                                  <span class="paris-person-initials" aria-hidden="true">{guide.initials}</span>
-                                )}
-                                <span>{guide.name}</span>
-                              </span>
-                            )
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    <div class="paris-route-purpose">
-                      <span>Session</span>
-                      <p>{item.purpose}</p>
-                    </div>
-
-                    {item.note && <p class="paris-route-note">{item.note}</p>}
-
-                    {item.sparks && (
-                      <div class="paris-practitioner-sparks">
-                        <div>
-                          <span>Practitioner Sparks</span>
-                          <p>Short provocations from people in the room - no presentations, no product pitches.</p>
-                        </div>
-                        <div class="paris-spark-grid">
-                          {item.sparks.map((spark) => (
-                            <article>
-                              {spark.avatar ? (
-                                <img src={spark.avatar} alt="" loading="lazy" />
-                              ) : (
-                                <span class="paris-spark-initials" aria-hidden="true">{spark.initials}</span>
-                              )}
-                              <strong>{spark.name}</strong>
-                              <span>{spark.focus}</span>
-                            </article>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {item.callout && (
-                      <div class="paris-route-callout">
-                        <strong>{item.callout.title}</strong>
-                        <p>{item.callout.text}</p>
-                        {item.callout.names && <span>{item.callout.names}</span>}
-                      </div>
-                    )}
-
-                    <div class="paris-route-details">
-                      <details>
-                        <summary>
-                          <span>What happens</span>
-                          <small>{item.happens.length} points</small>
-                        </summary>
-                        <ul>
-                          {item.happens.map((detail) => <li>{detail}</li>)}
-                        </ul>
-                      </details>
-                      <details>
-                        <summary>
-                          <span>Outcome</span>
-                          <small>{item.output.length} outputs</small>
-                        </summary>
-                        <ul>
-                          {item.output.map((output) => <li>{output}</li>)}
-                        </ul>
-                      </details>
-                    </div>
-
-                    {item.connections && (
-                      <div class="paris-route-connections">
-                        <span>Possible station connections</span>
-                        <div>
-                          {item.connections.map((connection) => <span>{connection}</span>)}
-                        </div>
-                      </div>
-                    )}
-
-                  </article>
-                </>
-              )}
-            </li>
-          ))}
-        </ol>
-
-        <div class="paris-section-actions">
-          <a class="button primary" href={ticketUrl}>FOST Paris - 20% for APIOps Community</a>
-          <a class="button secondary alt" href={challengeUrl}>Share an APIOps Challenge</a>
-        </div>
-      </div>
-    </section>
-
     <section class="section section-light paris-practitioners-section" id="practitioners">
       <div class="container">
         <div class="section-title section-title-left section-title-compact">
           <p class="small-pill">Practitioners in the Room</p>
-          <h2>No speaker/audience divide.</h2>
+          <h2>Speakers</h2>
           <p>
-            Our invited Practitioner Guides bring short provocations, experience and difficult questions - then
+            No speaker/audience divide. Our invited Practitioner Guides bring short provocations, experience and difficult questions - then
             work in the clinics alongside everyone else.
           </p>
         </div>
@@ -1082,7 +1047,7 @@ const faqs = [
 
         <div class="paris-station-links">
           <a href="#cycles">Explore APIOps Cycles stations</a>
-          <a class="button secondary alt" href={challengeUrl}>Share an APIOps Challenge</a>
+          <a class="button secondary alt" href="#practitioners">Speakers</a>
         </div>
       </div>
     </section>
@@ -1131,6 +1096,35 @@ const faqs = [
       }
     </script>
 
+    <section class="section section-light" id="cycles">
+      <div class="container paris-two-column">
+        <div class="paris-section-intro">
+          <p class="small-pill">How APIOps Cycles is used</p>
+          <h2>An open and optional method for navigating API program work.</h2>
+        </div>
+        <div class="paris-copy-stack">
+          <p>
+            APIOps Cycles is an open method for understanding, designing, and improving the digital capability
+            operating model behind APIs and related capabilities.
+          </p>
+          <p>
+            It is not a vendor product. It is not a mandatory framework. It is one practical way to make the
+            APIOps conversation visible across business, governance, platform, design, delivery, publishing,
+            adoption, and continuous improvement.
+          </p>
+          <p>
+            At APIOps Paris, APIOps Cycles is used as a shared navigation tool. Participants choose station
+            stickers to show where their organization is currently stuck, find relevant peers, join focused
+            clinics, and connect local challenges to a broader enterprise API capability.
+          </p>
+          <p>
+            The goal is not to follow a method. The goal is to help participants understand and improve the
+            operating model for their own organization.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-soft" id="format">
       <div class="container">
         <div class="section-title section-title-left section-title-compact">
@@ -1163,35 +1157,6 @@ const faqs = [
             <h3>How do we involve control teams earlier?</h3>
             <p>Bring security, privacy, legal, risk, and compliance into the paved road before they become blockers.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light" id="cycles">
-      <div class="container paris-two-column">
-        <div class="paris-section-intro">
-          <p class="small-pill">How APIOps Cycles is used</p>
-          <h2>An open and optional method for navigating API program work.</h2>
-        </div>
-        <div class="paris-copy-stack">
-          <p>
-            APIOps Cycles is an open method for understanding, designing, and improving the digital capability
-            operating model behind APIs and related capabilities.
-          </p>
-          <p>
-            It is not a vendor product. It is not a mandatory framework. It is one practical way to make the
-            APIOps conversation visible across business, governance, platform, design, delivery, publishing,
-            adoption, and continuous improvement.
-          </p>
-          <p>
-            At APIOps Paris, APIOps Cycles is used as a shared navigation tool. Participants choose station
-            stickers to show where their organization is currently stuck, find relevant peers, join focused
-            clinics, and connect local challenges to a broader enterprise API capability.
-          </p>
-          <p>
-            The goal is not to follow a method. The goal is to help participants understand and improve the
-            operating model for their own organization.
-          </p>
         </div>
       </div>
     </section>
@@ -1289,7 +1254,7 @@ const faqs = [
         <h4>Conference</h4>
         <a href="#why">Why</a>
         <a href="#stations">Stations</a>
-        <a href="#program">Program</a>
+        <a href="#program">Agenda</a>
       </div>
       <div>
           <h4>Contribute</h4>
