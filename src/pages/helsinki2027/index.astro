@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import events from "../../data/events.json";
+
+const event = events.find((item) => item.id === "helsinki-2027")!;
+const formats = [
+  { title: "Practitioner talks", text: "Real cases and lessons from API strategy, platforms, governance, and adoption." },
+  { title: "Workshops and clinics", text: "Work through practical API challenges with peers and facilitators." },
+  { title: "Community discussions", text: "Compare approaches, ask questions, and connect with people facing similar decisions." },
+];
+const gallery = [
+  { src: "/images/hero/apiops-helsinki2026-hanna_sillanpaa_claire_barrett.jpg", alt: "Hanna Sillanpää presenting with Claire Barrett at APIOps Helsinki 2026", caption: "Practitioner talks at the 2026 conference" },
+  { src: "/images/hero/apiops-helsinki2026-mike-jackson-allanknabe.jpg", alt: "Mike Jackson and Allan Knabe at APIOps Helsinki 2026", caption: "Community connections in 2026" },
+  { src: "/images/hero/apiops-helsinki2026-allan-knabe-jurgen-buchmann-preparing-clinic.jpg", alt: "Allan Knabe and Jürgen Buchmann preparing a clinic at APIOps Helsinki 2026", caption: "Preparing a hands-on clinic in 2026" },
+];
+---
+
+<BaseLayout title={event.title} description="Save the date: APIOps Helsinki Conference returns to Epicenter Helsinki on June 1–2, 2027. Two days of practitioner learning and community connection.">
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="/"><img class="brand-logo" src="/favicon.svg" alt="APIOps logo" /><strong>APIOps Helsinki 2027</strong></a>
+      <div class="nav-links archive-nav-links">
+        <a href="#format">Format</a><a href="#venue">Venue</a><a href="/events">Event calendar</a>
+        <a class="button primary" href="#subscribe-section">Get updates</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="archive-hero">
+      <div class="container archive-hero-inner">
+        <div class="archive-hero-copy">
+          <span class="hero-kicker">Save the date · June 1–2, 2027</span>
+          <h1>APIOps Helsinki Conference 2027</h1>
+          <p class="hero-meta">{event.date} at {event.location}</p>
+          <p>Two days to connect with API and platform practitioners, share experience, and work through the decisions behind better APIs.</p>
+          <p>We’re returning to the same venue as 2026, building on a format of practitioner talks, workshops, clinics, and peer discussions.</p>
+          <div class="community-actions"><a class="button primary" href="#subscribe-section">Get conference updates</a><a class="button secondary alt" href="/helsinki2026">Explore the 2026 conference</a></div>
+        </div>
+        <div class="archive-stats" aria-label="Conference details">
+          <div><strong>2</strong><span>conference days</span></div>
+          <div><strong>June 1–2</strong><span>2027 · Helsinki, Finland</span></div>
+          <div><strong>Epicenter</strong><span>Returning to our 2026 venue</span></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section section-light" id="format">
+      <div class="container">
+        <div class="archive-summary-grid">
+          <article class="section-shell archive-summary-main">
+            <div class="section-title section-title-left section-title-compact"><h2>Learn together. Work on real challenges.</h2><p>A practitioner format, building on Helsinki 2026.</p></div>
+            <p>In 2026, the community came together for keynotes, parallel talks, hands-on workshops, clinics, labs, panels, and unconference sessions. The 2027 conference will build on that mix of shared experience and practical participation.</p>
+            <p>Whether you work in API product management, architecture, engineering, platforms, or governance, bring the questions and experiences you want to explore with the community.</p>
+          </article>
+          <aside class="section-shell archive-summary-side">
+            <h2>Program updates</h2>
+            <ul><li>Dates: June 1–2, 2027</li><li>Venue: Epicenter Helsinki</li><li>Agenda and session times: to be announced</li><li>Speakers: to be announced</li><li>Tickets and registration: details to follow</li></ul>
+          </aside>
+        </div>
+        <div class="local-opportunity-grid conference-formats">{formats.map((format) => <article><h3>{format.title}</h3><p>{format.text}</p></article>)}</div>
+      </div>
+    </section>
+
+    <section class="section archive-gallery-section">
+      <div class="container">
+        <div class="section-title section-title-left section-title-compact"><h2>A look back at Helsinki 2026</h2><p>A taste of the community and format we’re building on. All photos are from the 2026 conference.</p></div>
+        <div class="archive-gallery">{gallery.map((photo) => <figure><img src={photo.src} alt={photo.alt} loading="lazy" /><figcaption>{photo.caption}</figcaption></figure>)}</div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="venue">
+      <div class="container archive-summary-grid">
+        <article class="section-shell archive-summary-main">
+          <div class="section-title section-title-left section-title-compact"><h2>Back at Epicenter Helsinki</h2><p>Helsinki, Finland · June 1–2, 2027</p></div>
+          <p>The 2027 conference takes place at Epicenter Helsinki, the venue for APIOps Helsinki 2026. Arrival details and daily schedules will be shared as the program develops.</p>
+        </article>
+        <aside class="section-shell archive-summary-side"><h2>Stay in the loop</h2><p>Subscribe to APIOps community updates for conference announcements, including the program and registration details.</p><div class="community-actions"><a class="button primary" href="#subscribe-section">Get updates</a><a href="/communities/finland">Meet the Finland community</a></div></aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-grid">
+    <div><h4>APIOps Helsinki 2027</h4><p>June 1–2, 2027 · Epicenter Helsinki</p><p>Program, speakers, and ticket details to be announced.</p></div>
+    <div><h4>Conference</h4><a href="#format">Format</a><a href="#venue">Venue</a><a href="/helsinki2026">2026 archive</a></div>
+    <div><h4>Community</h4><a href="/">Community home</a><a href="/communities">Local communities</a><a href="/events">Event calendar</a></div>
+  </div></footer>
+</BaseLayout>
+
+<style>
+  .conference-formats { margin-top: 2rem; }
+  @media (min-width: 960px) {
+    .conference-formats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+</style>
