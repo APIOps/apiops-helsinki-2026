@@ -22,5 +22,9 @@ export function getCurrentEvents<T extends EventDates>(events: T[], today = getT
   return events.map((event) => ({
     ...event,
     status: isPastEvent(event, today) ? "Past event" : event.status,
-  })).sort((a, b) => a.startDate.localeCompare(b.startDate));
+  })).sort((a, b) => {
+    if (!a.year) return b.year ? 1 : 0;
+    if (!b.year) return -1;
+    return a.startDate.localeCompare(b.startDate);
+  });
 }
