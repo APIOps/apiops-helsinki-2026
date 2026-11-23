@@ -3,9 +3,9 @@
     "slug": "finland",
     "name": "Finland",
     "intro": "A community for API practitioners across Finland, connecting platform, product, architecture and governance peers.",
-    "cities": ["Helsinki", "Tampere"],
+    "cities": ["Helsinki", "Espoo", "Tampere"],
     "organizers": ["Marjukka Niinioja", "Kristiina Kivivuori"],
-    "partners": ["Local hosts and partners welcome"],
+    "partners": ["Osaango — community and APIOps Cycles support", "Vivicta Oy — November 24 meetup host"],
     "meetupLinks": [
       { "label": "Helsinki", "url": "https://www.meetup.com/apiops-helsinki/" },
       { "label": "Tampere", "url": "https://www.meetup.com/apiops-tampere/" }
@@ -14,13 +14,13 @@
   {
     "slug": "germany",
     "name": "Germany",
-    "intro": "A growing Meetup group for practitioners improving API operating models in Germany.",
+    "intro": "APIOps Germany connects API practitioners through meetups in Cologne and Nuremberg, sharing practical experience with APIs, production AI, product data, and governance.",
     "cities": ["Köln", "Nürnberg"],
     "organizers": [
       { "name": "Audrey Kolski", "url": "https://www.linkedin.com/in/audreykolski/" },
       { "name": "Daniel Kocot", "url": "https://www.linkedin.com/in/danielkocot/" }
     ],
-    "partners": ["Local hosts and partners welcome"],
+    "partners": ["Netlight — Cologne meetup host", "Axway — Cologne food and drinks sponsor", "adorsys — Nuremberg meetup host"],
     "meetupLinks": [
       { "label": "Germany", "url": "https://www.meetup.com/apiops-germany/" }
     ]
@@ -41,8 +41,8 @@
   {
     "slug": "poland",
     "name": "Poland",
-    "intro": "API Meetup Polska with APIOps connects practitioners working on APIs, integrations, platforms, governance, and AI across Poland, starting with a meetup in Poznań.",
-    "cities": ["Poznań", "Warsaw"],
+    "intro": "API Meetup Polska with APIOps starts in Poznań on November 26, 2026, with Polish-language talks on API and AI governance and resilient hybrid platforms. The group plans to meet every two to three months in different Polish cities.",
+    "cities": ["Poznań"],
     "organizers": [
       { "name": "Andrzej Jarzyna", "url": "https://www.linkedin.com/in/andrzej-jarzyna/" }
     ],
@@ -54,13 +54,12 @@
   {
     "slug": "spain",
     "name": "Spain",
-    "intro": "A community bringing together API practitioners and platform teams throughout Spain.",
+    "intro": "Help bring API practitioners and platform teams together in Spain. Local organizers and hosts are welcome to help shape the first activities in Barcelona.",
+    "planned": true,
     "cities": ["Barcelona"],
     "organizers": ["Local organizer team forming"],
     "partners": ["Local hosts and partners welcome"],
-    "meetupLinks": [
-      { "label": "Spain", "url": "https://www.meetup.com/find/?keywords=apiops&location=es--Barcelona" }
-    ]
+    "meetupLinks": []
   },
   {
     "slug": "us",
