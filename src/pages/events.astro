@@ -8,7 +8,7 @@ const events = getCurrentEvents(eventData);
 const whenFilters = [
   { label: "Upcoming", value: "upcoming" },
   { label: "This quarter", value: "quarter" },
-  { label: "2026", value: "2026" },
+  ...Array.from(new Set(events.map((event) => event.year).filter(Boolean))).sort().map((year) => ({ label: year, value: year })),
   { label: "TBA", value: "tba" },
   { label: "Past events", value: "past" },
 ];
@@ -21,6 +21,7 @@ const formatFilters = [
   { label: "Workshops", value: "workshop" },
   { label: "Talks", value: "talk" },
   { label: "Meetups", value: "meetup" },
+  { label: "Conferences", value: "conference" },
   { label: "Full-day events", value: "full-day" },
 ];
 const regionFilters = [
@@ -286,7 +287,7 @@ function getModeToken(event) {
       if (when === "upcoming") return !isPast;
       if (when === "past") return isPast;
       if (when === "tba") return isTba;
-      if (when === "2026") return year === "2026" && !isPast;
+      if (/^\d{4}$/.test(when)) return year === when && !isPast;
       if (when === "quarter") return !isPast && !isTba && date && end ? isNextThreeMonths(date, end) : false;
       return true;
     }

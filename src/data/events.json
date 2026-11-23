@@ -157,6 +157,26 @@
     "challengeUrl": "https://tally.so/r/GxW52L"
   },
   {
+    "id": "helsinki-2027",
+    "title": "APIOps Helsinki Conference 2027",
+    "date": "June 1–2, 2027",
+    "month": "JUN",
+    "day": "1–2",
+    "year": "2027",
+    "startDate": "2027-06-01",
+    "endDate": "2027-06-02",
+    "location": "Epicenter Helsinki",
+    "region": "finland",
+    "mode": "In person",
+    "format": "Conference",
+    "topic": "API strategy, platforms, governance, and community learning",
+    "status": "Save the date",
+    "description": "APIOps Helsinki returns to Epicenter Helsinki on June 1–2, 2027. Building on the 2026 format of practitioner talks, workshops, clinics, and peer discussions, the conference brings API and platform practitioners together for two days of shared learning. Program, speakers, and ticket details will be announced.",
+    "ticketUrl": "/helsinki2027",
+    "learnUrl": "/helsinki2027",
+    "challengeUrl": ""
+  },
+  {
     "id": "webinars-2026",
     "title": "APIOps online sessions and webinars",
     "date": "Dates to be announced",
